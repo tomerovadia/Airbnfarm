@@ -6,12 +6,12 @@ import App from './app';
 export default (props) => {
 
   return (
-    <h1>WELCOME</h1>
-    // <Provider store={props.store}>
-    //   <Router history={ hashHistory }>
-    //     <Route path='/' component={App} />
-    //   </Router>
-    // </Provider>
+    <Provider store={props.store}>
+      <Router history={ hashHistory }>
+        <Route path='/' component={App} />
+
+      </Router>
+    </Provider>
   );
 
 };
