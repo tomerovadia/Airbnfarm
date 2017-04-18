@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {login, logout, signup} from './util/session_api_util';
 import configureStore from './store/store.js';
+import Root from './components/root';
 
 document.addEventListener('DOMContentLoaded', () => {
   window.login = login;
@@ -12,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const root = document.getElementById('root');
   ReactDOM.render(
-    <h1>Welcome to Airnbn</h1>,
+    <Root />,
     root
   );
 });
