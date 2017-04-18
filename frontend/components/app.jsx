@@ -20,11 +20,18 @@ export default () => {
 
         <div className='main-nav-right'>
 
-          <div className='main-nav-links'>
-            <div className='main-nav-avatar'>
+            <ul className='main-nav-links'>
+              <li>No time to host?</li>
 
-            </div>
-          </div>
+              <li>Become a Host</li>
+              <li>Help</li>
+              <li>Sign Up</li>
+              <li>Log In</li>
+
+              <li className='main-nav-avatar'>
+                AVATAR
+              </li>
+            </ul>
 
 
 
