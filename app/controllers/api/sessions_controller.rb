@@ -8,14 +8,19 @@ class Api::SessionsController < ApplicationController
 
     if @user
       login!(@user)
-      redirect_to user_url(@user)
+      redirect_to api_user_url(@user)
     else
-      
+      render json: {message: ['Invalid credentials']}, status: 401
     end
   end
 
   def destroy
-
+    if current_user
+      logout!
+      render json: {message: ['successful logout']}
+    else
+      render json: {errors: ['not logged in']}, status: 404
+    end
   end
 
 end
