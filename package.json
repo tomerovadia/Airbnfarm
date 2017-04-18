@@ -12,7 +12,7 @@
     "webpack": "webpack --watch"
   },
   "engines": {
-    "node": "6.7.1",
+    "node": "6.7.0",
     "npm": "3.10.7"
   },
   "keywords": [],
