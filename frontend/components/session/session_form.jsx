@@ -25,30 +25,33 @@ class SessionForm extends React.Component {
     let errorsString = Object.keys(this.props.errors).length === 0 ? "" : JSON.stringify(this.props.errors);
 
     return (
-      <div>
 
-        <h2>{formType}</h2>
+      <div className='session-form-blackout'>
+        <div className='session-form-div'>
 
-        <div>{errorsString}</div>
+          <div>{errorsString}</div>
 
-        <form onSubmit={this.handleSubmit}>
-          <label>Email: </label>
-          <input
-            type='text'
-            value={this.state.email}
-            onChange={this.handleChange('email')}
-          />
+            <form onSubmit={this.handleSubmit} id='session-form'>
 
-          <label>Password: </label>
-            <input
-              type='password'
-              value={this.state.password}
-              onChange={this.handleChange('password')}
-            />
+              <input
+                type='text'
+                value={this.state.email}
+                onChange={this.handleChange('email')}
+                placeholder='Email Address'
+              />
 
-          <input type='submit' value={formType}/>
-        </form>
+              <input
+                type='password'
+                value={this.state.password}
+                onChange={this.handleChange('password')}
+                placeholder='Password'
+              />
+
+              <button form='session-form' type='submit'>{formType}</button>
+            </form>
+        </div>
       </div>
+
     );
 
   }
