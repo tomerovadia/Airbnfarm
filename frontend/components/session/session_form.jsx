@@ -20,7 +20,7 @@ class SessionForm extends React.Component {
     this.props.processForm(this.state);
   }
 
-  redirect(){
+  redirectToAltSessionForm(){
 
   }
 
@@ -34,19 +34,18 @@ class SessionForm extends React.Component {
 
   render(){
 
-    let formType;
+    let formTypeFormatted;
     let altFormType;
     let altText;
     if(this.props.formType === 'signup'){
-      formType = 'Sign Up';
+      formTypeFormatted = 'Sign Up';
       altFormType = 'Log In';
       altText = 'Already have an Airbnb account?';
     } else {
-      formType = 'Log In';
+      formTypeFormatted = 'Log In';
       altFormType = 'Sign Up';
       altText = "Don't have an account?";
     }
-
 
     let emailErrors;
     let passwordErrors;
@@ -86,10 +85,9 @@ class SessionForm extends React.Component {
             />
 
             <button
-              onClick={this.redirect}
               form='session-form'
               type='submit'>
-              <span>{formType}</span>
+              <span>{formTypeFormatted}</span>
             </button>
 
           </form>
@@ -100,7 +98,7 @@ class SessionForm extends React.Component {
             </div>
 
             <div className='session-form-alt-button'>
-              <button>
+              <button onClick={this.redirectToAltSessionForm}>
                 {altFormType}
               </button>
             </div>

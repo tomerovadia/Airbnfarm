@@ -17,7 +17,11 @@ class App extends React.Component {
     if (!this.props.activeModal){
       sessionForm = "";
     } else {
-      sessionForm = <SessionFormContainer formType={this.props.activeModal} />
+      sessionForm =
+      <SessionFormContainer
+        formType={this.props.activeModal}
+        clearModal={this.props.clearModal}
+      />
     }
 
     return (
@@ -27,7 +31,6 @@ class App extends React.Component {
           currentUser={ this.props.currentUser }
           logout={this.props.logout}
           receiveModal={this.props.receiveModal}
-          clearModal={this.props.clearModal}
         />
 
         {sessionForm}

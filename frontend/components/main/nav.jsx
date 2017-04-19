@@ -13,7 +13,8 @@ export default (props) => {
 
   let links;
   if(props.currentUser){
-    links = <ul className='main-nav-links'>
+    links =
+    <ul className='main-nav-links'>
       <Link>No time to host?</Link>
 
       <Link>Become a Host</Link>
@@ -28,7 +29,8 @@ export default (props) => {
     </ul>
 
   } else {
-    links = <ul className='main-nav-links'>
+    links =
+    <ul className='main-nav-links'>
       <Link>No time to host?</Link>
       <Link>Become a Host</Link>
       <Link>Help</Link>
