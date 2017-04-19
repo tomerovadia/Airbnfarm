@@ -20,14 +20,20 @@ class SessionForm extends React.Component {
     this.props.processForm(this.state);
   }
 
-  redirect(new_url){
-    () => hashHistory.push(new_url)
+  redirect(){
+
   }
 
   render(){
 
     let formType = this.props.formType === 'signup' ? 'Sign Up' : 'Log In';
-    let errorsString = Object.keys(this.props.errors).length === 0 ? "" : JSON.stringify(this.props.errors);
+
+    let errorsString;
+    if(Object.keys(this.props.errors).length === 0){
+      errorsString = '';
+    } else {
+      errorsString = JSON.stringify(this.props.errors);
+    }
 
     return (
 
@@ -53,7 +59,7 @@ class SessionForm extends React.Component {
             />
 
             <button
-              onClick={}
+              onClick={this.redirect}
               form='session-form'
               type='submit'>
               <span>{formType}</span>

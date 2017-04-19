@@ -5,7 +5,10 @@ export default (props) => {
 
   let logInOrAvatar = <Link to='/login'>Log In</Link>;
   if(props.currentUser){
-    logInOrAvatar = <Link>{props.currentUser}</Link>;
+    logInOrAvatar =
+      <Link id='main-nav-avatar-link'>
+        <img src='https://a0.muscache.com/defaults/user_pic-50x50.png?v=2' />
+      </Link>;
   }
 
   const handleLogout = () => {
