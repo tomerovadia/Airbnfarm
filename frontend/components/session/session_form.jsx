@@ -21,13 +21,13 @@ class SessionForm extends React.Component {
 
   render(){
 
-    let formTitle = this.props.formType === 'signup' ? 'Sign Up' : 'Log In';
+    let formType = this.props.formType === 'signup' ? 'Sign Up' : 'Log In';
     let errorsString = Object.keys(this.props.errors).length === 0 ? "" : JSON.stringify(this.props.errors);
 
     return (
       <div>
 
-        <h2>{formTitle}</h2>
+        <h2>{formType}</h2>
 
         <div>{errorsString}</div>
 
@@ -46,7 +46,7 @@ class SessionForm extends React.Component {
               onChange={this.handleChange('password')}
             />
 
-          <input type='submit' />
+          <input type='submit' value={formType}/>
         </form>
       </div>
     );
