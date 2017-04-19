@@ -52,8 +52,10 @@ export default connect(
     };
   },
   (dispatch) => {
-    return {logout: () => dispatch(logout())};
-    return {receiveModal: (modalName) => dispatch(receiveModal(modalName))};
-    return {clearModal: () => dispatch(clearModal())};
+    return {
+      logout: () => dispatch(logout()),
+      receiveModal: (modalName) => dispatch(receiveModal(modalName)),
+      clearModal: () => dispatch(clearModal())
+    }
   }
 )(App);
