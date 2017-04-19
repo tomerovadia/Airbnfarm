@@ -5,7 +5,7 @@ const _initialState = {
   activeModal: null
 }
 
-export default (oldState = _initialState, action){
+export default (oldState = _initialState, action) => {
 
   switch(action.type){
     case RECEIVE_MODAL:
@@ -15,5 +15,5 @@ export default (oldState = _initialState, action){
     default:
       return oldState;
   }
-  
+
 }
