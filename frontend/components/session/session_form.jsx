@@ -24,8 +24,12 @@ class SessionForm extends React.Component {
 
   }
 
-  determineInputClassName() {
-    return 'session-form-input-with-error';
+  determineInputClassName(inputType) {
+    if(this.props.errors[inputType]){
+      return 'session-form-input-with-error';
+    } else {
+      return '';
+    }
   }
 
   render(){
@@ -65,7 +69,7 @@ class SessionForm extends React.Component {
             {emailErrors}
 
             <input
-              className={this.determineInputClassName()}
+              className={this.determineInputClassName('email')}
               type='text'
               value={this.state.email}
               onChange={this.handleChange('email')}
@@ -75,6 +79,7 @@ class SessionForm extends React.Component {
             {passwordErrors}
 
             <input
+              className={this.determineInputClassName('password')}
               type='password'
               value={this.state.password}
               onChange={this.handleChange('password')}
