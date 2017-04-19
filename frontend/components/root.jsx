@@ -9,6 +9,8 @@ export default (props) => {
     <Provider store={props.store}>
       <Router history={ hashHistory }>
         <Route path='/' component={App} />
+          <Route path='/signup' component={App} />
+          <Route path='/login' component={App} />
 
       </Router>
     </Provider>

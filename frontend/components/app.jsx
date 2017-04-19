@@ -1,6 +1,10 @@
 import React from 'react';
+import SessionFormContainer from './session/session_form_container';
 
-export default () => {
+export default (props) => {
+
+  const form = props.location.pathname === '/' ? "" : <SessionFormContainer path={props.location.pathname} />;
+
 
   return (
     <div>
@@ -27,19 +31,19 @@ export default () => {
               <li>Help</li>
               <li>Sign Up</li>
               <li>Log In</li>
+              <li>Log Out</li>
 
               <li className='main-nav-avatar'>
                 AVATAR
               </li>
             </ul>
 
-
-
-
         </div>
 
-
       </nav>
+
+      {form}
+
     </div>
   );
 };
