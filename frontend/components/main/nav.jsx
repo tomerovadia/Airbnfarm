@@ -1,10 +1,11 @@
 import React from 'react';
+import {Link, hashHistory} from 'react-router';
 
 export default (props) => {
 
-  let logInOrAvatar = <li>Log In</li>;
+  let logInOrAvatar = <Link to='/login'>Log In</Link>;
   if(props.currentUser){
-    logInOrAvatar = <li>{props.currentUser}</li>;
+    logInOrAvatar = <Link>{props.currentUser}</Link>;
   }
 
   const handleLogout = () => {
@@ -29,13 +30,13 @@ export default (props) => {
       <div className='main-nav-right'>
 
           <ul className='main-nav-links'>
-            <li>No time to host?</li>
+            <Link>No time to host?</Link>
 
-            <li>Become a Host</li>
-            <li>Help</li>
-            <li>Sign Up</li>
+            <Link>Become a Host</Link>
+            <Link>Help</Link>
+            <Link to='/signup'>Sign Up</Link>
             {logInOrAvatar}
-            <li onClick={handleLogout}>Log Out</li>
+            <Link onClick={handleLogout}>Log Out</Link>
           </ul>
 
       </div>
