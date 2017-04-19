@@ -34,6 +34,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'bcrypt'
+gem 'email_validator'
 
 group :production do
   gem 'rails_12factor'

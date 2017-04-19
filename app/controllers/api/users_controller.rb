@@ -6,6 +6,10 @@ class Api::UsersController < ApplicationController
     # Handle email errors
     if unformatted_errors.include?("Email can't be blank")
       formatted_errors['email'] = "Email is required."
+    elsif unformatted_errors.include?("Email is invalid")
+      formatted_errors['email'] = "Please enter a valid email address."
+    elsif unformatted_errors.include?("Email has already been taken")
+      formatted_errors['email'] = "Looks like you already have an account. Please log in instead."
     end
 
     # Handle password errors

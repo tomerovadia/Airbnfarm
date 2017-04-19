@@ -62,6 +62,8 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     debug_inspector (0.0.2)
+    email_validator (1.6.0)
+      activemodel
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.18)
@@ -181,6 +183,7 @@ DEPENDENCIES
   binding_of_caller
   byebug
   coffee-rails (~> 4.2)
+  email_validator
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
