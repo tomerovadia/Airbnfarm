@@ -22,7 +22,7 @@
 }
 
 .session-form-div button {
-  padding: 25px 175px;
+  padding: 25px 160px;
   background-color: rgb(255, 90, 95);
   border: 1px lightgray;
   border-radius: 5px;
@@ -32,6 +32,10 @@
   display: block;
   width: 97%;
   cursor: pointer;
+}
+
+.session-form-div button span {
+  width: 20%;
 }
 
 .session-form-div input {
