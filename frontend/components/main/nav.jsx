@@ -33,6 +33,10 @@ export default (props) => {
     </ul>
   }
 
+  const activateModal () => {
+    
+  }
+
   return (
     <nav className='main-nav'>
 
