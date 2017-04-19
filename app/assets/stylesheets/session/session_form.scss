@@ -1,0 +1,78 @@
+.session-form-blackout {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 700px;
+  width: 100%;
+  flex: 1;
+  padding-top: 100px;
+}
+
+.session-form-div {
+  border: 1px solid red;
+  border-radius: 3px;
+  height: 386px;
+  width: 481px;
+  padding: 32px;
+  background-color: white;
+}
+
+.session-form-div {
+  border: 1px solid #a6abb2;
+  margin: 0 auto;
+}
+
+#session-form > button {
+  padding: 25px 160px;
+  background-color: rgb(255, 90, 95);
+  border: 1px lightgray;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  margin: 0 auto;
+  display: block;
+  width: 97%;
+  cursor: pointer;
+}
+
+.session-form-div button span {
+  width: 20%;
+}
+
+.session-form-div input {
+  height: 65px;
+  font-size: 15px;
+  color: black;
+  padding: 10px 35px 10px 10px;
+  border-radius: 2px;
+  border: 1px solid #a6abb2;
+  display: block;
+  margin: 5px auto;
+  width: 97%;
+  box-sizing: border-box;
+}
+
+#session-form {
+}
+
+.session-form-alt-div {
+  border: 1px solid green;
+  height: 100px;
+  width: 100%;
+  display: flex;
+}
+
+.session-form-alt-text {
+  width: 50%;
+  height: 90px;
+  border: 1px solid yellow;
+}
+
+.session-form-alt-button {
+  width: 50%;
+  height: 90px;
+  border: 1px solid yellow;
+}
+
+.session-form-alt-button button {
+
+}
