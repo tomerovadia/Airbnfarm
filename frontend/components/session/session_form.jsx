@@ -1,4 +1,5 @@
 import React from 'react';
+import { hashHistory } from 'react-router';
 
 
 class SessionForm extends React.Component {
@@ -19,6 +20,10 @@ class SessionForm extends React.Component {
     this.props.processForm(this.state);
   }
 
+  redirect(new_url){
+    () => hashHistory.push(new_url)
+  }
+
   render(){
 
     let formType = this.props.formType === 'signup' ? 'Sign Up' : 'Log In';
@@ -31,24 +36,43 @@ class SessionForm extends React.Component {
 
           <div>{errorsString}</div>
 
-            <form onSubmit={this.handleSubmit} id='session-form'>
+          <form onSubmit={this.handleSubmit} id='session-form'>
 
-              <input
-                type='text'
-                value={this.state.email}
-                onChange={this.handleChange('email')}
-                placeholder='Email Address'
-              />
+            <input
+              type='text'
+              value={this.state.email}
+              onChange={this.handleChange('email')}
+              placeholder='Email Address'
+            />
 
-              <input
-                type='password'
-                value={this.state.password}
-                onChange={this.handleChange('password')}
-                placeholder='Password'
-              />
+            <input
+              type='password'
+              value={this.state.password}
+              onChange={this.handleChange('password')}
+              placeholder='Password'
+            />
 
-            <button form='session-form' type='submit'><span>{formType}</span></button>
-            </form>
+            <button
+              onClick={}
+              form='session-form'
+              type='submit'>
+              <span>{formType}</span>
+            </button>
+
+          </form>
+
+          <div className='session-form-alt-div'>
+            <div className='session-form-alt-text'>
+              Don't have an account?
+            </div>
+
+            <div className='session-form-alt-button'>
+              <button>
+                Sign Up
+              </button>
+            </div>
+          </div>
+
         </div>
       </div>
 
