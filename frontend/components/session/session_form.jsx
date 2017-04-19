@@ -26,6 +26,7 @@ class SessionForm extends React.Component {
 
   render(){
 
+
     let formType;
     let altFormType;
     let altText;
@@ -39,21 +40,29 @@ class SessionForm extends React.Component {
       altText = "Don't have an account?";
     }
 
-    let errorsString;
+
+
+    let emailErrors;
+    let passwordErrors;
     if(Object.keys(this.props.errors).length === 0){
-      errorsString = '';
+      emailErrors = '';
+      passwordErrors = '';
     } else {
-      errorsString = JSON.stringify(this.props.errors);
+      emailErrors = this.props.errors.email;
+      passwordErrors = this.props.errors.password;
     }
+
+
+
 
     return (
 
       <div className='session-form-blackout'>
         <div className='session-form-div'>
 
-          <div>{errorsString}</div>
-
           <form onSubmit={this.handleSubmit} id='session-form'>
+
+            {emailErrors}
 
             <input
               type='text'
@@ -61,6 +70,8 @@ class SessionForm extends React.Component {
               onChange={this.handleChange('email')}
               placeholder='Email Address'
             />
+
+            {passwordErrors}
 
             <input
               type='password'
