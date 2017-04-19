@@ -1,6 +1,7 @@
 import React from 'react';
 import SessionFormContainer from './session/session_form_container';
 import { logout } from '../actions/session_actions';
+import { receiveModal, clearModal } from '../actions/modal_actions';
 import { connect } from 'react-redux';
 import Nav from './main/nav';
 
@@ -22,7 +23,12 @@ class App extends React.Component {
     return (
       <div>
 
-        <Nav currentUser={ this.props.currentUser } logout={this.props.logout}/>
+        <Nav
+          currentUser={ this.props.currentUser }
+          logout={this.props.logout}
+          receiveModal={this.props.receiveModal}
+          clearModal={this.props.clearModal}
+        />
 
         {sessionForm}
 
@@ -47,5 +53,7 @@ export default connect(
   },
   (dispatch) => {
     return {logout: () => dispatch(logout())};
+    return {receiveModal: (modalName) => dispatch(receiveModal(modalName))};
+    return {clearModal: () => dispatch(clearModal())};
   }
 )(App);

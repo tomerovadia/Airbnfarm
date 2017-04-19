@@ -33,8 +33,8 @@ export default (props) => {
     </ul>
   }
 
-  const activateModal () => {
-    
+  const activateModal = () => {
+
   }
 
   return (
