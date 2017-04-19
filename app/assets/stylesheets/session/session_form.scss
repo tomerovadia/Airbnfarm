@@ -4,6 +4,7 @@
   height: 700px;
   width: 100%;
   flex: 1;
+  padding-top: 100px;
 }
 
 .session-form-div {
@@ -16,7 +17,8 @@
 }
 
 .session-form-div {
-  border: 1px solid magenta;
+  border: 1px solid lightgray;
+  margin: 0 auto;
 }
 
 .session-form-div button {
