@@ -33,7 +33,7 @@ export const login = (user) => dispatch => {
     .then(
       (user) => {
         dispatch(receiveCurrentUser(user));
-        dispatch(clearModal());
+        // dispatch(clearModal());
       },
       (errors) => dispatch(receiveErrors(errors))
     );
@@ -53,7 +53,7 @@ export const signup = (user) => dispatch => {
     .then(
       (user) => {
         dispatch(receiveCurrentUser(user));
-        dispatch(clearModal());
+        // dispatch(clearModal());
       },
       (errors) => dispatch(receiveErrors(errors)));
 };
