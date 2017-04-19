@@ -48,7 +48,6 @@ class SessionForm extends React.Component {
     }
 
 
-
     let emailErrors;
     let passwordErrors;
     if(Object.keys(this.props.errors).length === 0){
