@@ -7,6 +7,10 @@ export default (props) => {
     props.logout();
   };
 
+  const activateModal = (modalName) => {
+    return () => props.receiveModal(modalName);
+  }
+
   let links;
   if(props.currentUser){
     links = <ul className='main-nav-links'>
@@ -28,13 +32,9 @@ export default (props) => {
       <Link>No time to host?</Link>
       <Link>Become a Host</Link>
       <Link>Help</Link>
-      <Link to='/signup'>Sign Up</Link>
+      <Link onClick={activateModal('signup')}>Sign Up</Link>
       <Link to='/login'>Log In</Link>
     </ul>
-  }
-
-  const activateModal = () => {
-
   }
 
   return (
