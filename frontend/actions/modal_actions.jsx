@@ -8,7 +8,6 @@ export const receiveModal = (modalName) => {
   }
 };
 
-
 export const clearModal = () => {
   return {
     type: CLEAR_MODAL,

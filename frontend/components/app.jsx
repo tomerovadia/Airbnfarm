@@ -12,14 +12,21 @@ class App extends React.Component {
 
   render() {
 
-    const form = this.props.location.pathname === '/' ? "" : <SessionFormContainer path={this.props.location.pathname} />;
+    // const form = this.props.location.pathname === '/' ? "" : <SessionFormContainer path={this.props.location.pathname} />;
+
+    let sessionForm;
+    if (!this.props.activeModal){
+      sessionForm = "";
+    } else {
+      sessionForm = <SessionFormContainer formType={this.props.activeModal} />
+    }
 
     return (
       <div>
 
         <Nav currentUser={ this.props.currentUser } logout={this.props.logout}/>
 
-        {form}
+        {sessionForm}
 
       </div>
     );
@@ -28,8 +35,17 @@ class App extends React.Component {
 
 export default connect(
   (state) => {
-    const currentUser = state.session.currentUser ? state.session.currentUser.email : null;
-    return{currentUser: currentUser};
+    let currentUser;
+    if(state.session.currentUser){
+      currentUser = state.session.currentUser.email
+    } else {
+      currentUser = null
+    }
+
+    return{
+      currentUser,
+      activeModal: 'signup'
+    };
   },
   (dispatch) => {
     return {logout: () => dispatch(logout())};
