@@ -1,16 +1,17 @@
 class Api::SessionsController < ApplicationController
 
   def create
-    @user = User.find_by_credentials(
+    result_of_search = User.find_by_credentials(
       params[:user][:email],
       params[:user][:password]
     )
 
-    if @user
+    if result_of_search.class == User
+      @user = result_of_search
       login!(@user)
       redirect_to api_user_url(@user)
     else
-      render json: {message: ['Invalid credentials']}, status: 401
+      render json: result_of_search, status: 401
     end
   end
 
