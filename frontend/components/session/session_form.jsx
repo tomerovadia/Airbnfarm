@@ -24,6 +24,10 @@ class SessionForm extends React.Component {
 
   }
 
+  stopPropagation(e){
+    e.stopPropagation();
+  }
+
   determineInputClassName(inputType) {
     if(this.props.errors[inputType]){
       return 'session-form-input-with-error';
@@ -59,8 +63,8 @@ class SessionForm extends React.Component {
 
     return (
 
-      <div className='session-form-blackout'>
-        <div className='session-form-div'>
+      <div className='session-form-blackout' onClick={this.props.clearModal}>
+        <div className='session-form-div' onClick={this.stopPropagation}>
 
           <form onSubmit={this.handleSubmit} id='session-form'>
 
