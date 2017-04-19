@@ -33,7 +33,7 @@ export default (props) => {
       <Link>Become a Host</Link>
       <Link>Help</Link>
       <Link onClick={activateModal('signup')}>Sign Up</Link>
-      <Link to='/login'>Log In</Link>
+      <Link onClick={activateModal('login')}>Log In</Link>
     </ul>
   }
 
