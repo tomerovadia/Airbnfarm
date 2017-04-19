@@ -10,9 +10,6 @@ class App extends React.Component {
     super(props);
   }
 
-
-
-
   render() {
 
     const form = this.props.location.pathname === '/' ? "" : <SessionFormContainer path={this.props.location.pathname} />;
