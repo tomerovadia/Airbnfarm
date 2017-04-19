@@ -3,18 +3,35 @@ import {Link, hashHistory} from 'react-router';
 
 export default (props) => {
 
-  let logInOrAvatar = <Link to='/login'>Log In</Link>;
-  if(props.currentUser){
-
-    logInOrAvatar =
-      <Link id='main-nav-avatar-link'>
-        <img src='https://a0.muscache.com/defaults/user_pic-50x50.png?v=2' />
-      </Link>;
-  }
-
   const handleLogout = () => {
     props.logout();
   };
+
+  let links;
+  if(props.currentUser){
+    links = <ul className='main-nav-links'>
+      <Link>No time to host?</Link>
+
+      <Link>Become a Host</Link>
+      <Link>Host</Link>
+      <Link>Trips</Link>
+      <Link>Messages</Link>
+      <Link>Help</Link>
+      <Link id='main-nav-avatar-link'>
+        <img src='https://a0.muscache.com/defaults/user_pic-50x50.png?v=2' />
+      </Link>
+      <Link onClick={handleLogout}>Log Out</Link>
+    </ul>
+
+  } else {
+    links = <ul className='main-nav-links'>
+      <Link>No time to host?</Link>
+      <Link>Become a Host</Link>
+      <Link>Help</Link>
+      <Link to='/signup'>Sign Up</Link>
+      <Link to='/login'>Log In</Link>
+    </ul>
+  }
 
   return (
     <nav className='main-nav'>
@@ -33,15 +50,7 @@ export default (props) => {
 
       <div className='main-nav-right'>
 
-          <ul className='main-nav-links'>
-            <Link>No time to host?</Link>
-
-            <Link>Become a Host</Link>
-            <Link>Help</Link>
-            <Link to='/signup'>Sign Up</Link>
-            {logInOrAvatar}
-            <Link onClick={handleLogout}>Log Out</Link>
-          </ul>
+        {links}
 
       </div>
 
