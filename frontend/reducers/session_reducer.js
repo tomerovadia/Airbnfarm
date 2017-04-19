@@ -11,7 +11,7 @@ export default (oldState = _initialState, action) => {
 
   switch(action.type){
     case RECEIVE_CURRENT_USER:
-      return {currentUser: action.user, errors: []};
+      return {currentUser: action.user, errors: {}};
     case RECEIVE_ERRORS:
       return {currentUser: null, errors: action.errors};
     default:
