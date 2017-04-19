@@ -11,7 +11,6 @@ export default (props) => {
         <Route path='/' component={App} />
           <Route path='/signup' component={App} />
           <Route path='/login' component={App} />
-
       </Router>
     </Provider>
   );
