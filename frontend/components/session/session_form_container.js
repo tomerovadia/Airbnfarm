@@ -4,7 +4,6 @@ import SessionForm from './session_form';
 import {signup, login} from '../../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  // let formType = ownProps.path.slice(1);
 
   return {
     currentUser: state.session.currentUser,
@@ -15,7 +14,6 @@ const mapStateToProps = (state, ownProps) => {
 
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  // let formType = ownProps.path.slice(1);
   let formType = ownProps.formType;
   let processForm = formType === "login" ? login : signup;
 

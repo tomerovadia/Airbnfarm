@@ -12,8 +12,6 @@ class App extends React.Component {
 
   render() {
 
-    // const form = this.props.location.pathname === '/' ? "" : <SessionFormContainer path={this.props.location.pathname} />;
-
     let sessionForm;
     if (!this.props.activeModal){
       sessionForm = "";
@@ -44,7 +42,7 @@ export default connect(
 
     return{
       currentUser,
-      activeModal: 'signup'
+      activeModal: state.modalConductor.activeModal
     };
   },
   (dispatch) => {
