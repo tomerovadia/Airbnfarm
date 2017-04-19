@@ -1,4 +1,5 @@
 import * as SessionAPIUtil from '../util/session_api_util';
+import { clearModal } from './modal_actions';
 
 // Constants
 
@@ -30,8 +31,12 @@ export const receiveErrors = (errors) => {
 export const login = (user) => dispatch => {
   return SessionAPIUtil.login(user)
     .then(
-      (user) => dispatch(receiveCurrentUser(user)),
-      (errors) => dispatch(receiveErrors(errors)));
+      (user) => {
+        dispatch(receiveCurrentUser(user));
+        dispatch(clearModal());
+      },
+      (errors) => dispatch(receiveErrors(errors))
+    );
 };
 
 
@@ -46,6 +51,9 @@ export const logout = () => dispatch => {
 export const signup = (user) => dispatch => {
   return SessionAPIUtil.signup(user)
     .then(
-      (user) => dispatch(receiveCurrentUser(user)),
+      (user) => {
+        dispatch(receiveCurrentUser(user));
+        dispatch(clearModal());
+      },
       (errors) => dispatch(receiveErrors(errors)));
 };

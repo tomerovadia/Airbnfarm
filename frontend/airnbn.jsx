@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const preloadedState = {session: {currentUser: window.currentUser, errors: []}};
 
   const store = configureStore(preloadedState);
-  window.store = store;
 
   const root = document.getElementById('root');
   ReactDOM.render(
