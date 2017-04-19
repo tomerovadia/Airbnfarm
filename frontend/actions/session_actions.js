@@ -15,10 +15,13 @@ export const receiveCurrentUser = (user) => {
   };
 };
 
+// Multiple errors: Object {email: Array(1), password: Array(1)}
+// Single error: Object {password: Array(1)}
+
 export const receiveErrors = (errors) => {
   return {
     type: RECEIVE_ERRORS,
-    errors
+    errors: jQuery.parseJSON(errors.responseText)
   };
 };
 

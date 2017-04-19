@@ -3,7 +3,7 @@ import merge from 'lodash/merge';
 
 const _initialState = {
   currentUser: null,
-  errors: []
+  errors: {}
 };
 
 export default (oldState = _initialState, action) => {
