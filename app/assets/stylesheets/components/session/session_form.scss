@@ -51,6 +51,18 @@
   box-sizing: border-box;
 }
 
+input.session-form-input-with-error {
+  background-color: #fff8e6;
+  border-color: #ffb400;
+}
+
+.session-form-error-div {
+  width: 97%;
+  margin: 11px auto;
+  font-size: 13.2px;
+  color: rgb(72, 72, 72);
+}
+
 #session-form {
 }
 
