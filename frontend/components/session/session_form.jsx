@@ -66,7 +66,7 @@ class SessionForm extends React.Component {
 
           <form onSubmit={this.handleSubmit} id='session-form'>
 
-            {emailErrors}
+            <div className='session-form-error-div'>{emailErrors}</div>
 
             <input
               className={this.determineInputClassName('email')}
@@ -76,7 +76,7 @@ class SessionForm extends React.Component {
               placeholder='Email Address'
             />
 
-            {passwordErrors}
+            <div className='session-form-error-div'>{passwordErrors}</div>
 
             <input
               className={this.determineInputClassName('password')}
