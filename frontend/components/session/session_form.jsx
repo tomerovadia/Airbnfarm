@@ -21,12 +21,15 @@ class SessionForm extends React.Component {
 
   render(){
 
-    let formTitle = this.props.formType === 'siginup' ? 'Sign Up' : 'Log In';
+    let formTitle = this.props.formType === 'signup' ? 'Sign Up' : 'Log In';
+    let errorsString = Object.keys(this.props.errors).length === 0 ? "" : JSON.stringify(this.props.errors);
 
     return (
       <div>
 
         <h2>{formTitle}</h2>
+
+        <div>{errorsString}</div>
 
         <form onSubmit={this.handleSubmit}>
           <label>Email: </label>
