@@ -26,7 +26,18 @@ class SessionForm extends React.Component {
 
   render(){
 
-    let formType = this.props.formType === 'signup' ? 'Sign Up' : 'Log In';
+    let formType;
+    let altFormType;
+    let altText;
+    if(this.props.formType === 'signup'){
+      formType = 'Sign Up';
+      altFormType = 'Log In';
+      altText = 'Already have an Airbnb account?';
+    } else {
+      formType = 'Log In';
+      altFormType = 'Sign Up';
+      altText = "Don't have an account?";
+    }
 
     let errorsString;
     if(Object.keys(this.props.errors).length === 0){
@@ -69,12 +80,12 @@ class SessionForm extends React.Component {
 
           <div className='session-form-alt-div'>
             <div className='session-form-alt-text'>
-              Don't have an account?
+              {altText}
             </div>
 
             <div className='session-form-alt-button'>
               <button>
-                Sign Up
+                {altFormType}
               </button>
             </div>
           </div>
