@@ -40,15 +40,24 @@ class User < ApplicationRecord
   end
 
   def self.find_by_credentials(email, password)
-    result_of_search = User.find_by(email: email)
-    if result_of_search
-      if(result_of_search.is_password?(password))
-        return result_of_search
+    response = {}
+    if email.empty? || password.empty?
+      response['email'] = "Email is required." if email.empty?
+      response['password'] = "Password is required." if password.empty?
+      return response
+    end
+
+    user = User.find_by(email: email)
+    if user
+      if(user.is_password?(password))
+        return user
       else
-        return {password: "The password you entered is incorrect. Try again, or choose another login option."}
+        response['password'] = "The password you entered is incorrect. Try again, or choose another login option."
+        return response
       end
     else
-      return {email: "Invalid email."}
+      response['email'] = "Invalid email."
+      return response
     end
   end
 
