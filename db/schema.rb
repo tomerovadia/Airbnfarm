@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170420145825) do
+ActiveRecord::Schema.define(version: 20170420154003) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "availabilities", force: :cascade do |t|
+    t.integer  "spot_id",        null: false
+    t.date     "available_date", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["available_date"], name: "index_availabilities_on_available_date", using: :btree
+    t.index ["spot_id"], name: "index_availabilities_on_spot_id", using: :btree
+  end
+
+  create_table "privacy_levels", force: :cascade do |t|
+    t.string   "privacy_level", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["privacy_level"], name: "index_privacy_levels_on_privacy_level", using: :btree
+  end
 
   create_table "spots", force: :cascade do |t|
     t.integer  "host_id",          null: false
@@ -39,6 +55,13 @@ ActiveRecord::Schema.define(version: 20170420145825) do
     t.index ["state_id"], name: "index_spots_on_state_id", using: :btree
   end
 
+  create_table "states", force: :cascade do |t|
+    t.string   "state_name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["state_name"], name: "index_states_on_state_name", using: :btree
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",           null: false
     t.string   "password_digest"
@@ -48,4 +71,5 @@ ActiveRecord::Schema.define(version: 20170420145825) do
     t.index ["email"], name: "index_users_on_email", using: :btree
   end
 
+  add_foreign_key "availabilities", "spots"
 end
