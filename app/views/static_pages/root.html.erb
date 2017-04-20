@@ -16,7 +16,11 @@
 </script>
 
 <script type='text/javascript'>
-  window.states = "<%= State.statesArray.to_json %>";
+
+  window.states = <%= raw State.get_array %>
+  window.privacy_levels = <%= raw PrivacyLevel.get_array %>
+
+  debugger
 </script>
 
 <main id='root'>

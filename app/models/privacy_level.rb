@@ -12,7 +12,9 @@ class PrivacyLevel < ApplicationRecord
 
   has_many :spots
 
-
+  def self.get_array
+    return self.all.map {|privacy_level| privacy_level.privacy_level}
+  end
 
 
 end
