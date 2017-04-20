@@ -3,6 +3,7 @@ import {Router, Route, IndexRoute, hashHistory} from 'react-router';
 import { Provider } from 'react-redux';
 import App from './app';
 import BecomeAHost from './spots/become_a_host';
+import Welcome from './main/welcome';
 
 export default (props) => {
 
