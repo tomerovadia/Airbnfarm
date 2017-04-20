@@ -9,6 +9,18 @@ class App extends React.Component {
 
   constructor(props){
     super(props);
+    this.state = {userSettingsVisible: false};
+    this.showUserSettings = this.showUserSettings.bind(this);
+    this.hideUserSettings = this.hideUserSettings.bind(this);
+  }
+
+  showUserSettings(e){
+    this.setState({userSettingsVisible: true});
+    e.stopPropagation();
+  }
+
+  hideUserSettings(){
+    this.setState({userSettingsVisible: false});
   }
 
   render() {
@@ -25,7 +37,7 @@ class App extends React.Component {
     }
 
     return (
-      <div>
+      <div onClick={this.hideUserSettings}>
 
         {sessionForm}
 
@@ -33,6 +45,8 @@ class App extends React.Component {
           currentUser={ this.props.currentUser }
           logout={this.props.logout}
           receiveModal={this.props.receiveModal}
+          userSettingsVisible={this.state.userSettingsVisible}
+          showUserSettings={this.showUserSettings}
         />
 
         <div className='main-homepage-container'>
