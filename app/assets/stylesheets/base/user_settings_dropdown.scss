@@ -1,0 +1,21 @@
+.user-settings-dropdown-div {
+  border: 1px solid red;
+  width: 280px;
+  position: absolute;
+  right: 0;
+  background-color: white;
+  border: 1px solid #DBDBDB;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.user-settings-dropdown-div li {
+  text-align: left;
+  padding: 20px 22px 20px 0;
+  margin: 0 21px;
+  border-bottom: 1px solid #F2F2F2;
+  font-size: 13px;
+}
+
+.user-settings-dropdown-div li:hover {
+  border-bottom: 1px solid black;
+}
