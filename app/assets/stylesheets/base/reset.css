@@ -42,3 +42,11 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+div, span {
+  font-weight: 400;
+  font-family: "Helvetica Neue";
+  font-size: 14px;
+  color: #575757;
+  letter-spacing: 1px;
+}

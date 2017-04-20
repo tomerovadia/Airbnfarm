@@ -6,6 +6,17 @@
         user: current_user
       ).html_safe %>
   <% end %>
+
+  window.images = {
+    flowers: "<%= image_url('become_a_host') %>"
+  }
+
+
+
+</script>
+
+<script type='text/javascript'>
+  window.states = "<%= State.statesArray.to_json %>";
 </script>
 
 <main id='root'>
