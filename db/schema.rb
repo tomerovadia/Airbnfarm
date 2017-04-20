@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170420154003) do
+ActiveRecord::Schema.define(version: 20170420160424) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,12 +44,11 @@ ActiveRecord::Schema.define(version: 20170420154003) do
     t.integer  "num_beds",         null: false
     t.integer  "num_bathrooms",    null: false
     t.string   "street_address",   null: false
-    t.integer  "city_id",          null: false
     t.integer  "state_id",         null: false
     t.integer  "zipcode",          null: false
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
-    t.index ["city_id"], name: "index_spots_on_city_id", using: :btree
+    t.string   "city"
     t.index ["host_id"], name: "index_spots_on_host_id", using: :btree
     t.index ["privacy_level_id"], name: "index_spots_on_privacy_level_id", using: :btree
     t.index ["state_id"], name: "index_spots_on_state_id", using: :btree
