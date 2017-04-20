@@ -15,14 +15,14 @@
   border: 1px solid #a6abb2;
   border-radius: 3px;
   height: 365px;
-  width: 481px;
+  width: 435px;
   padding: 25px;
   background-color: white;
 }
 
 
 #session-form > button {
-  padding: 25px 160px;
+  padding: 25px 0;
   background-color: rgb(255, 90, 95);
   border: 1px lightgray;
   border-radius: 5px;
@@ -88,4 +88,5 @@ input.session-form-input-with-error {
   height: 36px;
   border-radius: 4px;
   background-color: white;
+  cursor: pointer;
 }
