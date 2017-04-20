@@ -12,7 +12,7 @@ export default (props) => {
     return () => props.receiveModal(modalName);
   }
 
-  let userSettingsDropdown = props.userSettingsVisible ? <UserSettingsDropdown /> : null
+  let userSettingsDropdown = props.userSettingsVisible ? <UserSettingsDropdown handleLogout={handleLogout}/> : null
 
   let links;
   if(props.currentUser){
@@ -27,7 +27,6 @@ export default (props) => {
         <img src='https://a0.muscache.com/defaults/user_pic-50x50.png?v=2' />
         {userSettingsDropdown}
       </Link>
-      <Link onClick={handleLogout}>Log Out</Link>
     </ul>
 
   } else {
