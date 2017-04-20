@@ -3,11 +3,24 @@ import SpotForm from './spot_form';
 
 class BecomeAHost extends React.Component {
 
+  constructor(props){
+    super(props);
+  }
+
   render() {
 
     return (
+      <div className='become-a-host-main-container'>
+        <div className='left-panel'>
+          <SpotForm />
+        </div>
 
-      <SpotForm />
+        <div className='right-panel'>
+
+        </div>
+
+
+      </div>
 
     )
   }
