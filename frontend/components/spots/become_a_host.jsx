@@ -1,28 +1,16 @@
 import React from 'react';
-
-
-
+import SpotForm from './spot_form';
 
 class BecomeAHost extends React.Component {
-
-
-
-
-
 
   render() {
 
     return (
 
-      <div>
-
-        Become a host!
-      </div>
+      <SpotForm />
 
     )
-
   }
-
 }
 
 export default BecomeAHost;
