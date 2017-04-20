@@ -19,7 +19,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
   return {
     processForm: (user) => dispatch(processForm(user)),
-    clearModal: () => dispatch(clearModal()),
+    clearModal: () => {
+      dispatch(clearModal());
+      dispatch(receiveErrors({}));
+    },
     receiveModal: (modalName) => dispatch(receiveModal(modalName)),
     clearErrors: () => dispatch(receiveErrors({})),
   };
