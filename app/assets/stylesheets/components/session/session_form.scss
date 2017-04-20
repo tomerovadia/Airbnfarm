@@ -11,12 +11,16 @@
   justify-content: center;
 }
 
-.session-form-div {
-  border: 1px solid #a6abb2;
+.session-form-error-and-form {
+  width: 435px;
   border-radius: 3px;
+  background-color: white;
+  border: 1px solid #a6abb2;
+}
+
+.session-form-div {
   width: 435px;
   padding: 25px;
-  background-color: white;
 }
 
 
@@ -88,4 +92,22 @@ input.session-form-input-with-error {
   border-radius: 4px;
   background-color: white;
   cursor: pointer;
+}
+
+.session-form-credentials-error-div {
+  height: 76px;
+  width: 100%;
+  background-color: #FFD1C4;
+  display: flex;
+  border-bottom: 1px solid #a6abb2;
+}
+
+.credentials-error-logo {
+  width: 15%;
+}
+
+.credentials-error-text {
+  width: 85%;
+  padding: 15px 0px;
+  line-height: 22px;
 }

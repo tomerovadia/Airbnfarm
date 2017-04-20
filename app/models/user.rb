@@ -52,11 +52,11 @@ class User < ApplicationRecord
       if(user.is_password?(password))
         return user
       else
-        response['password'] = "The password you entered is incorrect. Try again, or choose another login option."
+        response['credentials'] = "The password you entered is incorrect. Try again, or choose another login option."
         return response
       end
     else
-      response['email'] = "Invalid email."
+      response['credentials'] = "Invalid email."
       return response
     end
   end

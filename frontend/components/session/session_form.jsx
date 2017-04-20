@@ -60,64 +60,85 @@ class SessionForm extends React.Component {
       altText = "Don't have an account?";
     }
 
-    let emailErrors;
-    let passwordErrors;
+    let emailError;
+    let passwordError;
+    let credentialsError;
     if(Object.keys(this.props.errors).length === 0){
-      emailErrors = '';
-      passwordErrors = '';
+      emailError = '';
+      passwordError = '';
+      credentialsError = '';
     } else {
-      emailErrors = this.props.errors.email;
-      passwordErrors = this.props.errors.password;
+      emailError = this.props.errors.email;
+      passwordError = this.props.errors.password;
+      credentialsError = this.props.errors.credentials;
+    }
+
+    let credentialsErrorDiv = null;
+    if(credentialsError){
+      credentialsErrorDiv = (
+        <div className='session-form-credentials-error-div'>
+          <div className='credentials-error-logo'>
+            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+          </div>
+          <div className='credentials-error-text'>
+            <span>{credentialsError}</span>
+          </div>
+        </div>
+      )
     }
 
     return (
 
       <div className='session-form-blackout' onClick={this.props.clearModal}>
-        <div className='session-form-div' onClick={this.stopPropagation}>
 
-          <form onSubmit={this.handleSubmit} id='session-form'>
+        <div className='session-form-error-and-form'>
+          {credentialsErrorDiv}
+          <div className='session-form-div' onClick={this.stopPropagation}>
 
-            <div className='session-form-error-div'>{emailErrors}</div>
+            <form onSubmit={this.handleSubmit} id='session-form'>
 
-            <input
-              className={this.determineInputClassName('email')}
-              type='text'
-              value={this.state.email}
-              onChange={this.handleChange('email')}
-              placeholder='Email Address'
-            />
+              <div className='session-form-error-div'>{emailError}</div>
 
-            <div className='session-form-error-div'>{passwordErrors}</div>
+              <input
+                className={this.determineInputClassName('email')}
+                type='text'
+                value={this.state.email}
+                onChange={this.handleChange('email')}
+                placeholder='Email Address'
+              />
 
-            <input
-              className={this.determineInputClassName('password')}
-              type='password'
-              value={this.state.password}
-              onChange={this.handleChange('password')}
-              placeholder='Password'
-            />
+              <div className='session-form-error-div'>{passwordError}</div>
 
-            <button
-              form='session-form'
-              type='submit'>
-              <span>{formTypeFormatted}</span>
-            </button>
+              <input
+                className={this.determineInputClassName('password')}
+                type='password'
+                value={this.state.password}
+                onChange={this.handleChange('password')}
+                placeholder='Password'
+              />
 
-          </form>
+              <button
+                form='session-form'
+                type='submit'>
+                <span>{formTypeFormatted}</span>
+              </button>
 
-          <div className='session-form-alt-div clearfix'>
-              <div className='session-form-alt-text'>
-                <span>{altText}</span>
-              </div>
+            </form>
 
-            <button
-              className='session-form-alt-button'
-              onClick={this.switchModal(altFormType)}>
-              {altFormTypeFormatted}
-            </button>
+            <div className='session-form-alt-div clearfix'>
+                <div className='session-form-alt-text'>
+                  <span>{altText}</span>
+                </div>
+
+              <button
+                className='session-form-alt-button'
+                onClick={this.switchModal(altFormType)}>
+                {altFormTypeFormatted}
+              </button>
+
+            </div>
 
           </div>
-
         </div>
       </div>
 
