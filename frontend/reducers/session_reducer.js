@@ -13,7 +13,12 @@ export default (oldState = _initialState, action) => {
     case RECEIVE_CURRENT_USER:
       return {currentUser: action.user, errors: {}};
     case RECEIVE_ERRORS:
-      return {currentUser: null, errors: action.errors};
+      const currentUser = oldState.session.currentUser
+
+      return {
+        currentUser,
+        errors: action.errors
+      };
     default:
       return oldState;
   }
