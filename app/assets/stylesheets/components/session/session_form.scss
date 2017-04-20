@@ -14,7 +14,6 @@
 .session-form-div {
   border: 1px solid #a6abb2;
   border-radius: 3px;
-  height: 365px;
   width: 435px;
   padding: 25px;
   background-color: white;
@@ -69,9 +68,9 @@ input.session-form-input-with-error {
 }
 
 .session-form-alt-div {
-  margin: 30px 5px;
-  padding: 25px 0;
   border-top: 1px solid lightgray;
+  margin: 30px 5px 0 5px;
+  padding: 25px 0 0 0;
 }
 
 .session-form-alt-text {
