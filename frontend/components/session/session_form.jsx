@@ -91,9 +91,9 @@ class SessionForm extends React.Component {
 
       <div className='session-form-blackout' onClick={this.props.clearModal}>
 
-        <div className='session-form-error-and-form'>
+        <div className='session-form-error-and-form' onClick={this.stopPropagation}>
           {credentialsErrorDiv}
-          <div className='session-form-div' onClick={this.stopPropagation}>
+          <div className='session-form-div'>
 
             <form onSubmit={this.handleSubmit} id='session-form'>
 

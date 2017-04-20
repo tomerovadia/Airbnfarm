@@ -27,7 +27,7 @@ class App extends React.Component {
 
     let sessionForm;
     if (!this.props.activeModal){
-      sessionForm = "";
+      sessionForm = null;
     } else {
       sessionForm =
       <SessionFormContainer
