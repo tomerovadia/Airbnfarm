@@ -13,7 +13,7 @@ export default (oldState = _initialState, action) => {
     case RECEIVE_CURRENT_USER:
       return {currentUser: action.user, errors: {}};
     case RECEIVE_ERRORS:
-      const currentUser = oldState.session.currentUser
+      const currentUser = oldState.currentUser
 
       return {
         currentUser,
