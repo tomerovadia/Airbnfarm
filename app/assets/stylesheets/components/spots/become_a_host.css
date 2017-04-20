@@ -2,17 +2,26 @@
   display: flex;
   margin: 0 auto;
   max-width: 1310px;
-  width: 90%;
+  width: 100%;
   height: 500px;
-  border: 2px solid blue;
+  border: 3px solid blue;
 }
 
 .left-panel {
   width: 50%;
-  border: 1px solid green;
+  border: 2px solid yellow;
+  padding: 15px;
 }
 
 .right-panel {
   width: 50%;
-  border: 1px solid orange;
+  border: 2px solid orange;
+  padding: 15px;
+}
+
+.right-panel img {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  max-width: 534px;
 }

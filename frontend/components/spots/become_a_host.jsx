@@ -1,5 +1,5 @@
 import React from 'react';
-import SpotForm from './spot_form';
+import SpotFormBasics from './spot_form_basics';
 
 class BecomeAHost extends React.Component {
 
@@ -12,13 +12,16 @@ class BecomeAHost extends React.Component {
     return (
       <div className='become-a-host-main-container'>
         <div className='left-panel'>
-          <SpotForm />
+          <div className='right-panel-contents'>
+            <SpotFormBasics />
+          </div>
         </div>
 
         <div className='right-panel'>
-
+          <div className='right-panel-contents'>
+            <img src={window.images.flowers} />
+          </div>
         </div>
-
 
       </div>
 
