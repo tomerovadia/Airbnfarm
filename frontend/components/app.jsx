@@ -27,13 +27,19 @@ class App extends React.Component {
     return (
       <div>
 
+        {sessionForm}
+
         <Nav
           currentUser={ this.props.currentUser }
           logout={this.props.logout}
           receiveModal={this.props.receiveModal}
         />
 
-        {sessionForm}
+        <div className='welcome-splash'>
+          <span className='welcome-where-to'>Where to?</span>
+          <span className='welcome-start-adventure'>Start your next adventure on Airbnb.</span>
+        </div>
+
 
       </div>
     );
