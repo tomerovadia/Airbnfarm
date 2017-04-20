@@ -12,8 +12,7 @@ class State < ApplicationRecord
 
   has_many :spots
 
-  def self.statesArray
-    return State.all.map {|state| state.state_name}
+  def self.get_array
+    return self.all.map {|state| state.state_name}
   end
-
 end
