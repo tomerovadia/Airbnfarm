@@ -11,6 +11,12 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentWillReceiveProps(newProps){
+    if(newProps.formType !== this.props.formType){
+      this.props.clearErrors();
+    }
+  }
+
   handleChange(formInput){
     return (e) => this.setState({[formInput]: e.target.value});
   }
@@ -42,8 +48,7 @@ class SessionForm extends React.Component {
     let altFormTypeFormatted;
     let altFormType;
     let altText;
-    debugger
-    if(this.props.activeModal === 'signup'){
+    if(this.props.formType === 'signup'){
       formTypeFormatted = 'Sign Up';
       altFormTypeFormatted = 'Log In';
       altFormType = 'login';
@@ -100,16 +105,17 @@ class SessionForm extends React.Component {
 
           </form>
 
-          <div className='session-form-alt-div'>
-            <div className='session-form-alt-text'>
-              {altText}
-            </div>
+          <div className='session-form-alt-div clearfix'>
+              <div className='session-form-alt-text'>
+                <span>{altText}</span>
+              </div>
 
-            <div className='session-form-alt-button'>
-              <button onClick={this.switchModal(altFormType)}>
-                {altFormTypeFormatted}
-              </button>
-            </div>
+            <button
+              className='session-form-alt-button'
+              onClick={this.switchModal(altFormType)}>
+              {altFormTypeFormatted}
+            </button>
+
           </div>
 
         </div>

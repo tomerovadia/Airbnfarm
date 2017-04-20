@@ -1,7 +1,7 @@
 import React from 'react-redux';
 import { connect } from 'react-redux';
 import SessionForm from './session_form';
-import {signup, login} from '../../actions/session_actions';
+import {signup, login, receiveErrors} from '../../actions/session_actions';
 import { receiveModal, clearModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -10,7 +10,6 @@ const mapStateToProps = (state, ownProps) => {
     currentUser: state.session.currentUser,
     errors: state.session.errors,
     formType: ownProps.formType,
-    activeModal: state.modalConductor.activeModal,
   };
 };
 
@@ -22,6 +21,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     processForm: (user) => dispatch(processForm(user)),
     clearModal: () => dispatch(clearModal()),
     receiveModal: (modalName) => dispatch(receiveModal(modalName)),
+    clearErrors: () => dispatch(receiveErrors({})),
   };
 };
 

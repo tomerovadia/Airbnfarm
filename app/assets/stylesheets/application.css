@@ -13,9 +13,15 @@
  *= require_tree .
  *= require_self
  */
+div, span {
+  font-weight: 400;
+  font-family: "Helvetica Neue";
+  font-size: 14px;
+  color: rgb(72, 72, 72);
+}
 
- div {
-   font-weight: 400;
-   font-family: "Helvetica Neue";
-   font-size: 14px;
+ .clearfix:after {
+   content: '';
+   display: block;
+   clear: both;
  }
