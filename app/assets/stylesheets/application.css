@@ -12,7 +12,10 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
+
+
 div, span {
   font-weight: 400;
   font-family: "Helvetica Neue";
