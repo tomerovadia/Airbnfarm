@@ -16,8 +16,6 @@ export default (props) => {
     links =
     <ul className='main-nav-links'>
       <Link>No time to host?</Link>
-
-      <Link>Become a Host</Link>
       <Link>Host</Link>
       <Link>Trips</Link>
       <Link>Messages</Link>
