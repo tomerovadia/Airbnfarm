@@ -14,9 +14,9 @@
 .session-form-div {
   border: 1px solid #a6abb2;
   border-radius: 3px;
-  height: 386px;
+  height: 365px;
   width: 481px;
-  padding: 32px;
+  padding: 25px;
   background-color: white;
 }
 
@@ -26,7 +26,6 @@
   background-color: rgb(255, 90, 95);
   border: 1px lightgray;
   border-radius: 5px;
-  color: white;
   font-size: 16px;
   margin: 0 auto;
   display: block;
@@ -36,6 +35,9 @@
 
 .session-form-div button span {
   width: 20%;
+  color: white;
+  font-weight: 300;
+  letter-spacing: 1px;
 }
 
 .session-form-div input {
@@ -67,24 +69,23 @@ input.session-form-input-with-error {
 }
 
 .session-form-alt-div {
-  border: 1px solid green;
-  height: 100px;
-  width: 100%;
-  display: flex;
+  margin: 30px 5px;
+  padding: 25px 0;
+  border-top: 1px solid lightgray;
 }
 
 .session-form-alt-text {
-  width: 50%;
-  height: 90px;
-  border: 1px solid yellow;
+  float: left;
+  line-height: 36px;
 }
 
 .session-form-alt-button {
-  width: 50%;
-  height: 90px;
-  border: 1px solid yellow;
-}
-
-.session-form-alt-button button {
-
+  float: right;
+  padding: 7px 21px;
+  font-size: 14px;
+  color: #ff5a5f;
+  border: 1px solid #ff5a5f;
+  height: 36px;
+  border-radius: 4px;
+  background-color: white;
 }

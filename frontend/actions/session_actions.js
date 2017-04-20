@@ -19,9 +19,15 @@ export const receiveCurrentUser = (user) => {
 // Single error: Object {password: Array(1)}
 
 export const receiveErrors = (errors) => {
+  if (Object.keys(errors).length > 0){
+    errors = jQuery.parseJSON(errors.responseText)
+  } else {
+    errors = {}
+  }
+
   return {
     type: RECEIVE_ERRORS,
-    errors: jQuery.parseJSON(errors.responseText)
+    errors
   };
 };
 
