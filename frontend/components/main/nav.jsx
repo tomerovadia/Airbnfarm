@@ -12,6 +12,8 @@ export default (props) => {
     return () => props.receiveModal(modalName);
   }
 
+  let userSettingsDropdown = props.userSettingsVisible ? <UserSettingsDropdown /> : null
+
   let links;
   if(props.currentUser){
     links =
@@ -21,9 +23,9 @@ export default (props) => {
       <Link>Trips</Link>
       <Link>Messages</Link>
       <Link>Help</Link>
-      <Link id='main-nav-avatar-link'>
+      <Link id='main-nav-avatar-link' onClick={props.showUserSettings}>
         <img src='https://a0.muscache.com/defaults/user_pic-50x50.png?v=2' />
-        <UserSettingsDropdown />
+        {userSettingsDropdown}
       </Link>
       <Link onClick={handleLogout}>Log Out</Link>
     </ul>
