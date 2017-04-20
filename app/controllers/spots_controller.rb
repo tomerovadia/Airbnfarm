@@ -1,2 +1,0 @@
-class SpotsController < ApplicationController
-end

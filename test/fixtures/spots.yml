@@ -15,11 +15,11 @@
 #  num_beds         :integer          not null
 #  num_bathrooms    :integer          not null
 #  street_address   :string           not null
-#  city_id          :integer          not null
 #  state_id         :integer          not null
 #  zipcode          :integer          not null
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
+#  city             :string
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
