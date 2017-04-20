@@ -9,12 +9,13 @@ export default (props) => {
     <Provider store={props.store}>
       <Router history={ hashHistory }>
         <Route path='/' component={App}>
-          <Route path='/become-a-host' component={BecomeAHost}>
-            <Route path='/become-a-host/details' component={BecomeAHost} />
-            <Route path='/become-a-host/availability' component={BecomeAHost} />
-          </Route>
         </Route>
       </Router>
     </Provider>
   );
 };
+
+// <Route path='/become-a-host' component={BecomeAHost}>
+//   <Route path='/become-a-host/details' component={BecomeAHost} />
+//   <Route path='/become-a-host/availability' component={BecomeAHost} />
+// </Route>
