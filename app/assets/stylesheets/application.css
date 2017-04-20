@@ -17,7 +17,8 @@ div, span {
   font-weight: 400;
   font-family: "Helvetica Neue";
   font-size: 14px;
-  color: rgb(72, 72, 72);
+  color: #575757;
+  letter-spacing: 1px;
 }
 
  .clearfix:after {

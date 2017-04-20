@@ -1,17 +1,14 @@
 
 
 .main-nav div {
-  border: 1px solid green;
 }
 
 
 // NAV BAR
 
 .main-nav {
-  background-color: antiquewhite;
   width: 100%;
   height: 64px;
-  border: 1px solid black;
   display: flex;
   justify-content: space-between;
 }
@@ -19,16 +16,14 @@
 // MAIN NAV LEFT
 
 .main-nav-left {
-  border: 3px solid blue !important;
   width: 50%;
   display: flex;
   padding: 2px;
-  flex-direction: flex-start;
+  justify-content: flex-start;
 }
 
 .main-nav-airbnb-logo {
   margin: 5px 2px 5px 20px;
-  border: 1px solid green;
 }
 
 .airbnb-logo {
@@ -41,8 +36,6 @@
 // MAIN NAV RIGHT
 
 .main-nav-right {
-  border: 4px solid blue !important;
-  width: 50%;
   padding: 2px;
   display: flex;
   justify-content: flex-end;
@@ -51,7 +44,7 @@
 .main-nav-links {
   display: flex;
   justify-content: space-between;
-  width: 478px;
+  width: 450px;
 }
 
 .main-nav-links a {
@@ -59,10 +52,9 @@
   font-family: "Helvetica Neue";
   text-align: center;
   flex-grow: 1;
-  border: 1px solid orange;
   margin: 7px 0;
   padding: 10px 0;
-  font-size: 14px;
+  font-size: 13px;
   cursor: pointer;
   text-decoration: none;
 }
