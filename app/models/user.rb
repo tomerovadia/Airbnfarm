@@ -19,6 +19,10 @@ class User < ApplicationRecord
 
   attr_reader :password
 
+  has_many :spots,
+    class_name: Spot,
+    foreign_key: :host_id
+
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)
