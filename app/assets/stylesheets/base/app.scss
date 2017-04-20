@@ -1,5 +1,12 @@
-.welcome-splash {
+.main-homepage-container {
+  width: 84%;
+  margin: 0 auto;
+  margin-top: 48px;
+}
 
+
+.welcome-splash {
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
 }
 
 .welcome-where-to {
@@ -10,5 +17,8 @@
 }
 
 .welcome-start-adventure {
-
+  color: #4c4c4c;
+  font-weight: 200;
+  font-size: 48px;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
 }
