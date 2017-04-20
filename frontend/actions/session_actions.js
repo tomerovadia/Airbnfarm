@@ -39,7 +39,6 @@ export const login = (user) => dispatch => {
     .then(
       (user) => {
         dispatch(receiveCurrentUser(user));
-        // dispatch(clearModal());
       },
       (errors) => dispatch(receiveErrors(errors))
     );
@@ -57,9 +56,6 @@ export const logout = () => dispatch => {
 export const signup = (user) => dispatch => {
   return SessionAPIUtil.signup(user)
     .then(
-      (user) => {
-        dispatch(receiveCurrentUser(user));
-        // dispatch(clearModal());
-      },
+      (user) => dispatch(receiveCurrentUser(user)),
       (errors) => dispatch(receiveErrors(errors)));
 };
