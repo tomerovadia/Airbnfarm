@@ -20,8 +20,8 @@ class SessionForm extends React.Component {
     this.props.processForm(this.state).then(this.props.clearModal);
   }
 
-  redirectToAltSessionForm(){
-
+  switchModal(modalName){
+    return () => this.props.receiveModal(modalName);
   }
 
   stopPropagation(e){
@@ -39,15 +39,19 @@ class SessionForm extends React.Component {
   render(){
 
     let formTypeFormatted;
+    let altFormTypeFormatted;
     let altFormType;
     let altText;
-    if(this.props.formType === 'signup'){
+    debugger
+    if(this.props.activeModal === 'signup'){
       formTypeFormatted = 'Sign Up';
-      altFormType = 'Log In';
+      altFormTypeFormatted = 'Log In';
+      altFormType = 'login';
       altText = 'Already have an Airbnb account?';
     } else {
       formTypeFormatted = 'Log In';
-      altFormType = 'Sign Up';
+      altFormTypeFormatted = 'Sign Up';
+      altFormType = 'signup';
       altText = "Don't have an account?";
     }
 
@@ -102,8 +106,8 @@ class SessionForm extends React.Component {
             </div>
 
             <div className='session-form-alt-button'>
-              <button onClick={this.redirectToAltSessionForm}>
-                {altFormType}
+              <button onClick={this.switchModal(altFormType)}>
+                {altFormTypeFormatted}
               </button>
             </div>
           </div>
