@@ -12,7 +12,7 @@ export default (props) => {
       <li>My Guidebook</li>
       <li>Gift Cards</li>
       <li>Business Travel</li>
-      <li>Log Out</li>
+      <li onClick={props.handleLogout}>Log Out</li>
 
     </ul>
   </div>)
