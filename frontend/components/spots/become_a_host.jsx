@@ -48,9 +48,9 @@ class BecomeAHost extends React.Component {
     return (e) => {
       const result = this.state.spotDetails[field] + addend;
       if(result <= this.limits[field] && result >= 0){
-        // const newSpotDetails = this.state.spotDetails;
-        // newSpotDetails[field] = result;
-        this.setState({spotDetails: {[field]: result}})
+        const newSpotDetails = this.state.spotDetails;
+        newSpotDetails[field] = result;
+        this.setState({spotDetails: newSpotDetails})
       }
     }
   }
