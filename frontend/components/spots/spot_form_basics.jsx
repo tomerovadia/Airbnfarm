@@ -54,20 +54,37 @@ export default (props) => {
         <h4>STEP 1</h4>
         <h2>What kind of place do you have?</h2>
 
-        <select id='spot_privacy_level' onChange={props.handleFieldChange('privacyLevel')} >
+        <select id='spot_privacy_level'
+          onChange={props.handleFieldChange('privacyLevel')}
+          value={props.formValues.privacyLevel}
+        >
           {privacyLevelOptions}
         </select>
 
-        <select id='spot_num_guests' onChange={props.handleFieldChange('numGuests')} >
+        <select
+          id='spot_num_guests'
+          onChange={props.handleFieldChange('numGuests')}
+          value={props.formValues.numGuests}
+        >
           {numGuestsOptions}
         </select>
 
-        <input type='text' id='spot_location' onChange={props.handleFieldChange('location')}/>
+        <input
+          type='text'
+          id='spot_city'
+          onChange={props.handleFieldChange('city')}
+          value={props.formValues.city}
+        />
+
         <div className='location-predictions'>
-          {locationPredictionDivs}
         </div>
 
-        <button form='spot-form' className='spot_form_basics-button'>Continue</button>
+        <button
+          form='spot-form'
+          className='spot_form_basics-button'
+          onClick={props.switchForm('details')}>
+          Continue
+        </button>
       </form>
 
       <div className='spot-form-info-box'>
@@ -76,3 +93,5 @@ export default (props) => {
     </div>
   )
 }
+
+// {locationPredictionDivs}
