@@ -39,3 +39,13 @@
   background-color: #E5FAF9;
   border: 1px solid #B2F1EC;
 }
+
+#spot-form-basics-main-container .location-predictions {
+  border: 2px solid blue;
+}
+
+#spot-form-basics-main-container .location-prediction-div {
+  border: 1px solid green;
+  height: 20px;
+  width: 100px;
+}

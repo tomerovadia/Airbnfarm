@@ -11,17 +11,12 @@
     flowers: "<%= image_url('become_a_host') %>"
   }
 
+  window.spotConstants = {};
 
-
+  window.spotConstants.states = <%= raw State.get_array %>
+  window.spotConstants.privacyLevels = <%= raw PrivacyLevel.get_array %>
 </script>
 
-<script type='text/javascript'>
-
-  window.states = <%= raw State.get_array %>
-  window.privacy_levels = <%= raw PrivacyLevel.get_array %>
-
-  debugger
-</script>
 
 <main id='root'>
   bananas
