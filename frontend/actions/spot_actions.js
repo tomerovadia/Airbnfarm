@@ -19,7 +19,7 @@ export const receiveErrors = (errors) => {
 
   return {
     type: RECEIVE_ERRORS,
-    errors: jQuery.parseJSON(errors.responseText),
+    errors,
   };
 }
 
