@@ -10,51 +10,57 @@ class BecomeAHost extends React.Component {
     this.state = {
       form: 'basics',
       tips: {'entire place': 'guests will rent the entire place', 'private room': 'guests share some spaces but'},
-      spotDetails: {
-        privacyLevel: '',
-        numGuests: '',
+      spotProperties: {
+        privacy_level_id: Object.keys(window.spotConstants.privacyLevels)[0],
+        num_guests: '',
         city: '',
         title: '',
-        basePrice: '',
-        mainPhotoUrl: '',
-        numBedrooms: 0,
-        numBeds: 0,
-        numBathrooms: 0,
+        base_price: '',
+        main_photo_url: '',
+        num_bedrooms: 0,
+        num_beds: 0,
+        num_bathrooms: 0,
         summary: '',
         description: '',
-        streetAddress: '',
-        state: '',
+        street_address: '',
+        state_id: Object.keys(window.spotConstants.states)[0],
         zipcode: '',
       },
     }
 
     this.limits = {
-      numBedrooms: 10,
-      numBeds: 16,
-      numBathrooms: 8,
+      num_bedrooms: 10,
+      num_beds: 16,
+      num_bathrooms: 8,
     };
 
     this.changeField = this.changeField.bind(this);
     this.addToValue = this.addToValue.bind(this);
     this.switchForm = this.switchForm.bind(this);
     this.setTips = this.setTips.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   changeField(field){
     return (e) => {
-      const newSpotDetails = this.state.spotDetails;
-      newSpotDetails[field] = e.target.value;
-      this.setState({spotDetails: newSpotDetails})
+      const newSpotDetails = this.state.spotProperties;
+      if(field === 'privacy_level_id' || field === 'state_id'){
+        newSpotDetails[field] = parseInt(e.target.value);
+      } else {
+        newSpotDetails[field] = e.target.value;
+      }
+
+      this.setState({spotProperties: newSpotDetails})
     };
   }
 
   addToValue(field, addend){
     return (e) => {
-      const result = this.state.spotDetails[field] + addend;
+      const result = this.state.spotProperties[field] + addend;
       if(result <= this.limits[field] && result >= 0){
-        const newSpotDetails = this.state.spotDetails;
+        const newSpotDetails = this.state.spotProperties;
         newSpotDetails[field] = result;
-        this.setState({spotDetails: newSpotDetails})
+        this.setState({spotProperties: newSpotDetails})
       }
     }
   }
@@ -69,6 +75,10 @@ class BecomeAHost extends React.Component {
     this.setState({tips});
   }
 
+  handleSubmit(e){
+    this.props.createSpot(this.state.spotProperties);
+  }
+
   render() {
 
     window.state = this.state
@@ -80,8 +90,9 @@ class BecomeAHost extends React.Component {
           <SpotFormDetails
             changeField={this.changeField}
             addToValue={this.addToValue}
-            formValues={this.state.spotDetails}
+            formValues={this.state.spotProperties}
             switchForm={this.switchForm}
+            handleSubmit={this.handleSubmit}
           />
         break
       default:
@@ -90,7 +101,7 @@ class BecomeAHost extends React.Component {
             changeField={this.changeField}
             locationInput={this.state.location}
             currentUser={this.props.currentUser}
-            formValues={this.state.spotDetails}
+            formValues={this.state.spotProperties}
             switchForm={this.switchForm}
           />
     }
@@ -137,18 +148,5 @@ class BecomeAHost extends React.Component {
     )
   }
 }
-
-// <SpotFormDetails
-//   changeField={this.changeField}
-//   addToValue={this.addToValue}
-//   formValues={this.state}
-// />
-//
-// <SpotFormBasics
-//   changeField={this.changeField}
-//   locationInput={this.state.location}
-//   currentUser={this.props.currentUser}
-//   formValues={this.state}
-// />
 
 export default BecomeAHost;

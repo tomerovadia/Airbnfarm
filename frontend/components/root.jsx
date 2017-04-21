@@ -2,7 +2,7 @@ import React from 'react';
 import {Router, Route, IndexRoute, hashHistory} from 'react-router';
 import { Provider } from 'react-redux';
 import App from './app';
-import BecomeAHost from './spots/become_a_host';
+import BecomeAHostContainer from './spots/become_a_host_container';
 import Welcome from './main/welcome';
 
 export default (props) => {
@@ -12,9 +12,9 @@ export default (props) => {
       <Router history={ hashHistory }>
         <Route path='/' component={App}>
           <IndexRoute component={Welcome} />
-          <Route path='/become-a-host' component={BecomeAHost}>
-            <Route path='/become-a-host/details' component={BecomeAHost} />
-            <Route path='/become-a-host/availability' component={BecomeAHost} />
+          <Route path='/become-a-host' component={BecomeAHostContainer}>
+            <Route path='/become-a-host/details' component={BecomeAHostContainer} />
+            <Route path='/become-a-host/availability' component={BecomeAHostContainer} />
           </Route>
         </Route>
       </Router>

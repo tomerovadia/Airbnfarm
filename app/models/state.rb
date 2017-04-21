@@ -15,4 +15,16 @@ class State < ApplicationRecord
   def self.get_array
     return self.all.map {|state| state.state_name}
   end
+
+  def self.get_json_hash
+    states_hash = {}
+
+    State.all.each do |state|
+      states_hash[state.id] = state.state_name
+    end
+
+    states_hash.to_json
+  end
+
+
 end

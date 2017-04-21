@@ -2,20 +2,19 @@ import React from 'react';
 
 export default (props) => {
 
-  const privacyLevelOptions = window.spotConstants.privacyLevels.map(
-    (privacyLevelString, idx) => {
-      return (
-        <option key={idx}>
-          {privacyLevelString}
-        </option>
-      )
-    }
-  )
+  const privacyLevelOptions = [];
+  for(let id in spotConstants.privacyLevels){
+    privacyLevelOptions.push(<option key={id} value={id}>{spotConstants.privacyLevels[id]}</option>)
+  }
+
+
+
+
 
   const numGuestsOptions = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16].map(
     (numGuests, idx) => {
       return (
-        <option key={idx} value={parseInt(idx)}>
+        <option key={idx} value={parseInt(numGuests)}>
           {numGuests === 1 ? `for ${numGuests} guest` : `for ${numGuests} guests`}
         </option>
       )
@@ -57,16 +56,16 @@ export default (props) => {
         <h2>What kind of place do you have?</h2>
 
         <select id='spot_privacy_level'
-          onChange={props.changeField('privacyLevel')}
-          value={props.formValues.privacyLevel}
+          onChange={props.changeField('privacy_level_id')}
+          value={props.formValues.privacy_level_id}
         >
           {privacyLevelOptions}
         </select>
 
         <select
           id='spot_num_guests'
-          onChange={props.changeField('numGuests')}
-          value={props.formValues.numGuests}
+          onChange={props.changeField('num_guests')}
+          value={props.formValues.num_guests}
         >
           {numGuestsOptions}
         </select>

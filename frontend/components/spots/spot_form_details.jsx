@@ -2,7 +2,16 @@ import React from 'react';
 
 export default (props) => {
 
+  const stateOptions = [];
+  for(let id in spotConstants.states){
+    stateOptions.push(<option key={id} value={id}>{spotConstants.states[id]}</option>)
+  }
+
+  window.formValues = props.formValues
+
   return (
+
+
     <div id='spot-form-basics-main-container'>
       <h1>Tell us more about your place.</h1>
 
@@ -17,7 +26,7 @@ export default (props) => {
         <br />
 
         <input
-          onChange={props.changeField('basePrice')}
+          onChange={props.changeField('base_price')}
           value={props.formValues.basePrice}
           placeholder='Price'
         />
@@ -25,7 +34,7 @@ export default (props) => {
         <br />
 
         <input
-          onChange={props.changeField('mainPhotoUrl')}
+          onChange={props.changeField('main_photo_url')}
           value={props.formValues.mainPhotoUrl}
           placeholder='Photo URL'
         />
@@ -35,21 +44,21 @@ export default (props) => {
         <br />
 
         <div>
-          <div>{`${props.formValues.numBedrooms} bedrooms`}</div>
-          <button onClick={props.addToValue('numBedrooms', -1)}>-</button>
-          <button onClick={props.addToValue('numBedrooms', 1)}>+</button>
+          <div>{`${props.formValues.num_bedrooms} bedrooms`}</div>
+          <button onClick={props.addToValue('num_bedrooms', -1)}>-</button>
+          <button onClick={props.addToValue('num_bedrooms', 1)}>+</button>
         </div>
 
         <div>
-          <div>{`${props.formValues.numBeds} beds`}</div>
-          <button onClick={props.addToValue('numBeds', -1)}>-</button>
-          <button onClick={props.addToValue('numBeds', 1)}>+</button>
+          <div>{`${props.formValues.num_beds} beds`}</div>
+          <button onClick={props.addToValue('num_beds', -1)}>-</button>
+          <button onClick={props.addToValue('num_beds', 1)}>+</button>
         </div>
 
         <div>
-          <div>{`${props.formValues.numBathrooms} bathroom`}</div>
-          <button onClick={props.addToValue('numBathrooms', -0.5)}>-</button>
-          <button onClick={props.addToValue('numBathrooms', 0.5)}>+</button>
+          <div>{`${props.formValues.num_bathrooms} bathroom`}</div>
+          <button onClick={props.addToValue('num_bathrooms', -0.5)}>-</button>
+          <button onClick={props.addToValue('num_bathrooms', 0.5)}>+</button>
         </div>
 
         <br />
@@ -68,13 +77,36 @@ export default (props) => {
           placeholder='Description'
         />
 
+        <input
+          onChange={props.changeField('street_address')}
+          value={props.formValues.street_address}
+          placeholder='Street Address'
+        />
+
+
+        <select
+            onChange={props.changeField('state_id')}
+            value={props.formValues.state_id}
+            placeholder='State'
+          >
+          {stateOptions}
+        </select>
+
+        <input
+          onChange={props.changeField('zipcode')}
+          value={props.formValues.zipcode}
+          placeholder='Zip Code'
+        />
+
+
+
         <br />
 
         <button className='spot-form-back-button' onClick={props.switchForm('basics')}>
           Back
         </button>
 
-        <button className='spot-form-finish-button'>
+        <button className='spot-form-finish-button' onClick={props.handleSubmit}>
           Finish
         </button >
 
@@ -85,13 +117,3 @@ export default (props) => {
     </div>
   )
 }
-
-//
-// title: null,
-// basePrice: null,
-// mainPhotoUrl: null,
-// numBedrooms: null,
-// numBeds: null,
-// numBathrooms: null,
-// summary: null,
-// description: null,

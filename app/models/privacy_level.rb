@@ -16,5 +16,15 @@ class PrivacyLevel < ApplicationRecord
     return self.all.map {|privacy_level| privacy_level.privacy_level}
   end
 
+  def self.get_json_hash
+    privacy_level_hash = {}
+
+    PrivacyLevel.all.each do |privacy_level|
+      privacy_level_hash[privacy_level.id] = privacy_level.privacy_level
+    end
+
+    privacy_level_hash.to_json
+  end
+
 
 end
