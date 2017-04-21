@@ -41,7 +41,11 @@ class BecomeAHost extends React.Component {
   }
 
   changeField(field){
-    return (e) => this.setState({spotDetails: {[field]: e.target.value}})
+    return (e) => {
+      const newSpotDetails = this.state.spotDetails;
+      newSpotDetails[field] = e.target.value;
+      this.setState({spotDetails: newSpotDetails})
+    };
   }
 
   addToValue(field, addend){
@@ -66,6 +70,8 @@ class BecomeAHost extends React.Component {
   }
 
   render() {
+
+    window.state = this.state
 
     let form;
     switch(this.state.form){
