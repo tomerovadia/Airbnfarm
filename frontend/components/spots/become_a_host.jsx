@@ -1,6 +1,7 @@
 import React from 'react';
 import SpotFormBasics from './spot_form_basics';
 import SpotFormDetails from './spot_form_details';
+import merge from 'lodash/merge';
 
 class BecomeAHost extends React.Component {
 
@@ -33,20 +34,23 @@ class BecomeAHost extends React.Component {
       numBathrooms: 8,
     };
 
-    this.handleFieldChange = this.handleFieldChange.bind(this);
+    this.changeField = this.changeField.bind(this);
     this.addToValue = this.addToValue.bind(this);
     this.switchForm = this.switchForm.bind(this);
+    this.setTips = this.setTips.bind(this);
   }
 
-  handleFieldChange(field){
-      return (e) => this.setState({[field]: e.target.value})
+  changeField(field){
+    return (e) => this.setState({spotDetails: {[field]: e.target.value}})
   }
 
   addToValue(field, addend){
     return (e) => {
-      const result = this.state[field] + addend;
+      const result = this.state.spotDetails[field] + addend;
       if(result <= this.limits[field] && result >= 0){
-        this.setState({[field]: result})
+        // const newSpotDetails = this.state.spotDetails;
+        // newSpotDetails[field] = result;
+        this.setState({spotDetails: {[field]: result}})
       }
     }
   }
@@ -57,6 +61,10 @@ class BecomeAHost extends React.Component {
     }
   }
 
+  setTips(tips){
+    this.setState({tips});
+  }
+
   render() {
 
     let form;
@@ -64,19 +72,19 @@ class BecomeAHost extends React.Component {
       case 'details':
         form =
           <SpotFormDetails
-            handleFieldChange={this.handleFieldChange}
+            changeField={this.changeField}
             addToValue={this.addToValue}
-            formValues={this.state}
+            formValues={this.state.spotDetails}
             switchForm={this.switchForm}
           />
         break
       default:
         form =
           <SpotFormBasics
-            handleFieldChange={this.handleFieldChange}
+            changeField={this.changeField}
             locationInput={this.state.location}
             currentUser={this.props.currentUser}
-            formValues={this.state}
+            formValues={this.state.spotDetails}
             switchForm={this.switchForm}
           />
     }
@@ -125,13 +133,13 @@ class BecomeAHost extends React.Component {
 }
 
 // <SpotFormDetails
-//   handleFieldChange={this.handleFieldChange}
+//   changeField={this.changeField}
 //   addToValue={this.addToValue}
 //   formValues={this.state}
 // />
 //
 // <SpotFormBasics
-//   handleFieldChange={this.handleFieldChange}
+//   changeField={this.changeField}
 //   locationInput={this.state.location}
 //   currentUser={this.props.currentUser}
 //   formValues={this.state}

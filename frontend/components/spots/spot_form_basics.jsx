@@ -23,6 +23,8 @@ export default (props) => {
   )
 
 
+
+
   // const getAddressPredictions = () => {
   //   const displayPredictions = (predictions, status) => {
   //     console.log(predictions.map((prediction) => prediction.description));
@@ -55,7 +57,7 @@ export default (props) => {
         <h2>What kind of place do you have?</h2>
 
         <select id='spot_privacy_level'
-          onChange={props.handleFieldChange('privacyLevel')}
+          onChange={props.changeField('privacyLevel')}
           value={props.formValues.privacyLevel}
         >
           {privacyLevelOptions}
@@ -63,7 +65,7 @@ export default (props) => {
 
         <select
           id='spot_num_guests'
-          onChange={props.handleFieldChange('numGuests')}
+          onChange={props.changeField('numGuests')}
           value={props.formValues.numGuests}
         >
           {numGuestsOptions}
@@ -72,7 +74,7 @@ export default (props) => {
         <input
           type='text'
           id='spot_city'
-          onChange={props.handleFieldChange('city')}
+          onChange={props.changeField('city')}
           value={props.formValues.city}
         />
 
