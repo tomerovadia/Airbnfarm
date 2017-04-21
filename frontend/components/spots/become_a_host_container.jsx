@@ -5,6 +5,7 @@ import { createSpot } from '../../actions/spot_actions';
 const mapStateToProps = (state, ownProps) => {
   return {
     currentSpot: state.spots.currentSpot,
+    errors: state.spots.errors,
     currentUser: state.session.currentUser,
   }
 }

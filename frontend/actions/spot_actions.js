@@ -11,6 +11,11 @@ export const receiveCurrentSpot = (spot) => {
 }
 
 export const receiveErrors = (errors) => {
+  if (Object.keys(errors).length > 0){
+    errors = jQuery.parseJSON(errors.responseText)
+  } else {
+    errors = {}
+  }
 
   return {
     type: RECEIVE_ERRORS,
