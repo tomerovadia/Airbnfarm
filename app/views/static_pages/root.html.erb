@@ -13,8 +13,8 @@
 
   window.spotConstants = {};
 
-  window.spotConstants.states = <%= raw State.get_array %>
-  window.spotConstants.privacyLevels = <%= raw PrivacyLevel.get_array %>
+  window.spotConstants.states = <%= (State.get_json_hash).html_safe %>
+  window.spotConstants.privacyLevels = <%= (PrivacyLevel.get_json_hash).html_safe %>
 </script>
 
 

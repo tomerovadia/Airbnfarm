@@ -9,8 +9,6 @@ export const receiveCurrentSpot = (spot) => {
   }
 }
 
-
-
 // Thunk action creators
 
 export const createSpot = (spot) => dispatch => {

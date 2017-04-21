@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import BecomeAHost from './bome_a_host';
-import {}
+import BecomeAHost from './become_a_host';
+import { createSpot } from '../../actions/spot_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => {
   }
 }
 
-const mapDispatchToProps = (state, ownProps) => {
+const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     createSpot: (spot) => dispatch(createSpot(spot)),
   }
