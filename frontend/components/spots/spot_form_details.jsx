@@ -70,13 +70,12 @@ export default (props) => {
 
         <br />
 
-
-        <button className='spot-form-details-back-button'>
+        <button className='spot-form-back-button' onClick={props.switchForm('basics')}>
           Back
         </button>
 
-        <button className='spot-form-details-next-button'>
-          Next
+        <button className='spot-form-finish-button'>
+          Finish
         </button >
 
 
