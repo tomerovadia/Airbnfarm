@@ -27,8 +27,8 @@ class Spot < ApplicationRecord
     :num_guests, :num_bedrooms, :num_beds, :num_bathrooms, :street_address, :city,
     :state, :zipcode
   validates_format_of :zipcode, with: /\A[0-9]{5}\Z/
-  validates :num_bedrooms, :num_bathrooms, numericality: { greater_than: 0 }
-  validates :num_guests, :num_beds, :base_price, numericality: { greater_than_or_equal_to: 0 }
+  validates :num_bedrooms, :num_bathrooms, numericality: { greater_than_or_equal_to: 0 }
+  validates :num_guests, :num_beds, :base_price, numericality: { greater_than: 0 }
 
   belongs_to :host,
     class_name: User,

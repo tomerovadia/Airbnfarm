@@ -12,7 +12,7 @@ class BecomeAHost extends React.Component {
       tips: {'entire place': 'guests will rent the entire place', 'private room': 'guests share some spaces but'},
       spotProperties: {
         privacy_level_id: Object.keys(window.spotConstants.privacyLevels)[0],
-        num_guests: '',
+        num_guests: 1,
         city: '',
         title: '',
         base_price: 0,
@@ -77,15 +77,15 @@ class BecomeAHost extends React.Component {
 
   handleSubmit(e){
     this.props.createSpot(this.state.spotProperties);
-    
+    this.props.receiveErrors({});
   }
 
 
 
 
 
-
   render() {
+    window.state = this.state;
 
     let errorsLis = [];
     for(let field in this.props.errors){
