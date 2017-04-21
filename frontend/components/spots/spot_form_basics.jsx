@@ -80,14 +80,13 @@ export default (props) => {
         </div>
 
         <button
-          form='spot-form'
-          className='spot_form_basics-button'
+          className='spot-form-continue-button'
           onClick={props.switchForm('details')}>
           Continue
         </button>
       </form>
 
-      <div className='spot-form-info-box'>
+      <div className='spot-form-tip-box'>
 
       </div>
     </div>

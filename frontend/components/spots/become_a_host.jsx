@@ -8,6 +8,7 @@ class BecomeAHost extends React.Component {
     super(props);
     this.state = {
       form: 'basics',
+      tips: {'entire place': 'guests will rent the entire place', 'private room': 'guests share some spaces but'},
       spotDetails: {
         privacyLevel: '',
         numGuests: '',
@@ -80,6 +81,25 @@ class BecomeAHost extends React.Component {
           />
     }
 
+    let rightPanelContents = <img src={window.images.flowers} />;
+    if(this.state.tips){
+      let tipElements = [];
+      for(let key in this.state.tips){
+        tipElements.push(
+          <div key={key} className='spot-form-tip'>
+            <h4 className='spot-form-header'>{key}</h4>
+            <p className='spot-form-content'>{this.state.tips[key]}</p>
+          </div>
+        )
+      }
+
+      rightPanelContents =
+        <div className='spot-form-tip-box' className='spot-form-tip-container'>
+          <i>LIGHTBULB</i>
+          {tipElements}
+        </div>
+    }
+
     return (
       <div className='become-a-host-main-container'>
         <div className='left-panel'>
@@ -93,7 +113,7 @@ class BecomeAHost extends React.Component {
         <div className='right-panel'>
           <div className='right-panel-contents'>
 
-            <img src={window.images.flowers} />
+            {rightPanelContents}
 
           </div>
         </div>
