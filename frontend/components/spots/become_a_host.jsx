@@ -15,7 +15,7 @@ class BecomeAHost extends React.Component {
         num_guests: '',
         city: '',
         title: '',
-        base_price: '',
+        base_price: 0,
         main_photo_url: '',
         num_bedrooms: 0,
         num_beds: 0,
@@ -44,7 +44,7 @@ class BecomeAHost extends React.Component {
   changeField(field){
     return (e) => {
       const newSpotDetails = this.state.spotProperties;
-      if(field === 'privacy_level_id' || field === 'state_id'){
+      if(field === 'privacy_level_id' || field === 'state_id' || field === 'num_guests'){
         newSpotDetails[field] = parseInt(e.target.value);
       } else {
         newSpotDetails[field] = e.target.value;
@@ -127,19 +127,24 @@ class BecomeAHost extends React.Component {
 
     return (
       <div className='become-a-host-main-container'>
-        <div className='left-panel'>
-          <div className='left-panel-contents'>
+        <div className
 
-            {form}
+        <div className='become-a-host-panels'>
 
+          <div className='become-a-host-left-panel'>
+            <div className='become-a-host-left-panel-contents'>
+
+              {form}
+
+            </div>
           </div>
-        </div>
 
-        <div className='right-panel'>
-          <div className='right-panel-contents'>
+          <div className='become-a-host-right-panel'>
+            <div className='become-a-host-right-panel-contents'>
 
-            {rightPanelContents}
+              {rightPanelContents}
 
+            </div>
           </div>
         </div>
 
