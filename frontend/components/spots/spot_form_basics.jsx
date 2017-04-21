@@ -55,33 +55,41 @@ export default (props) => {
         <h4>STEP 1</h4>
         <h2>What kind of place do you have?</h2>
 
-        <select id='spot_privacy_level'
-          onChange={props.changeField('privacy_level_id')}
-          value={props.formValues.privacy_level_id}
-        >
-          {privacyLevelOptions}
-        </select>
+        <div className='spot-form-fields'>
+          <select
+            id='spot-privacy-level'
+            className='small-field'
+            onChange={props.changeField('privacy_level_id')}
+            value={props.formValues.privacy_level_id}
+          >
+            {privacyLevelOptions}
+          </select>
 
-        <select
-          id='spot_num_guests'
-          onChange={props.changeField('num_guests')}
-          value={props.formValues.num_guests}
-        >
-          {numGuestsOptions}
-        </select>
+          <select
+            id='spot-num-guests'
+            className='small-field'
+            onChange={props.changeField('num_guests')}
+            value={props.formValues.num_guests}
+          >
+            {numGuestsOptions}
+          </select>
 
-        <input
-          type='text'
-          id='spot_city'
-          onChange={props.changeField('city')}
-          value={props.formValues.city}
-        />
+          <input
+            type='text'
+            id='spot-city'
+            className='full-field'
+            placeholder='e.g. San Francisco'
+            onChange={props.changeField('city')}
+            value={props.formValues.city}
+          />
 
-        <div className='location-predictions'>
+          <div className='location-predictions'>
+          </div>
+
         </div>
 
         <button
-          className='spot-form-continue-button'
+          className='continue-button'
           onClick={props.switchForm('details')}>
           Continue
         </button>

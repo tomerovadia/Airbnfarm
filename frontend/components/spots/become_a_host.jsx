@@ -9,7 +9,7 @@ class BecomeAHost extends React.Component {
     super(props);
     this.state = {
       form: 'basics',
-      tips: {'entire place': 'guests will rent the entire place', 'private room': 'guests share some spaces but'},
+      tips: {},
       spotProperties: {
         privacy_level_id: Object.keys(window.spotConstants.privacyLevels)[0],
         num_guests: 1,
@@ -85,8 +85,6 @@ class BecomeAHost extends React.Component {
 
 
   render() {
-    window.state = this.state;
-
     let errorsLis = [];
     for(let field in this.props.errors){
       this.props.errors[field].forEach( (errorMessage, idx) => {
@@ -121,7 +119,7 @@ class BecomeAHost extends React.Component {
     }
 
     let rightPanelContents = <img src={window.images.flowers} />;
-    if(this.state.tips){
+    if(Object.keys(this.state.tips).length > 0){
       let tipElements = [];
       for(let key in this.state.tips){
         tipElements.push(
