@@ -9,7 +9,7 @@ export default (props) => {
       <form id='spot-form-details-form'>
 
         <input
-          onChange={props.handleFieldChange('title')}
+          onChange={props.changeField('title')}
           value={props.formValues.title}
           placeholder='Title'
         />
@@ -17,7 +17,7 @@ export default (props) => {
         <br />
 
         <input
-          onChange={props.handleFieldChange('basePrice')}
+          onChange={props.changeField('basePrice')}
           value={props.formValues.basePrice}
           placeholder='Price'
         />
@@ -25,7 +25,7 @@ export default (props) => {
         <br />
 
         <input
-          onChange={props.handleFieldChange('mainPhotoUrl')}
+          onChange={props.changeField('mainPhotoUrl')}
           value={props.formValues.mainPhotoUrl}
           placeholder='Photo URL'
         />
@@ -55,7 +55,7 @@ export default (props) => {
         <br />
 
         <input
-          onChange={props.handleFieldChange('summary')}
+          onChange={props.changeField('summary')}
           value={props.formValues.summary}
           placeholder='Summary'
         />
@@ -63,7 +63,7 @@ export default (props) => {
         <br />
 
         <input
-          onChange={props.handleFieldChange('description')}
+          onChange={props.changeField('description')}
           value={props.formValues.description}
           placeholder='Description'
         />
