@@ -15,7 +15,7 @@ export default (props) => {
   const numGuestsOptions = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16].map(
     (numGuests, idx) => {
       return (
-        <option key={idx}>
+        <option key={idx} value={parseInt(idx)}>
           {numGuests === 1 ? `for ${numGuests} guest` : `for ${numGuests} guests`}
         </option>
       )
