@@ -1,3 +1,10 @@
+.become-a-host-errors {
+  width: 100%;
+  background-color: #FFD1C4;
+  border-top: 1px solid black;
+  min-height: 62px;
+}
+
 .become-a-host-panels {
   display: flex;
   margin: 0 auto;
@@ -15,7 +22,7 @@
 
 .become-a-host-right-panel {
   width: 50%;
-  border: 2px solid orange;
+  border: 2px solid green;
   padding: 15px;
 }
 

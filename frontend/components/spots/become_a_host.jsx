@@ -77,11 +77,25 @@ class BecomeAHost extends React.Component {
 
   handleSubmit(e){
     this.props.createSpot(this.state.spotProperties);
+    
   }
+
+
+
+
+
 
   render() {
 
-    window.state = this.state
+    let errorsLis = [];
+    for(let field in this.props.errors){
+      this.props.errors[field].forEach( (errorMessage, idx) => {
+        errorsLis.push(
+          <li key={`${idx}${field}${errorMessage}`}>{field} {errorMessage}</li>
+        )
+      })
+    }
+
 
     let form;
     switch(this.state.form){
@@ -126,8 +140,17 @@ class BecomeAHost extends React.Component {
     }
 
     return (
-      <div className='become-a-host-main-container'>
-        <div className
+      <div
+        className='become-a-host-main-container'
+      >
+        <div
+          className='become-a-host-errors'
+          style={{display: Object.keys(this.props.errors).length === 0 ? 'none' : 'block' }}
+        >
+          <ul>
+            {errorsLis}
+          </ul>
+        </div>
 
         <div className='become-a-host-panels'>
 
