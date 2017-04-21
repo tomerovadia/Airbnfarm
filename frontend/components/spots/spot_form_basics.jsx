@@ -48,7 +48,7 @@ export default (props) => {
 
   return (
     <div id='spot-form-basics-main-container'>
-      <h1>Hi, {currentUser.email}! Let's get you ready to become a host.</h1>
+      <h1>Hi, {props.currentUser.email}! Let's get you ready to become a host.</h1>
 
       <form id='spot-form-basics-form'>
 
