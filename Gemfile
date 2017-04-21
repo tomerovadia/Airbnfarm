@@ -36,6 +36,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt'
 gem 'email_validator'
 gem "font-awesome-rails"
+gem "figaro"
 
 group :production do
   gem 'rails_12factor'
