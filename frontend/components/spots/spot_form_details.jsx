@@ -12,7 +12,7 @@ export default (props) => {
   return (
 
 
-    <div id='spot-form-basics-main-container'>
+    <div id='spot-form-details-main-container spot-form-main-container'>
       <h1>Tell us more about your place.</h1>
 
       <form id='spot-form-details-form'>
@@ -23,7 +23,6 @@ export default (props) => {
           placeholder='Title'
         />
 
-        <br />
 
         <input
           onChange={props.changeField('base_price')}
@@ -31,7 +30,6 @@ export default (props) => {
           placeholder='Price'
         />
 
-        <br />
 
         <input
           onChange={props.changeField('main_photo_url')}
@@ -39,9 +37,7 @@ export default (props) => {
           placeholder='Photo URL'
         />
 
-        <br />
 
-        <br />
 
         <div>
           <div>{`${props.formValues.num_bedrooms} bedrooms`}</div>
@@ -61,7 +57,6 @@ export default (props) => {
           <button onClick={props.addToValue('num_bathrooms', 0.5)}>+</button>
         </div>
 
-        <br />
 
         <input
           onChange={props.changeField('summary')}
@@ -69,7 +64,6 @@ export default (props) => {
           placeholder='Summary'
         />
 
-        <br />
 
         <input
           onChange={props.changeField('description')}
@@ -100,7 +94,6 @@ export default (props) => {
 
 
 
-        <br />
 
         <button className='spot-form-back-button' onClick={props.switchForm('basics')}>
           Back
