@@ -1,5 +1,4 @@
 import * as SessionAPIUtil from '../util/session_api_util';
-import { clearModal } from './modal_actions';
 
 // Constants
 

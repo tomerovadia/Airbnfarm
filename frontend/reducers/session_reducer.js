@@ -12,6 +12,7 @@ export default (oldState = _initialState, action) => {
   switch(action.type){
     case RECEIVE_CURRENT_USER:
       return {currentUser: action.user, errors: {}};
+
     case RECEIVE_ERRORS:
       const currentUser = oldState.currentUser
 
@@ -19,6 +20,7 @@ export default (oldState = _initialState, action) => {
         currentUser,
         errors: action.errors
       };
+
     default:
       return oldState;
   }

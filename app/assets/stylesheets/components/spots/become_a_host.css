@@ -1,4 +1,4 @@
-.become-a-host-main-container {
+.become-a-host-panels {
   display: flex;
   margin: 0 auto;
   max-width: 1310px;
@@ -7,19 +7,19 @@
   border: 3px solid blue;
 }
 
-.left-panel {
+.become-a-host-left-panel {
   width: 50%;
   border: 2px solid yellow;
   padding: 15px;
 }
 
-.right-panel {
+.become-a-host-right-panel {
   width: 50%;
   border: 2px solid orange;
   padding: 15px;
 }
 
-.right-panel img {
+.become-a-host-right-panel img {
   width: 100%;
   margin: 0 auto;
   display: block;
