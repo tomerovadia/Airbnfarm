@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- <meta charset="utf-8"> -->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  <!-- <title>jQuery UI Datepicker - Select a Date Range</title> -->
+  <!-- <link rel="stylesheet" href="/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
+  <link rel="stylesheet" href="./calendar.css">
+  <script src="./calendar_jquery-1.12.4.js"></script>
+  <script src="./calendar_jquery-ui.js"></script>
+  <script>
+    $( function() {
+      var dateFormat = "mm/dd/yy",
+        from = $( "#calendar-from-input" )
+          .datepicker({
+            defaultDate: "+1w",
+            changeMonth: true,
+            numberOfMonths: 1,
+            minDate: 1,
+          })
+          .on( "change", function() {
+            to.datepicker( "option", "minDate", getDate( this ) );
+          }),
+        to = $( "#calendar-to-input" ).datepicker({
+          defaultDate: "+1w",
+          changeMonth: true,
+          numberOfMonths: 1
+        })
+        .on( "change", function() {
+          from.datepicker( "option", "maxDate", getDate( this ) );
+        });
+
+      function getDate( element ) {
+        var date;
+        try {
+          date = $.datepicker.parseDate( dateFormat, element.value );
+        } catch( error ) {
+          date = null;
+        }
+
+        return date;
+      }
+
+      window.getDate = getDate;
+
+    } );
+  </script>
+</head>
+<body>
+
+<label for="calendar-from-input">From</label>
+<input type="text" id="calendar-from-input" name="calendar-from-input">
+<label for="calendar-to-input">to</label>
+<input type="text" id="calendar-to-input" name="calendar-to-input">
+
+
+</body>
+</html>
