@@ -14,20 +14,27 @@ class SpotFormAvailability extends React.Component {
       endDate: null,
     };
 
-    this.props.setTips({'Select a Date': 'Pick wisely'});
     this.onDatesChange = this.onDatesChange.bind(this);
     this.startAvailabilityDate = this.startAvailabilityDate.bind(this);
     this.endAvailabilityDate = this.endAvailabilityDate.bind(this);
   }
 
+  componentWillMount(){
+    this.props.setTips({'Select a Date': 'Pick wisely'});
+  }
+
   componentWillReceiveProps(newProps){
-    if(this.startAvailabilityDate() !== newProps.startAvailabilityDate._d){
-      this.setState({startDate: moment(newProps.startAvailabilityDate)});
+
+    const parentStartAvailabilityDate = newProps.startAvailabilityDate;
+    if((this.startAvailabilityDate() !== parentStartAvailabilityDate)){
+      this.setState({startDate: moment(parentStartAvailabilityDate)});
     }
 
-    if(this.endAvailabilityDate() !== newProps.endAvailabilityDate._d){
-      this.setState({endDate: moment(newProps.endAvailabilityDate)});
+    const parentEndAvailabilityDate = newProps.endAvailabilityDate;
+    if((this.endAvailabilityDate() !== parentEndAvailabilityDate)){
+      this.setState({endDate: moment(parentEndAvailabilityDate)});
     }
+
   }
 
   startAvailabilityDate(){
