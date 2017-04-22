@@ -92,8 +92,8 @@ export default (props) => {
           Back
         </button>
 
-        <button className='spot-form-finish-button' onClick={props.handleSubmit}>
-          Finish
+        <button className='spot-form-next-button' onClick={props.switchForm('availability')}>
+          Next
         </button >
 
 

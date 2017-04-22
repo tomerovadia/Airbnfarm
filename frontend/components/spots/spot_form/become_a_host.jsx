@@ -11,7 +11,8 @@ class BecomeAHost extends React.Component {
     this.state = {
       form: 'availability',
       tips: {},
-      availability: [],
+      startAvailabilityDate: null,
+      endAvailabilityDate: null,
       spotProperties: {
         privacy_level_id: Object.keys(window.spotConstants.privacyLevels)[0],
         num_guests: 1,
@@ -41,6 +42,7 @@ class BecomeAHost extends React.Component {
     this.switchForm = this.switchForm.bind(this);
     this.setTips = this.setTips.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.receiveAvailabilityDates = this.receiveAvailabilityDates.bind(this);
   }
 
   changeField(field){
@@ -68,6 +70,11 @@ class BecomeAHost extends React.Component {
     };
   }
 
+  receiveAvailabilityDates(startAvailabilityDate, endAvailabilityDate){
+    this.setState({startAvailabilityDate});
+    this.setState({endAvailabilityDate});
+  }
+
   switchForm(newForm){
     return (e) => {
       this.setState({form: newForm});
@@ -87,7 +94,9 @@ class BecomeAHost extends React.Component {
 
 
 
+
   render() {
+
     let errorsLis = [];
     for(let field in this.props.errors){
       this.props.errors[field].forEach( (errorMessage, idx) => {
@@ -117,6 +126,9 @@ class BecomeAHost extends React.Component {
             switchForm={this.switchForm}
             handleSubmit={this.handleSubmit}
             setTips={this.setTips}
+            receiveAvailabilityDates={this.receiveAvailabilityDates}
+            startAvailabilityDate={this.state.startAvailabilityDate}
+            endAvailabilityDate={this.state.endAvailabilityDate}
           />;
         break;
       default:
