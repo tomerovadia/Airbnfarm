@@ -1,6 +1,7 @@
 import React from 'react';
 import SpotFormBasics from './spot_form_basics';
 import SpotFormDetails from './spot_form_details';
+import SpotFormAvailability from './spot_form_availability';
 import merge from 'lodash/merge';
 
 class BecomeAHost extends React.Component {
@@ -8,8 +9,9 @@ class BecomeAHost extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      form: 'basics',
+      form: 'availability',
       tips: {},
+      availability: [],
       spotProperties: {
         privacy_level_id: Object.keys(window.spotConstants.privacyLevels)[0],
         num_guests: 1,
@@ -104,6 +106,14 @@ class BecomeAHost extends React.Component {
           <SpotFormDetails
             changeField={this.changeField}
             addToValue={this.addToValue}
+            formValues={this.state.spotProperties}
+            switchForm={this.switchForm}
+            handleSubmit={this.handleSubmit}
+          />;
+        break;
+      case 'availability':
+        form =
+          <SpotFormAvailability
             formValues={this.state.spotProperties}
             switchForm={this.switchForm}
             handleSubmit={this.handleSubmit}
