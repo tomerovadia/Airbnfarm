@@ -28,14 +28,11 @@ export default (props) => {
           placeholder='Price'
         />
 
-
         <input
           onChange={props.changeField('main_photo_url')}
           value={props.formValues.mainPhotoUrl}
           placeholder='Photo URL'
         />
-
-
 
         <div>
           <div>{`${props.formValues.num_bedrooms} bedrooms`}</div>
@@ -89,8 +86,6 @@ export default (props) => {
           value={props.formValues.zipcode}
           placeholder='Zip Code'
         />
-
-
 
 
         <button className='spot-form-back-button' onClick={props.switchForm('basics')}>

@@ -1,4 +1,4 @@
-class AvailabilitiesController < ApplicationController
+class Api::AvailabilitiesController < ApplicationController
 
   def create
     @availability = Availability.new(availability_params)
@@ -15,7 +15,7 @@ class AvailabilitiesController < ApplicationController
 
   private
   def availability_params
-    params.require(:availability).permit(:date, :spot_id)
+    params.require(:availability).permit(:available_date, :spot_id)
   end
 
 end

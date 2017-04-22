@@ -16,6 +16,4 @@ document.addEventListener('DOMContentLoaded', () => {
     root
   );
 
-  window.store = store;
-
 });

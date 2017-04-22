@@ -4,6 +4,6 @@ export const createSpot = (spot) => {
     method: 'post',
     url: 'api/spots',
     data: {spot},
-  })
+  });
 
-}
+};

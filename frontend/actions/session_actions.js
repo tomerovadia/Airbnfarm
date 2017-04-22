@@ -1,12 +1,10 @@
 import * as SessionAPIUtil from '../util/session_api_util';
 
 // Constants
-
 export const RECEIVE_CURRENT_USER = 'RECEIVE_USER';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 
 // Regular object action creators
-
 export const receiveCurrentUser = (user) => {
   return {
     type: RECEIVE_CURRENT_USER,
@@ -19,9 +17,9 @@ export const receiveCurrentUser = (user) => {
 
 export const receiveErrors = (errors) => {
   if (Object.keys(errors).length > 0){
-    errors = jQuery.parseJSON(errors.responseText)
+    errors = jQuery.parseJSON(errors.responseText);
   } else {
-    errors = {}
+    errors = {};
   }
 
   return {

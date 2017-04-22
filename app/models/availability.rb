@@ -10,6 +10,7 @@
 #
 
 class Availability < ApplicationRecord
+  validates :available_date, :spot, presence: true
 
   belongs_to :spot
 

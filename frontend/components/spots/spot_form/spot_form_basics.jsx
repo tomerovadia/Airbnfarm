@@ -99,7 +99,7 @@ export default (props) => {
 
       </div>
     </div>
-  )
-}
+  );
+};
 
 // {locationPredictionDivs}

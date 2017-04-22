@@ -1,0 +1,26 @@
+Airnbn@1.0.0 /Users/appacademy/Desktop/Airnbn
+├── UNMET PEER DEPENDENCY moment@2.18.1
+├── UNMET PEER DEPENDENCY react-addons-shallow-compare@>=0.14
+└─┬ react-dates@10.1.1 
+  ├─┬ airbnb-prop-types@2.5.3 
+  │ ├── array.prototype.find@2.0.4 
+  │ ├─┬ has@1.0.1 
+  │ │ └── function-bind@1.1.0 
+  │ ├── is-regex@1.0.4 
+  │ ├─┬ object.assign@4.0.4 
+  │ │ └── object-keys@1.0.11 
+  │ └── object.entries@1.0.4 
+  ├─┬ array-includes@3.0.3 
+  │ ├─┬ define-properties@1.1.2 
+  │ │ └── foreach@2.0.5 
+  │ └─┬ es-abstract@1.7.0 
+  │   ├─┬ es-to-primitive@1.1.1 
+  │   │ ├── is-date-object@1.0.1 
+  │   │ └── is-symbol@1.0.1 
+  │   └── is-callable@1.1.3 
+  ├── classnames@2.2.5 
+  ├── consolidated-events@1.0.1 
+  ├── lodash.throttle@4.1.1 
+  ├── react-moment-proptypes@1.4.0 
+  └── react-portal@3.0.0 
+
