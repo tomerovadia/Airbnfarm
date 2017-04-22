@@ -26,7 +26,7 @@ class BecomeAHost extends React.Component {
         state_id: Object.keys(window.spotConstants.states)[0],
         zipcode: '',
       },
-    }
+    };
 
     this.limits = {
       num_bedrooms: 10,
@@ -44,31 +44,32 @@ class BecomeAHost extends React.Component {
   changeField(field){
     return (e) => {
       const newSpotProperties = this.state.spotProperties;
-      if(field === 'privacy_level_id' || field === 'state_id' || field === 'num_guests'){
+      if(field === 'privacy_level_id' || field === 'state_id' || field === 'num_guests' || field === 'base_price'){
         newSpotProperties[field] = parseInt(e.target.value);
       } else {
         newSpotProperties[field] = e.target.value;
       }
 
-      this.setState({spotProperties: newSpotProperties})
+      this.setState({spotProperties: newSpotProperties});
     };
   }
 
   addToValue(field, addend){
     return (e) => {
       const result = this.state.spotProperties[field] + addend;
+
       if(result <= this.limits[field] && result >= 0){
         const newSpotProperties = this.state.spotProperties;
         newSpotProperties[field] = result;
-        this.setState({spotProperties: newSpotProperties})
+        this.setState({spotProperties: newSpotProperties});
       }
-    }
+    };
   }
 
   switchForm(newForm){
     return (e) => {
       this.setState({form: newForm});
-    }
+    };
   }
 
   setTips(tips){
@@ -85,13 +86,14 @@ class BecomeAHost extends React.Component {
 
 
   render() {
+    console.log('rendering!');
     let errorsLis = [];
     for(let field in this.props.errors){
       this.props.errors[field].forEach( (errorMessage, idx) => {
         errorsLis.push(
           <li key={`${idx}${field}${errorMessage}`}>{field} {errorMessage}</li>
-        )
-      })
+        );
+      });
     }
 
 
@@ -105,8 +107,8 @@ class BecomeAHost extends React.Component {
             formValues={this.state.spotProperties}
             switchForm={this.switchForm}
             handleSubmit={this.handleSubmit}
-          />
-        break
+          />;
+        break;
       default:
         form =
           <SpotFormBasics
@@ -115,7 +117,7 @@ class BecomeAHost extends React.Component {
             currentUser={this.props.currentUser}
             formValues={this.state.spotProperties}
             switchForm={this.switchForm}
-          />
+          />;
     }
 
     let rightPanelContents = <img src={window.images.flowers} />;
@@ -127,11 +129,11 @@ class BecomeAHost extends React.Component {
             <h4 className='spot-form-header'>{key}</h4>
             <p className='spot-form-content'>{this.state.tips[key]}</p>
           </div>
-        )
+        );
       }
 
       rightPanelContents =
-        <div className='spot-form-tip-box' className='spot-form-tip-container'>
+        <div className='spot-form-tip-box spot-form-tip-container'>
           <i>LIGHTBULB</i>
           {tipElements}
         </div>
@@ -171,7 +173,7 @@ class BecomeAHost extends React.Component {
 
       </div>
 
-    )
+    );
   }
 }
 

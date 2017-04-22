@@ -4,7 +4,7 @@ export default (props) => {
 
   const privacyLevelOptions = [];
   for(let id in spotConstants.privacyLevels){
-    privacyLevelOptions.push(<option key={id} value={id}>{spotConstants.privacyLevels[id]}</option>)
+    privacyLevelOptions.push(<option key={id} value={id}>{spotConstants.privacyLevels[id]}</option>);
   }
 
 
@@ -17,9 +17,9 @@ export default (props) => {
         <option key={idx} value={parseInt(numGuests)}>
           {numGuests === 1 ? `for ${numGuests} guest` : `for ${numGuests} guests`}
         </option>
-      )
+      );
     }
-  )
+  );
 
 
 
