@@ -7,8 +7,6 @@ export default (props) => {
     stateOptions.push(<option key={id} value={id}>{spotConstants.states[id]}</option>)
   }
 
-  window.formValues = props.formValues
-
   return (
 
 
@@ -108,5 +106,5 @@ export default (props) => {
 
 
     </div>
-  )
-}
+  );
+};
