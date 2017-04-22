@@ -61,9 +61,9 @@ export default connect(
   (state) => {
     let currentUser;
     if(state.session.currentUser){
-      currentUser = state.session.currentUser.email
+      currentUser = state.session.currentUser.email;
     } else {
-      currentUser = null
+      currentUser = null;
     }
 
     return{
@@ -76,6 +76,6 @@ export default connect(
       logout: () => dispatch(logout()),
       receiveModal: (modalName) => dispatch(receiveModal(modalName)),
       clearModal: () => dispatch(clearModal())
-    }
+    };
   }
 )(App);
