@@ -14,23 +14,6 @@
  *= require font-awesome
  */
 
- .clearfix:after {
-   content: '';
-   display: block;
-   clear: both;
- }
-
- @import './base/reset.scss';
- @import './base/app.scss';
- @import './base/nav.scss';
- @import './base/user_settings_dropdown.scss';
-
- @import './api/sessions';
- @import './api/users';
-
- @import './components/session/session_form';
- @import './components/spots/become_a_host';
-
  @import './components/calendar/CalendarDay';
  @import './components/calendar/CalendarMonth';
  @import './components/calendar/CalendarMonthGrid';
@@ -42,3 +25,20 @@
  @import './components/calendar/DateRangePickerInput';
  @import './components/calendar/SingleDatePicker';
  @import './components/calendar/SingleDatePickerInput';
+
+ .clearfix:after {
+   content: '';
+   display: block;
+   clear: both;
+ }
+
+ @import './base/reset.scss';
+ @import './base/app.scss';
+ @import './base/nav.scss';
+ @import './base/user_settings_dropdown.scss';
+
+ @import './api/sessions.scss';
+ @import './api/users.scss';
+
+ @import './components/session/session_form.scss';
+ @import './components/spots/become_a_host.scss';

@@ -116,6 +116,7 @@ class BecomeAHost extends React.Component {
             formValues={this.state.spotProperties}
             switchForm={this.switchForm}
             handleSubmit={this.handleSubmit}
+            setTips={this.setTips}
           />;
         break;
       default:
