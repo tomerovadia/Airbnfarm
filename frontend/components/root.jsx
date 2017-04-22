@@ -2,7 +2,7 @@ import React from 'react';
 import {Router, Route, IndexRoute, hashHistory} from 'react-router';
 import { Provider } from 'react-redux';
 import App from './app';
-import BecomeAHostContainer from './spots/become_a_host_container';
+import BecomeAHostContainer from './spots/spot_form/become_a_host_container';
 import Welcome from './main/welcome';
 
 export default (props) => {

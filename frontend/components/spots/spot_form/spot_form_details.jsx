@@ -4,7 +4,7 @@ export default (props) => {
 
   const stateOptions = [];
   for(let id in spotConstants.states){
-    stateOptions.push(<option key={id} value={id}>{spotConstants.states[id]}</option>)
+    stateOptions.push(<option key={id} value={id}>{spotConstants.states[id]}</option>);
   }
 
   return (
