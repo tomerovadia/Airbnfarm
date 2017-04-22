@@ -43,14 +43,14 @@ class BecomeAHost extends React.Component {
 
   changeField(field){
     return (e) => {
-      const newSpotDetails = this.state.spotProperties;
+      const newSpotProperties = this.state.spotProperties;
       if(field === 'privacy_level_id' || field === 'state_id' || field === 'num_guests'){
-        newSpotDetails[field] = parseInt(e.target.value);
+        newSpotProperties[field] = parseInt(e.target.value);
       } else {
-        newSpotDetails[field] = e.target.value;
+        newSpotProperties[field] = e.target.value;
       }
 
-      this.setState({spotProperties: newSpotDetails})
+      this.setState({spotProperties: newSpotProperties})
     };
   }
 
@@ -58,9 +58,9 @@ class BecomeAHost extends React.Component {
     return (e) => {
       const result = this.state.spotProperties[field] + addend;
       if(result <= this.limits[field] && result >= 0){
-        const newSpotDetails = this.state.spotProperties;
-        newSpotDetails[field] = result;
-        this.setState({spotProperties: newSpotDetails})
+        const newSpotProperties = this.state.spotProperties;
+        newSpotProperties[field] = result;
+        this.setState({spotProperties: newSpotProperties})
       }
     }
   }
