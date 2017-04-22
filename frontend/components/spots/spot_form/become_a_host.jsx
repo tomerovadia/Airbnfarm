@@ -86,6 +86,8 @@ class BecomeAHost extends React.Component {
   }
 
   handleSubmit(e){
+
+
     this.props.createSpot(this.state.spotProperties);
     this.props.receiveErrors({});
   }
@@ -96,6 +98,8 @@ class BecomeAHost extends React.Component {
 
 
   render() {
+
+    window.state = this.state;
 
     let errorsLis = [];
     for(let field in this.props.errors){

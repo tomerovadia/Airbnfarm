@@ -8,20 +8,20 @@ export const receiveCurrentSpot = (spot) => {
     type: RECEIVE_CURRENT_SPOT,
     spot,
   };
-}
+};
 
 export const receiveErrors = (errors) => {
   if (Object.keys(errors).length > 0){
-    errors = jQuery.parseJSON(errors.responseText)
+    errors = jQuery.parseJSON(errors.responseText);
   } else {
-    errors = {}
+    errors = {};
   }
 
   return {
     type: RECEIVE_ERRORS,
     errors,
   };
-}
+};
 
 // Thunk action creators
 
@@ -30,5 +30,5 @@ export const createSpot = (spot) => dispatch => {
     .then(
       (resp) => dispatch(receiveCurrentSpot(resp)),
       (errors) => dispatch(receiveErrors(errors))
-    )
-}
+    );
+};
