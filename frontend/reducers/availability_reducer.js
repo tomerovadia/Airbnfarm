@@ -1,16 +1,22 @@
 import merge from 'lodash/merge';
-import {RECEIVE_CURRENT_SPOT, RECEIVE_ERRORS} from '../actions/spot_actions';
+import {RECEIVE_AVAILABILITY, CLEAR_AVAILABILITIES, RECEIVE_ERRORS} from '../actions/availability_actions';
 
 const _initialState = {
-  currentSpot: null,
+  availabilities: [],
   errors: {},
 };
 
 export default (oldState = _initialState, action) => {
+
   let newState = merge({}, oldState);
   switch(action.type){
-    case RECEIVE_CURRENT_SPOT:
-      newState.currentSpot = action.spot;
+
+    case RECEIVE_AVAILABILITY:
+      newState.availabilities.push(action.availability);
+      return newState;
+
+    case CLEAR_AVAILABILITIES:
+      newState.availabilities = [];
       return newState;
 
     case RECEIVE_ERRORS:

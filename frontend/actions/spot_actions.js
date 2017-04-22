@@ -11,11 +11,6 @@ export const receiveCurrentSpot = (spot) => {
 };
 
 export const receiveErrors = (errors) => {
-  if (Object.keys(errors).length > 0){
-    errors = jQuery.parseJSON(errors.responseText);
-  } else {
-    errors = {};
-  }
 
   return {
     type: RECEIVE_ERRORS,
@@ -29,6 +24,6 @@ export const createSpot = (spot) => dispatch => {
   return SessionAPIUtil.createSpot(spot)
     .then(
       (resp) => dispatch(receiveCurrentSpot(resp)),
-      (errors) => dispatch(receiveErrors(errors))
+      (errors) => dispatch(receiveErrors(jQuery.parseJSON(errors.responseText)))
     );
 };

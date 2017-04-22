@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import BecomeAHost from './become_a_host';
 import { createSpot, receiveErrors } from '../../../actions/spot_actions';
+import { createAvailability } from '../../../actions/availability_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -14,6 +15,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     createSpot: (spot) => dispatch(createSpot(spot)),
     receiveErrors: (errors) => dispatch(receiveErrors(errors)),
+    createAvailability: (availability) => dispatch(createAvailability(availability)),
   };
 };
 
