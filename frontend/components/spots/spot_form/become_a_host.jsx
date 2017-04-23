@@ -9,7 +9,7 @@ class BecomeAHost extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      form: 'basics',
+      form: 'availability',
       tips: {},
       startAvailabilityDate: null,
       endAvailabilityDate: null,
@@ -18,7 +18,7 @@ class BecomeAHost extends React.Component {
         num_guests: 1,
         city: '',
         title: '',
-        base_price: 0,
+        base_price: '',
         main_photo_url: '',
         num_bedrooms: 0,
         num_beds: 0,
@@ -51,12 +51,15 @@ class BecomeAHost extends React.Component {
       const newSpotProperties = this.state.spotProperties;
 
       let newValue = e.target.value;
-      if(field === 'privacy_level_id' || field === 'state_id' || field === 'num_guests' || field === 'base_price'){
-        newValue = parseInt(e.target.value);
-      }
       newSpotProperties[field] = newValue;
-
-      this.setState({spotProperties: newSpotProperties});
+      if(field === 'privacy_level_id' || field === 'state_id' || field === 'num_guests' || field === 'base_price' || field === 'zipcode'){
+        if(/^\d*$/.test(newValue)){
+          newValue = parseInt(e.target.value);
+          this.setState({spotProperties: newSpotProperties});
+        }
+      } else {
+        this.setState({spotProperties: newSpotProperties});
+      }
     };
   }
 
