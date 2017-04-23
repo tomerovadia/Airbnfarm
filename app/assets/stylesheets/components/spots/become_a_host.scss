@@ -14,12 +14,11 @@
   margin: 0 auto;
   max-width: 1310px;
   width: 100%;
-  height: 500px;
   border: 3px solid blue;
 }
 
 .become-a-host-left-panel {
-  width: 65%;
+  width: 50%;
   border: 2px solid yellow;
   padding: 15px;
 }
@@ -29,13 +28,14 @@
 }
 
 .become-a-host-right-panel {
-  width: 35%;
+  width: 50%;
   border: 2px solid green;
   padding: 15px;
+  margin-top: 150px;
 }
 
 .become-a-host-right-panel img {
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
   display: block;
   max-width: 534px;
@@ -48,11 +48,12 @@
 
 .become-a-host-main-container h1 {
   margin: 32px 0;
-  font-size: 25px;
+  font-size: 32px;
+  color: #484848;
 }
 
 .become-a-host-main-container h2 {
-  font-size: 20px;
+  font-size: 24px;
   margin: 10px 0;
 }
 
@@ -82,33 +83,46 @@
 }
 
 .become-a-host-main-container .spot-form-fields {
+
+}
+
+.become-a-host-main-container input,
+.become-a-host-main-container button,
+.become-a-host-main-container select, {
+  margin: 7px 2px;
+  border-radius: 3px;
+  border: 1px solid #aaaaaa;
   font-size: 14px;
 }
 
+.become-a-host-main-container select {
+  color: #aeaeae;
+}
+
+.become-a-host-main-container input {
+  color: #797979;
+}
+
 .become-a-host-main-container .small-field {
-  width: 47%;
-  border-radius: 0;
+  width: 48%;
   height: 35px;
-  margin: 7px 0;
 }
 
 .become-a-host-main-container .full-field {
   width: 95%;
-  border-radius: 0;
   height: 35px;
-  margin: 7px 0;
-  border-radius: 3px;
-  border: 1px solid gray;
   padding: 0 7px;
 }
 
 .become-a-host-main-container button {
-  padding: 10px 15px;
+  padding: 12px 23px;
   border-radius: 5px;
+  border: none;
+  letter-spacing: 1.2px;
+  cursor: pointer;
 }
 
 .become-a-host-main-container .continue-button {
   background-color: #00A699;
   color: white;
-  letter-spacing: 1.2px
 }
