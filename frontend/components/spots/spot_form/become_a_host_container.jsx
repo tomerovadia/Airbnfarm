@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import BecomeAHost from './become_a_host';
 import { createSpot, receiveErrors } from '../../../actions/spot_actions';
 import { createAvailability } from '../../../actions/availability_actions';
+import { withRouter } from 'react-router';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -22,4 +23,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(BecomeAHost);
+)(withRouter(BecomeAHost));

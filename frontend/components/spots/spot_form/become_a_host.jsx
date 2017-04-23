@@ -3,6 +3,7 @@ import SpotFormBasics from './spot_form_basics';
 import SpotFormDetails from './spot_form_details';
 import SpotFormAvailability from './spot_form_availability';
 import merge from 'lodash/merge';
+import {hashHistory} from 'react-router';
 
 class BecomeAHost extends React.Component {
 
@@ -109,8 +110,11 @@ class BecomeAHost extends React.Component {
       this.props.createSpot(this.state.spotProperties)
         .then( (action) => {
           createAvailabilities(startAvailabilityDate, endAvailabilityDate, action.spot.id);
-        }
-      );
+          return action.spot.id;
+        })
+        .then(function(spotId) {
+          this.props.router.push(`/spots/${spotId}`);
+        }.bind(this));
     } else {
       this.props.receiveErrors({availability: ['cannot be blank']});
     }
@@ -189,16 +193,17 @@ class BecomeAHost extends React.Component {
     }
 
     return (
-      <div
-        className='become-a-host-main-container'
-      >
+      <div className='become-a-host-main-container'>
+
         <div
           className='become-a-host-errors'
           style={{display: Object.keys(this.props.errors).length === 0 ? 'none' : 'block' }}
-        >
+          >
+
           <ul>
             {errorsLis}
           </ul>
+
         </div>
 
         <div className='become-a-host-panels'>
