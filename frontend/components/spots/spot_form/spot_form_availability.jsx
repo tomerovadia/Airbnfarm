@@ -65,7 +65,7 @@ class SpotFormAvailability extends React.Component {
 
     return (
 
-      <div id='spot-form-availability-main-container spot-form-main-container'>
+      <div className='spot-form-availability-main-container spot-form-main-container'>
         <h1>Tell us about the availability of your place.</h1>
 
         <DateRangePicker
@@ -76,15 +76,15 @@ class SpotFormAvailability extends React.Component {
           onFocusChange={focusedInput => this.setState({ focusedInput })}
         />
 
-        <br />
+        <div className='nav-buttons-div clearfix'>
+          <button className='spot-form-back-button' onClick={this.props.switchForm('details')}>
+            Back
+          </button>
 
-        <button className='spot-form-back-button' onClick={this.props.switchForm('details')}>
-          Back
-        </button>
-
-        <button className='spot-form-next-button' onClick={this.props.handleSubmit}>
-          Finish
-        </button >
+          <button className='spot-form-next-button' onClick={this.props.handleSubmit}>
+            Finish
+          </button >
+        </div>
 
       </div>
 

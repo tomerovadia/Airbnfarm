@@ -72,57 +72,111 @@
   border: 1px solid #B2F1EC;
 }
 
-#spot-form-basics-main-container .location-predictions {
-  border: 2px solid blue;
-}
-
-#spot-form-basics-main-container .location-prediction-div {
-  border: 1px solid green;
-  height: 20px;
-  width: 100px;
-}
+// #spot-form-basics-main-container .location-predictions {
+//   border: 2px solid blue;
+// }
+//
+// #spot-form-basics-main-container .location-prediction-div {
+//   border: 1px solid green;
+//   height: 20px;
+//   width: 100px;
+// }
 
 .become-a-host-main-container .spot-form-fields {
 
 }
 
 .become-a-host-main-container input,
-.become-a-host-main-container button,
-.become-a-host-main-container select, {
+.become-a-host-main-container select,
+.become-a-host-main-container textarea, {
   margin: 7px 2px;
   border-radius: 3px;
   border: 1px solid #aaaaaa;
   font-size: 14px;
-}
-
-.become-a-host-main-container select {
-  color: #aeaeae;
-}
-
-.become-a-host-main-container input {
+  padding: 4px 7px;
+  letter-spacing: 1.2px;
   color: #797979;
 }
 
-.become-a-host-main-container .small-field {
-  width: 48%;
+.become-a-host-main-container input {
+}
+
+.become-a-host-main-container select {
+  color: #797979;
   height: 35px;
 }
 
-.become-a-host-main-container .full-field {
+.become-a-host-main-container textarea {
+  height: 100px;
+  width: 95%;
+}
+
+.become-a-host-main-container .half-width-field {
+  width: 48%;
+}
+
+.become-a-host-main-container .full-width-field {
   width: 95%;
   height: 35px;
   padding: 0 7px;
 }
 
 .become-a-host-main-container button {
-  padding: 12px 23px;
   border-radius: 5px;
   border: none;
-  letter-spacing: 1.2px;
   cursor: pointer;
+  letter-spacing: 1.2px;
+  font-size: 15px;
 }
 
 .become-a-host-main-container .continue-button {
   background-color: #00A699;
   color: white;
+  padding: 12px 23px;
+}
+
+.number-toggle-div {
+  border: 1px solid #aaaaaa;
+  display: flex;
+  width: 60%;
+  margin: 14px 0;
+}
+
+.num-display {
+  width: 60%;
+  padding: 18px 15px;
+}
+
+button.increment-button {
+  width: 17%;
+  padding: 12px 23px;
+  border: 1px solid #dce0e0;
+  margin: 5px 0;
+}
+
+button.spot-form-back-button {
+  float: left;
+  color: #767676;
+  padding: 15px;
+}
+
+button.spot-form-next-button {
+  background-color: #ff5a5f;
+  float: right;
+  color: white;
+  padding: 15px 75px;
+}
+
+button.spot-form-next-button:hover {
+  background-color: #ff7e82;
+}
+
+.nav-buttons-div {
+  border-top: 1px solid #ebebeb;
+  padding: 25px 0;
+  margin: 25px 0;
+}
+
+.spot-form-availability-main-container .nav-buttons-div {
+  margin-top: 350px;
 }

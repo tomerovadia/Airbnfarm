@@ -8,9 +8,6 @@ export default (props) => {
   }
 
 
-
-
-
   const numGuestsOptions = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16].map(
     (numGuests, idx) => {
       return (
@@ -20,8 +17,6 @@ export default (props) => {
       );
     }
   );
-
-
 
 
   // const getAddressPredictions = () => {
@@ -58,7 +53,7 @@ export default (props) => {
         <div className='spot-form-fields'>
           <select
             id='spot-privacy-level'
-            className='small-field'
+            className='half-width-field'
             onChange={props.changeField('privacy_level_id')}
             value={props.formValues.privacy_level_id}
           >
@@ -67,7 +62,7 @@ export default (props) => {
 
           <select
             id='spot-num-guests'
-            className='small-field'
+            className='half-width-field'
             onChange={props.changeField('num_guests')}
             value={props.formValues.num_guests}
           >
@@ -77,7 +72,7 @@ export default (props) => {
           <input
             type='text'
             id='spot-city'
-            className='full-field'
+            className='full-width-field'
             placeholder='e.g. San Francisco'
             onChange={props.changeField('city')}
             value={props.formValues.city}

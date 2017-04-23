@@ -11,11 +11,12 @@ export default (props) => {
 
 
     <div id='spot-form-details-main-container spot-form-main-container'>
-      <h1>Tell us more about your place.</h1>
+      <h2>Tell us more about your place.</h2>
 
       <form id='spot-form-details-form'>
 
         <input
+          className='full-width-field'
           onChange={props.changeField('title')}
           value={props.formValues.title}
           placeholder='Title'
@@ -23,50 +24,53 @@ export default (props) => {
 
 
         <input
+          className='full-width-field'
           onChange={props.changeField('base_price')}
-          value={props.formValues.basePrice}
-          placeholder='Price'
+          value={props.formValues.base_price}
+          placeholder='Price ($)'
         />
 
         <input
+          className='full-width-field'
           onChange={props.changeField('main_photo_url')}
-          value={props.formValues.mainPhotoUrl}
+          value={props.formValues.main_photo_url}
           placeholder='Photo URL'
         />
 
-        <div>
-          <div>{`${props.formValues.num_bedrooms} bedrooms`}</div>
-          <button onClick={props.addToValue('num_bedrooms', -1)}>-</button>
-          <button onClick={props.addToValue('num_bedrooms', 1)}>+</button>
+        <div className='number-toggle-div'>
+          <div className='num-display'>{`${props.formValues.num_bedrooms} bedrooms`}</div>
+          <button className='increment-button' onClick={props.addToValue('num_bedrooms', -1)}>-</button>
+          <button className='increment-button' onClick={props.addToValue('num_bedrooms', 1)}>+</button>
         </div>
 
-        <div>
-          <div>{`${props.formValues.num_beds} beds`}</div>
-          <button onClick={props.addToValue('num_beds', -1)}>-</button>
-          <button onClick={props.addToValue('num_beds', 1)}>+</button>
+        <div className='number-toggle-div'>
+          <div className='num-display'>{`${props.formValues.num_beds} beds`}</div>
+          <button className='increment-button' onClick={props.addToValue('num_beds', -1)}>-</button>
+          <button className='increment-button' onClick={props.addToValue('num_beds', 1)}>+</button>
         </div>
 
-        <div>
-          <div>{`${props.formValues.num_bathrooms} bathroom`}</div>
-          <button onClick={props.addToValue('num_bathrooms', -0.5)}>-</button>
-          <button onClick={props.addToValue('num_bathrooms', 0.5)}>+</button>
+        <div className='number-toggle-div'>
+          <div className='num-display'>{`${props.formValues.num_bathrooms} bathroom`}</div>
+          <button className='increment-button' onClick={props.addToValue('num_bathrooms', -0.5)}>-</button>
+          <button className='increment-button' onClick={props.addToValue('num_bathrooms', 0.5)}>+</button>
         </div>
 
 
-        <input
+        <textarea
           onChange={props.changeField('summary')}
           value={props.formValues.summary}
           placeholder='Summary'
         />
 
 
-        <input
+        <textarea
           onChange={props.changeField('description')}
           value={props.formValues.description}
           placeholder='Description'
         />
 
         <input
+          className='full-width-field'
           onChange={props.changeField('street_address')}
           value={props.formValues.street_address}
           placeholder='Street Address'
@@ -74,6 +78,7 @@ export default (props) => {
 
 
         <select
+          className='half-width-field'
             onChange={props.changeField('state_id')}
             value={props.formValues.state_id}
             placeholder='State'
@@ -82,20 +87,17 @@ export default (props) => {
         </select>
 
         <input
+          className='half-width-field'
           onChange={props.changeField('zipcode')}
           value={props.formValues.zipcode}
           placeholder='Zip Code'
         />
 
+        <div className='nav-buttons-div clearfix'>
+          <button className='spot-form-back-button' onClick={props.switchForm('basics')}>Back</button>
 
-        <button className='spot-form-back-button' onClick={props.switchForm('basics')}>
-          Back
-        </button>
-
-        <button className='spot-form-next-button' onClick={props.switchForm('availability')}>
-          Next
-        </button >
-
+          <button className='spot-form-next-button' onClick={props.switchForm('availability')}>Next</button >
+        </div>
 
       </form>
 
