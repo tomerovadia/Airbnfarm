@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import App from './app';
 import BecomeAHostContainer from './spots/spot_form/become_a_host_container';
 import SpotProfileContainer from './spots/spot_profile/spot_profile_container';
+import SpotProfileOverviewThespace from './spots/spot_profile/spot_profile_overview_thespace';
 import Welcome from './main/welcome';
 
 export default (props) => {
@@ -20,6 +21,10 @@ export default (props) => {
           </Route>
 
           <Route path='/spots/:spotId' component={SpotProfileContainer}></Route>
+
+
+          <Route path='/spots/test/:spotId' component={SpotProfileOverviewThespace}></Route>
+
         </Route>
       </Router>
     </Provider>

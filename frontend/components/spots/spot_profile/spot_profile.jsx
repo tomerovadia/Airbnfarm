@@ -1,4 +1,6 @@
 import React from 'react';
+import SpotProfileNav from './spot_profile_nav';
+import SpotProfileOverview from './spot_profile_overview';
 
 
 class SpotProfile extends React.Component {
@@ -16,15 +18,24 @@ class SpotProfile extends React.Component {
       mainPhotoUrl = this.props.currentSpot.main_photo_url;
     }
 
-
     return(
 
       <div className='spot-profile-main-container'>
 
-        <img src={mainPhotoUrl}>
+        <div className='spot-profile-img-container'>
+          <img className='spot-profile-main-img' src={mainPhotoUrl} />
+
+          <div className='spot-profile-photo-overlay'>
+            <button className='spot-profile-view-photos-button'>
+              View Photos
+            </button>
+          </div>
+        </div>
 
 
-        </img>
+        <SpotProfileNav />
+
+        <SpotProfileOverview currentSpot={this.props.currentSpot}/>
 
       </div>
 

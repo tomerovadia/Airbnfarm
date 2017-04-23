@@ -1,0 +1,153 @@
+// MAIN IMAGE
+
+.spot-profile-img-container {
+  position: relative;
+}
+
+.spot-profile-main-img {
+  width: 100%;
+  max-height: 552px;
+}
+
+.spot-profile-photo-overlay {
+  position: absolute;
+  bottom: 30px;
+}
+
+.spot-profile-view-photos-button {
+  background-color: white;
+  color: black;
+  padding: 5px 15px;
+}
+
+// NAV
+
+.spot-profile-nav {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  border: 1px solid #95cb6d; //random
+}
+
+.spot-profile-nav-tab {
+  height: 50px;
+  width: 15%;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #2b79fb; //random
+}
+
+// OVERVIEW
+
+.spot-profile-overview {
+  width: 60%;
+  margin: 0 auto;
+}
+
+// OVERVIEW HEADING
+
+.spot-profile-overview-heading {
+  border: 1px solid #f704a3;
+  display: flex;
+  justify-content: space-between;
+}
+
+.spot-profile-overview-heading-left {
+  border: 1px solid #4d2518;
+}
+
+.spot-profile-overview-heading-right {
+  border: 1px solid #adfbf2;
+}
+
+.spot-profile-city-and-reviews {
+  border: 1px solid #bc99f7;
+}
+
+.spot-profile-host-name {
+  border: 1px solid #f06161;
+}
+
+.spot-profile-overview-heading-left h1 {
+  font-size: 25px;
+}
+
+// OVERVIEW ICONS
+
+.spot-profile-overview-icons {
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid #66f22d; //random
+}
+
+
+.spot-profile-overview-icon-div {
+  width: 16%;
+  border: 1px solid #f06161; //random
+  text-align: center;
+}
+
+// OVERVIEW SUMMARY
+
+.spot-profile-overview-summary {
+  border: 1px solid #134274;
+}
+
+.spot-profile-overview-summary h3 {
+  font-size: 18px;
+  margin: 10px 0;
+  font-weight: 600;
+  border: 1px solid #134274; //random
+  padding: 5px 10px;
+}
+
+.spot-profile-overview-summary div {
+  border: 1px solid #fcbbcb; //random
+}
+
+.spot-profile-overview-summary p {
+  font-size: 14px;
+  border: 1px solid #480043; //random
+  padding: 5px 10px;
+}
+
+// OVERVIEW SECTION
+
+.spot-profile-overview-section {
+  display: flex;
+  border: 2px solid blue;
+}
+
+.spot-profile-overview-section-left {
+  border: 1px solid #c8882d; //random
+  width: 20%;
+}
+
+.spot-profile-overview-section-right {
+  border: 1px solid #4dfcbb; //random
+  width: 80%;
+}
+
+
+// OVERVIEW SECTION: The Space
+
+.spot-profile-overview-thespace {
+  border: 2px solid #9b1b28;
+}
+
+.spot-profile-overview-thespace-row {
+  border: 1px solid #983e71;
+  display: flex;
+  margin: 5px;
+}
+
+.spot-profile-overview-thespace-item {
+  border: 1px solid #79c204;
+  width: 50%;
+}
+
+// OVERVIEW SECTION: Description
+
+.spot-profile-overview-description {
+  border: 2px solid #8ec3a2;
+}

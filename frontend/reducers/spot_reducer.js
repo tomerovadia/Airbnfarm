@@ -2,7 +2,20 @@ import merge from 'lodash/merge';
 import {RECEIVE_CURRENT_SPOT, RECEIVE_ERRORS} from '../actions/spot_actions';
 
 const _initialState = {
-  currentSpot: null,
+  currentSpot: {
+    title: '',
+    base_price: 0,
+    summary: '',
+    privacy_level_id: 1,
+    num_guests: 8,
+    num_bedrooms: 4,
+    num_beds: 4,
+    num_bathrooms: 4,
+    street_address: '',
+    state_id: 5,
+    zipcode: 11111,
+    city: ''
+  },
   errors: {},
 };
 
