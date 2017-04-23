@@ -37,18 +37,24 @@
   border: 1px solid #2b79fb; //random
 }
 
+
+
 // MAIN SECTION
 
 .spot-profile-overview-and-sidebar {
   display: flex;
+  border: 3px solid gray;
+  width: 1048px;
+  margin: 0 auto;
 }
+
+
 
 // OVERVIEW
 
 .spot-profile-overview {
-  width: 60%;
-  margin: 0 auto;
   border: 2px solid green;
+  width: 70%;
 }
 
 // OVERVIEW HEADING
@@ -157,4 +163,101 @@
 
 .spot-profile-overview-description {
   border: 2px solid #8ec3a2;
+}
+
+
+
+
+
+// SIDEBAR
+
+.spot-profile-sidebar {
+  border: 1px solid #dce0e0;
+  width: 30%;
+}
+
+.spot-profile-price-overlay {
+  background-color: rgba(0,0,0,0.7);
+  height: 50px;
+  width: 100%;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  padding: 14px;
+}
+
+.spot-profile-sidebar-contents {
+  padding: 14px;
+}
+
+.spot-profile-text {
+  display: flex;
+  align-items: flex-end;
+}
+
+.spot-profile-price-overlay span {
+  color: white;
+  padding: 2px;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+span.spot-profile-price {
+  font-size: 18px;
+}
+
+.spot-profile-calendar-labels {
+
+}
+
+.spot-profile-calendar-labels label {
+  width: 50%;
+  border: 1px solid #b571e1;
+}
+
+.spot-profile-booking-calendar {
+  margin: 0 auto;
+  width: 92%;
+}
+
+
+.spot-profile-guests-select-div {
+  border: 1px solid #2f9699;
+  width: 100%;
+}
+
+.spot-profile-guests-select {
+  width: 100%;
+  margin: 5px 0;
+}
+
+.spot-profile-request-to-book-button-div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.spot-profile-request-to-book-button {
+  background-color: #ff5a5f;
+  padding: 15px;
+  border-radius: 5px;
+  color: white;
+  letter-spacing: 1.2px;
+  font-size: 16px;
+  width: 98%;
+  margin: 10px 0;
+}
+
+.spot-profile-request-to-book-button-div span {
+  font-size: 11px;
+  color: #767676;
+}
+
+.spot-profile-guests-select {
+  border-radius: 3px;
+  border: 1px solid #aaaaaa;
+  font-size: 14px;
+  letter-spacing: 1.2px;
+  color: #797979;
+  height: 45px;
 }
