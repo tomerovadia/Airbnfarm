@@ -125,11 +125,13 @@ class BecomeAHost extends React.Component {
 
     let errorsLis = [];
     for(let field in this.props.errors){
-      this.props.errors[field].forEach( (errorMessage, idx) => {
-        errorsLis.push(
-          <li key={`${idx}${field}${errorMessage}`}>{field} {errorMessage}</li>
-        );
-      });
+      if(this.props.errors[field].constructor === Array){
+        this.props.errors[field].forEach( (errorMessage, idx) => {
+          errorsLis.push(
+            <li key={`${idx}${field}${errorMessage}`}>{field} {errorMessage}</li>
+          );
+        });
+      }
     }
 
 
