@@ -17,7 +17,7 @@ class Api::SpotsController < ApplicationController
     @spot = Spot.find_by(id: params[:id])
 
     if @spot
-      render json: @spot
+      render :show
     else
       render json: ['Spot not found'], status: 404
     end

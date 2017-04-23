@@ -43,7 +43,6 @@
 
 .spot-profile-overview-and-sidebar {
   display: flex;
-  border: 3px solid gray;
   width: 1048px;
   margin: 0 auto;
 }
@@ -157,6 +156,12 @@
 .spot-profile-overview-thespace-item {
   border: 1px solid #79c204;
   width: 50%;
+  font-weight: normal;
+  letter-spacing: 1.2px;
+}
+
+.spot-profile-overview-thespace-item span:last-child {
+  font-weight: bold;
 }
 
 // OVERVIEW SECTION: Description
@@ -174,6 +179,8 @@
 .spot-profile-sidebar {
   border: 1px solid #dce0e0;
   width: 30%;
+  position: relative;
+  top: -55px;
 }
 
 .spot-profile-price-overlay {
@@ -187,7 +194,7 @@
 }
 
 .spot-profile-sidebar-contents {
-  padding: 14px;
+  padding: 12px;
 }
 
 .spot-profile-text {
@@ -217,7 +224,7 @@ span.spot-profile-price {
 
 .spot-profile-booking-calendar {
   margin: 0 auto;
-  width: 92%;
+  width: 100%;
 }
 
 

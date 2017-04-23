@@ -15,8 +15,6 @@ class SpotProfileSidebar extends React.Component {
   }
 
 
-
-
   render(){
 
     return(
@@ -25,7 +23,7 @@ class SpotProfileSidebar extends React.Component {
 
         <div className='spot-profile-price-overlay'>
           <div className='spot-profile-text'>
-            <span className='spot-profile-price'>$123</span><span>per night</span>
+            <span className='spot-profile-price'>${this.props.currentSpot.base_price}</span><span>per night</span>
           </div>
         </div>
 
@@ -41,7 +39,7 @@ class SpotProfileSidebar extends React.Component {
               startDate={this.state.startDate}
               endDate={this.state.endDate}
               onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })}
-              focusedInput={this.state.focusedInput}
+              focusedInput='{this.state.focusedInput}'
               onFocusChange={focusedInput => this.setState({ focusedInput })}
               startDatePlaceholderText='mm/dd/yyyy'
               endDatePlaceholderText='mm/dd/yyyy'
