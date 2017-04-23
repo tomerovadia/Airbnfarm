@@ -5,12 +5,16 @@ import SpotProfileOverviewSummary from './spot_profile_overview_summary';
 import SpotProfileOverviewSection from './spot_profile_overview_section';
 import SpotProfileOverviewThespace from './spot_profile_overview_thespace';
 import SpotProfileOverviewDescription from './spot_profile_overview_description';
+import SpotProfileNav from './spot_profile_nav';
+
 
 export default (props) => {
 
   return(
 
     <div className='spot-profile-overview'>
+
+      <SpotProfileNav />
 
       <SpotProfileOverviewHeading currentSpot={props.currentSpot}/>
 
