@@ -5,6 +5,7 @@ class Api::AvailabilitiesController < ApplicationController
     if @availability.save
       render json: @availability
     else
+      p @availability.errors
       render json: @availability.errors, status: 422
     end
   end

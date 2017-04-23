@@ -43,6 +43,7 @@ class BecomeAHost extends React.Component {
     this.setTips = this.setTips.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.receiveAvailabilityDates = this.receiveAvailabilityDates.bind(this);
+    this.createAvailabilities = this.createAvailabilities.bind(this);
   }
 
   changeField(field){
@@ -86,14 +87,28 @@ class BecomeAHost extends React.Component {
     this.setState({tips});
   }
 
+  createAvailabilities(startDate, endDate, spot_id){
+    debugger
+    let date = startDate;
+
+    while(date <= endDate){
+      this.props.createAvailability({available_date: date, spot_id: spot_id});
+      date = new Date(date.valueOf());
+      date.setDate(date.getDate() + 1);
+    }
+  }
+
   handleSubmit(e){
     const startAvailabilityDate = this.state.startAvailabilityDate;
     const endAvailabilityDate = this.state.endAvailabilityDate;
+    const createAvailabilities = this.createAvailabilities;
 
     if(startAvailabilityDate && endAvailabilityDate){
-      
-
-      this.props.createSpot(this.state.spotProperties);
+      this.props.createSpot(this.state.spotProperties)
+        .then( (action) => {
+          createAvailabilities(startAvailabilityDate, endAvailabilityDate, action.spot.id);
+        }
+      );
     } else {
       this.props.receiveErrors({availability: ['cannot be blank']});
     }
@@ -103,8 +118,9 @@ class BecomeAHost extends React.Component {
 
 
 
-
   render() {
+
+    window.state = this.state;
 
     let errorsLis = [];
     for(let field in this.props.errors){
