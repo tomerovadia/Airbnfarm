@@ -123,8 +123,6 @@ class BecomeAHost extends React.Component {
 
   render() {
 
-    window.state = this.state;
-
     let errorsLis = [];
     for(let field in this.props.errors){
       this.props.errors[field].forEach( (errorMessage, idx) => {

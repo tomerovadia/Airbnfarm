@@ -7,3 +7,13 @@ export const createSpot = (spot) => {
   });
 
 };
+
+export const fetchSpot = (id) => {
+  const url = `api/spots/${id}`;
+
+  return $.ajax({
+    method: 'get',
+    url,
+  });
+
+};
