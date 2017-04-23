@@ -9,7 +9,7 @@ class BecomeAHost extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      form: 'availability',
+      form: 'basics',
       tips: {},
       startAvailabilityDate: null,
       endAvailabilityDate: null,
@@ -91,7 +91,6 @@ class BecomeAHost extends React.Component {
   }
 
   createAvailabilities(startDate, endDate, spot_id){
-    debugger
     let date = startDate;
 
     while(date <= endDate){

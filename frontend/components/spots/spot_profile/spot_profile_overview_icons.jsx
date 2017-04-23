@@ -14,19 +14,19 @@ export default (props) => {
 
       <div className='spot-profile-overview-icon-div'>
         <i>NUM_GUESTS_ICON</i>
-        <div>8 Guests</div>
+        <div>{props.currentSpot.num_guests} Guests</div>
       </div>
 
 
       <div className='spot-profile-overview-icon-div'>
         <i>NUM_BEDROOMS_ICON</i>
-        <div>4 Bedrooms</div>
+        <div>{props.currentSpot.num_bedrooms} Bedrooms</div>
       </div>
 
 
       <div className='spot-profile-overview-icon-div'>
         <i>NUM_BEDS_ICON</i>
-        <div>4 Beds</div>
+        <div>{props.currentSpot.num_beds} Beds</div>
       </div>
 
     </div>

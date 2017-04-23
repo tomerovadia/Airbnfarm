@@ -7,6 +7,7 @@ const _initialState = {
     base_price: 0,
     summary: '',
     privacy_level_id: 1,
+    description: '',
     num_guests: 8,
     num_bedrooms: 4,
     num_beds: 4,
