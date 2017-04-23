@@ -19,8 +19,8 @@ export default (props) => {
       <SpotProfileOverviewSummary currentSpot={props.currentSpot} />
 
       <div className='spot-profile-overview-sections'>
-        <SpotProfileOverviewSection sectionTitle='The space' contents={<SpotProfileOverviewThespace />}/>
-        <SpotProfileOverviewSection sectionTitle='Description' contents={<SpotProfileOverviewDescription />}/>
+        <SpotProfileOverviewSection sectionTitle='The space' contents={<SpotProfileOverviewThespace currentSpot={props.currentSpot} />}/>
+        <SpotProfileOverviewSection sectionTitle='Description' contents={<SpotProfileOverviewDescription currentSpot={props.currentSpot} />}/>
       </div>
 
     </div>

@@ -35,7 +35,11 @@ class SpotProfile extends React.Component {
 
         <SpotProfileNav />
 
-        <SpotProfileOverview currentSpot={this.props.currentSpot}/>
+        <div className='spot-profile-overview-and-sidebar'>
+
+          <SpotProfileOverview currentSpot={this.props.currentSpot}/>
+
+        </div>
 
       </div>
 

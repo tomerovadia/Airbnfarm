@@ -37,11 +37,18 @@
   border: 1px solid #2b79fb; //random
 }
 
+// MAIN SECTION
+
+.spot-profile-overview-and-sidebar {
+  display: flex;
+}
+
 // OVERVIEW
 
 .spot-profile-overview {
   width: 60%;
   margin: 0 auto;
+  border: 2px solid green;
 }
 
 // OVERVIEW HEADING
