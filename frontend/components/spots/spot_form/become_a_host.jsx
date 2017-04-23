@@ -9,7 +9,7 @@ class BecomeAHost extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      form: 'availability',
+      form: 'basics',
       tips: {},
       startAvailabilityDate: null,
       endAvailabilityDate: null,
