@@ -1,19 +1,33 @@
 import React from 'react';
 import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'react-dates';
-import Moment from 'react-moment';
-import moment from 'moment';
+import Moment from 'moment';
+import { extendMoment } from 'moment-range';
+const moment = extendMoment(Moment);
 
 class SpotProfileSidebar extends React.Component {
 
   constructor(props){
     super(props);
+
     this.state = {
       focusedInput: 'startDate',
       startDate: null,
       endDate: null,
     };
+
+    this.isDayBlocked = this.isDayBlocked.bind(this);
   }
 
+  isDayBlocked(day){
+    const startDate = moment('Sat, 02 May 2017');
+    const endDate = moment('Sat, 10 May 2017');
+
+    const range = moment().range(startDate, endDate);
+
+    console.log(day.within(range));
+
+    debugger
+  }
 
   render(){
 
@@ -43,6 +57,7 @@ class SpotProfileSidebar extends React.Component {
               onFocusChange={focusedInput => this.setState({ focusedInput })}
               startDatePlaceholderText='mm/dd/yyyy'
               endDatePlaceholderText='mm/dd/yyyy'
+              isDayBlocked={this.isDayBlocked}
             />
 
           </div>
