@@ -1,4 +1,5 @@
 import React from 'react';
+import SpotSearchFilter from './spot_search_filter';
 
 class SpotSearch extends React.Component {
 
@@ -12,12 +13,17 @@ class SpotSearch extends React.Component {
     return(
       <div className='spot-search-main-container'>
 
+
+
         <div className='spot-search-left'>
 
+          <div className='spot-search-filter-container'>
+            <SpotSearchFilter />
+          </div>
+
+          <div></div>
 
         </div>
-
-
 
 
         <div className='spot-search-right'>

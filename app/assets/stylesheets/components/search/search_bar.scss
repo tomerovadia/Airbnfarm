@@ -32,3 +32,31 @@
 .welcome-search-bar-right {
   display: flex;
 }
+
+
+// SEARCH PAGE
+
+.spot-search-main-container {
+
+}
+
+.spot-search-left {
+
+}
+
+.spot-search-filter {
+  border: 1px solid #740d0e;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.spot-search-filter-dropdown {
+  border: 1px solid #a69e75;
+  cursor: pointer;
+  margin: 0 15px;
+  padding: 15px 0;
+}
+
+.spot-search-right {
+
+}
