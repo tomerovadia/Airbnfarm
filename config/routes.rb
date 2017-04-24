@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     end
 
     resource :session, only: [:create, :destroy]
-    resources :spots, only: [:create, :show]
+    resources :spots, only: [:create, :show, :index]
     resources :availabilities, only: [:create, :destroy]
 
   end

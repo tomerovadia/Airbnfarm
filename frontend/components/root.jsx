@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import App from './app';
 import BecomeAHostContainer from './spots/spot_form/become_a_host_container';
 import SpotProfileContainer from './spots/spot_profile/spot_profile_container';
-import SpotProfileSidebar from './spots/spot_profile/spot_profile_sidebar';
+import WelcomeSearchBar from './search/welcome_search_bar';
 import Welcome from './main/welcome';
 
 export default (props) => {
@@ -23,7 +23,7 @@ export default (props) => {
           <Route path='/spots/:spotId' component={SpotProfileContainer}></Route>
 
 
-          <Route path='/spots/test/:spotId' component={SpotProfileSidebar}></Route>
+          <Route path='/spots/test/:spotId' component={WelcomeSearchBar}></Route>
 
         </Route>
       </Router>
