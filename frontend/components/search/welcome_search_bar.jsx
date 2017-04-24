@@ -36,7 +36,18 @@ class WelcomeSearchBar extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    this.props.fetchSearchResults(this.state.searchCriteria)
+
+    const criteria = this.state.searchCriteria;
+
+    if(this.state.searchCriteria.startDate && this.state.searchCriteria.endDate){
+      criteria.startDate = this.state.searchCriteria.startDate._d;
+      criteria.endDate = this.state.searchCriteria.endDate._d;
+    } else {
+      delete criteria.startDate
+      delete criteria.endDate
+    }
+
+    this.props.fetchSearchResults(criteria)
       .then(() => hashHistory.push(`/spots/search`));
   }
 
