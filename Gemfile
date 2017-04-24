@@ -37,6 +37,7 @@ gem 'bcrypt'
 gem 'email_validator'
 gem "font-awesome-rails"
 gem "figaro"
+gem 'faker'
 
 group :production do
   gem 'rails_12factor'

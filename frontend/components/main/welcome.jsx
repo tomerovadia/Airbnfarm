@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link } from 'react-router';
+import WelcomeSearchBar from '../search/welcome_search_bar';
 
 export default (props) => {
 
@@ -9,8 +10,10 @@ export default (props) => {
         <span className='welcome-where-to'>Where to? </span>
         <span className='welcome-start-adventure'> Start your next adventure on Airnbn.</span>
       </div>
-      <br/><br/><br/><br/><br/><br/><br/>
+
+      <WelcomeSearchBar />
+
       <Link to='/become-a-host'>Become a Host!</Link>
     </div>
-  )
-}
+  );
+};
