@@ -1,7 +1,7 @@
 import React from 'react';
+import NavSearchBar from '../search/nav_search_bar';
+import NavLinks from './nav_links';
 import {Link, hashHistory} from 'react-router';
-import UserSettingsDropdown from './user_settings_dropdown';
-import NavSearchBar from '../search/spot_search_bar_nav';
 
 export default (props) => {
 
@@ -13,33 +13,7 @@ export default (props) => {
     return () => props.receiveModal(modalName);
   }
 
-  let userSettingsDropdown = props.userSettingsVisible ? <UserSettingsDropdown handleLogout={handleLogout}/> : null
-
-  let links;
-  if(props.currentUser){
-    links =
-    <ul className='main-nav-links'>
-      <Link>No time to host?</Link>
-      <Link>Host</Link>
-      <Link>Trips</Link>
-      <Link>Messages</Link>
-      <Link>Help</Link>
-      <Link id='main-nav-avatar-link' onClick={props.showUserSettings}>
-        <img src='https://a0.muscache.com/defaults/user_pic-50x50.png?v=2' />
-        {userSettingsDropdown}
-      </Link>
-    </ul>
-
-  } else {
-    links =
-    <ul className='main-nav-links'>
-      <Link>No time to host?</Link>
-      <Link>Become a Host</Link>
-      <Link>Help</Link>
-      <Link onClick={activateModal('signup')}>Sign Up</Link>
-      <Link onClick={activateModal('login')}>Log In</Link>
-    </ul>
-  }
+  let loggedIn = props.currentUser ? true : false
 
   return (
     <nav className='main-nav'>
@@ -63,8 +37,13 @@ export default (props) => {
 
       <div className='main-nav-right'>
 
-        {links}
-
+        <NavLinks
+          userSettingsVisible={props.userSettingsVisible}
+          loggedIn={loggedIn}
+          activateModal={activateModal}
+          showUserSettings={props.showUserSettings}
+          handleLogout={handleLogout}
+          />
       </div>
 
     </nav>

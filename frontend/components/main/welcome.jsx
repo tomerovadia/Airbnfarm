@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link } from 'react-router';
-import WelcomeSearchBar from '../search/spot_search_bar_welcome';
+import WelcomeSearchBar from '../search/welcome_search_bar';
 
 export default (props) => {
 
@@ -13,7 +13,6 @@ export default (props) => {
 
       <WelcomeSearchBar />
 
-      <Link to='/become-a-host'>Become a Host!</Link>
     </div>
   );
 };
