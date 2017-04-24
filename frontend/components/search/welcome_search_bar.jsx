@@ -29,7 +29,9 @@ class WelcomeSearchBar extends React.Component {
   }
 
   handleCityChange(e){
-    this.setState({city: e.target.value});
+    const newSearchCriteria = this.state.searchCriteria;
+    newSearchCriteria.city = e.target.value;
+    this.setState({searchCriteria: newSearchCriteria});
   }
 
   handleSubmit(e){
@@ -53,8 +55,6 @@ class WelcomeSearchBar extends React.Component {
 
   render() {
 
-    window.state = this.state;
-
     return(
       <div className='welcome-search-bar-main-container'>
         <form id='welcome-search-bar-form' onSubmit={this.handleSubmit}>
@@ -73,7 +73,7 @@ class WelcomeSearchBar extends React.Component {
 
           <div className='welcome-search-bar-middle'>
             <label>When</label>
-            <div>
+            <div className='welcome-search-bar-calendar'>
               <DateRangePicker
                 startDate={this.state.searchCriteria.startDate}
                 endDate={this.state.searchCriteria.endDate}
