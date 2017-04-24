@@ -26,9 +26,7 @@ class WelcomeSearchBar extends React.Component {
   handleSubmit(e){
     e.preventDefault();
     this.props.fetchSearchResults(this.state)
-      .then(() => {
-        hashHistory.push(`/spots/search`)
-      });
+      .then(() => hashHistory.push(`/spots/search`));
   }
 
   render() {

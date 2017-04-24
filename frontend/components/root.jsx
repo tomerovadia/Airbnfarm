@@ -21,9 +21,6 @@ export default (props) => {
 
           <Route path='/spots/search' component={SpotSearchContainer}></Route>
 
-
-
-
         </Route>
       </Router>
     </Provider>

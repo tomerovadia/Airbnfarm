@@ -4,6 +4,8 @@ import Moment from 'react-moment';
 import moment from 'moment';
 import {connect} from 'react-redux';
 import { fetchSearchResults } from '../../actions/spot_actions';
+import {hashHistory} from 'react-router';
+
 
 class NavSearchBar extends React.Component {
 
@@ -24,7 +26,8 @@ class NavSearchBar extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    this.props.fetchSearchResults(this.state);
+    this.props.fetchSearchResults(this.state)
+      .then(() => hashHistory.push(`/spots/search`));
   }
 
   render() {
