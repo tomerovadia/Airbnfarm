@@ -17,3 +17,13 @@ export const fetchSpot = (id) => {
   });
 
 };
+
+export const fetchSearchResults = (criteria) => {
+
+  return $.ajax({
+    method: 'get',
+    url: 'api/spots',
+    data: criteria,
+  });
+
+};

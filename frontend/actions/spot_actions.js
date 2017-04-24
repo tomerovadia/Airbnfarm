@@ -2,6 +2,7 @@ import * as SessionAPIUtil from '../util/spot_api_util';
 
 export const RECEIVE_CURRENT_SPOT = 'RECEIVE_CURRENT_SPOT';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
+export const RECEIVE_SEARCH_RESULTS = 'RECEIVE_SEARCH_RESULTS';
 
 
 
@@ -12,6 +13,17 @@ export const receiveCurrentSpot = (spot) => {
   };
 };
 
+
+
+export const receiveSearchResults = (searchResults) => {
+  return {
+    type: RECEIVE_SEARCH_RESULTS,
+    searchResults,
+  };
+
+};
+
+
 export const receiveErrors = (errors) => {
 
   return {
@@ -19,6 +31,8 @@ export const receiveErrors = (errors) => {
     errors,
   };
 };
+
+
 
 
 
@@ -36,6 +50,14 @@ export const fetchSpot = (id) => dispatch => {
   return SessionAPIUtil.fetchSpot(id)
     .then(
       (resp) => dispatch(receiveCurrentSpot(resp)),
+      (errors) => dispatch(receiveErrors(errors))
+    );
+};
+
+export const fetchSearchResults = (criteria) => dispatch => {
+  return SessionAPIUtil.fetchSearchResults(criteria)
+    .then(
+      (resp) => dispatch(receiveSearchResults(resp)),
       (errors) => dispatch(receiveErrors(errors))
     );
 };

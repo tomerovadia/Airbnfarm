@@ -1,5 +1,5 @@
 import merge from 'lodash/merge';
-import {RECEIVE_CURRENT_SPOT, RECEIVE_ERRORS} from '../actions/spot_actions';
+import {RECEIVE_CURRENT_SPOT, RECEIVE_ERRORS, RECEIVE_SEARCH_RESULTS} from '../actions/spot_actions';
 
 const _initialState = {
   currentSpot: {
@@ -17,6 +17,7 @@ const _initialState = {
     zipcode: 11111,
     city: ''
   },
+  searchResults: {},
   errors: {},
 };
 
@@ -31,6 +32,10 @@ export default (oldState = _initialState, action) => {
 
     case RECEIVE_ERRORS:
       newState.errors = action.errors;
+      return newState;
+
+    case RECEIVE_SEARCH_RESULTS:
+      newState.searchResults = action.searchResults;
       return newState;
 
     default:
