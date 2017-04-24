@@ -24,9 +24,7 @@ class SpotProfileSidebar extends React.Component {
 
     const range = moment().range(startDate, endDate);
 
-    console.log(day.within(range));
-
-    debugger
+    return !day.within(range);
   }
 
   render(){
