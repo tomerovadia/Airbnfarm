@@ -7,7 +7,7 @@ export default (props) => {
 
     <div className='spot-mini-main-container'>
 
-      <Link to={`/spots/profile/${props.spot.id}`}>
+      <Link to={`/spots/profile/${props.spot.id}`} target='_blank'>
         <img className='spot-img' src={props.spot.main_photo_url}>
         </img>
 
