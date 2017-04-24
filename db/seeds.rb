@@ -16,7 +16,6 @@ ActiveRecord::Base.transaction do
   State.destroy_all
   Spot.destroy_all
 
-
   entire_place = PrivacyLevel.create!(privacy_level: 'Entire Place')
   private_room = PrivacyLevel.create!(privacy_level: 'Private Room')
   shared_room = PrivacyLevel.create!(privacy_level: 'Shared Room')
@@ -172,5 +171,9 @@ river_home = Spot.create!(
               zipcode: 12912
             )
     end
+
+    
+
+
 
 end
