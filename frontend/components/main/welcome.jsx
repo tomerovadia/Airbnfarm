@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link } from 'react-router';
-import WelcomeSearchBar from '../search/welcome_search_bar';
+import WelcomeSearchBar from '../search/spot_search_bar_welcome';
 
 export default (props) => {
 

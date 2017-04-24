@@ -5,7 +5,7 @@ import App from './app';
 import BecomeAHostContainer from './spots/spot_form/become_a_host_container';
 import SpotProfileContainer from './spots/spot_profile/spot_profile_container';
 import SpotSearchContainer from './search/spot_search_container';
-import WelcomeSearchBar from './search/welcome_search_bar';
+import SpotSearchBarNav from './search/spot_search_bar_nav';
 import Welcome from './main/welcome';
 
 export default (props) => {
@@ -22,7 +22,9 @@ export default (props) => {
 
           <Route path='/spots/search' component={SpotSearchContainer}></Route>
 
-          <Route path='/spots/test/:spotId' component={WelcomeSearchBar}></Route>
+
+
+          <Route path='/spots/test/:spotId' component={SpotSearchBarNav}></Route>
 
         </Route>
       </Router>

@@ -16,7 +16,7 @@
 // MAIN NAV LEFT
 
 .main-nav-left {
-  width: 50%;
+  width: 10%;
   display: flex;
   padding: 2px;
   justify-content: flex-start;
@@ -33,13 +33,22 @@
   font-size: 34px !important;
 }
 
+// MAIN NAV CENTER
+
+.main-nav-center {
+  width: 50%;
+}
+
 // MAIN NAV RIGHT
 
 .main-nav-right {
   padding: 2px;
   display: flex;
   justify-content: flex-end;
+  width: 40%;
 }
+
+
 
 .main-nav-links {
   display: flex;
