@@ -12,11 +12,20 @@ class WelcomeSearchBar extends React.Component {
     super(props);
 
     this.state = {
-      city: ''
+      calendarProps: {
+        focusedInput: 'startDate',
+      },
+      searchCriteria: {
+        city: '',
+        startDate: null,
+        endDate: null,
+      },
     };
 
     this.handleCityChange = this.handleCityChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleNewDates = this.handleNewDates.bind(this);
+    this.handleNewFocusedInput = this.handleNewFocusedInput.bind(this);
   }
 
   handleCityChange(e){
@@ -25,11 +34,26 @@ class WelcomeSearchBar extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    this.props.fetchSearchResults(this.state)
+    this.props.fetchSearchResults(this.state.searchCriteria)
       .then(() => hashHistory.push(`/spots/search`));
   }
 
+  handleNewDates({ startDate, endDate }){
+    const newSearchCriteria = this.state.searchCriteria;
+    newSearchCriteria.startDate = startDate;
+    newSearchCriteria.endDate = endDate;
+    this.setState({ searchCriteria: newSearchCriteria });
+  }
+
+  handleNewFocusedInput(newFocusedInput){
+    const newCalendarProps = this.state.calendarProps;
+    newCalendarProps.focusedInput = newFocusedInput;
+    this.setState({ calendarProps: newCalendarProps });
+  }
+
   render() {
+
+    window.state = this.state;
 
     return(
       <div className='welcome-search-bar-main-container'>
@@ -40,14 +64,30 @@ class WelcomeSearchBar extends React.Component {
               type='text'
               placeholder='Anywhere'
               onChange={this.handleCityChange}
-              value={this.state.city}
+              value={this.state.searchCriteria.city}
              />
           </div>
 
+
+
+
           <div className='welcome-search-bar-middle'>
             <label>When</label>
-            <div></div>
+            <div>
+              <DateRangePicker
+                startDate={this.state.searchCriteria.startDate}
+                endDate={this.state.searchCriteria.endDate}
+                onDatesChange={this.handleNewDates}
+                focusedInput={this.state.calendarProps.focusedInput}
+                onFocusChange={this.handleNewFocusedInput}
+              />
+
+            </div>
           </div>
+
+
+
+
 
           <div className='welcome-search-bar-right'>
             <div>
@@ -66,6 +106,11 @@ class WelcomeSearchBar extends React.Component {
             </div>
 
           </div>
+
+
+
+
+
 
         </form>
 
