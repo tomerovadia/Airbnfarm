@@ -113,7 +113,7 @@ class BecomeAHost extends React.Component {
           return action.spot.id;
         })
         .then(function(spotId) {
-          this.props.router.push(`/spots/${spotId}`);
+          this.props.router.push(`/spots/show/${spotId}`);
         }.bind(this));
     } else {
       this.props.receiveErrors({availability: ['cannot be blank']});
