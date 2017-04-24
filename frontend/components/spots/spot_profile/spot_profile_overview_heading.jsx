@@ -8,8 +8,8 @@ export default (props) => {
 
       <div className='spot-profile-overview-heading-left'>
         <h1>{props.currentSpot.title}</h1>
-        <div className='spot-profile-city-and-reviews'>
-          {props.currentSpot.city}, {props.currentSpot.state}
+        <div className='spot-profile-privacylevel-city-and-reviews'>
+          {props.currentSpot.privacy_level}  &middot;  {props.currentSpot.city}, {props.currentSpot.state}
         </div>
       </div>
 

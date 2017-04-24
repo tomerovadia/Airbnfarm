@@ -39,6 +39,7 @@
     "webpack": "^2.4.1"
   },
   "devDependencies": {
-    "css-loader": "^0.28.0"
+    "css-loader": "^0.28.0",
+    "eslint": "^3.19.0"
   }
 }
