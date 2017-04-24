@@ -6,13 +6,13 @@
   margin: 70px auto;
 }
 
-.welcome-search-bar-form {
+#welcome-search-bar-form {
   display: flex;
   border: 2px solid gray;
   width: 100%;
 }
 
-.welcome-search-bar-form > div {
+#welcome-search-bar-form > div {
   border: 1px solid red;
   flex-grow: 1;
   padding: 3px 7px;;

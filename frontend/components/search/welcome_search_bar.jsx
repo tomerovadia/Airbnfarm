@@ -2,6 +2,8 @@ import React from 'react';
 import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'react-dates';
 import Moment from 'react-moment';
 import moment from 'moment';
+import {connect} from 'react-redux';
+import { fetchSearchResults } from '../../actions/spot_actions';
 
 class WelcomeSearchBar extends React.Component {
 
@@ -9,29 +11,34 @@ class WelcomeSearchBar extends React.Component {
     super(props);
 
     this.state = {
-      where: ''
+      city: ''
     };
 
-    this.handleWhereChange = this.handleWhereChange.bind(this);
+    this.handleCityChange = this.handleCityChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleWhereChange(e){
-    this.setState({where: e.target.value});
+  handleCityChange(e){
+    this.setState({city: e.target.value});
+  }
+
+  handleSubmit(e){
+    e.preventDefault();
+    this.props.fetchSearchResults(this.state);
   }
 
   render() {
 
-    window.state = this.state;
-
     return(
       <div className='welcome-search-bar-main-container'>
-        <form className='welcome-search-bar-form'>
+        <form id='welcome-search-bar-form' onSubmit={this.handleSubmit}>
           <div className='welcome-search-bar-left'>
             <label>Where</label>
             <input
               type='text'
               placeholder='Anywhere'
-              onChange={this.handleWhereChange}
+              onChange={this.handleCityChange}
+              value={this.state.city}
              />
           </div>
 
@@ -47,7 +54,13 @@ class WelcomeSearchBar extends React.Component {
             </div>
 
             <div>
-              <button>Search</button>
+              <button
+                type='submit'
+                form='welcome-search-bar-form'
+                className='welcome-search-bar-search-button'
+                >
+                Search
+              </button>
             </div>
 
           </div>
@@ -56,11 +69,15 @@ class WelcomeSearchBar extends React.Component {
 
       </div>
     );
-
   }
-
-
-
 }
 
-export default WelcomeSearchBar;
+export default connect(
+  (state) => {return {};},
+
+  (dispatch) => {
+    return {
+      fetchSearchResults: (criteria) => dispatch(fetchSearchResults(criteria)),
+    };
+  }
+)(WelcomeSearchBar);
