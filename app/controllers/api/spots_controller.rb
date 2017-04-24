@@ -5,6 +5,15 @@ class Api::SpotsController < ApplicationController
     city = params[:city]
     @spots = Spot.where(city: city).includes(:privacy_level)
 
+    if params[:startDate] && params[:endDate]
+      startDate = Date.parse(params[:startDate])
+      endDate = Date.parse(params[:endDate])
+      # @spots.select()
+    end
+
+    debugger
+
+
     render template: 'api/spots/minishow'
 
     # receive params that include location, start date and end date
