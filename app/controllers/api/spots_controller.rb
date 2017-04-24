@@ -3,7 +3,7 @@ class Api::SpotsController < ApplicationController
   def index
 
     city = params[:city]
-    @spots = Spot.where(city: city)
+    @spots = Spot.where(city: city).includes(:privacy_level)
 
     render template: 'api/spots/minishow'
 
