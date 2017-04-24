@@ -172,8 +172,22 @@ river_home = Spot.create!(
             )
     end
 
-    
+    date_ranges = [
+      ['Mon, 01 May 2017', 'Wed, 10 May 2017'],
+      ['Fri, 05 May 2017', 'Mon, 15 May 2017'],
+      ['Wed, 10 May 2017', 'Sat, 20 May 2017']
+    ]
 
+    Spot.all.each do |spot|
+      date_range = date_ranges[spot.id % 3]
 
+      start_date = Date.parse(date_range.first)
+      end_date = Date.parse(date_range.last)
+
+      (start_date..end_date).each do |date|
+        Availability.create!(available_date: date, spot_id: spot.id)
+      end
+
+    end
 
 end
