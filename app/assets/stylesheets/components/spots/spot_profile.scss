@@ -34,6 +34,7 @@
 }
 
 .spot-profile-nav-tab {
+  cursor: pointer;
   height: 82px;
   width: 17%;
   text-align: center;
@@ -343,6 +344,7 @@ span.spot-profile-price {
   font-size: 16px;
   width: 98%;
   margin: 10px 0;
+  cursor: pointer;
 }
 
 .spot-profile-request-to-book-button-div span {
@@ -357,4 +359,5 @@ span.spot-profile-price {
   letter-spacing: 1.2px;
   color: #797979;
   height: 45px;
+  cursor: pointer;
 }
