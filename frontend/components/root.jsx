@@ -18,7 +18,7 @@ export default (props) => {
 
           <Route path='/become-a-host' component={BecomeAHostContainer}></Route>
 
-          <Route path='/spots/show/:spotId' component={SpotProfileContainer}></Route>
+          <Route path='/spots/profile/:spotId' component={SpotProfileContainer}></Route>
 
           <Route path='/spots/search' component={SpotSearchContainer}></Route>
 

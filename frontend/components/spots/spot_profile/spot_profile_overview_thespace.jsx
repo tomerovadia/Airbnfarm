@@ -20,7 +20,7 @@ export default (props) => {
 
       <div className='spot-profile-overview-thespace-row'>
         <div className='spot-profile-overview-thespace-item'>
-          <span>Beds:</span>
+          <span>Beds: </span>
           <span>2</span>
         </div>
 
