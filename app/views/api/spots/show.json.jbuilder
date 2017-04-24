@@ -4,3 +4,4 @@ json.extract! @spot, :id, :title, :base_price, :summary, :main_photo_url, :descr
 json.host @spot.host.email
 json.privacy_level @spot.privacy_level.privacy_level
 json.state @spot.state.state_name
+json.availabilities @spot.availabilities.map{|availability| availability.available_date}
