@@ -11,7 +11,6 @@ class Api::SpotsController < ApplicationController
       # @spots.select()
     end
 
-    debugger
 
 
     render template: 'api/spots/minishow'
