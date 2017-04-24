@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link, hashHistory} from 'react-router';
 import UserSettingsDropdown from './user_settings_dropdown';
+import NavSearchBar from '../search/spot_search_bar_nav';
 
 export default (props) => {
 
@@ -52,6 +53,11 @@ export default (props) => {
           </svg>
 
         </Link>
+      </div>
+
+
+      <div  className='main-nav-center'>
+        <NavSearchBar />
       </div>
 
 

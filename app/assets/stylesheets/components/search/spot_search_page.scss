@@ -1,0 +1,69 @@
+.spot-search-main-container {
+  display: flex;
+  border: 2px solid blue;
+}
+
+.spot-search-left {
+  width: 60%;
+  border: 1px solid orange;
+}
+
+.spot-search-right {
+  width: 40%;
+}
+
+// SPOT SEARCH FILTER
+
+.spot-search-filter {
+  border: 1px solid #740d0e;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.spot-search-filter-dropdown {
+  border: 1px solid #a69e75;
+  cursor: pointer;
+  margin: 0 15px;
+  padding: 15px 0;
+}
+
+
+// SEARCH RESULTS LIST
+
+.spot-search-results-list-container {
+  border: 1px solid gray;
+}
+
+
+
+// SPOT MINI
+
+.spot-mini-main-container {
+  border: 1px solid #61cd28;
+  width: 50%;
+  float: left;
+  padding: 10px;
+}
+
+.spot-mini-main-container img {
+  width: 100%;
+}
+
+.spot-mini-price-and-title {
+  border: 1px solid #1f2ccb;
+}
+
+.spot-mini-price-and-title span {
+
+  border: 1px solid #e777b5;
+}
+
+.spot-mini-privacylevel-and-numbeds {
+  border: 1px solid #1f2ccb;
+
+}
+
+.spot-mini-privacylevel-and-numbeds span {
+  border: 1px solid #e777b5;
+
+}

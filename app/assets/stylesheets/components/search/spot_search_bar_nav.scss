@@ -1,0 +1,30 @@
+// NAV SEARCH BAR
+
+.nav-search-bar-main-container {
+  border: 3px solid orange;
+  width: 80%;
+  margin: 0 auto;
+}
+
+#nav-search-bar-form {
+  display: flex;
+  border: 2px solid purple;
+}
+
+#nav-search-bar-form > div {
+  border: 1px solid blue;
+  width: 33.3333%;
+  padding: 3px 7px;
+}
+
+.nav-search-bar-main-container input {
+  height: 30px;
+  width: 100%;
+}
+
+.nav-search-bar-right {
+}
+
+.nav-search-bar-submit-button {
+  display: none;
+}
