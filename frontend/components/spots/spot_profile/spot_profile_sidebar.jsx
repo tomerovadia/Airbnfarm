@@ -19,6 +19,7 @@ class SpotProfileSidebar extends React.Component {
   }
 
   isDayBlocked(day){
+    debugger
     const startDate = moment('Sat, 02 May 2017');
     const endDate = moment('Sat, 10 May 2017');
 
@@ -83,9 +84,6 @@ class SpotProfileSidebar extends React.Component {
 
 
   }
-
-
-
 
 }
 
