@@ -28,8 +28,8 @@ class SpotProfileSidebar extends React.Component {
   isDayBlocked(day){
     // if(Object.keys(this.state.availabilities).length > 0 && day.month() === 4) debugger
 
-    return !this.state.availabilities.some((available_date) => {
-      return available_date.startOf('day').isSame(day.startOf('day'));
+    return !this.state.availabilities.some((availableDate) => {
+      return availableDate.startOf('day').isSame(day.startOf('day'));
     });
   }
 
