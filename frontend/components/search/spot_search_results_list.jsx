@@ -8,7 +8,15 @@ class SpotSearchResultsList extends React.Component {
   }
 
   render() {
-    const spotMinis = this.props.searchResults.map((spot) => <SpotMini key={spot.id} spot={spot} />)
+
+    let spotMinis;
+    if(Object.keys(this.props.searchResults).length > 0){
+      spotMinis = this.props.searchResults.map((spot) => {
+        return <SpotMini key={spot.id} spot={spot} />
+      });
+    } else {
+      spotMinis = null;
+    }
 
     return(
       <div className='spot-search-results-list-container clearfix'>

@@ -3,17 +3,38 @@ class Api::SpotsController < ApplicationController
   def index
 
     city = params[:city]
-    @spots = Spot.where(city: city).includes(:privacy_level, :availabilities)
+    if city == ""
+      @spots = Spot.all
+    else
+      @spots = Spot.where(city: city).includes(:privacy_level, :availabilities)
+    end
+
 
     if params[:startDate] && params[:endDate]
       startDate = Date.parse(params[:startDate])
       endDate = Date.parse(params[:endDate])
-      # @spots.select()
+
+      # select only those spots where...
+      new_spots = @spots.select do |spot|
+        availabilities = spot.availabilities.map do |availability|
+          availability.available_date
+        end
+
+        # ...each of the requested dates are in the spot's availabilities
+        response = (startDate..endDate).all? do |requested_date|
+          availabilities.include?(requested_date)
+        end
+        response
+      end
+      @spots = new_spots
     end
 
+    if @spots.empty?
+      render json: ['Nothing matches your search'], status: 404
+    else
+      render template: 'api/spots/minishow'
+    end
 
-
-    render template: 'api/spots/minishow'
 
     # receive params that include location, start date and end date
 
