@@ -10,25 +10,32 @@ class SpotProfileSidebar extends React.Component {
     super(props);
 
     this.state = {
+      availabilities: [],
       focusedInput: 'startDate',
       startDate: null,
       endDate: null,
     };
 
+
     this.isDayBlocked = this.isDayBlocked.bind(this);
   }
 
+  componentWillReceiveProps(newProps){
+    this.setState({availabilities: newProps.currentSpot.availabilities.map((date) => moment(date))})
+  }
+
+
   isDayBlocked(day){
-    debugger
-    const startDate = moment('Sat, 02 May 2017');
-    const endDate = moment('Sat, 10 May 2017');
+    // if(Object.keys(this.state.availabilities).length > 0 && day.month() === 4) debugger
 
-    const range = moment().range(startDate, endDate);
-
-    return !day.within(range);
+    return !this.state.availabilities.some((available_date) => {
+      return available_date.startOf('day').isSame(day.startOf('day'));
+    });
   }
 
   render(){
+
+    window.state = this.state;
 
     return(
 
