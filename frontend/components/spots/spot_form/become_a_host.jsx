@@ -38,6 +38,23 @@ class BecomeAHost extends React.Component {
       num_bathrooms: 8,
     };
 
+    this.tips = {
+      privacy_level: {
+        'Entire place': 'Guests will rent the entire place. Includes in-law units.',
+        'Private room': 'Guests share some spaces but they’ll have their own private room for sleeping.',
+        'Shared room': 'Guests don’t have a room to themselves.'
+      },
+      num_beds: {
+        'Beds': 'The number and type of beds you have determines how many guests can stay comfortably. Bed details help guests understand what the sleeping arrangements are like.'
+      },
+      num_bedrooms: {
+        'Bedrooms': 'Bedrooms are rooms guests will have as their own private space for sleeping.'
+      },
+      num_bathrooms: {
+        'Bathrooms': 'If you have a toilet separate from the shower, count it as 0.5 bathroom. Count only the bathrooms guests can use.'
+      }
+    }
+
     this.changeField = this.changeField.bind(this);
     this.addToValue = this.addToValue.bind(this);
     this.switchForm = this.switchForm.bind(this);
@@ -66,6 +83,9 @@ class BecomeAHost extends React.Component {
 
   addToValue(field, addend){
     return (e) => {
+      e.preventDefault();
+
+      this.setTips(field)();
       const result = this.state.spotProperties[field] + addend;
 
       if(result <= this.limits[field] && result >= 0){
@@ -87,8 +107,11 @@ class BecomeAHost extends React.Component {
     };
   }
 
-  setTips(tips){
-    this.setState({tips});
+  setTips(field){
+    return () => {
+      const tips = this.tips[field]
+      this.setState({tips});
+    }
   }
 
   createAvailabilities(startDate, endDate, spot_id){
@@ -170,10 +193,11 @@ class BecomeAHost extends React.Component {
             currentUser={this.props.currentUser}
             formValues={this.state.spotProperties}
             switchForm={this.switchForm}
+            setTips={this.setTips}
           />;
     }
 
-    let rightPanelContents = <img src={window.images.flowers} />;
+    let rightPanelContents = <div className='flowers-image-container'><img src={window.images.flowers} /></div>;
     if(Object.keys(this.state.tips).length > 0){
       let tipElements = [];
       for(let key in this.state.tips){
@@ -187,7 +211,7 @@ class BecomeAHost extends React.Component {
 
       rightPanelContents =
         <div className='spot-form-tip-box spot-form-tip-container'>
-          <i>LIGHTBULB</i>
+          <i className="fa fa-lightbulb-o" aria-hidden="true"></i>
           {tipElements}
         </div>
     }

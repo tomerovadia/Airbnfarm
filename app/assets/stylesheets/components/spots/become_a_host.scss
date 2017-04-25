@@ -14,12 +14,10 @@
   margin: 0 auto;
   max-width: 1310px;
   width: 100%;
-  border: 3px solid blue;
 }
 
 .become-a-host-left-panel {
   width: 50%;
-  border: 2px solid yellow;
   padding: 15px;
 }
 
@@ -29,16 +27,16 @@
 
 .become-a-host-right-panel {
   width: 50%;
-  border: 2px solid green;
-  padding: 15px;
-  margin-top: 150px;
+  margin-top: 50px;
+  background-color: #fafafa;
 }
 
 .become-a-host-right-panel img {
-  width: 90%;
-  margin: 0 auto;
+  width: 100%;
   display: block;
   max-width: 534px;
+  padding-right: auto;
+  background-color: white;
 }
 
 .spot-form-main-container {
@@ -179,4 +177,49 @@ button.spot-form-next-button:hover {
 
 .spot-form-availability-main-container .nav-buttons-div {
   margin-top: 350px;
+}
+
+.spot-form-tip-container {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 26px;
+  width: 80%;
+  position: absolute;
+  top: 15px;
+  left: 10px;
+  max-width: 554px;
+}
+
+.become-a-host-right-panel-contents {
+  position: relative;
+}
+
+.flowers-image-container {
+  background-color: white;
+  width: 100%;
+}
+
+.spot-form-tip {
+
+}
+
+.spot-form-tip h4 {
+  color: #2d2d2d;
+  font-size: 14px;
+  line-height: 150%;
+  padding: 10px 0px;
+  font-weight: 400;
+}
+
+.spot-form-tip p {
+  color: #767676;
+  font-size: 15px;
+  margin-bottom: 10px;
+  line-height: 150%;
+}
+
+i.fa-lightbulb-o {
+  color: #40bdb6;
+  font-size: 38px;
 }

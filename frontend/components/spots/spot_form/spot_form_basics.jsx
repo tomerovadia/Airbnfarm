@@ -57,6 +57,7 @@ export default (props) => {
             id='spot-privacy-level'
             className='half-width-field'
             onChange={props.changeField('privacy_level_id')}
+            onClick={props.setTips('privacy_level')}
             value={props.formValues.privacy_level_id}
           >
             {privacyLevelOptions}
