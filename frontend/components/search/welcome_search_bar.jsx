@@ -69,6 +69,10 @@ class WelcomeSearchBar extends React.Component {
     return(
       <div className='welcome-search-bar-main-container'>
         <form id='welcome-search-bar-form' onSubmit={this.handleSubmit}>
+
+
+
+
           <div className='welcome-search-bar-left'>
             <label>Where</label>
             <input
@@ -95,8 +99,6 @@ class WelcomeSearchBar extends React.Component {
 
             </div>
           </div>
-
-
 
 
 

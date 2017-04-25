@@ -6,8 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
-
 ActiveRecord::Base.transaction do
 
   Availability.destroy_all
@@ -115,20 +113,12 @@ ActiveRecord::Base.transaction do
       'Secluded mini-horse ranch island'
     ]
 
-
-    cities = [
-      'Agra',
-      'Oil Trough',
-      'Tripp'
+    locations = [
+      ['Agra', State.find_by(state_name: 'KS').id],
+      ['Oil Trough', State.find_by(state_name: 'AR').id],
+      ['Tripp', State.find_by(state_name: 'SD').id]
     ]
 
-
-
-    state_ids = [
-      State.find_by(state_name: 'KS').id,
-      State.find_by(state_name: 'AR').id,
-      State.find_by(state_name: 'SD').id
-    ]
 
     photo_urls = [
       'https://saveland.org/wp-content/uploads/2016/06/FinnriverFarmView_3.jpg',
@@ -166,8 +156,8 @@ ActiveRecord::Base.transaction do
               num_beds: rand(1..10),
               num_bathrooms: rand(1..10),
               street_address: '123 Main St.',
-              city: cities[idx % 3],
-              state_id: state_ids[idx % 3],
+              city: locations[idx % 3][0],
+              state_id: locations[idx % 3][1],
               zipcode: 12912
             )
     end

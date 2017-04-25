@@ -40,30 +40,32 @@ class Spot < ApplicationRecord
   has_many :availabilities
 
 
+  def self.filter_by_availability(spots, startRequestedDate, endRequestedDate)
+
+    # select only those spots where...
+    return spots.select do |spot|
+      # ...each of the requested dates are in the spot's availabilities
+      spot.send(:available_for?, startRequestedDate, endRequestedDate)
+    end
+
+  end
 
 
-  protected
+  def available_for?(startRequestedDate, endRequestedDate)
+    availabilities = self.availabilities.map do |availability|
+      availability.available_date
+    end
+
+    (startRequestedDate..endRequestedDate).all? do |requested_date|
+      availabilities.include?(requested_date)
+    end
+  end
+
 
   def self.all_spots_in(city)
     return Spot.all if city == ""
 
     Spot.where('lower(city) = ?', city.downcase).includes(:privacy_level, :availabilities)
-  end
-
-  def self.filter_by_availability(spots, startRequestedDate, endRequestedDate)
-
-    # select only those spots where...
-    return spots.select do |spot|
-      availabilities = spot.availabilities.map do |availability|
-        availability.available_date
-      end
-
-      # ...each of the requested dates are in the spot's availabilities
-      (startRequestedDate..endRequestedDate).all? do |requested_date|
-        availabilities.include?(requested_date)
-      end
-    end
-
   end
 
 end
