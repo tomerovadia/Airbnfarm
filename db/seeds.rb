@@ -83,10 +83,13 @@ ActiveRecord::Base.transaction do
             num_bedrooms: rand(1..10),
             num_beds: rand(1..10),
             num_bathrooms: rand(1..10),
-            street_address: '123 Main St.',
-            city: locations[idx % 3][0],
-            state_id: locations[idx % 3][1],
-            zipcode: 12912,
+            street_address: '665 Bush St.',
+            city: 'San Francisco',
+            state_id: State.find_by(state_name: 'CA').id,
+            zipcode: 94108,
+            # city: locations[idx % 3][0],
+            # state_id: locations[idx % 3][1],
+            # zipcode: 12912,
             main_photo_url: '',
           )
   end

@@ -6,15 +6,13 @@ export default class MarkerManager {
 
   updateMarkers(searchResults){
 
-    debugger;
-
     for(let i = 0; i < searchResults.length; i++){
       const spot = searchResults[i];
       if(!this.markers.hasOwnProperty(spot.id)){
-        return addSpot(spot);
+        this.addSpot(spot)
+          .then((marker) => this.markers[spot.id] = marker);
       }
     }
-
   }
 
   addSpot(spot){
@@ -26,7 +24,7 @@ export default class MarkerManager {
         address: `${spot.street_address} ${spot.city} ${spot.state} ${spot.zipcode}`,
       },
     }).then(
-      (resp) => addMarker(resp.results[0].geometry.location),
+      (resp) => this.addMarker(resp.results[0].geometry.location),
       (errors) => console.log('there were errors:', errors)
     )
   }
