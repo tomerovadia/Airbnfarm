@@ -20,7 +20,6 @@ class BecomeAHost extends React.Component {
         city: '',
         title: '',
         base_price: '',
-        // main_photo_url: '',
         num_bedrooms: 0,
         num_beds: 0,
         num_bathrooms: 0,
@@ -69,6 +68,7 @@ class BecomeAHost extends React.Component {
 
   changeField(field){
     return (e) => {
+
       const newSpotProperties = this.state.spotProperties;
 
       let newValue = e.target.value;
@@ -97,9 +97,6 @@ class BecomeAHost extends React.Component {
     if (file) {
       fileReader.readAsDataURL(file);
     }
-
-    debugger
-
   }
 
   addToValue(field, addend){

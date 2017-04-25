@@ -23,8 +23,6 @@ class Api::SpotsController < ApplicationController
   def show
     @spot = Spot.find_by(id: params[:id])
 
-    debugger
-
     if @spot
       render :show
     else
