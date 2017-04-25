@@ -28,59 +28,59 @@ ActiveRecord::Base.transaction do
     State.create!(state_name: state_abbreviation)
   end
 
-  beach_place = Spot.create!(
-    host_id: bob.id,
-    title: "My awesome beach place",
-    base_price: 1500,
-    summary: "right along the beach",
-    main_photo_url: 'example.com',
-    description: "wonderful beaches",
-    privacy_level_id: entire_place.id,
-    num_guests: 7,
-    num_bedrooms: 18,
-    num_beds: 101,
-    num_bathrooms: 0,
-    street_address: '123 Ocean Ave',
-    city: 'Laguna Beach',
-    state_id: State.all.sample.id,
-    zipcode: 91335
-  )
-
-  mountain_cabin = Spot.create!(
-    host_id: tomer.id,
-    title: "Homey cabin in the mountains",
-    base_price: 500,
-    summary: "great views!",
-    main_photo_url: 'example.com',
-    description: "this place has great views!",
-    privacy_level_id: private_room.id,
-    num_guests: 2,
-    num_bedrooms: 2,
-    num_beds: 1,
-    num_bathrooms: 1,
-    street_address: '123 Middle Of Nowhere Lane',
-    city: 'Americatown',
-    state_id: State.all.sample.id,
-    zipcode: 11553
-  )
-
-river_home = Spot.create!(
-        host_id: tomer.id,
-        title: "River boat!",
-        base_price: 10000,
-        summary: "Never docks!",
-        main_photo_url: 'example.com',
-        description: "Always on the water!",
-        privacy_level_id: shared_room.id,
-        num_guests: 50,
-        num_bedrooms: 25,
-        num_beds: 30,
-        num_bathrooms: 1,
-        street_address: 'The water!',
-        city: 'River',
-        state_id: State.all.sample.id,
-        zipcode: 20037
-      )
+#   beach_place = Spot.create!(
+#     host_id: bob.id,
+#     title: "My awesome beach place",
+#     base_price: 1500,
+#     summary: "right along the beach",
+#     main_photo_url: 'example.com',
+#     description: "wonderful beaches",
+#     privacy_level_id: entire_place.id,
+#     num_guests: 7,
+#     num_bedrooms: 18,
+#     num_beds: 101,
+#     num_bathrooms: 0,
+#     street_address: '123 Ocean Ave',
+#     city: 'Laguna Beach',
+#     state_id: State.all.sample.id,
+#     zipcode: 91335
+#   )
+#
+#   mountain_cabin = Spot.create!(
+#     host_id: tomer.id,
+#     title: "Homey cabin in the mountains",
+#     base_price: 500,
+#     summary: "great views!",
+#     main_photo_url: 'example.com',
+#     description: "this place has great views!",
+#     privacy_level_id: private_room.id,
+#     num_guests: 2,
+#     num_bedrooms: 2,
+#     num_beds: 1,
+#     num_bathrooms: 1,
+#     street_address: '123 Middle Of Nowhere Lane',
+#     city: 'Americatown',
+#     state_id: State.all.sample.id,
+#     zipcode: 11553
+#   )
+#
+# river_home = Spot.create!(
+#         host_id: tomer.id,
+#         title: "River boat!",
+#         base_price: 10000,
+#         summary: "Never docks!",
+#         main_photo_url: 'example.com',
+#         description: "Always on the water!",
+#         privacy_level_id: shared_room.id,
+#         num_guests: 50,
+#         num_bedrooms: 25,
+#         num_beds: 30,
+#         num_bathrooms: 1,
+#         street_address: 'The water!',
+#         city: 'River',
+#         state_id: State.all.sample.id,
+#         zipcode: 20037
+#       )
 
 
     50.times do |idx|

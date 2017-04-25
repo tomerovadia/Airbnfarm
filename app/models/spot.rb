@@ -40,4 +40,15 @@ class Spot < ApplicationRecord
   has_many :availabilities
 
 
+
+
+  protected
+
+  def self.all_spots_in(city)
+    return Spot.all if city == ""
+
+    Spot.where('lower(city) = ?', city.downcase).includes(:privacy_level, :availabilities)
+  end
+
+
 end
