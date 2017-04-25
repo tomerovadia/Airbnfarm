@@ -29,7 +29,10 @@ class SpotSearch extends React.Component {
 
         <div className='spot-search-right'>
 
-          <div className='spot-search-map-div'></div>
+          <div className='spot-search-map-container'>
+            
+
+          </div>
 
         </div>
 

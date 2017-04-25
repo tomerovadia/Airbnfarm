@@ -46,7 +46,7 @@ class Api::SpotsController < ApplicationController
     if @spot
       render :show
     else
-      render json: ['Spot not found'], status: 404
+      render json: {}
     end
 
   end
