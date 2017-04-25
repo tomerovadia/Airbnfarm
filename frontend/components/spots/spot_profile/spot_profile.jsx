@@ -13,9 +13,7 @@ class SpotProfile extends React.Component {
 
   render() {
 
-    debugger
     const mainPhotoUrl = this.props.currentSpot.main_photo_url;
-    debugger
 
     return(
 
