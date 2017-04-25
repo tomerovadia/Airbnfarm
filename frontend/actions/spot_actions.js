@@ -7,6 +7,7 @@ export const RECEIVE_SEARCH_RESULTS = 'RECEIVE_SEARCH_RESULTS';
 
 
 export const receiveCurrentSpot = (spot) => {
+
   return {
     type: RECEIVE_CURRENT_SPOT,
     spot,
