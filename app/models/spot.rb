@@ -53,19 +53,16 @@ class Spot < ApplicationRecord
   def self.filter_by_availability(spots, startRequestedDate, endRequestedDate)
 
     # select only those spots where...
-    new_spots = spots.select do |spot|
+    return spots.select do |spot|
       availabilities = spot.availabilities.map do |availability|
         availability.available_date
       end
 
       # ...each of the requested dates are in the spot's availabilities
-      response = (startRequestedDate..endRequestedDate).all? do |requested_date|
+      (startRequestedDate..endRequestedDate).all? do |requested_date|
         availabilities.include?(requested_date)
       end
-      response
     end
-
-    return new_spots
 
   end
 
