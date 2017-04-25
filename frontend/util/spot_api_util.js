@@ -1,9 +1,11 @@
-export const createSpot = (spot) => {
+export const createSpot = (formData) => {
 
   return $.ajax({
     method: 'post',
     url: 'api/spots',
-    data: {spot},
+    contentType: false,
+    processData: false,
+    data: formData,
   });
 
 };

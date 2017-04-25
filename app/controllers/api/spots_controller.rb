@@ -4,26 +4,6 @@ class Api::SpotsController < ApplicationController
 
     @spots = Spot.all_spots_in(params[:city])
 
-    # if params[:startDate] && params[:endDate]
-    #   startDate = Date.parse(params[:startDate])
-    #   endDate = Date.parse(params[:endDate])
-    #
-    #   # select only those spots where...
-    #   new_spots = @spots.select do |spot|
-    #     availabilities = spot.availabilities.map do |availability|
-    #       availability.available_date
-    #     end
-    #
-    #     # ...each of the requested dates are in the spot's availabilities
-    #     response = (startDate..endDate).all? do |requested_date|
-    #       availabilities.include?(requested_date)
-    #     end
-    #     response
-    #   end
-    #   @spots = new_spots
-    # end
-
-
     if params[:startDate] && params[:endDate]
       startRequestedDate = Date.parse(params[:startDate])
       endRequestedDate = Date.parse(params[:endDate])
@@ -42,6 +22,8 @@ class Api::SpotsController < ApplicationController
 
   def show
     @spot = Spot.find_by(id: params[:id])
+
+    debugger
 
     if @spot
       render :show
@@ -71,7 +53,7 @@ class Api::SpotsController < ApplicationController
   def spot_params
     params.require(:spot).permit(:title, :base_price, :summary, :main_photo_url, :privacy_level_id,
       :num_guests, :num_bedrooms, :num_beds, :num_bathrooms, :street_address, :city,
-      :state_id, :zipcode, :description)
+      :state_id, :zipcode, :description, :main_photo)
   end
 
 

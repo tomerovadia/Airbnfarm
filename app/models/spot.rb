@@ -23,12 +23,16 @@
 #
 
 class Spot < ApplicationRecord
+  has_attached_file :main_photo, default_url: "missing.png"
+  validates_attachment_content_type :main_photo, content_type: /\Aimage\/.*\Z/
+
   validates_presence_of :host, :title, :base_price, :summary, :main_photo_url, :privacy_level,
     :num_guests, :num_bedrooms, :num_beds, :num_bathrooms, :street_address, :city,
     :state, :zipcode
   validates_format_of :zipcode, with: /\A[0-9]{5}\Z/
   validates :num_bedrooms, :num_bathrooms, numericality: { greater_than_or_equal_to: 0 }
   validates :num_guests, :num_beds, :base_price, numericality: { greater_than: 0 }
+
 
   belongs_to :host,
     class_name: User,

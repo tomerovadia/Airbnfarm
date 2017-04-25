@@ -12,10 +12,10 @@ class SpotProfile extends React.Component {
   }
 
   render() {
-    let mainPhotoUrl = '';
-    if(this.props.currentSpot){
-      mainPhotoUrl = this.props.currentSpot.main_photo_url;
-    }
+
+    debugger
+    const mainPhotoUrl = this.props.currentSpot.main_photo_url;
+    debugger
 
     return(
 
