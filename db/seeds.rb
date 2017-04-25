@@ -91,8 +91,6 @@ ActiveRecord::Base.transaction do
           )
   end
 
-  # File.open('app/assets/images/sennacy.jpg')
-
   date_ranges = [
     ['Mon, 01 May 2017', 'Wed, 10 May 2017'],
     ['Fri, 05 May 2017', 'Mon, 15 May 2017'],

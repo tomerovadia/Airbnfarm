@@ -2,7 +2,7 @@ class Api::SpotsController < ApplicationController
 
   def index
 
-    @spots = Spot.all_spots_in(params[:city])
+    @spots = Spot.all_spots_in(params[:city]).includes(:state)
 
     if params[:startDate] && params[:endDate]
       startRequestedDate = Date.parse(params[:startDate])
@@ -14,7 +14,7 @@ class Api::SpotsController < ApplicationController
     if @spots.empty?
       render json: ['Nothing matches your search'], status: 404
     else
-      render template: 'api/spots/minishow'
+      render template: 'api/spots/spots'
     end
 
   end

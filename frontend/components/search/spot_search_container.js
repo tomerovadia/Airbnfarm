@@ -2,6 +2,8 @@ import { connect } from 'react-redux';
 import SpotSearch from './spot_search';
 import { getSearchResults } from '../../reducers/selectors';
 import { withRouter } from 'react-router';
+import { fetchSearchResults } from '../../actions/spot_actions';
+
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -12,6 +14,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
 
   return {
+    fetchSearchResults: (criteria) => dispatch(fetchSearchResults(criteria)),
   };
 };
 
