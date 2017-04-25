@@ -50,7 +50,10 @@ export const createSpot = (spot) => dispatch => {
 export const fetchSpot = (id) => dispatch => {
   return SessionAPIUtil.fetchSpot(id)
     .then(
-      (resp) => dispatch(receiveCurrentSpot(resp)),
+      (resp) => {
+        debugger
+        dispatch(receiveCurrentSpot(resp))
+      },
       (errors) => dispatch(receiveErrors(errors))
     );
 };

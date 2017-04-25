@@ -20,7 +20,7 @@ class BecomeAHost extends React.Component {
         city: '',
         title: '',
         base_price: '',
-        main_photo_url: '',
+        // main_photo_url: '',
         num_bedrooms: 0,
         num_beds: 0,
         num_bathrooms: 0,
@@ -29,6 +29,8 @@ class BecomeAHost extends React.Component {
         street_address: '',
         state_id: Object.keys(window.spotConstants.states)[0],
         zipcode: '',
+        main_photo_file: null,
+        main_photo_url: '',
       },
     };
 
@@ -56,6 +58,7 @@ class BecomeAHost extends React.Component {
     }
 
     this.changeField = this.changeField.bind(this);
+    this.updateFile = this.updateFile.bind(this);
     this.addToValue = this.addToValue.bind(this);
     this.switchForm = this.switchForm.bind(this);
     this.setTips = this.setTips.bind(this);
@@ -79,6 +82,24 @@ class BecomeAHost extends React.Component {
         this.setState({spotProperties: newSpotProperties});
       }
     };
+  }
+
+  updateFile(e){
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      const newSpotProperties = this.state.spotProperties;
+      newSpotProperties.main_photo_file = file;
+      newSpotProperties.main_photo_url = fileReader.result;
+      this.setState({spotProperties: newSpotProperties});
+    };
+
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
+
+    debugger
+
   }
 
   addToValue(field, addend){
@@ -130,7 +151,30 @@ class BecomeAHost extends React.Component {
     const createAvailabilities = this.createAvailabilities;
 
     if(startAvailabilityDate && endAvailabilityDate){
-      this.props.createSpot(this.state.spotProperties)
+
+      const spotProperties = this.state.spotProperties;
+
+      const formData = new FormData();
+      formData.append('spot[title]', spotProperties.title);
+      formData.append('spot[base_price]', spotProperties.base_price);
+      formData.append('spot[summary]', spotProperties.summary);
+      formData.append('spot[main_photo_url]', spotProperties.main_photo_url);
+      formData.append('spot[main_photo]', spotProperties.main_photo_file);
+      formData.append('spot[privacy_level_id]', spotProperties.privacy_level_id);
+      formData.append('spot[num_guests]', spotProperties.num_guests);
+      formData.append('spot[num_bedrooms]', spotProperties.num_bedrooms);
+      formData.append('spot[num_beds]', spotProperties.num_beds);
+      formData.append('spot[num_bathrooms]', spotProperties.num_bathrooms);
+      formData.append('spot[street_address]', spotProperties.street_address);
+      formData.append('spot[city]', spotProperties.city);
+      formData.append('spot[state_id]', spotProperties.state_id);
+      formData.append('spot[zipcode]', spotProperties.zipcode);
+      formData.append('spot[description]', spotProperties.description);
+
+      this.props.createSpot(formData)
+
+
+
         .then( (action) => {
           createAvailabilities(startAvailabilityDate, endAvailabilityDate, action.spot.id);
           return action.spot.id;
@@ -171,6 +215,7 @@ class BecomeAHost extends React.Component {
             formValues={this.state.spotProperties}
             switchForm={this.switchForm}
             handleSubmit={this.handleSubmit}
+            updateFile={this.updateFile}
           />;
         break;
       case 'availability':

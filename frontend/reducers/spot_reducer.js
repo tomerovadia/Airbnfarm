@@ -17,6 +17,7 @@ const _initialState = {
     zipcode: 0,
     city: '',
     availabilities: [],
+    main_photo: {url: ''},
   },
   searchResults: {},
   errors: {},

@@ -30,12 +30,14 @@ export default (props) => {
           placeholder='Price ($)'
         />
 
+
         <input
+          type='file'
           className='full-width-field'
-          onChange={props.changeField('main_photo_url')}
-          value={props.formValues.main_photo_url}
-          placeholder='Photo URL'
+          onChange={props.updateFile}
         />
+
+        <img className='photo-upload-preview' src={props.formValues.main_photo_url} />
 
         <div className='number-toggle-div'>
           <div className='num-display'>{`${props.formValues.num_bedrooms} bedrooms`}</div>
@@ -105,3 +107,16 @@ export default (props) => {
     </div>
   );
 };
+
+
+
+
+
+
+
+// <input
+//   className='full-width-field'
+//   onChange={props.changeField('main_photo_url')}
+//   value={props.formValues.main_photo_url}
+//   placeholder='Photo URL'
+// />

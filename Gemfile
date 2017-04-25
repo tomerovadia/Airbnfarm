@@ -38,6 +38,8 @@ gem 'email_validator'
 gem "font-awesome-rails"
 gem "figaro"
 gem 'faker'
+gem "paperclip", '~> 5.0.0'
+gem 'aws-sdk', '>= 2.0'
 
 group :production do
   gem 'rails_12factor'
