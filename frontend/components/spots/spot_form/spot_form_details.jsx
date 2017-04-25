@@ -35,6 +35,7 @@ export default (props) => {
           type='file'
           className='full-width-field'
           onChange={props.updateFile}
+          placeholder='Main Photo'
         />
 
         <img className='photo-upload-preview' src={props.formValues.main_photo_url} />
@@ -107,16 +108,3 @@ export default (props) => {
     </div>
   );
 };
-
-
-
-
-
-
-
-// <input
-//   className='full-width-field'
-//   onChange={props.changeField('main_photo_url')}
-//   value={props.formValues.main_photo_url}
-//   placeholder='Photo URL'
-// />
