@@ -8,8 +8,10 @@ class SpotSearch extends React.Component {
   constructor(props){
     super(props);
 
+    const city = props.location.query.city || '';
+
     const criteria = {
-      city: props.location.query.city,
+      city,
       startDate: props.location.query.startDate,
       endDate: props.location.query.endDate,
     }
@@ -38,9 +40,7 @@ class SpotSearch extends React.Component {
 
         <div className='spot-search-right'>
 
-          <div className='spot-search-map-container'>
-            <SpotSearchMap searchResults={this.props.searchResults}/>
-          </div>
+          <SpotSearchMap searchResults={this.props.searchResults}/>
 
         </div>
 

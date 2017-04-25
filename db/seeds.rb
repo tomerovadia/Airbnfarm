@@ -59,10 +59,17 @@ ActiveRecord::Base.transaction do
     'Secluded mini-horse ranch island'
   ]
 
+
+  addresses = [
+    ['121 Main St.', '745 Railroad Avenue', '450 Southern Avenue', '120 Kansas Avenue', '1152 E Quail Rd.'],
+    ['19 Rose Ln', '95 Shelly Street', '552 4th St', '450 Moore St', '59 W Main St'],
+    ['200 S Hassett St.', '150 E Dakota St.', '114 N Wilder St.', '245 N Carpenter St.', '475 Main St.'],
+  ]
+
   locations = [
-    ['Agra', State.find_by(state_name: 'KS').id],
-    ['Oil Trough', State.find_by(state_name: 'AR').id],
-    ['Tripp', State.find_by(state_name: 'SD').id]
+    ['Agra', 67621, State.find_by(state_name: 'KS').id],
+    ['Oil Trough', 72564, State.find_by(state_name: 'AR').id],
+    ['Tripp', 57376, State.find_by(state_name: 'SD').id]
   ]
 
   summary = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
@@ -83,13 +90,13 @@ ActiveRecord::Base.transaction do
             num_bedrooms: rand(1..10),
             num_beds: rand(1..10),
             num_bathrooms: rand(1..10),
-            street_address: '665 Bush St.',
-            city: 'San Francisco',
-            state_id: State.find_by(state_name: 'CA').id,
-            zipcode: 94108,
-            # city: locations[idx % 3][0],
-            # state_id: locations[idx % 3][1],
-            # zipcode: 12912,
+            # city: 'San Francisco',
+            # zipcode: 94108,
+            # state_id: State.find_by(state_name: 'CA').id,
+            street_address: addresses[idx % 3].pop,
+            city: locations[idx % 3][0],
+            state_id: locations[idx % 3][2],
+            zipcode: locations[idx % 3][1],
             main_photo_url: '',
           )
   end
