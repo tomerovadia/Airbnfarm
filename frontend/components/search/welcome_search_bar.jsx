@@ -4,7 +4,7 @@ import Moment from 'react-moment';
 import moment from 'moment';
 import {connect} from 'react-redux';
 import { fetchSearchResults } from '../../actions/spot_actions';
-import {hashHistory} from 'react-router';
+import {hashHistory, router} from 'react-router';
 
 class WelcomeSearchBar extends React.Component {
 
@@ -34,21 +34,35 @@ class WelcomeSearchBar extends React.Component {
     this.setState({searchCriteria: newSearchCriteria});
   }
 
+  deMomentDates(){
+    const newSearchCriteria = this.state.searchCriteria;
+
+    newSearchCriteria.startDate = this.state.searchCriteria.startDate._d;
+    newSearchCriteria.endDate = this.state.searchCriteria.endDate._d;
+
+    this.setState({searchCriteria: newSearchCriteria});
+  }
+
+  removeNullCriteria(){
+  }
+
   handleSubmit(e){
     e.preventDefault();
 
-    const criteria = this.state.searchCriteria;
-
     if(this.state.searchCriteria.startDate && this.state.searchCriteria.endDate){
-      criteria.startDate = this.state.searchCriteria.startDate._d;
-      criteria.endDate = this.state.searchCriteria.endDate._d;
+      this.deMomentDates();
     } else {
-      delete criteria.startDate
-      delete criteria.endDate
+      const newSearchCriteria = this.state.searchCriteria;
+      delete newSearchCriteria.startDate
+      delete newSearchCriteria.endDate
+      this.setState({searchCriteria: newSearchCriteria});
     }
 
-    this.props.fetchSearchResults(criteria)
-      .then(() => hashHistory.push(`/spots/search`));
+    this.props.router.push({pathname: `/spots/search`, query: this.state.searchCriteria});
+
+    // this.props.fetchSearchResults(criteria)
+    //   .then(function() {this.props.router.push({pathname: `/spots/search`, query: this.state.searchCriteria})}.bind(this));
+      // .then(() => hashHistory.push(`/spots/search`));
   }
 
   handleNewDates({ startDate, endDate }){

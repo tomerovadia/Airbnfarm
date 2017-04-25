@@ -2,7 +2,7 @@ class Api::SpotsController < ApplicationController
 
   def index
 
-    @spots = Spot.all_spots_in(params[:city]).includes(:state)
+    @spots = Spot.all_spots_in(params[:city]).includes(:state, :privacy_level)
 
     if params[:startDate] && params[:endDate]
       startRequestedDate = Date.parse(params[:startDate])

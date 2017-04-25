@@ -18,8 +18,8 @@ class SpotSearchMap extends React.Component {
     this.MarkerManager.updateMarkers(this.props.searchResults);
   }
 
-  componentDidUpdate(){
-    this.MarkerManager.updateMarkers(this.props.searchResults);
+  componentWillReceiveProps(newProps){
+    this.MarkerManager.updateMarkers(newProps.searchResults);
   }
 
 
