@@ -72,4 +72,10 @@ class Spot < ApplicationRecord
     Spot.where('lower(city) = ?', city.downcase).includes(:privacy_level, :availabilities)
   end
 
+
+
+  def self.in_bounds(bounds)
+
+  end
+
 end

@@ -11,6 +11,7 @@ class SpotSearchMap extends React.Component {
     const mapOptions = {
       center: {lat: 37.7758, lng: -122.435},
       zoom: 13,
+      zoomControl: true,
     };
 
     this.map = new google.maps.Map(this.mapNode, mapOptions);
