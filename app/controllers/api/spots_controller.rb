@@ -4,23 +4,31 @@ class Api::SpotsController < ApplicationController
 
     @spots = Spot.all_spots_in(params[:city])
 
+    # if params[:startDate] && params[:endDate]
+    #   startDate = Date.parse(params[:startDate])
+    #   endDate = Date.parse(params[:endDate])
+    #
+    #   # select only those spots where...
+    #   new_spots = @spots.select do |spot|
+    #     availabilities = spot.availabilities.map do |availability|
+    #       availability.available_date
+    #     end
+    #
+    #     # ...each of the requested dates are in the spot's availabilities
+    #     response = (startDate..endDate).all? do |requested_date|
+    #       availabilities.include?(requested_date)
+    #     end
+    #     response
+    #   end
+    #   @spots = new_spots
+    # end
+
+
     if params[:startDate] && params[:endDate]
-      startDate = Date.parse(params[:startDate])
-      endDate = Date.parse(params[:endDate])
+      startRequestedDate = Date.parse(params[:startDate])
+      endRequestedDate = Date.parse(params[:endDate])
 
-      # select only those spots where...
-      new_spots = @spots.select do |spot|
-        availabilities = spot.availabilities.map do |availability|
-          availability.available_date
-        end
-
-        # ...each of the requested dates are in the spot's availabilities
-        response = (startDate..endDate).all? do |requested_date|
-          availabilities.include?(requested_date)
-        end
-        response
-      end
-      @spots = new_spots
+      @spots = Spot.filter_by_availability(@spots, startRequestedDate, endRequestedDate)
     end
 
     if @spots.empty?
