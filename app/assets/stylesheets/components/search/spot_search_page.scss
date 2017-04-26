@@ -52,10 +52,14 @@
 
 .spot-mini-price-and-title {
   border: 1px solid #1f2ccb;
+  overflow: hidden;
 }
 
 .spot-mini-price-and-title span {
   border: 1px solid #e777b5;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .spot-mini-privacylevel-and-numbeds {

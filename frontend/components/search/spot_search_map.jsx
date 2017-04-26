@@ -9,7 +9,7 @@ class SpotSearchMap extends React.Component {
 
   componentDidMount() {
     const mapOptions = {
-      center: {lat: 37.7758, lng: -122.435},
+      center: {lat: 43.226451, lng: -97.965929},
       zoom: 13,
       zoomControl: true,
     };
