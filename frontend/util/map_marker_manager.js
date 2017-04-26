@@ -6,13 +6,22 @@ export default class MarkerManager {
 
   updateMarkers(searchResults){
 
+    let bounds = new google.maps.LatLngBounds();
     for(let i = 0; i < searchResults.length; i++){
       const spot = searchResults[i];
       if(!this.markers.hasOwnProperty(spot.id)){
         this.addSpot(spot)
-          .then((marker) => this.markers[spot.id] = marker);
+          .then(function(marker){
+            this.markers[spot.id] = marker;
+            bounds.extend(marker.getPosition());
+          }.bind(this))
+          .then(() => this.map.fitBounds(bounds));
       }
     }
+
+    debugger
+
+
   }
 
   addSpot(spot){
