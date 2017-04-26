@@ -73,8 +73,6 @@ class SpotSearchBar extends React.Component {
 
   render() {
 
-    console.log(this.state);
-
     return(
       <div className='spot-search-bar-main-container'>
         <form onSubmit={this.handleSubmit} className='spot-search-bar-form'>
