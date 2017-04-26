@@ -14,8 +14,10 @@ export default class MarkerManager {
   }
 
   updateMarkers(searchResults){
+    this.markers = {};
     this.map.setZoom(15);
     let bounds = new google.maps.LatLngBounds();
+
     for(let i = 0; i < searchResults.length; i++){
       const spot = searchResults[i];
       if(!this.markers.hasOwnProperty(spot.id)){
