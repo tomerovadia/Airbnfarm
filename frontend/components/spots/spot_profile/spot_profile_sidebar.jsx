@@ -18,6 +18,7 @@ class SpotProfileSidebar extends React.Component {
 
 
     this.isDayBlocked = this.isDayBlocked.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentWillReceiveProps(newProps){
@@ -27,11 +28,15 @@ class SpotProfileSidebar extends React.Component {
   }
 
   isDayBlocked(day){
-    // if(Object.keys(this.state.availabilities).length > 0 && day.month() === 4) debugger
 
     return !this.state.availabilities.some((availableDate) => {
       return availableDate.startOf('day').isSame(day.startOf('day'));
     });
+  }
+
+  handleSubmit(e){
+    e.preventDefault();
+    
   }
 
   render(){
@@ -46,7 +51,7 @@ class SpotProfileSidebar extends React.Component {
           </div>
         </div>
 
-        <div className='spot-profile-sidebar-contents'>
+        <form className='spot-profile-sidebar-form' onClick={this.handleSubmit}>
 
           <div className='spot-profile-calendar-labels'>
             <label>Check In</label>
@@ -83,7 +88,7 @@ class SpotProfileSidebar extends React.Component {
             <span>You won't be charged yet</span>
           </div>
 
-        </div>
+        </form>
 
       </div>
     );
