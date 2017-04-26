@@ -6,17 +6,17 @@
   box-shadow: 1px 1px #ccc;
 }
 
-#spot-search-bar-form {
+.spot-search-bar-form {
   display: flex;
   width: 100%;
 }
 
-#spot-search-bar-form > div {
+.spot-search-bar-form > div {
   border-right: 1px solid #ccc;
   padding: 8px 20px;
 }
 
-#spot-search-bar-form > div:last-child {
+.spot-search-bar-form > div:last-child {
   border-right: none;
 }
 
