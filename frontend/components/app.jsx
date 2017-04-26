@@ -37,7 +37,7 @@ class App extends React.Component {
     }
 
     return (
-      <div onClick={this.hideUserSettings}>
+      <div onClick={this.hideUserSettings} id='app'>
 
         {sessionForm}
 

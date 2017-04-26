@@ -1,7 +1,7 @@
 import React from 'react';
-import NavSearchBar from '../search/nav_search_bar';
 import NavLinks from './nav_links';
 import {Link, hashHistory} from 'react-router';
+import WelcomeSearchBar from '../search/welcome_search_bar';
 
 export default (props) => {
 
@@ -31,7 +31,7 @@ export default (props) => {
 
 
       <div  className='main-nav-center'>
-        <NavSearchBar />
+        <WelcomeSearchBar />
       </div>
 
 
