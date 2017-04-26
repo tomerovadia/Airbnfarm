@@ -1,91 +1,146 @@
 // WELCOME SEARCH BAR
 
 .welcome-search-bar-main-container {
-  border: 3px solid yellow;
-  width: 80%;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 90%;
   margin: 70px auto;
+  box-shadow: 1px 1px #ccc;
 }
 
 #welcome-search-bar-form {
   display: flex;
-  border: 2px solid gray;
   width: 100%;
 }
 
 #welcome-search-bar-form > div {
-  border: 1px solid red;
-  flex-grow: 1;
-  padding: 3px 7px;;
+  border-right: 1px solid #ccc;
+  padding: 8px 20px;
+}
+
+#welcome-search-bar-form > div:last-child {
+  border-right: none;
 }
 
 .welcome-search-bar-main-container input {
   height: 30px;
   width: 100%;
+  font-size: 19px;
+  flex-grow: 1;
+  padding-top: 14px;
 }
 
 .welcome-search-bar-main-container label {
-  border: 1px solid green;
   width: 100%;
+  flex-grow: 1;
+  font-size: 15px;
 }
 
 .welcome-search-bar-calendar {
   margin: 0 auto;
   width: 83%;
+  padding-left: 9%;
+}
+
+.welcome-search-bar-left {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 30%;
+}
+
+.welcome-search-bar-middle {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 40%;
 }
 
 .welcome-search-bar-right {
   display: flex;
+  width: 30%;
+  justify-content: space-between;
+  align-items: center;
 }
 
+.DateInput {
+  width: 44%;
+  line-height: 11px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.welcome-search-bar-search-button {
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 1.2px;
+  font-size: 15px;
+  background-color: #ff5a5f;
+  color: white;
+  padding: 15px 27px;
+}
 
 
 // NAV SEARCH BAR
 
-.nav-search-bar-main-container {
-  border: 3px solid orange;
-  width: 80%;
-  margin: 0 auto;
-}
-
-#nav-search-bar-form {
-  display: flex;
-  border: 2px solid purple;
-}
-
-#nav-search-bar-form > div {
-  border: 1px solid blue;
-  width: 33.3333%;
-  padding: 3px 7px;
-}
-
-.nav-search-bar-main-container input {
-  height: 30px;
+.main-nav-center .welcome-search-bar-main-container {
+  margin: 3px auto;
   width: 100%;
 }
 
-.nav-search-bar-right {
+.main-nav-center .DateInput {
+  width: 33%;
 }
 
-.nav-search-bar-submit-button {
+.main-nav-center label {
   display: none;
 }
+
+.main-nav-center .welcome-search-bar-search-button {
+  display: none;
+}
+
+// Don't display the nav search bar when on the welcome page
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // NAV SEARCH BAR
+//
+// .nav-search-bar-main-container {
+//   border: 3px solid orange;
+//   width: 80%;
+//   margin: 0 auto;
+// }
+//
+// #nav-search-bar-form {
+//   display: flex;
+//   border: 2px solid purple;
+// }
+//
+// #nav-search-bar-form > div {
+//   border: 1px solid blue;
+//   width: 33.3333%;
+//   padding: 3px 7px;
+// }
+//
+// .nav-search-bar-main-container input {
+//   height: 30px;
+//   width: 100%;
+// }
+//
+// .nav-search-bar-right {
+// }
+//
+// .nav-search-bar-submit-button {
+//   display: none;
+// }
