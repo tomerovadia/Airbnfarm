@@ -34,13 +34,8 @@ class SpotSearchBar extends React.Component {
     this.setState({searchCriteria: newSearchCriteria});
   }
 
-  deMomentDates(){
-    const newSearchCriteria = this.state.searchCriteria;
-
-    newSearchCriteria.startDate = this.state.searchCriteria.startDate._d;
-    newSearchCriteria.endDate = this.state.searchCriteria.endDate._d;
-
-    this.setState({searchCriteria: newSearchCriteria});
+  deMomentDate(moment){
+    return moment._d.toString();
   }
 
   removeNullCriteria(){
@@ -49,18 +44,17 @@ class SpotSearchBar extends React.Component {
   handleSubmit(e){
     e.preventDefault();
 
-    if(this.state.searchCriteria.startDate && this.state.searchCriteria.endDate){
-      this.deMomentDates();
+    const criteria = Object.assign({}, this.state.searchCriteria);
+
+    if(criteria.startDate && criteria.endDate){
+      criteria.startDate = this.deMomentDate(criteria.startDate);
+      criteria.endDate = this.deMomentDate(criteria.endDate);
     } else {
-      const newSearchCriteria = this.state.searchCriteria;
-      delete newSearchCriteria.startDate
-      delete newSearchCriteria.endDate
-      this.setState({searchCriteria: newSearchCriteria});
+      criteria.startDate = null;
+      criteria.endDate = null;
     }
 
-    debugger
-
-    this.props.router.push({pathname: `/spots/search`, query: this.state.searchCriteria});
+    this.props.router.push({pathname: `/spots/search`, query: criteria});
   }
 
   handleNewDates({ startDate, endDate }){
@@ -77,6 +71,8 @@ class SpotSearchBar extends React.Component {
   }
 
   render() {
+
+    window.state = this.state;
 
     return(
       <div className='spot-search-bar-main-container'>
