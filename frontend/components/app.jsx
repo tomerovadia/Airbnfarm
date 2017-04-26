@@ -13,12 +13,6 @@ class App extends React.Component {
     this.handleAppClick = this.handleAppClick.bind(this);
   }
 
-  handleAppClick(){
-    if(this.props.userSettingsVisible){
-      this.props.hideUserSettings();
-    }
-  }
-
   render() {
 
     let sessionForm;
@@ -33,7 +27,7 @@ class App extends React.Component {
     }
 
     return (
-      <div onClick={this.handleAppClick} id='app'>
+      <div id='app'>
 
         {sessionForm}
 
