@@ -4,7 +4,7 @@ class Api::SpotsController < ApplicationController
 
     @spots = Spot.all_spots_in(params[:city]).includes(:state, :privacy_level)
 
-    if params[:startDate] && params[:endDate]
+    if (params[:startDate] && params[:endDate]) && (!(params[:startDate].empty? && params[:endDate].empty?))
       startRequestedDate = Date.parse(params[:startDate])
       endRequestedDate = Date.parse(params[:endDate])
 
