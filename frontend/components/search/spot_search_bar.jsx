@@ -6,7 +6,7 @@ import {connect} from 'react-redux';
 import { fetchSearchResults } from '../../actions/spot_actions';
 import {hashHistory, router, withRouter} from 'react-router';
 
-class WelcomeSearchBar extends React.Component {
+class SpotSearchBar extends React.Component {
 
   constructor(props){
     super(props);
@@ -59,10 +59,6 @@ class WelcomeSearchBar extends React.Component {
     }
 
     this.props.router.push({pathname: `/spots/search`, query: this.state.searchCriteria});
-
-    // this.props.fetchSearchResults(criteria)
-    //   .then(function() {this.props.router.push({pathname: `/spots/search`, query: this.state.searchCriteria})}.bind(this));
-      // .then(() => hashHistory.push(`/spots/search`));
   }
 
   handleNewDates({ startDate, endDate }){
@@ -81,13 +77,13 @@ class WelcomeSearchBar extends React.Component {
   render() {
 
     return(
-      <div className='welcome-search-bar-main-container'>
-        <form id='welcome-search-bar-form' onSubmit={this.handleSubmit}>
+      <div className='spot-search-bar-main-container'>
+        <form id='spot-search-bar-form' onSubmit={this.handleSubmit}>
 
 
 
 
-          <div className='welcome-search-bar-left'>
+          <div className='spot-search-bar-left'>
             <label>Where</label>
             <input
               type='text'
@@ -100,9 +96,9 @@ class WelcomeSearchBar extends React.Component {
 
 
 
-          <div className='welcome-search-bar-middle'>
+          <div className='spot-search-bar-middle'>
             <label>When</label>
-            <div className='welcome-search-bar-calendar'>
+            <div className='spot-search-bar-calendar'>
               <DateRangePicker
                 startDate={this.state.searchCriteria.startDate}
                 endDate={this.state.searchCriteria.endDate}
@@ -116,7 +112,7 @@ class WelcomeSearchBar extends React.Component {
 
 
 
-          <div className='welcome-search-bar-right'>
+          <div className='spot-search-bar-right'>
             <div>
               <label>Guests</label>
               <div></div>
@@ -125,19 +121,14 @@ class WelcomeSearchBar extends React.Component {
             <div>
               <button
                 type='submit'
-                form='welcome-search-bar-form'
-                className='welcome-search-bar-search-button'
+                form='spot-search-bar-form'
+                className='spot-search-bar-search-button'
                 >
                 Search
               </button>
             </div>
 
           </div>
-
-
-
-
-
 
         </form>
 
@@ -154,4 +145,4 @@ export default withRouter(connect(
       fetchSearchResults: (criteria) => dispatch(fetchSearchResults(criteria)),
     };
   }
-)(WelcomeSearchBar));
+)(SpotSearchBar));

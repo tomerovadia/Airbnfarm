@@ -1,6 +1,4 @@
-// WELCOME SEARCH BAR
-
-.welcome-search-bar-main-container {
+.spot-search-bar-main-container {
   border: 1px solid #ccc;
   border-radius: 3px;
   width: 90%;
@@ -8,21 +6,21 @@
   box-shadow: 1px 1px #ccc;
 }
 
-#welcome-search-bar-form {
+#spot-search-bar-form {
   display: flex;
   width: 100%;
 }
 
-#welcome-search-bar-form > div {
+#spot-search-bar-form > div {
   border-right: 1px solid #ccc;
   padding: 8px 20px;
 }
 
-#welcome-search-bar-form > div:last-child {
+#spot-search-bar-form > div:last-child {
   border-right: none;
 }
 
-.welcome-search-bar-main-container input {
+.spot-search-bar-main-container input {
   height: 30px;
   width: 100%;
   font-size: 19px;
@@ -30,33 +28,33 @@
   padding-top: 14px;
 }
 
-.welcome-search-bar-main-container label {
+.spot-search-bar-main-container label {
   width: 100%;
   flex-grow: 1;
   font-size: 15px;
 }
 
-.welcome-search-bar-calendar {
+.spot-search-bar-calendar {
   margin: 0 auto;
   width: 83%;
   padding-left: 9%;
 }
 
-.welcome-search-bar-left {
+.spot-search-bar-left {
   display: flex;
   justify-content: center;
   flex-direction: column;
   width: 30%;
 }
 
-.welcome-search-bar-middle {
+.spot-search-bar-middle {
   display: flex;
   justify-content: center;
   flex-direction: column;
   width: 40%;
 }
 
-.welcome-search-bar-right {
+.spot-search-bar-right {
   display: flex;
   width: 30%;
   justify-content: space-between;
@@ -76,7 +74,7 @@
   display: block;
 }
 
-.welcome-search-bar-search-button {
+.spot-search-bar-search-button {
   border-radius: 5px;
   border: none;
   cursor: pointer;
@@ -90,7 +88,7 @@
 
 // NAV SEARCH BAR
 
-.main-nav-center .welcome-search-bar-main-container {
+.main-nav-center .spot-search-bar-main-container {
   margin: 3px auto;
   width: 100%;
 }
@@ -103,30 +101,27 @@
   display: none;
 }
 
-.main-nav-center .welcome-search-bar-search-button {
+.main-nav-center .spot-search-bar-search-button {
   display: none;
 }
 
-.main-nav-center .welcome-search-bar-main-container input {
+.main-nav-center .spot-search-bar-main-container input {
   padding: 0;
 }
 
-.main-nav-center .welcome-search-bar-left {
+.main-nav-center .spot-search-bar-left {
   width: 25%
 }
 
-.main-nav-center .welcome-search-bar-middle {
+.main-nav-center .spot-search-bar-middle {
   width: 50%
 
 }
 
-.main-nav-center .welcome-search-bar-right {
+.main-nav-center .spot-search-bar-right {
   width: 25%
 
 }
-
-// Don't display the nav search bar when on the welcome page
-
 
 
 
