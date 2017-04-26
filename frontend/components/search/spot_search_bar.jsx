@@ -58,6 +58,8 @@ class SpotSearchBar extends React.Component {
       this.setState({searchCriteria: newSearchCriteria});
     }
 
+    debugger
+
     this.props.router.push({pathname: `/spots/search`, query: this.state.searchCriteria});
   }
 
