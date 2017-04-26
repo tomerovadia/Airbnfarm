@@ -13,6 +13,7 @@ class App extends React.Component {
     // this.state = {userSettingsVisible: false};
     // this.showUserSettings = this.showUserSettings.bind(this);
     // this.hideUserSettings = this.hideUserSettings.bind(this);
+    this.handleAppClick = this.handleAppClick.bind(this);
   }
 
   // showUserSettings(e){
@@ -23,6 +24,12 @@ class App extends React.Component {
   // hideUserSettings(){
   //   this.setState({userSettingsVisible: false});
   // }
+
+  handleAppClick(){
+    if(this.props.userSettingsVisible){
+      this.props.hideUserSettings();
+    }
+  }
 
   render() {
 
@@ -38,7 +45,7 @@ class App extends React.Component {
     }
 
     return (
-      <div onClick={this.props.hideUserSettings} id='app'>
+      <div onClick={this.handleAppClick} id='app'>
 
         {sessionForm}
 
@@ -62,7 +69,8 @@ export default connect(
 
     return{
       currentUser,
-      activeModal: state.modalConductor.activeModal
+      activeModal: state.modalConductor.activeModal,
+      userSettingsVisible: state.modalConductor.userSettingsVisible,
     };
   },
   (dispatch) => {

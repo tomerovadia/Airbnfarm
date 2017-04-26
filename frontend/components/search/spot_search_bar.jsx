@@ -11,6 +11,8 @@ class SpotSearchBar extends React.Component {
   constructor(props){
     super(props);
 
+    console.log('constructing');
+
     this.state = {
       calendarProps: {
         focusedInput: null,
@@ -29,7 +31,7 @@ class SpotSearchBar extends React.Component {
   }
 
   handleCityChange(e){
-    const newSearchCriteria = this.state.searchCriteria;
+    const newSearchCriteria = Object.assign({}, this.state.searchCriteria);
     newSearchCriteria.city = e.target.value;
     this.setState({searchCriteria: newSearchCriteria});
   }
@@ -43,8 +45,8 @@ class SpotSearchBar extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-
     const criteria = Object.assign({}, this.state.searchCriteria);
+    debugger
 
     if(criteria.startDate && criteria.endDate){
       criteria.startDate = this.deMomentDate(criteria.startDate);
@@ -58,25 +60,25 @@ class SpotSearchBar extends React.Component {
   }
 
   handleNewDates({ startDate, endDate }){
-    const newSearchCriteria = this.state.searchCriteria;
+    const newSearchCriteria = Object.assign({}, this.state.searchCriteria);
     newSearchCriteria.startDate = startDate;
     newSearchCriteria.endDate = endDate;
     this.setState({ searchCriteria: newSearchCriteria });
   }
 
   handleNewFocusedInput(newFocusedInput){
-    const newCalendarProps = this.state.calendarProps;
+    const newCalendarProps = Object.assign({}, this.state.calendarProps);
     newCalendarProps.focusedInput = newFocusedInput;
     this.setState({ calendarProps: newCalendarProps });
   }
 
   render() {
 
-    window.state = this.state;
+    console.log(this.state);
 
     return(
       <div className='spot-search-bar-main-container'>
-        <form id='spot-search-bar-form' onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit}>
 
 
 
@@ -119,7 +121,6 @@ class SpotSearchBar extends React.Component {
             <div>
               <button
                 type='submit'
-                form='spot-search-bar-form'
                 className='spot-search-bar-search-button'
                 >
                 Search

@@ -12,9 +12,7 @@ class SpotSearch extends React.Component {
     this.props.fetchSearchResults(this.criteria);
   }
 
-
   componentWillUpdate() {
-    debugger
     if(JSON.stringify(this.criteria) !== JSON.stringify(this.getCriteriaFromQueryString())){
       this.criteria = this.getCriteriaFromQueryString();
       this.props.fetchSearchResults(this.criteria);
