@@ -26,7 +26,14 @@ class Nav extends React.Component {
     this.props.showUserSettings();
   }
 
+
+
   render(){
+
+    let spotsSearchBar = <SpotsSearchBar />;
+    if(this.props.router.location.pathname === '/'){
+      spotsSearchBar = null;
+    }
 
     let loggedIn = this.props.currentUser ? true : false
 
@@ -48,7 +55,7 @@ class Nav extends React.Component {
 
 
           <div  className='main-nav-center'>
-            <SpotsSearchBar />
+            {spotsSearchBar}
           </div>
 
 
