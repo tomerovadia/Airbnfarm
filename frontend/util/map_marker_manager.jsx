@@ -8,8 +8,9 @@ export default class MarkerManager {
     this.markers = {};
 
 
-    this.mapSpotMiniDiv = '<div id="map-spot-mini-div"></div>';
+    this.mapSpotMiniDiv = '<div id="map-spot-mini-div" style="width:280px"></div>';
 
+    this.openMapSpotMini = null;
   }
 
   updateMarkers(searchResults){
@@ -38,7 +39,11 @@ export default class MarkerManager {
 
 
             marker.addListener('click', function(){
-              debugger
+
+              if(this.openMapSpotMini){
+                this.openMapSpotMini.close();
+              };
+              this.openMapSpotMini = infowindow;
               infowindow.open(this.map, marker);
               ReactDOM.render(<SpotMini spot={spot}/>, document.getElementById('map-spot-mini-div'))
             }.bind(this));
