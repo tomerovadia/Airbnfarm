@@ -7,11 +7,13 @@ Rails.application.routes.draw do
 
     resources :users, only: [:create, :show] do
       resources :spots, only: [:index]
+      resources :bookings, only: [:index]
     end
 
     resource :session, only: [:create, :destroy]
     resources :spots, only: [:create, :show, :index]
     resources :availabilities, only: [:create, :destroy]
+    resources :bookings, only: [:create, :show]
 
   end
 
