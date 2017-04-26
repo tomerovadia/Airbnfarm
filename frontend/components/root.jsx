@@ -20,7 +20,6 @@ export default (props) => {
           <Route path='/spots' component={NavContainer}>
             <Route path='/spots/profile/:spotId' component={SpotProfileContainer}></Route>
             <Route path='/spots/search' component={SpotSearchContainer}></Route>
-            <Route path='/spots/test' component={SpotSearchMap}></Route>
           </Route>
 
           <Route path='/become-a-host' component={BecomeAHostContainer}></Route>
@@ -32,3 +31,6 @@ export default (props) => {
     </Provider>
   );
 };
+
+
+// <Route path='/spots/test' component={SpotSearchMap}></Route>

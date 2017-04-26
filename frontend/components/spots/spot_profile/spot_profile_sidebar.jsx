@@ -11,7 +11,7 @@ class SpotProfileSidebar extends React.Component {
 
     this.state = {
       availabilities: [],
-      focusedInput: 'startDate',
+      focusedInput: null,
       startDate: null,
       endDate: null,
     };

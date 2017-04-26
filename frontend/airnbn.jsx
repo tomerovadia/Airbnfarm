@@ -16,4 +16,14 @@ document.addEventListener('DOMContentLoaded', () => {
     root
   );
 
+  // FLESH THIS OUT LATER, LOGIC FOR MAKING USER DROPDOWN DISAPPEAR
+  // MAY NEED TO CONNECT THE ROOT TO STORE
+  // const onPageClick() => {
+  //
+  //   if(this.props.userSettingsVisible){
+  //     this.props.hideUserSettings();
+  //   }
+  //
+  // };
+
 });

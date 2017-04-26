@@ -58,7 +58,6 @@ class Nav extends React.Component {
             {spotsSearchBar}
           </div>
 
-
           <div className='main-nav-right'>
 
             <NavLinks
