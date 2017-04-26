@@ -10,7 +10,6 @@ class App extends React.Component {
   constructor(props){
     super(props);
 
-    this.handleAppClick = this.handleAppClick.bind(this);
   }
 
   render() {
