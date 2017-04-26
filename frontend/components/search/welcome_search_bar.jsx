@@ -4,7 +4,7 @@ import Moment from 'react-moment';
 import moment from 'moment';
 import {connect} from 'react-redux';
 import { fetchSearchResults } from '../../actions/spot_actions';
-import {hashHistory, router} from 'react-router';
+import {hashHistory, router, withRouter} from 'react-router';
 
 class WelcomeSearchBar extends React.Component {
 
@@ -21,8 +21,6 @@ class WelcomeSearchBar extends React.Component {
         endDate: null,
       },
     };
-
-    console.log('constructing');
 
     this.handleCityChange = this.handleCityChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -75,15 +73,12 @@ class WelcomeSearchBar extends React.Component {
   }
 
   handleNewFocusedInput(newFocusedInput){
-    console.log(newFocusedInput);
     const newCalendarProps = this.state.calendarProps;
     newCalendarProps.focusedInput = newFocusedInput;
     this.setState({ calendarProps: newCalendarProps });
   }
 
   render() {
-
-    console.log('re-rendering')
 
     return(
       <div className='welcome-search-bar-main-container'>
@@ -151,7 +146,7 @@ class WelcomeSearchBar extends React.Component {
   }
 }
 
-export default connect(
+export default withRouter(connect(
   (state) => {return {};},
 
   (dispatch) => {
@@ -159,4 +154,4 @@ export default connect(
       fetchSearchResults: (criteria) => dispatch(fetchSearchResults(criteria)),
     };
   }
-)(WelcomeSearchBar);
+)(WelcomeSearchBar));

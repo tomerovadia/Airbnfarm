@@ -1,7 +1,8 @@
 import React from 'react';
 import NavLinks from './nav_links';
-import {Link, hashHistory, withRouter} from 'react-router';
+import {Link, hashHistory} from 'react-router';
 import WelcomeSearchBar from '../search/welcome_search_bar';
+
 
 export default (props) => {
 
@@ -14,8 +15,6 @@ export default (props) => {
   }
 
   let loggedIn = props.currentUser ? true : false
-
-  const WelcomeSearchBarWithRouter = withRouter(WelcomeSearchBar);
 
   return (
     <nav className='main-nav'>
@@ -33,7 +32,7 @@ export default (props) => {
 
 
       <div  className='main-nav-center'>
-        <WelcomeSearchBarWithRouter />
+        <WelcomeSearchBar place={'top'}/>
       </div>
 
 

@@ -68,6 +68,14 @@
   line-height: 11px;
 }
 
+.DateRangePicker {
+  display: block;
+}
+
+.DateRangePickerInput {
+  display: block;
+}
+
 .welcome-search-bar-search-button {
   border-radius: 5px;
   border: none;
@@ -88,7 +96,7 @@
 }
 
 .main-nav-center .DateInput {
-  width: 33%;
+  width: 45%;
 }
 
 .main-nav-center label {
@@ -101,6 +109,20 @@
 
 .main-nav-center .welcome-search-bar-main-container input {
   padding: 0;
+}
+
+.main-nav-center .welcome-search-bar-left {
+  width: 25%
+}
+
+.main-nav-center .welcome-search-bar-middle {
+  width: 50%
+
+}
+
+.main-nav-center .welcome-search-bar-right {
+  width: 25%
+
 }
 
 // Don't display the nav search bar when on the welcome page
