@@ -36,10 +36,18 @@ class SpotProfileSidebar extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    
+
+
+
+
   }
 
   render(){
+
+    let numGuestOptions = [];
+    for(let i=0; i < this.props.currentSpot.num_guests; i++){
+      numGuestOptions.push(<option key={i}>{i+1} guests</option>);
+    }
 
     return(
 
@@ -77,7 +85,7 @@ class SpotProfileSidebar extends React.Component {
           <div className='spot-profile-guests-select-div'>
             <label>Guests</label>
             <select className='spot-profile-guests-select'>
-              <option>1 guest</option>
+              {numGuestOptions}
             </select>
           </div>
 
