@@ -36,8 +36,6 @@ class SpotProfileSidebar extends React.Component {
 
   render(){
 
-    window.state = this.state;
-
     return(
 
       <div className='spot-profile-sidebar'>
