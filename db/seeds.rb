@@ -108,7 +108,7 @@ ActiveRecord::Base.transaction do
   ]
 
   Spot.all.each do |spot|
-    date_range = date_ranges[spot.id % 3]
+    date_range = date_ranges[(0..2).shuffle]
 
     start_date = Date.parse(date_range.first)
     end_date = Date.parse(date_range.last)
