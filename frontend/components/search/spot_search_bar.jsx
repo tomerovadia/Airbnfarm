@@ -46,7 +46,6 @@ class SpotSearchBar extends React.Component {
   handleSubmit(e){
     e.preventDefault();
     const criteria = Object.assign({}, this.state.searchCriteria);
-    debugger
 
     if(criteria.startDate && criteria.endDate){
       criteria.startDate = this.deMomentDate(criteria.startDate);
@@ -78,7 +77,7 @@ class SpotSearchBar extends React.Component {
 
     return(
       <div className='spot-search-bar-main-container'>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className='spot-search-bar-form'>
 
 
 

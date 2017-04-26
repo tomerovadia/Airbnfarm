@@ -1,6 +1,5 @@
 import React from 'react';
 import SessionFormContainer from './session/session_form_container';
-// import { logout } from '../actions/session_actions';
 import { clearModal, hideUserSettings } from '../actions/modal_actions';
 import { connect } from 'react-redux';
 import Nav from './main/nav';
@@ -10,20 +9,9 @@ class App extends React.Component {
 
   constructor(props){
     super(props);
-    // this.state = {userSettingsVisible: false};
-    // this.showUserSettings = this.showUserSettings.bind(this);
-    // this.hideUserSettings = this.hideUserSettings.bind(this);
+
     this.handleAppClick = this.handleAppClick.bind(this);
   }
-
-  // showUserSettings(e){
-  //   this.setState({userSettingsVisible: true});
-  //   e.stopPropagation();
-  // }
-
-  // hideUserSettings(){
-  //   this.setState({userSettingsVisible: false});
-  // }
 
   handleAppClick(){
     if(this.props.userSettingsVisible){
@@ -49,7 +37,6 @@ class App extends React.Component {
 
         {sessionForm}
 
-        <NavContainer />
 
         {this.props.children}
 
@@ -75,12 +62,8 @@ export default connect(
   },
   (dispatch) => {
     return {
-      // logout: () => dispatch(logout()),
-      // receiveModal: (modalName) => dispatch(receiveModal(modalName)),
       clearModal: () => dispatch(clearModal()),
       hideUserSettings: () => dispatch(hideUserSettings()),
-
-      // hideUserSettings: () => dispatch(hideUserSettings()),
     };
   }
 )(App);

@@ -31,12 +31,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(withRouter(Nav));
-
-
-// <Nav
-//   // currentUser={ this.props.currentUser }
-//   // logout={this.props.logout}
-//   // receiveModal={this.props.receiveModal}
-//   userSettingsVisible={this.state.userSettingsVisible}
-//   showUserSettings={this.showUserSettings}
-// />
