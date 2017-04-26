@@ -13,7 +13,7 @@ class WelcomeSearchBar extends React.Component {
 
     this.state = {
       calendarProps: {
-        focusedInput: 'startDate',
+        focusedInput: null,
       },
       searchCriteria: {
         city: '',
@@ -21,6 +21,8 @@ class WelcomeSearchBar extends React.Component {
         endDate: null,
       },
     };
+
+    console.log('constructing');
 
     this.handleCityChange = this.handleCityChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -73,12 +75,15 @@ class WelcomeSearchBar extends React.Component {
   }
 
   handleNewFocusedInput(newFocusedInput){
+    console.log(newFocusedInput);
     const newCalendarProps = this.state.calendarProps;
     newCalendarProps.focusedInput = newFocusedInput;
     this.setState({ calendarProps: newCalendarProps });
   }
 
   render() {
+
+    console.log('re-rendering')
 
     return(
       <div className='welcome-search-bar-main-container'>
