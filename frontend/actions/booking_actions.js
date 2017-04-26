@@ -9,8 +9,6 @@ import * as BookingAPIUtil from '../util/booking_api_util';
 
 
 
-
-
 // Regular object action creators
 
 // export const receiveAvailability = (availability) => {
@@ -19,7 +17,6 @@ import * as BookingAPIUtil from '../util/booking_api_util';
 //     availability,
 //   };
 // };
-
 
 
 

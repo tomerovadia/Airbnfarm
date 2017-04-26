@@ -1,7 +1,7 @@
 class Api::BookingsController < ApplicationController
 
   def index
-    
+
   end
 
 
@@ -14,6 +14,7 @@ class Api::BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
 
     @booking.guest = current_user
+    @booking.status_id = BookingStatus.find_by(status: 'pending').id
 
     if @booking.save
       render :show
