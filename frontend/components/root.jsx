@@ -9,7 +9,9 @@ import Welcome from './main/welcome';
 import NavContainer from './main/nav_container';
 import TripsPage from './bookings/trips_page';
 import ReservationsPage from './bookings/reservations_page';
-import SpotMini from './spots/spot_mini';
+import HostPage from './bookings/host_page';
+
+
 
 export default (props) => {
 
@@ -27,12 +29,20 @@ export default (props) => {
           <Route path='/become-a-host' component={BecomeAHostContainer}></Route>
 
           <Route path='/bookings/trips' component={TripsPage}></Route>
-          <Route path='/bookings/reservations' component={ReservationsPage}></Route>
 
-          <Route path='/test' component={SpotMini}></Route>
+          <Route path='/bookings/host' component={HostPage}>
+            <Route path='/bookings/host/reservations' component={ReservationsPage}></Route>
+          </Route>
+
+
+
+          <Route path='/test' component={ReservationsPage}></Route>
 
         </Route>
       </Router>
     </Provider>
   );
 };
+
+
+// <Route path='r' component={ListingsPage}></Route>

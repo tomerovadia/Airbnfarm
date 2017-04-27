@@ -47,16 +47,20 @@ class TripsPage extends React.Component {
 
 }
 
+const mapStateToProps = (state) => {
+  return {
+    currentUser: state.session.currentUser,
+    currentBookings: getFormatedBookings(state),
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchBookings: (userId) => dispatch(fetchBookings(userId)),
+  };
+}
+
 export default withRouter(connect(
-  (state) => {
-    return {
-      currentUser: state.session.currentUser,
-      currentBookings: getFormatedBookings(state),
-    };
-  },
-  (dispatch) => {
-    return {
-      fetchBookings: (userId) => dispatch(fetchBookings(userId)),
-    };
-  }
+  mapStateToProps,
+  mapDispatchToProps
 )(TripsPage));

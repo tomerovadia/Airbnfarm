@@ -5,17 +5,17 @@ class SpotSearchResultsList extends React.Component {
 
   constructor(props){
     super(props);
+
+    this.contents = null;
   }
 
-  render() {
-
-    let contents;
+  componentWillUpdate(){
     if(Object.keys(this.props.searchResults).length > 0){
-      contents = this.props.searchResults.map((spot) => {
+      this.contents = this.props.searchResults.map((spot) => {
         return <SpotMini key={spot.id} spot={spot} />
       });
     } else {
-      contents =
+      this.contents =
         <div className='spot-search-no-results-container'>
           <h1>No results</h1>
           <span>Try adjusting your search. Here are some ideas:</span>
@@ -27,10 +27,15 @@ class SpotSearchResultsList extends React.Component {
           <div className='spot-search-no-results-fine-text'><span>Enter dates to see full pricing. Additional fees apply. Taxes may be added.</span></div>
         </div>
     }
+  }
+
+  render() {
+
+
 
     return(
       <div className='spot-search-results-list-container clearfix'>
-        { contents }
+        { this.contents }
       </div>
     );
   }

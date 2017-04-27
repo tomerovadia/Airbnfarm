@@ -1,0 +1,110 @@
+
+.reservations-page-main-container {
+
+}
+
+.reservations-page-reservations {
+  border: 1px solid #dce0e0;
+}
+
+// ONE RESERVATION
+
+
+.reservation-main-container {
+  display: flex;
+  border-bottom: 1px solid #dce0e0;
+  height: 185px;
+  width: 726px;
+  margin: 0 auto;
+}
+
+.reservation-main-container:last-child {
+  border-bottom: none;
+}
+
+.reservation-main-container span {
+  color: #767676;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.reservation-left {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reservation-guest-img {
+  width: 100%;
+  margin: 5px;
+  border: 2px solid white;
+  border-radius: 50%;
+  margin: 8px;
+}
+
+.reservation-middle {
+  padding: 25px 30px;
+  width: 50%;
+}
+
+.reservation-guest-email {
+  padding-bottom: 10px;
+}
+
+.reservation-guest-email span {
+  color: rgb(72, 72, 72);
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
+
+.reservation-date-range {
+
+}
+
+.reservation-num-guests {
+
+}
+
+.reservation-right {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.reservation-status-div {
+  border-radius: 3px;
+}
+
+.reservation-status-div span {
+  display: block;
+  color: green;
+  font-weight: 600;
+  font-size: 22px;
+  border-radius: 3px;
+  padding: 8px 15px;
+  border: 1px solid #ccc;
+  box-shadow: 0.5px 0.5px 0.5px #ccc;
+  width: 145px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.reservation-approve-button {
+  background-color: #ff5a5f;
+  color: white;
+  padding: 12px 55px;
+  border-radius: 5px;
+  cursor: pointer;
+  letter-spacing: 1.2px;
+  font-size: 15px;
+  margin: 0 auto;
+}
+
+.reservation-approve-button:hover {
+  background-color: #ff7e82;
+}

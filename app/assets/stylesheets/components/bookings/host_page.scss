@@ -1,0 +1,54 @@
+.host-console {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.host-console-tabs {
+  width: 18%;
+}
+
+.host-console-ul {
+  margin-bottom: 35px;
+}
+
+.host-console-ul a {
+  padding: 6px 0;
+  font-size: 16px;
+  text-decoration: none;
+  display: block;
+  color: #767676;
+}
+
+.host-console-ul a.inactive:hover {
+  color: #bbb;
+}
+
+.host-console-ul a.active {
+  font-weight: bold;
+  color: #484848;
+}
+
+
+.host-console-contents {
+  width: 82%;
+}
+
+.host-add-new-listing-button {
+  background-color: #007a87;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  letter-spacing: 1.2px;
+  font-size: 13.7px;
+  float: right;
+  margin: 5px;
+  border-color: #fff;
+  text-decoration: none;
+}
+
+.host-add-new-listing-button :hover {
+  background-color: #009aab;
+}

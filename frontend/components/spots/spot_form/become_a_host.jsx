@@ -4,6 +4,7 @@ import SpotFormDetails from './spot_form_details';
 import SpotFormAvailability from './spot_form_availability';
 import merge from 'lodash/merge';
 import {hashHistory} from 'react-router';
+import NavContainer from '../../main/nav_container';
 
 class BecomeAHost extends React.Component {
 
@@ -260,6 +261,8 @@ class BecomeAHost extends React.Component {
 
     return (
       <div className='become-a-host-main-container'>
+
+        <NavContainer searchBarVisible={false} />
 
         <div
           className='become-a-host-errors'
