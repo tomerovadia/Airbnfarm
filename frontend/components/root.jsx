@@ -7,7 +7,7 @@ import SpotProfileContainer from './spots/spot_profile/spot_profile_container';
 import SpotSearchContainer from './search/spot_search_container';
 import Welcome from './main/welcome';
 import NavContainer from './main/nav_container';
-import Trip from './bookings/trip';
+import Trips from './bookings/trips';
 
 export default (props) => {
 
@@ -24,7 +24,7 @@ export default (props) => {
 
           <Route path='/become-a-host' component={BecomeAHostContainer}></Route>
 
-          <Route path='/bookings/trips' component={Trip}></Route>
+          <Route path='/bookings/trips' component={Trips}></Route>
         </Route>
       </Router>
     </Provider>
