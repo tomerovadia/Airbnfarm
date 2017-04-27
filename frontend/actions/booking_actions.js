@@ -2,23 +2,15 @@ import * as BookingAPIUtil from '../util/booking_api_util';
 
 // Constants
 
-export const RECEIVE_GUEST_BOOKINGS = 'RECEIVE_GUEST_BOOKINGS';
-export const RECEIVE_HOST_BOOKINGS = 'RECEIVE_GUEST_BOOKINGS';
+export const RECEIVE_BOOKINGS = 'RECEIVE_BOOKINGS';
 
 
 // Regular object action creators
 
-export const receiveGuestBookings = (guestBookings) => {
+export const receiveBookings = (bookings) => {
   return {
-    type: RECEIVE_GUEST_BOOKINGS,
-    guestBookings,
-  };
-};
-
-export const receiveHostBookings = (hostBookings) => {
-  return {
-    type: RECEIVE_HOST_BOOKINGS,
-    hostBookings,
+    type: RECEIVE_BOOKINGS,
+    bookings,
   };
 };
 
@@ -26,12 +18,14 @@ export const receiveHostBookings = (hostBookings) => {
 
 
 // Thunk function action creators
-//
-// export const createAvailability = (availability) => dispatch => {
-//   return AvailabilityAPIUtil.createAvailability(availability)
-//     .then(
-//       (availability) => dispatch(receiveAvailability(availability),
-//       (errors) => dispatch(jQuery.parseJSON(errors.responseText))
-//     )
-//   );
-// };
+
+export const createBooking = (booking) => dispatch => {
+  return BookingAPIUtil.createBooking(booking)
+    .then(
+      (booking) => BookingAPIUtil.fetchBookings(booking.guest_id)
+        .then((bookings) => dispatch(receiveBookings(bookings)),
+              (errors) => console.log('there were errors')
+        ),
+      (errors) => console.log('there were errors')
+    )
+};
