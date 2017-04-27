@@ -16,7 +16,7 @@ export default (oldState = _initialState, action) => {
       return merge(newState, action.bookings);
 
     case RECEIVE_ERRORS:
-      return merge(newState, action.errors);
+      return merge(newState, {errors: action.errors});
 
     default:
       return oldState;

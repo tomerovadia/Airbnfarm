@@ -41,6 +41,6 @@ export const createBooking = (booking) => dispatch => {
 export const fetchBookings = (userId) => dispatch => {
   return BookingAPIUtil.fetchBookings(userId)
     .then((resp) => dispatch(receiveBookings(resp)),
-          (errors) => receiveErrors(errors)
+          (errors) => dispatch(receiveErrors(errors.responseJSON))
     );
 }

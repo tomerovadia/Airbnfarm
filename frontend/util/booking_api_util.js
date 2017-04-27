@@ -16,6 +16,7 @@ export const fetchBookings = (userId) => {
   return $.ajax({
     method: 'get',
     url,
+    contentResponse: 'json',
     contentType: 'json',
   });
 };
