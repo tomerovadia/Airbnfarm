@@ -34,6 +34,7 @@ export default (oldState = _initialState, action) => {
 
     case RECEIVE_ERRORS:
       newState.errors = action.errors;
+      newState.searchResults = {};
       return newState;
 
     case RECEIVE_SEARCH_RESULTS:

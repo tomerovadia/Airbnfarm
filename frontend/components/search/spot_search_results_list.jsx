@@ -7,16 +7,18 @@ class SpotSearchResultsList extends React.Component {
     super(props);
 
     this.contents = null;
+
+    console.log('constructing');
   }
 
-  componentWillUpdate(){
-    if(Object.keys(this.props.searchResults).length > 0){
-      this.contents = this.props.searchResults.map((spot) => {
+  componentWillReceiveProps(newProps){
+    debugger
+    if(Object.keys(newProps.searchResults).length > 0){
+      this.content = newProps.searchResults.map((spot) => {
         return <SpotMini key={spot.id} spot={spot} />
       });
-    } else {
-      this.contents =
-        <div className='spot-search-no-results-container'>
+    } else if(newProps.spotErrors === 404){
+      this.content = <div className='spot-search-no-results-container'>
           <h1>No results</h1>
           <span>Try adjusting your search. Here are some ideas:</span>
           <ul>
@@ -31,11 +33,13 @@ class SpotSearchResultsList extends React.Component {
 
   render() {
 
-
+    console.log('rendering');
+    console.log(this.props.spotErrors);
+    console.log(this.props.searchResults);
 
     return(
       <div className='spot-search-results-list-container clearfix'>
-        { this.contents }
+        { this.content }
       </div>
     );
   }

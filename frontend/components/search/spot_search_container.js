@@ -8,6 +8,7 @@ import { fetchSearchResults } from '../../actions/spot_actions';
 const mapStateToProps = (state, ownProps) => {
   return {
     searchResults: getSearchResults(state),
+    spotErrors: state.spots.errors,
   };
 };
 

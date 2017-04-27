@@ -44,7 +44,7 @@ class SpotSearch extends React.Component {
           </div>
 
           <div>
-            <SpotSearchResultsList searchResults={this.props.searchResults} />
+            <SpotSearchResultsList spotErrors={this.props.spotErrors} searchResults={this.props.searchResults} />
           </div>
 
         </div>

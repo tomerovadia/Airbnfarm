@@ -26,7 +26,6 @@ export const receiveSearchResults = (searchResults) => {
 
 
 export const receiveErrors = (errors) => {
-
   return {
     type: RECEIVE_ERRORS,
     errors,
@@ -59,6 +58,6 @@ export const fetchSearchResults = (criteria) => dispatch => {
   return SessionAPIUtil.fetchSearchResults(criteria)
     .then(
       (resp) => dispatch(receiveSearchResults(resp)),
-      (errors) => dispatch(receiveErrors(errors))
+      (errors) => dispatch(receiveErrors(errors.status))
     );
 };
