@@ -1,0 +1,83 @@
+.trip-main-container {
+  border: 1px solid #ccc;
+  margin: 0 auto;
+  width: 328px;
+  height: 544px;
+  text-align: center;
+  box-shadow: 1px 1px 1px solid #ccc;
+}
+
+.trip-photo-and-avatar {
+  position: relative;
+}
+
+.trip-main-photo {
+  width: 100%;
+}
+
+.host-avatar-div {
+  position: absolute;
+  bottom: -12px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+
+.host-avatar {
+  margin: 0 auto;
+  border-radius: 30px;
+  height: 60px;
+  display: block;
+  border: 2px solid white;
+}
+
+
+.trip-city-h1 {
+  font-size: 36px;
+  margin: 27px 0;
+}
+
+
+.trip-dates-and-guests-div {
+  margin-bottom: 12px;
+}
+
+.trip-dates-and-guests-span {
+
+}
+
+.trip-title-div {
+  margin-bottom: 12px;
+}
+
+.trip-title-div {
+}
+
+.trip-status-div {
+  border-radius: 3px;
+  padding: 6px 14px;
+  margin: 24px 0;
+}
+
+.trip-status-span {
+  color: green;
+  font-weight: 600;
+  font-size: 22px;
+  border-radius: 3px;
+  padding: 8px 15px;
+  margin: 18px 0;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 1px #ccc;
+}
+
+.trip-cancel-button {
+  background-color: white;
+  color: #575757;
+  padding: 12px 55px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  letter-spacing: 1.2px;
+  font-size: 15px;
+  margin: 0 auto;
+}
