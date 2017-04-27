@@ -1,11 +1,9 @@
 .spot-search-main-container {
   display: flex;
-  border: 2px solid blue;
 }
 
 .spot-search-left {
   width: 60%;
-  border: 1px solid orange;
 }
 
 .spot-search-right {
@@ -15,34 +13,81 @@
 // SPOT SEARCH FILTER
 
 .spot-search-filter {
-  border: 1px solid #740d0e;
   display: flex;
   justify-content: flex-start;
 }
 
 .spot-search-filter-dropdown {
-  border: 1px solid #a69e75;
   cursor: pointer;
   margin: 0 15px;
   padding: 15px 0;
+  color: #767676;
 }
 
 
 // SEARCH RESULTS LIST
 
 .spot-search-results-list-container {
-  border: 1px solid gray;
 }
+
+
+// NO RESULTS
+
+.spot-search-no-results-container {
+  margin-left: 60px;
+}
+
+.spot-search-no-results-container h1 {
+  font-weight: 700;
+  font-size: 36px;
+  color: #818181;
+  margin: 25px 0;
+}
+
+.spot-search-no-results-container ul {
+  list-style: disc;
+  padding-left: 31px;
+  margin: 24px 0;
+}
+
+.spot-search-no-results-container li {
+  color: #494949;
+  margin: 11px 0;
+  font-weight: 300;
+  font-size: 19px;
+}
+
+.spot-search-no-results-container span {
+  color: #494949;
+  font-weight: 300;
+  font-size: 19px;
+}
+
+.spot-search-no-results-fine-text {
+  margin-top: 125px;
+  margin-left: 30px;
+}
+
+.spot-search-no-results-fine-text span {
+  color: #818181;
+  font-size: 15px;
+}
+
+
+
 
 
 
 // SPOT MINI
 
 .spot-mini-main-container {
-  border: 1px solid #61cd28;
   width: 50%;
   float: left;
   padding: 10px;
+}
+
+.spot-mini-link {
+  text-decoration: none;
 }
 
 .spot-mini-main-container img {
@@ -51,21 +96,23 @@
 }
 
 .spot-mini-price-and-title {
-  border: 1px solid #1f2ccb;
   overflow: hidden;
+  margin: 6.5px 0;
 }
 
 .spot-mini-price-and-title span {
-  border: 1px solid #e777b5;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  font-weight: 600;
 }
 
 .spot-mini-privacylevel-and-numbeds {
-  border: 1px solid #1f2ccb;
 }
 
 .spot-mini-privacylevel-and-numbeds span {
-  border: 1px solid #e777b5;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-weight: 300;
 }

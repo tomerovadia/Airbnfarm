@@ -29,7 +29,6 @@ class SpotSearchMap extends React.Component {
 
     return(
       <div className='spot-search-map-main-container'>
-        <span>asdfasdf</span>
 
         <div ref={thisdiv => this.mapNode = thisdiv} className='spot-search-map'>
 

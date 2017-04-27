@@ -9,7 +9,6 @@ class Trip extends React.Component {
 
   render(){
 
-
     return(
       <div className='trip-main-container'>
 

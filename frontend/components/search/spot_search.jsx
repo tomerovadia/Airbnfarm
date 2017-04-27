@@ -56,9 +56,6 @@ class SpotSearch extends React.Component {
 
         </div>
 
-
-
-
       </div>
     );
   }
