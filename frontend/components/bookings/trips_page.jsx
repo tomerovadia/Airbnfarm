@@ -17,7 +17,6 @@ class TripsPage extends React.Component {
 
   render(){
 
-
     let trips = this.props.currentBookings.trips.map((trip) => {
       return <Trip key={trip.id} trip={trip} />
     });
@@ -30,7 +29,7 @@ class TripsPage extends React.Component {
 
         <NavContainer searchBarVisible={false} />
 
-        <h1 className='trips-page-h1'>Past Trips</h1>
+        <h1 className='trips-page-h1'>Your Trips</h1>
 
         <section className='trips-section'>
 

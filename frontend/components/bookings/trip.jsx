@@ -24,11 +24,11 @@ class Trip extends React.Component {
         <h1 className='trip-city-h1'>{this.props.trip.city}</h1>
 
         <div className='trip-dates-and-guests-div'>
-          <span className='trip-dates-and-guests-span'>Mar 20 - April 15, 2017 &middot; {this.props.trip.num_guests} guests</span>
+          <span className='trip-dates-and-guests-span'>{this.props.trip.start_date} - {this.props.trip.end_date} &middot; {this.props.trip.num_guests} guests</span>
         </div>
 
         <div className='trip-title-div'>
-          <span className='trip-title-span'>2 bedroom apt in beautiful Brooklyn</span>
+          <span className='trip-title-span'>{this.props.trip.title}</span>
         </div>
 
         <div className='trip-status-div'>

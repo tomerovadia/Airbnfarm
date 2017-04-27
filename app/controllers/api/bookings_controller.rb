@@ -4,8 +4,9 @@ class Api::BookingsController < ApplicationController
     user = User.find_by(id: params[:user_id])
 
     if user
-      @trips = user.trips.includes(:spot, :status)
+      @trips = user.trips.includes(:spot, :status) || {}
       @reservations = user.reservations.includes(:spot, :status) || {}
+
       render :index
     else
       render json: ['user not found'], status: 404
@@ -26,7 +27,6 @@ class Api::BookingsController < ApplicationController
 
     spot = Spot.find_by(id: params[:spot_id])
 
-    debugger
 
     @booking.guest = current_user
     @booking.spot = spot
@@ -35,8 +35,6 @@ class Api::BookingsController < ApplicationController
     @booking.title = spot.title
     @booking.city = spot.city
     @booking.base_price = spot.base_price.to_i
-
-    debugger
 
     if @booking.save
       Booking.book_availabilities(@booking.start_date, @booking.end_date, @booking.spot)

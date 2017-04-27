@@ -24,7 +24,7 @@ export default (props) => {
 
           <Route path='/become-a-host' component={BecomeAHostContainer}></Route>
 
-          <Route path='/users/:userId/bookings/trips' component={TripsPage}></Route>
+          <Route path='/bookings/trips' component={TripsPage}></Route>
 
         </Route>
       </Router>

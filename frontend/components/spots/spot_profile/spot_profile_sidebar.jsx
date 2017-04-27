@@ -85,7 +85,6 @@ class SpotProfileSidebar extends React.Component {
               onFocusChange={focusedInput => this.setState({ focusedInput })}
               startDatePlaceholderText='mm/dd/yyyy'
               endDatePlaceholderText='mm/dd/yyyy'
-              isDayBlocked={this.isDayBlocked}
             />
 
           </div>

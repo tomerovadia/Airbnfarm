@@ -1,5 +1,5 @@
 export const createBooking = (booking) => {
-  const url = `api/spots/${booking.spot_id}/bookings`
+  const url = `api/spots/${booking.spot_id}/bookings`;
 
   return $.ajax({
     method: 'post',
@@ -11,12 +11,11 @@ export const createBooking = (booking) => {
 
 
 export const fetchBookings = (userId) => {
-  const url = `api/users/${userId}/bookings`
+  const url = `api/users/${userId}/bookings`;
 
   return $.ajax({
     method: 'get',
     url,
     contentResponse: 'json',
-    contentType: 'json',
   });
 };
