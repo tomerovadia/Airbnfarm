@@ -1,6 +1,6 @@
 import React from 'react';
 import SpotProfileOverview from './spot_profile_overview';
-import SpotProfileSidebar from './spot_profile_sidebar';
+import SpotProfileSidebarContainer from './spot_profile_sidebar_container';
 
 
 class SpotProfile extends React.Component {
@@ -34,7 +34,7 @@ class SpotProfile extends React.Component {
 
           <SpotProfileOverview currentSpot={this.props.currentSpot}/>
 
-          <SpotProfileSidebar currentSpot={this.props.currentSpot}/>
+          <SpotProfileSidebarContainer currentSpot={this.props.currentSpot}/>
 
         </div>
 
