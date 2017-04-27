@@ -45,6 +45,8 @@ class Spot < ApplicationRecord
   belongs_to :privacy_level
   belongs_to :state
 
+  has_many :bookings
+
   has_many :availabilities
 
 

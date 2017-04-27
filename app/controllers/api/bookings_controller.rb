@@ -1,10 +1,11 @@
 class Api::BookingsController < ApplicationController
 
   def index
-    @bookings = Booking.where(guest_id: params[:user_id])
+    user = User.find_by(id: params[:user_id])
+    @trips = user.trips.includes(:spot, :status)
+    @reservations = user.reservations.includes(:spot, :status) || {}
 
-    debugger
-
+    render :index
   end
 
 

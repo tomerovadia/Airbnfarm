@@ -19,9 +19,18 @@ class User < ApplicationRecord
 
   attr_reader :password
 
-  has_many :spots,
-    class_name: Spot,
+  has_many :listings,
+    class_name: 'Spot',
     foreign_key: :host_id
+
+  has_many :trips,
+    class_name: 'Booking',
+    foreign_key: :guest_id
+
+  has_many :reservations,
+    through: :listings,
+    source: :bookings
+
 
   def password=(password)
     @password = password
