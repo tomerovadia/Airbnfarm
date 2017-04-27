@@ -16,7 +16,7 @@ class TripsPage extends React.Component {
 
       <div className='trips-page-main-container'>
 
-        <NavContainer />
+        <NavContainer searchBarVisible={false} />
 
         <h1 className='trips-page-h1'>Past Trips</h1>
 
