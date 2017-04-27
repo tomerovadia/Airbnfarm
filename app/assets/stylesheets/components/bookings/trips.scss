@@ -16,6 +16,7 @@ h1 {
 .trips-page-h1 {
   font-size: 32px;
   margin: 42px 0;
+  color: #484848;
 }
 
 
@@ -32,6 +33,10 @@ h1 {
   box-shadow: 1px 1px 1px #ccc;
   float: left;
   margin: 15px;
+}
+
+.trip-main-container a {
+  text-decoration: none;
 }
 
 .trip-photo-and-avatar {

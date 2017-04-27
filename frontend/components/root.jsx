@@ -8,6 +8,7 @@ import SpotSearchContainer from './search/spot_search_container';
 import Welcome from './main/welcome';
 import NavContainer from './main/nav_container';
 import TripsPage from './bookings/trips_page';
+import ReservationsPage from './bookings/reservations_page';
 import SpotMini from './spots/spot_mini';
 
 export default (props) => {
@@ -26,6 +27,7 @@ export default (props) => {
           <Route path='/become-a-host' component={BecomeAHostContainer}></Route>
 
           <Route path='/bookings/trips' component={TripsPage}></Route>
+          <Route path='/bookings/reservations' component={ReservationsPage}></Route>
 
           <Route path='/test' component={SpotMini}></Route>
 

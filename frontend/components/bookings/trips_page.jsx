@@ -4,6 +4,8 @@ import NavContainer from '../main/nav_container';
 import { connect } from 'react-redux';
 import { fetchBookings } from '../../actions/booking_actions';
 import { getFormatedBookings } from '../../reducers/selectors';
+import { withRouter } from 'react-router';
+
 
 class TripsPage extends React.Component {
 
@@ -45,7 +47,7 @@ class TripsPage extends React.Component {
 
 }
 
-export default connect(
+export default withRouter(connect(
   (state) => {
     return {
       currentUser: state.session.currentUser,
@@ -57,4 +59,4 @@ export default connect(
       fetchBookings: (userId) => dispatch(fetchBookings(userId)),
     };
   }
-)(TripsPage);
+)(TripsPage));
