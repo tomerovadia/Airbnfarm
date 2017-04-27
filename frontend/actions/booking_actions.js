@@ -3,6 +3,7 @@ import * as BookingAPIUtil from '../util/booking_api_util';
 // Constants
 
 export const RECEIVE_BOOKINGS = 'RECEIVE_BOOKINGS';
+export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 
 
 // Regular object action creators
@@ -11,6 +12,13 @@ export const receiveBookings = (bookings) => {
   return {
     type: RECEIVE_BOOKINGS,
     bookings,
+  };
+};
+
+export const receiveErrors = (errors) => {
+  return {
+    type: RECEIVE_ERRORS,
+    errors,
   };
 };
 
@@ -29,3 +37,10 @@ export const createBooking = (booking) => dispatch => {
       (errors) => console.log('there were errors')
     )
 };
+
+export const fetchBookings = (userId) => dispatch => {
+  return BookingAPIUtil.fetchBookings(userId)
+    .then((resp) => dispatch(receiveBookings(resp)),
+          (errors) => receiveErrors(errors)
+    );
+}

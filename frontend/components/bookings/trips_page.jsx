@@ -1,11 +1,14 @@
 import React from 'react';
 import Trip from './trip';
 import NavContainer from '../main/nav_container';
+import { connect } from 'react-redux';
 
 class TripsPage extends React.Component {
 
   constructor(props){
     super(props)
+
+
   }
 
 
@@ -40,4 +43,11 @@ class TripsPage extends React.Component {
 
 }
 
-export default TripsPage;
+export default connect(
+  (state) => {
+
+  },
+  (dispatch) => {
+    
+  }
+)(TripsPage);

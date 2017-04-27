@@ -29,7 +29,6 @@ class Nav extends React.Component {
 
 
   render(){
-    debugger
 
     let searchBarVisible;
     if(this.props.route){

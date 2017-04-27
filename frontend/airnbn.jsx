@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store.js';
 import Root from './components/root';
+import {fetchBookings} from './actions/booking_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -10,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const store = configureStore(preloadedState);
 
   window.store = store;
+  window.fetchBookings = fetchBookings;
 
   const root = document.getElementById('root');
   ReactDOM.render(
