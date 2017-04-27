@@ -29,11 +29,16 @@ class Nav extends React.Component {
 
 
   render(){
+    debugger
 
-    let spotsSearchBar = <SpotsSearchBar />;
-    if(this.props.router.location.pathname === '/'){
-      spotsSearchBar = null;
+    let searchBarVisible;
+    if(this.props.route){
+      searchBarVisible = this.props.route.searchBarVisible;
+    } else {
+      searchBarVisible = this.props.searchBarVisible
     }
+
+    let spotsSearchBar = searchBarVisible ? <SpotsSearchBar /> : null;
 
     let loggedIn = this.props.currentUser ? true : false
 

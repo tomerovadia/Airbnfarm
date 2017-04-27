@@ -7,7 +7,7 @@ import SpotProfileContainer from './spots/spot_profile/spot_profile_container';
 import SpotSearchContainer from './search/spot_search_container';
 import Welcome from './main/welcome';
 import NavContainer from './main/nav_container';
-import Trips from './bookings/trips';
+import TripsPage from './bookings/trips_page';
 
 export default (props) => {
 
@@ -17,14 +17,15 @@ export default (props) => {
         <Route path='/' component={App}>
           <IndexRoute component={Welcome} />
 
-          <Route path='/spots' component={NavContainer}>
+          <Route path='/spots' component={NavContainer} searchBarVisible={true} >
             <Route path='/spots/profile/:spotId' component={SpotProfileContainer}></Route>
             <Route path='/spots/search' component={SpotSearchContainer}></Route>
           </Route>
 
           <Route path='/become-a-host' component={BecomeAHostContainer}></Route>
 
-          <Route path='/bookings/trips' component={Trips}></Route>
+          <Route path='/bookings/:userId/trips' component={TripsPage}></Route>
+
         </Route>
       </Router>
     </Provider>

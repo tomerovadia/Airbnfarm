@@ -43,12 +43,6 @@ class Trip extends React.Component {
     );
 
   }
-
-<<<<<<< HEAD
-
-
-=======
->>>>>>> make-usersettingsdropdown-disappear
 }
 
 export default Trip;

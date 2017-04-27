@@ -9,7 +9,7 @@ export default (props) => {
   return (
     <div className='main-homepage-container'>
 
-      <NavContainer />
+      <NavContainer searchBarVisible={false} />
 
       <div className='welcome-splash'>
         <span className='welcome-where-to'>Where to? </span>
