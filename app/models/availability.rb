@@ -14,4 +14,9 @@ class Availability < ApplicationRecord
 
   belongs_to :spot
 
+  def book_availability
+    self.is_available = false
+    self.save!
+  end
+
 end
