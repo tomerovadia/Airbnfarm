@@ -12,9 +12,9 @@ class SpotProfileSidebar extends React.Component {
     this.state = {
       availabilities: [],
       focusedInput: null,
-      start_date: null,
-      end_date: null,
-      num_guests: 1,
+      startDate: null,
+      endDate: null,
+      numGuests: 1,
     };
 
     this.isDayBlocked = this.isDayBlocked.bind(this);
@@ -29,19 +29,27 @@ class SpotProfileSidebar extends React.Component {
   }
 
   isDayBlocked(day){
-
     return !this.state.availabilities.some((availableDate) => {
       return availableDate.startOf('day').isSame(day.startOf('day'));
     });
   }
 
   handleNumGuestsChange(e){
-    this.setState({num_guests: parseInt(e.target.value)});
+    this.setState({numGuests: parseInt(e.target.value)});
+  }
+
+  deMomentDate(moment){
+    return moment._d.toString();
   }
 
   handleSubmit(e){
     e.preventDefault();
-
+    this.props.createBooking({
+      num_guests: this.state.numGuests,
+      start_date: this.deMomentDate(this.state.startDate),
+      end_date: this.deMomentDate(this.state.endDate),
+      spot_id: this.props.currentSpot.id,
+    });
   }
 
   render(){
@@ -50,8 +58,6 @@ class SpotProfileSidebar extends React.Component {
     for(let i=1; i <= this.props.currentSpot.num_guests; i++){
       numGuestOptions.push(<option key={i} value={i}>{i} guests</option>);
     }
-
-    window.state = this.state;
 
     return(
 
@@ -63,7 +69,7 @@ class SpotProfileSidebar extends React.Component {
           </div>
         </div>
 
-        <form className='spot-profile-sidebar-form' onClick={this.handleSubmit}>
+        <form className='spot-profile-sidebar-form' onSubmit={this.handleSubmit}>
 
           <div className='spot-profile-calendar-labels'>
             <label>Check In</label>
@@ -72,9 +78,9 @@ class SpotProfileSidebar extends React.Component {
 
           <div className='spot-profile-booking-calendar'>
             <DateRangePicker
-              startDate={this.state.start_date}
-              endDate={this.state.end_date}
-              onDatesChange={({ startDate, endDate }) => this.setState({ start_date, end_date })}
+              startDate={this.state.startDate}
+              endDate={this.state.endDate}
+              onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })}
               focusedInput={this.state.focusedInput}
               onFocusChange={focusedInput => this.setState({ focusedInput })}
               startDatePlaceholderText='mm/dd/yyyy'
