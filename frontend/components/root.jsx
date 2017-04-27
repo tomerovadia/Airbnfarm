@@ -5,9 +5,9 @@ import App from './app';
 import BecomeAHostContainer from './spots/spot_form/become_a_host_container';
 import SpotProfileContainer from './spots/spot_profile/spot_profile_container';
 import SpotSearchContainer from './search/spot_search_container';
-import SpotSearchMap from './search/spot_search_map';
 import Welcome from './main/welcome';
 import NavContainer from './main/nav_container';
+import Trip from './bookings/trip';
 
 export default (props) => {
 
@@ -24,13 +24,9 @@ export default (props) => {
 
           <Route path='/become-a-host' component={BecomeAHostContainer}></Route>
 
-
-
+          <Route path='/bookings/trips' component={Trip}></Route>
         </Route>
       </Router>
     </Provider>
   );
 };
-
-
-// <Route path='/spots/test' component={SpotSearchMap}></Route>

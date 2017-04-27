@@ -13,10 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const root = document.getElementById('root');
   ReactDOM.render(
-    <Root store={store}/>,
+    <Root store={store} />,
     root
   );
-
+  //
   // FLESH THIS OUT LATER, LOGIC FOR MAKING USER DROPDOWN DISAPPEAR
   // MAY NEED TO CONNECT THE ROOT TO STORE
   // const onPageClick() => {

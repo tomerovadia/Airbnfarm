@@ -11,8 +11,6 @@ class SpotSearchBar extends React.Component {
   constructor(props){
     super(props);
 
-    console.log('constructing');
-
     this.state = {
       calendarProps: {
         focusedInput: null,
