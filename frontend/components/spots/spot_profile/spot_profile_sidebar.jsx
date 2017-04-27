@@ -12,11 +12,10 @@ class SpotProfileSidebar extends React.Component {
     this.state = {
       availabilities: [],
       focusedInput: null,
-      startDate: null,
-      endDate: null,
-      numGuests: 1,
+      start_date: null,
+      end_date: null,
+      num_guests: 1,
     };
-
 
     this.isDayBlocked = this.isDayBlocked.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -37,12 +36,12 @@ class SpotProfileSidebar extends React.Component {
   }
 
   handleNumGuestsChange(e){
-    this.setState({numGuests: parseInt(e.target.value)});
+    this.setState({num_guests: parseInt(e.target.value)});
   }
 
   handleSubmit(e){
     e.preventDefault();
-    
+
   }
 
   render(){
@@ -73,9 +72,9 @@ class SpotProfileSidebar extends React.Component {
 
           <div className='spot-profile-booking-calendar'>
             <DateRangePicker
-              startDate={this.state.startDate}
-              endDate={this.state.endDate}
-              onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })}
+              startDate={this.state.start_date}
+              endDate={this.state.end_date}
+              onDatesChange={({ startDate, endDate }) => this.setState({ start_date, end_date })}
               focusedInput={this.state.focusedInput}
               onFocusChange={focusedInput => this.setState({ focusedInput })}
               startDatePlaceholderText='mm/dd/yyyy'

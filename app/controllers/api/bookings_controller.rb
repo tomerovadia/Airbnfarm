@@ -17,6 +17,7 @@ class Api::BookingsController < ApplicationController
 
 
   def create
+    debugger
     @booking = Booking.new(booking_params)
 
     spot = Spot.find_by(id: params[:spot_id])
