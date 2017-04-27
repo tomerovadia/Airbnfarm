@@ -11,9 +11,13 @@ Rails.application.routes.draw do
     end
 
     resource :session, only: [:create, :destroy]
-    resources :spots, only: [:create, :show, :index]
+    resources :spots, only: [:create, :show, :index] do
+      resources :bookings, only: [:create]
+    end
+
+    resources :bookings, only: [:show]
+
     resources :availabilities, only: [:create, :destroy]
-    resources :bookings, only: [:create, :show]
 
   end
 
