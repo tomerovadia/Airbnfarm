@@ -14,11 +14,13 @@ class SpotProfileSidebar extends React.Component {
       focusedInput: null,
       startDate: null,
       endDate: null,
+      numGuests: 1,
     };
 
 
     this.isDayBlocked = this.isDayBlocked.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleNumGuestsChange = this.handleNumGuestsChange.bind(this);
   }
 
   componentWillReceiveProps(newProps){
@@ -34,20 +36,23 @@ class SpotProfileSidebar extends React.Component {
     });
   }
 
+  handleNumGuestsChange(e){
+    this.setState({numGuests: parseInt(e.target.value)});
+  }
+
   handleSubmit(e){
     e.preventDefault();
-
-
-
-
+    
   }
 
   render(){
 
     let numGuestOptions = [];
-    for(let i=0; i < this.props.currentSpot.num_guests; i++){
-      numGuestOptions.push(<option key={i}>{i+1} guests</option>);
+    for(let i=1; i <= this.props.currentSpot.num_guests; i++){
+      numGuestOptions.push(<option key={i} value={i}>{i} guests</option>);
     }
+
+    window.state = this.state;
 
     return(
 
@@ -84,7 +89,7 @@ class SpotProfileSidebar extends React.Component {
 
           <div className='spot-profile-guests-select-div'>
             <label>Guests</label>
-            <select className='spot-profile-guests-select'>
+            <select className='spot-profile-guests-select' onChange={this.handleNumGuestsChange}>
               {numGuestOptions}
             </select>
           </div>
