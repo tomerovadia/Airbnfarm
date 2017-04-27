@@ -1,6 +1,6 @@
 export const createBooking = (booking) => {
   const url = `api/spots/${booking.spot_id}/bookings`
-  debugger
+
   return $.ajax({
     method: 'post',
     url,
