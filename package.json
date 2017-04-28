@@ -33,6 +33,7 @@
     "react-dates": "^10.1.1",
     "react-dom": "^15.5.4",
     "react-moment": "^0.2.2",
+    "react-onclickoutside": "^5.11.1",
     "react-redux": "^5.0.4",
     "react-router": "^3.0.5",
     "redux": "^3.6.0",
