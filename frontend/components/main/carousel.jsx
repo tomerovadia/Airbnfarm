@@ -17,7 +17,6 @@ class Carousel extends React.Component {
   }
 
   render() {
-    debugger
 
     if(Object.keys(this.props.searchResults).length >= 3) {
       this.spots = [
