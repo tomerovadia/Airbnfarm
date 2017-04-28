@@ -2,11 +2,14 @@
 
 .spot-profile-img-container {
   position: relative;
+  overflow: hidden;
+  max-height: 552px;
+  display: flex;
+  align-items: center;
 }
 
 .spot-profile-main-img {
   width: 100%;
-  max-height: 552px;
 }
 
 .spot-profile-photo-overlay {
