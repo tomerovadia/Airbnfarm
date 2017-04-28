@@ -1,17 +1,21 @@
 import React from 'react';
 import {Link, hashHistory} from 'react-router';
 import UserSettingsDropdown from './user_settings_dropdown';
+import HostDropdown from './host_dropdown';
 
 export default (props) => {
 
-  let userSettingsDropdown = props.activeDropdown === 'userSettings' ? <UserSettingsDropdown handleLogout={props.handleLogout} hideDropdown={props.hideDropdown}/> : null
+  let userSettingsDropdown = props.activeDropdown === 'userSettings' ? <UserSettingsDropdown handleLogout={props.handleLogout} hideDropdown={props.hideDropdown}/> : null;
+  let hostDropdown = props.activeDropdown === 'host' ? <HostDropdown hideDropdown={props.hideDropdown}/> : null;
 
   let links;
   if(props.loggedIn){
     links =
     <ul className='main-nav-links'>
       <Link>No time to host?</Link>
-      <Link to='/become-a-host'>Host</Link>
+      <Link onClick={() => props.showDropdown('host')}>Host
+        {hostDropdown}
+      </Link>
       <Link to='/bookings/trips'>Trips</Link>
       <Link>Messages</Link>
       <Link>Help</Link>

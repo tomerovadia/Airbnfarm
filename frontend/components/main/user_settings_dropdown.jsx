@@ -12,7 +12,7 @@ class UserSettingsDropdown extends React.Component {
   render() {
 
     return (
-      <div className='dropdown-div'>
+      <div className='user-settings-dropdown-div dropdown-div'>
         <ul>
           <li>Edit Profile</li>
           <li>Travel Credit</li>

@@ -2,6 +2,7 @@ import React from 'react';
 import onClickOutside from 'react-onclickoutside';
 import {connect} from 'react-redux';
 import {hideDropdown} from '../../actions/modal_actions';
+import {Link} from 'react-router';
 
 class HostDropdown extends React.Component {
 
@@ -12,15 +13,17 @@ class HostDropdown extends React.Component {
   render() {
 
     return (
-      <div className='host-dropdown-div'>
+      <div className='host-dropdown-div dropdown-div'>
         <ul>
-          <li>Edit Profile</li>
-          <li>Travel Credit</li>
-          <li>Account Settings</li>
-          <li>My Guidebook</li>
-          <li>Gift Cards</li>
-          <li>Business Travel</li>
-          <li onClick={this.props.handleLogout}>Log Out</li>
+          <Link>Dashboard</Link>
+          <Link>Calendar</Link>
+          <Link>Manage Listings</Link>
+          <Link>List Your Space</Link>
+          <Link>Your Reservations</Link>
+          <Link>Transaction History</Link>
+          <Link>Reviews</Link>
+          <Link>Host Assist</Link>
+          <Link>Experience Hosting</Link>
 
         </ul>
       </div>
