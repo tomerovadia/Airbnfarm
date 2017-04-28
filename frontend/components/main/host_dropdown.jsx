@@ -18,13 +18,12 @@ class HostDropdown extends React.Component {
           <Link>Dashboard</Link>
           <Link>Calendar</Link>
           <Link>Manage Listings</Link>
-          <Link>List Your Space</Link>
-          <Link>Your Reservations</Link>
+          <Link to='/become-a-host'>List Your Space</Link>
+          <Link to='/bookings/host/reservations'>Your Reservations</Link>
           <Link>Transaction History</Link>
           <Link>Reviews</Link>
           <Link>Host Assist</Link>
           <Link>Experience Hosting</Link>
-
         </ul>
       </div>
     )

@@ -1,4 +1,4 @@
-.dropdown-div {
+ .dropdown-div {
   width: 280px;
   position: absolute;
   right: 0;
@@ -8,15 +8,17 @@
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.dropdown-div li {
+.dropdown-div a {
   text-align: left;
   padding: 20px 22px 20px 0;
   margin: 0 21px;
   border-bottom: 1px solid #F2F2F2;
   font-size: 13px;
   cursor: pointer;
+  display: block;
+  color: #575757;
 }
 
-.dropdown-div li:hover {
+.dropdown-div a:hover {
   border-bottom: 1px solid black;
 }

@@ -57,7 +57,7 @@
   z-index: 2;
 }
 
-.main-nav-links a {
+.main-nav-links a, #main-nav-avatar {
   font-weight: 400;
   font-family: "Helvetica Neue";
   text-align: center;
@@ -73,12 +73,12 @@
 .main-nav-links a:hover {
 }
 
-#main-nav-avatar-link {
+#main-nav-avatar {
   padding: 3px 0;
   position: relative;
 }
 
-#main-nav-avatar-link img {
+#main-nav-avatar img {
   border-radius: 30px;
   height: 30px;
 }
