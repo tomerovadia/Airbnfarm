@@ -8,7 +8,6 @@ class SpotSearchResultsList extends React.Component {
 
     this.contents = null;
 
-    console.log('constructing');
   }
 
   componentWillReceiveProps(newProps){
@@ -31,10 +30,6 @@ class SpotSearchResultsList extends React.Component {
   }
 
   render() {
-
-    console.log('rendering');
-    console.log(this.props.spotErrors);
-    console.log(this.props.searchResults);
 
     return(
       <div className='spot-search-results-list-container clearfix'>

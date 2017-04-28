@@ -17,12 +17,13 @@ class Carousel extends React.Component {
   }
 
   render() {
+    debugger
 
-    if(Object.keys(this.props.searchResults).length > 0) {
+    if(Object.keys(this.props.searchResults).length >= 3) {
       this.spots = [
-        <SpotMini spot={this.props.searchResults[0]} />,
-        <SpotMini spot={this.props.searchResults[1]} />,
-        <SpotMini spot={this.props.searchResults[2]} />
+        <SpotMini key={this.props.searchResults[0].id} spot={this.props.searchResults[0]} />,
+        <SpotMini key={this.props.searchResults[1].id} spot={this.props.searchResults[1]} />,
+        <SpotMini key={this.props.searchResults[2].id} spot={this.props.searchResults[2]} />
       ]
     }
 
