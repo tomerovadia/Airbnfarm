@@ -124,6 +124,7 @@ ActiveRecord::Base.transaction do
   Booking.status.create!(status: 'approved')
   Booking.status.create!(status: 'declined')
   Booking.status.create!(status: 'pending')
+  Booking.status.create!(status: 'cancelled')
 
 
 

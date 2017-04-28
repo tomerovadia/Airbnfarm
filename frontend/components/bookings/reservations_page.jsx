@@ -16,8 +16,6 @@ class ReservationsPage extends React.Component {
 
   }
 
-
-
   render(){
 
     let reservations = this.props.currentBookings.reservations.map((reservation) => {

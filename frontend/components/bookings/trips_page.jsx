@@ -2,7 +2,7 @@ import React from 'react';
 import Trip from './trip';
 import NavContainer from '../main/nav_container';
 import { connect } from 'react-redux';
-import { fetchBookings } from '../../actions/booking_actions';
+import { fetchBookings, cancelBooking } from '../../actions/booking_actions';
 import { getFormatedBookings } from '../../reducers/selectors';
 import { withRouter } from 'react-router';
 
@@ -13,6 +13,7 @@ class TripsPage extends React.Component {
     super(props)
 
     this.props.fetchBookings(this.props.currentUser.id);
+
   }
 
 
@@ -20,7 +21,7 @@ class TripsPage extends React.Component {
   render(){
 
     let trips = this.props.currentBookings.trips.map((trip) => {
-      return <Trip key={trip.id} trip={trip} />
+      return <Trip key={trip.id} trip={trip} cancelBooking={this.props.cancelBooking} />
     });
 
 
@@ -57,6 +58,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchBookings: (userId) => dispatch(fetchBookings(userId)),
+    cancelBooking: (bookingId) => dispatch(cancelBooking(bookingId)),
   };
 }
 

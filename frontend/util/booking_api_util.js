@@ -52,3 +52,19 @@ export const declineBooking = (bookingId) => {
   });
 
 };
+
+export const cancelBooking = (bookingId) => {
+  const url = `api/bookings/${bookingId}`;
+
+  return $.ajax({
+    method: 'patch',
+    url,
+    contentResponse: 'json',
+    data: {
+      booking: {
+        booking_status: 'cancelled'
+      }
+    }
+  });
+
+};

@@ -1,5 +1,5 @@
 import merge from 'lodash/merge';
-import { RECEIVE_BOOKINGS, RECEIVE_BOOKING, RECEIVE_ERRORS } from '../actions/booking_actions';
+import { RECEIVE_BOOKINGS, RECEIVE_TRIP, RECEIVE_RESERVATION, RECEIVE_ERRORS } from '../actions/booking_actions';
 
 const _initialState = {
   trips: {},
@@ -18,8 +18,12 @@ export default (oldState = _initialState, action) => {
     case RECEIVE_ERRORS:
       return merge(newState, {errors: action.errors});
 
-    case RECEIVE_BOOKING:
-      newState.reservations[action.booking.id] = action.booking
+    case RECEIVE_RESERVATION:
+      newState.reservations[action.reservation.id] = action.reservation
+      return merge(newState)
+
+    case RECEIVE_TRIP:
+      newState.trips[action.trip.id] = action.trip
       return merge(newState)
 
     default:

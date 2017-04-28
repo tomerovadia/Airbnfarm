@@ -5,11 +5,16 @@ class Trip extends React.Component {
 
   constructor(props){
     super(props)
+
+    this.handleCancelButtonClick = this.handleCancelButtonClick.bind(this);
+  }
+
+  handleCancelButtonClick(){
+    debugger
+    this.props.cancelBooking(this.props.trip.id);
   }
 
   render(){
-
-    // if(this.props.trip.id === 44) debugger
 
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
 
@@ -30,6 +35,11 @@ class Trip extends React.Component {
       statusColor = 'green';
     } else if (bookingStatus === 'declined') {
       statusColor = 'red';
+    }
+
+    let cancelButton = null;
+    if(this.props.trip.booking_status === 'pending'){
+      cancelButton = <button className='trip-cancel-button' onClick={this.handleCancelButtonClick}>Cancel Request</button>;
     }
 
     return(
@@ -63,7 +73,7 @@ class Trip extends React.Component {
           <span style={{color: statusColor}} className='trip-status-span'>{formattedBookingStatus}</span>
         </div>
 
-        <button className='trip-cancel-button'>Cancel Request</button>
+        {cancelButton}
 
 
 

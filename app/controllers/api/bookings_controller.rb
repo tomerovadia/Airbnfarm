@@ -48,8 +48,9 @@ class Api::BookingsController < ApplicationController
 
   def update
     @booking = Booking.find_by(id: params[:id])
-
-    if @booking.update(status_id: BookingStatus.find_by(status: params[:booking][:booking_status]).id)
+    if !@booking
+      render json: ['booking not found'], status: 404
+    elsif @booking.update(status_id: BookingStatus.find_by(status: params[:booking][:booking_status]).id)
       Availability.book_availabilities(@booking.start_date, @booking.end_date, @booking.spot)
       render :show
     else
