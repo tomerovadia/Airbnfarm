@@ -77,8 +77,8 @@ class SessionForm extends React.Component {
     if(credentialsError){
       credentialsErrorDiv = (
         <div className='session-form-credentials-error-div'>
-          <div className='credentials-error-logo'>
-            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+          <div className='credentials-error-logo-div'>
+            <i className="fa fa-exclamation-triangle" aria-hidden="true"></i>
           </div>
           <div className='credentials-error-text'>
             <span>{credentialsError}</span>
@@ -99,23 +99,35 @@ class SessionForm extends React.Component {
 
               <div className='session-form-error-div'>{emailError}</div>
 
-              <input
-                className={this.determineInputClassName('email')}
-                type='text'
-                value={this.state.email}
-                onChange={this.handleChange('email')}
-                placeholder='Email Address'
-              />
+              <div className='session-form-input-div'>
+                <input
+                  className={this.determineInputClassName('email')}
+                  type='text'
+                  value={this.state.email}
+                  onChange={this.handleChange('email')}
+                  placeholder='Email Address'
+                />
+
+                <div className='input-icon-div'><i className="fa fa-envelope-o" aria-hidden="true"></i></div>
+              </div>
+
+
 
               <div className='session-form-error-div'>{passwordError}</div>
 
-              <input
-                className={this.determineInputClassName('password')}
-                type='password'
-                value={this.state.password}
-                onChange={this.handleChange('password')}
-                placeholder='Password'
-              />
+              <div className='session-form-input-div'>
+                <input
+                  className={this.determineInputClassName('password')}
+                  type='password'
+                  value={this.state.password}
+                  onChange={this.handleChange('password')}
+                  placeholder='Password'
+                />
+
+                <div className='input-icon-div'><i className="fa fa-lock" aria-hidden="true"></i></div>
+              </div>
+
+
 
               <button
                 form='session-form'

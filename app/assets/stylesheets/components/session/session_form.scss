@@ -45,6 +45,11 @@
   letter-spacing: 1px;
 }
 
+.session-form-input-div {
+  display: flex;
+  position: relative;
+}
+
 .session-form-div input {
   height: 65px;
   font-size: 15px;
@@ -56,6 +61,17 @@
   margin: 5px auto;
   width: 97%;
   box-sizing: border-box;
+}
+
+.session-form-input-div .input-icon-div {
+  position: absolute;
+  right: 27px;
+  top: 26px;
+}
+
+.session-form-div i {
+  font-size: 18px;
+  color: #5e5e5e;
 }
 
 input.session-form-input-with-error {
@@ -102,6 +118,18 @@ input.session-form-input-with-error {
   background-color: #FFD1C4;
   display: flex;
   border-bottom: 1px solid #a6abb2;
+  display: flex;
+  justify-content: center;
+}
+
+.credentials-error-logo-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.credentials-error-logo-div i {
+  font-size: 32px;
 }
 
 .credentials-error-logo {
@@ -112,4 +140,7 @@ input.session-form-input-with-error {
   width: 85%;
   padding: 15px 0px;
   line-height: 22px;
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
 }
