@@ -18,10 +18,6 @@ class Carousel extends React.Component {
 
   render() {
 
-    console.log('rendering');
-    console.log(this.props.searchResults);
-
-
     if(Object.keys(this.props.searchResults).length > 0) {
       this.spots = [
         <SpotMini spot={this.props.searchResults[0]} />,
@@ -30,9 +26,6 @@ class Carousel extends React.Component {
       ]
     }
 
-
-    window.spots = this.spots;
-    window.searchResults = this.props.searchResults;
 
     return(
       <div className='carousel-main-container'>
