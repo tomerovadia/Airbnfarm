@@ -6,7 +6,6 @@ import { fetchBookings, cancelBooking } from '../../actions/booking_actions';
 import { getFormatedBookings } from '../../reducers/selectors';
 import { withRouter } from 'react-router';
 
-
 class TripsPage extends React.Component {
 
   constructor(props){

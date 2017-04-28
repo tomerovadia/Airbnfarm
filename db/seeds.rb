@@ -19,6 +19,11 @@ ActiveRecord::Base.transaction do
   private_room = PrivacyLevel.create!(privacy_level: 'Private Room')
   shared_room = PrivacyLevel.create!(privacy_level: 'Shared Room')
 
+  BookingStatus.create!(status: 'approved')
+  BookingStatus.create!(status: 'declined')
+  BookingStatus.create!(status: 'pending')
+  BookingStatus.create!(status: 'cancelled')
+
   bob = User.create!(email: 'bob@gmail.com', password: 'password')
   tomer = User.create!(email: 'tomer@gmail.com', password: 'password')
 
@@ -121,10 +126,7 @@ ActiveRecord::Base.transaction do
   end
 
 
-  Booking.status.create!(status: 'approved')
-  Booking.status.create!(status: 'declined')
-  Booking.status.create!(status: 'pending')
-  Booking.status.create!(status: 'cancelled')
+
 
 
 

@@ -80,8 +80,8 @@ class Spot < ApplicationRecord
 
 
 
-  def self.in_bounds(bounds)
-
-  end
+  # def self.in_bounds(bounds)
+  #
+  # end
 
 end

@@ -1,4 +1,4 @@
-.user-settings-dropdown-div {
+.dropdown-div {
   border: 1px solid red;
   width: 280px;
   position: absolute;
@@ -8,7 +8,7 @@
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.user-settings-dropdown-div li {
+.dropdown-div li {
   text-align: left;
   padding: 20px 22px 20px 0;
   margin: 0 21px;
@@ -17,6 +17,6 @@
   cursor: pointer;
 }
 
-.user-settings-dropdown-div li:hover {
+.dropdown-div li:hover {
   border-bottom: 1px solid black;
 }

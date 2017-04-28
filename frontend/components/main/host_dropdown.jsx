@@ -3,7 +3,7 @@ import onClickOutside from 'react-onclickoutside';
 import {connect} from 'react-redux';
 import {hideDropdown} from '../../actions/modal_actions';
 
-class UserSettingsDropdown extends React.Component {
+class HostDropdown extends React.Component {
 
   handleClickOutside(e){
     this.props.hideDropdown();
@@ -12,7 +12,7 @@ class UserSettingsDropdown extends React.Component {
   render() {
 
     return (
-      <div className='dropdown-div'>
+      <div className='host-dropdown-div'>
         <ul>
           <li>Edit Profile</li>
           <li>Travel Credit</li>
@@ -31,4 +31,4 @@ class UserSettingsDropdown extends React.Component {
 
 }
 
-export default onClickOutside(UserSettingsDropdown);
+export default onClickOutside(HostDropdown);
