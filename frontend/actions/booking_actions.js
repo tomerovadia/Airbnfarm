@@ -4,6 +4,7 @@ import * as BookingAPIUtil from '../util/booking_api_util';
 
 export const RECEIVE_BOOKINGS = 'RECEIVE_BOOKINGS';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
+export const RECEIVE_BOOKING = 'RECEIVE_BOOKING';
 
 
 // Regular object action creators
@@ -15,12 +16,26 @@ export const receiveBookings = (bookings) => {
   };
 };
 
+export const receiveBooking = (booking) => {
+  return {
+    type: RECEIVE_BOOKING,
+    booking,
+  };
+}
+
+
+
+
 export const receiveErrors = (errors) => {
   return {
     type: RECEIVE_ERRORS,
     errors,
   };
 };
+
+
+
+
 
 
 
@@ -43,4 +58,11 @@ export const fetchBookings = (userId) => dispatch => {
     .then((resp) => dispatch(receiveBookings(resp)),
           (errors) => dispatch(receiveErrors(errors.responseJSON))
     );
-}
+};
+
+export const approveBooking = (bookingId) => dispatch => {
+  return BookingAPIUtil.approveBooking(bookingId)
+    .then((resp) => dispatch(receiveBooking(resp)),
+          (errors) => dispatch(receiveErrors(errors.responseJSON))
+    );
+};

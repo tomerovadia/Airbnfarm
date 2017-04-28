@@ -12,7 +12,6 @@ class SpotSearchResultsList extends React.Component {
   }
 
   componentWillReceiveProps(newProps){
-    debugger
     if(Object.keys(newProps.searchResults).length > 0){
       this.content = newProps.searchResults.map((spot) => {
         return <SpotMini key={spot.id} spot={spot} />

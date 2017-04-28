@@ -19,3 +19,19 @@ export const fetchBookings = (userId) => {
     contentResponse: 'json',
   });
 };
+
+export const approveBooking = (bookingId) => {
+  const url = `api/bookings/${bookingId}`;
+
+  return $.ajax({
+    method: 'patch',
+    url,
+    contentResponse: 'json',
+    data: {
+      booking: {
+        booking_status: 'approved'
+      }
+    }
+  });
+
+};

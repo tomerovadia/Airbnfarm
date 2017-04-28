@@ -15,6 +15,16 @@ class Trip extends React.Component {
     const endDate = new Date(this.props.trip.end_date);
     const dateRange = months[startDate.getMonth()] + ' ' + startDate.getDate() + ' - ' + months[endDate.getMonth()] + ' ' + endDate.getDate() + ', ' + endDate.getFullYear()
 
+    const bookingStatus = this.props.trip.booking_status;
+    const formattedBookingStatus = bookingStatus.charAt(0).toUpperCase() + bookingStatus.slice(1);
+
+    let statusColor = '#878787';
+    if(bookingStatus === 'approved'){
+      statusColor = 'green';
+    } else if (bookingStatus === 'declined') {
+      statusColor = 'red';
+    }
+
     return(
       <div className='trip-main-container'>
 
@@ -43,7 +53,7 @@ class Trip extends React.Component {
         </Link>
 
         <div className='trip-status-div'>
-          <span className='trip-status-span'>Approved</span>
+          <span style={{color: statusColor}} className='trip-status-span'>{formattedBookingStatus}</span>
         </div>
 
         <button className='trip-cancel-button'>Cancel Request</button>

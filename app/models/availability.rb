@@ -19,4 +19,10 @@ class Availability < ApplicationRecord
     self.save!
   end
 
+  def self.book_availabilities(start_date, end_date, spot)
+    (start_date .. end_date).each do |date|
+      Availability.find_by(available_date: date, spot: spot).book_availability
+    end
+  end
+
 end
