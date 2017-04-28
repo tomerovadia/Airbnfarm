@@ -2,10 +2,9 @@ import React from 'react';
 import {Link, hashHistory} from 'react-router';
 import UserSettingsDropdown from './user_settings_dropdown';
 
-
 export default (props) => {
 
-  let userSettingsDropdown = props.activeDropdown === 'userSettings' ? <UserSettingsDropdown handleLogout={props.handleLogout}/> : null
+  let userSettingsDropdown = props.activeDropdown === 'userSettings' ? <UserSettingsDropdown handleLogout={props.handleLogout} hideDropdown={props.hideDropdown}/> : null
 
   let links;
   if(props.loggedIn){

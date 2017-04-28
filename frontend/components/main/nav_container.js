@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import Nav from './nav';
 import { withRouter } from 'react-router';
-import { receiveModal, showDropdown } from '../../actions/modal_actions';
+import { receiveModal, showDropdown, hideDropdown } from '../../actions/modal_actions';
 import { logout } from '../../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -24,6 +24,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     logout: () => dispatch(logout()),
     receiveModal: (modalName) => dispatch(receiveModal(modalName)),
     showDropdown: (dropdown) => dispatch(showDropdown(dropdown)),
+    hideDropdown: () => dispatch(hideDropdown()),
   };
 };
 

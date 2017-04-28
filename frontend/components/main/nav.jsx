@@ -70,6 +70,7 @@ class Nav extends React.Component {
               activateModal={this.activateModal}
               showDropdown={this.props.showDropdown}
               handleLogout={this.handleLogout}
+              hideDropdown={this.props.hideDropdown}
               />
           </div>
         </nav>
