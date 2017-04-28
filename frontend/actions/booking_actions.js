@@ -36,10 +36,6 @@ export const receiveErrors = (errors) => {
 
 
 
-
-
-
-
 // Thunk function action creators
 
 export const createBooking = (booking) => dispatch => {

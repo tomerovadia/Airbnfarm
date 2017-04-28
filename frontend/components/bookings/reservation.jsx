@@ -5,7 +5,7 @@ export default (props) => {
 
 
   const handleApproveButtonClick = (e) => {
-    
+    props.approveBooking(props.reservation.id);
   }
 
 

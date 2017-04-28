@@ -21,7 +21,8 @@ class Availability < ApplicationRecord
 
   def self.book_availabilities(start_date, end_date, spot)
     (start_date .. end_date).each do |date|
-      Availability.find_by(available_date: date, spot: spot).book_availability
+      availability = Availability.find_by(available_date: date, spot: spot)
+      availability.book_availability if availability
     end
   end
 

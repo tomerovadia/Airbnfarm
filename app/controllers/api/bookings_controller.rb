@@ -37,7 +37,6 @@ class Api::BookingsController < ApplicationController
     @booking.base_price = spot.base_price.to_i
 
     if @booking.save
-      # Booking.book_availabilities(@booking.start_date, @booking.end_date, @booking.spot)
       render :show
     else
       render json: @booking.errors, status: 422
