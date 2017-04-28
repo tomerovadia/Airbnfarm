@@ -12,6 +12,9 @@ import ReservationsPage from './bookings/reservations_page';
 import HostPage from './bookings/host_page';
 
 
+import Carousel from './main/carousel';
+
+
 
 export default (props) => {
 
@@ -36,7 +39,7 @@ export default (props) => {
 
 
 
-          <Route path='/test' component={ReservationsPage}></Route>
+          <Route path='/test' component={Carousel}></Route>
 
         </Route>
       </Router>

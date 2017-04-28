@@ -1,6 +1,12 @@
+.homepage-main-section {
+  margin: 0 auto;
+  width: 75%;
+}
+
+
 .welcome-splash {
   font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
-  text-align: center;
+  text-align: left;
   margin-top: 50px;
 }
 
@@ -16,4 +22,26 @@
   font-weight: 200;
   font-size: 48px;
   font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+}
+
+
+
+.homepage-homes-section-header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.homepage-section-h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #484848;
+}
+
+.homepage-section-see-all {
+  text-decoration: none;
+  line-height: 18px;
+  font-size: 14px;
+  color: #484848;
+  font-weight: 300;
 }

@@ -7,7 +7,7 @@ import {Link} from 'react-router';
 class HostDropdown extends React.Component {
 
   handleClickOutside(e){
-    this.props.hideDropdown();
+    this.props.hideDropdown(e);
   }
 
   render() {

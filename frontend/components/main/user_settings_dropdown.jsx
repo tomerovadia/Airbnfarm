@@ -13,7 +13,7 @@ class UserSettingsDropdown extends React.Component {
   }
 
   handleClickOutside(e){
-    this.props.hideDropdown();
+    this.props.hideDropdown(e);
   }
 
   handleLogoutClick(e){

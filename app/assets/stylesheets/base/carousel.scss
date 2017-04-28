@@ -1,0 +1,21 @@
+.carousel-main-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0;
+}
+
+.carousel-main-container .spot-mini-main-container {
+  width: 33%;
+}
+
+.carousel-main-container .spot-mini-main-container {
+  width: 33%;
+}
+
+.carousel-main-container .spot-mini-main-container img.spot-img {
+  width: 100%;
+}
+
+.carousel-main-container .spot-mini-main-container:first-child {
+  padding-left: 0;
+}
