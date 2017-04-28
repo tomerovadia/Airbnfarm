@@ -9,10 +9,17 @@ class Trip extends React.Component {
 
   render(){
 
+    // if(this.props.trip.id === 44) debugger
+
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
 
-    const startDate = new Date(this.props.trip.start_date);
-    const endDate = new Date(this.props.trip.end_date);
+    let startDate = new Date(this.props.trip.start_date);
+    startDate.setTime(startDate.getTime() + (4*60*60*1000)) // convert to UTC
+
+    let endDate = new Date(this.props.trip.end_date);
+    endDate.setTime(endDate.getTime() + (4*60*60*1000)) // convert to UTC
+
+
     const dateRange = months[startDate.getMonth()] + ' ' + startDate.getDate() + ' - ' + months[endDate.getMonth()] + ' ' + endDate.getDate() + ', ' + endDate.getFullYear()
 
     const bookingStatus = this.props.trip.booking_status;

@@ -24,11 +24,16 @@ class SpotProfileSidebar extends React.Component {
 
   componentWillReceiveProps(newProps){
     if(newProps.currentSpot.availabilities){
-      this.setState({availabilities: newProps.currentSpot.availabilities.map((date) => moment(date))})
+      this.setState({availabilities: newProps.currentSpot.availabilities.map((date) => {
+        let dateObj = new Date(date);
+        dateObj.setTime(dateObj.getTime() + (4*60*60*1000));
+        return moment(dateObj);
+      })})
     }
   }
 
   isDayBlocked(day){
+
     return !this.state.availabilities.some((availableDate) => {
       return availableDate.startOf('day').isSame(day.startOf('day'));
     });
