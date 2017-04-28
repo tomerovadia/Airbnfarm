@@ -27,7 +27,7 @@
 #
 
 class Spot < ApplicationRecord
-  has_attached_file :main_photo, default_url: "missing.png"
+  has_attached_file :main_photo, default_url: "farm17.png"
   validates_attachment_content_type :main_photo, content_type: /\Aimage\/.*\Z/
 
   validates_presence_of :host, :title, :base_price, :summary, :main_photo, :privacy_level,

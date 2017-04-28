@@ -1,5 +1,6 @@
 .become-a-host-main-container {
   margin-top: 25px;
+  align-items: center;
 }
 
 .become-a-host-errors {
@@ -7,6 +8,28 @@
   background-color: #FFD1C4;
   border-top: 1px solid black;
   min-height: 62px;
+  display: flex;
+  justify-content: center;
+}
+
+.become-a-host-errors .error-icon {
+  display: flex;
+  align-items: center;
+}
+
+.become-a-host-errors ul {
+  margin: 10px 10px;
+}
+
+.become-a-host-errors li {
+  text-align: left;
+  margin: 10px;
+}
+
+.become-a-host-errors i {
+  margin: 10px;
+  font-size: 30px;
+  color: #e4a593;
 }
 
 .become-a-host-panels {

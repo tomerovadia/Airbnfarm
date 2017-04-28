@@ -9,7 +9,7 @@ class Carousel extends React.Component {
   constructor(props){
     super(props);
 
-    this.spots = 'turkey';
+    this.spots = null;
     const today = new Date();
     const nextMonth = new Date(today.setMonth(today.getMonth() + 1));
 

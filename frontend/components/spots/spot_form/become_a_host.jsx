@@ -266,8 +266,10 @@ class BecomeAHost extends React.Component {
 
         <div
           className='become-a-host-errors'
-          style={{display: Object.keys(this.props.errors).length === 0 ? 'none' : 'block' }}
+          style={{display: Object.keys(this.props.errors).length === 0 ? 'none' : 'flex' }}
           >
+
+          <div className='error-icon'><i className="fa fa-exclamation-circle" aria-hidden="true"></i></div>
 
           <ul>
             {errorsLis}
