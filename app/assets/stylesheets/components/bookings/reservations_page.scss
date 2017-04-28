@@ -14,8 +14,7 @@
   display: flex;
   border-bottom: 1px solid #dce0e0;
   height: 185px;
-  width: 726px;
-  margin: 0 auto;
+  justify-content: space-between;
 }
 
 .reservation-main-container:last-child {
@@ -46,6 +45,7 @@
 .reservation-middle {
   padding: 25px 30px;
   width: 50%;
+  padding-left: 45px;
 }
 
 .reservation-guest-email {

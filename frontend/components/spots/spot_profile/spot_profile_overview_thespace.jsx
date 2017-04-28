@@ -9,24 +9,24 @@ export default (props) => {
       <div className='spot-profile-overview-thespace-row'>
         <div className='spot-profile-overview-thespace-item'>
           <span>Bathrooms: </span>
-          <span>8</span>
+          <span>{props.currentSpot.num_bathrooms}</span>
         </div>
 
         <div className='spot-profile-overview-thespace-item'>
           <span>Bedrooms: </span>
-          <span>4</span>
+          <span>{props.currentSpot.num_bedrooms}</span>
         </div>
       </div>
 
       <div className='spot-profile-overview-thespace-row'>
         <div className='spot-profile-overview-thespace-item'>
           <span>Beds: </span>
-          <span>2</span>
+          <span>{props.currentSpot.num_beds}</span>
         </div>
 
         <div className='spot-profile-overview-thespace-item'>
           <span>Room Type: </span>
-          <span>Entire home/apt</span>
+          <span>{props.currentSpot.privacy_level}</span>
         </div>
       </div>
 
