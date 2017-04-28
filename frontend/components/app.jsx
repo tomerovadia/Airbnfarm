@@ -9,7 +9,6 @@ class App extends React.Component {
 
   constructor(props){
     super(props);
-
   }
 
   render() {
@@ -56,7 +55,7 @@ export default connect(
   (dispatch) => {
     return {
       clearModal: () => dispatch(clearModal()),
-      hideUserSettings: () => dispatch(hideUserSettings()),
+      // hideUserSettings: () => dispatch(hideUserSettings()),
     };
   }
 )(App);

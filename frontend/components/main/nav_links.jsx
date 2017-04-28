@@ -5,7 +5,7 @@ import UserSettingsDropdown from './user_settings_dropdown';
 
 export default (props) => {
 
-  let userSettingsDropdown = props.userSettingsVisible ? <UserSettingsDropdown handleLogout={props.handleLogout}/> : null
+  let userSettingsDropdown = props.activeDropdown === 'userSettings' ? <UserSettingsDropdown handleLogout={props.handleLogout}/> : null
 
   let links;
   if(props.loggedIn){
@@ -16,7 +16,7 @@ export default (props) => {
       <Link to='/bookings/trips'>Trips</Link>
       <Link>Messages</Link>
       <Link>Help</Link>
-      <Link id='main-nav-avatar-link' onClick={props.showUserSettings}>
+      <Link id='main-nav-avatar-link' onClick={() => props.showDropdown('userSettings')}>
         <img src='https://a0.muscache.com/defaults/user_pic-50x50.png?v=2' />
         {userSettingsDropdown}
       </Link>

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import Nav from './nav';
 import { withRouter } from 'react-router';
-import { receiveModal, showUserSettings } from '../../actions/modal_actions';
+import { receiveModal, showDropdown } from '../../actions/modal_actions';
 import { logout } from '../../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -14,7 +14,7 @@ const mapStateToProps = (state, ownProps) => {
 
   return {
     currentUser,
-    userSettingsVisible: state.modalConductor.userSettingsVisible,
+    activeDropdown: state.modalConductor.activeDropdown,
   };
 };
 
@@ -23,7 +23,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     logout: () => dispatch(logout()),
     receiveModal: (modalName) => dispatch(receiveModal(modalName)),
-    showUserSettings: () => dispatch(showUserSettings()),
+    showDropdown: (dropdown) => dispatch(showDropdown(dropdown)),
   };
 };
 

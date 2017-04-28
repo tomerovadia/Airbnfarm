@@ -52,7 +52,7 @@ class SessionForm extends React.Component {
       formTypeFormatted = 'Sign Up';
       altFormTypeFormatted = 'Log In';
       altFormType = 'login';
-      altText = 'Already have an Airnbn account?';
+      altText = 'Already have an Airbnfarm account?';
     } else {
       formTypeFormatted = 'Log In';
       altFormTypeFormatted = 'Sign Up';

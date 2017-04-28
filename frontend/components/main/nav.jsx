@@ -10,7 +10,7 @@ class Nav extends React.Component {
 
     this.handleLogout = this.handleLogout.bind(this);
     this.activateModal = this.activateModal.bind(this);
-    this.showUserSettings = this.showUserSettings.bind(this);
+    // this.showUserSettings = this.showUserSettings.bind(this);
   }
 
   handleLogout() {
@@ -21,10 +21,10 @@ class Nav extends React.Component {
     return () => this.props.receiveModal(modalName);
   }
 
-  showUserSettings(e){
-    e.stopPropagation();
-    this.props.showUserSettings();
-  }
+  // showUserSettings(e){
+  //   e.stopPropagation();
+  //   this.props.showUserSettings();
+  // }
 
 
 
@@ -65,10 +65,10 @@ class Nav extends React.Component {
           <div className='main-nav-right'>
 
             <NavLinks
-              userSettingsVisible={this.props.userSettingsVisible}
+              activeDropdown={this.props.activeDropdown}
               loggedIn={loggedIn}
               activateModal={this.activateModal}
-              showUserSettings={this.showUserSettings}
+              showDropdown={this.props.showDropdown}
               handleLogout={this.handleLogout}
               />
           </div>
