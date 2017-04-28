@@ -35,3 +35,20 @@ export const approveBooking = (bookingId) => {
   });
 
 };
+
+
+export const declineBooking = (bookingId) => {
+  const url = `api/bookings/${bookingId}`;
+
+  return $.ajax({
+    method: 'patch',
+    url,
+    contentResponse: 'json',
+    data: {
+      booking: {
+        booking_status: 'declined'
+      }
+    }
+  });
+
+};

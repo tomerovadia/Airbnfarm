@@ -94,8 +94,7 @@
   margin: 0 auto;
 }
 
-.reservation-approve-button {
-  background-color: #ff5a5f;
+.reservation-right button {
   color: white;
   padding: 12px 55px;
   border-radius: 5px;
@@ -105,6 +104,19 @@
   margin: 0 auto;
 }
 
+button.reservation-approve-button {
+  background-color: #138e1a;
+}
+
+button.reservation-decline-button {
+  background-color: #ff5a5f;
+}
+
+
 .reservation-approve-button:hover {
+  background-color: #1aa522;
+}
+
+.reservation-decline-button:hover {
   background-color: #ff7e82;
 }

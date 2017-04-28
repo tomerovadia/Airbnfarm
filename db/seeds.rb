@@ -13,6 +13,7 @@ ActiveRecord::Base.transaction do
   PrivacyLevel.destroy_all
   State.destroy_all
   Spot.destroy_all
+  BookingStatus.destroy_all
 
   entire_place = PrivacyLevel.create!(privacy_level: 'Entire Place')
   private_room = PrivacyLevel.create!(privacy_level: 'Private Room')
@@ -118,5 +119,12 @@ ActiveRecord::Base.transaction do
     end
 
   end
+
+
+  Booking.status.create!(status: 'approved')
+  Booking.status.create!(status: 'declined')
+  Booking.status.create!(status: 'pending')
+
+
 
 end

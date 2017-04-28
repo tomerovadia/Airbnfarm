@@ -62,3 +62,10 @@ export const approveBooking = (bookingId) => dispatch => {
           (errors) => dispatch(receiveErrors(errors.responseJSON))
     );
 };
+
+export const declineBooking = (bookingId) => dispatch => {
+  return BookingAPIUtil.declineBooking(bookingId)
+    .then((resp) => dispatch(receiveBooking(resp)),
+          (errors) => dispatch(receiveErrors(errors.responseJSON))
+    );
+};
