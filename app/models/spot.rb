@@ -62,7 +62,7 @@ class Spot < ApplicationRecord
 
 
   def available_for?(startRequestedDate, endRequestedDate)
-    availabilities = self.availabilities.map do |availability|
+    availabilities = self.availabilities.where(is_available: true).map do |availability|
       availability.available_date
     end
 

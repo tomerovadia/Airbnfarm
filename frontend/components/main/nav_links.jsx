@@ -13,7 +13,7 @@ export default (props) => {
     <ul className='main-nav-links'>
       <Link>No time to host?</Link>
       <Link to='/become-a-host'>Host</Link>
-      <Link>Trips</Link>
+      <Link to='/bookings/trips'>Trips</Link>
       <Link>Messages</Link>
       <Link>Help</Link>
       <Link id='main-nav-avatar-link' onClick={props.showUserSettings}>
