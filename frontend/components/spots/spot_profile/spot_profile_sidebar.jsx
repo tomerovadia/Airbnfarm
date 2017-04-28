@@ -55,6 +55,8 @@ class SpotProfileSidebar extends React.Component {
       end_date: this.deMomentDate(this.state.endDate),
       spot_id: this.props.currentSpot.id,
     });
+
+    this.props.router.push('/bookings/trips');
   }
 
   render(){
