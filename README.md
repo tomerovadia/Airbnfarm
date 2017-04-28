@@ -29,6 +29,8 @@ The `Spots` pages allow users to explore spots. The two pages under this route a
 
 The `search` page renders "mini-spots" (snapshots of spot info) in two ways: a list on the left and a map on the right.
 
+![image of search page](docs/wireframes/_HomesSpotsSearch __.png)
+
 ### Become A Host
 
 The app has a single `/become-a-host` route, which renders the `BecomeAHost` component. This page is paginated, just like Airbnb's website, allowing hosts to create a spot step-by-step. The `BecomeAHost` component renders one of three components -- `SpotFormBasics`, `spotFormDetails`, and `SpotFormAvailability` as hosts navigate between the pages. User input is persisted until submit by being stored in the `BecomeAHost` component's state.
@@ -43,8 +45,8 @@ The app's `/bookings` route has three sub-routes: one for guests (`trips`, which
 
 Future developments to Airbnfarm include:
 
--improving error handling
--creating profile pages for hosts and guests
--allowing guests to review spots/hosts and hosts to review guests
--allowing hosts to post additional details about spots, including more than one photo
--allowing guests to search spots based on additional criteria
+* improving error handling
+* creating profile pages for hosts and guests
+* allowing guests to review spots/hosts and hosts to review guests
+* allowing hosts to post additional details about spots, including more than one photo
+* allowing guests to search spots based on additional criteria
