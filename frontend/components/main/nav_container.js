@@ -24,7 +24,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     logout: () => dispatch(logout()),
     receiveModal: (modalName) => dispatch(receiveModal(modalName)),
     showDropdown: (dropdown) => dispatch(showDropdown(dropdown)),
-    hideDropdown: () => dispatch(hideDropdown()),
+    hideDropdown: (e) => {
+      e.stopPropagation();
+      dispatch(hideDropdown())
+    },
   };
 };
 
