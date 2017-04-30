@@ -1,4 +1,4 @@
-# Airnbn
+# Airbnfarm
 
 [Heroku link][heroku]
 
