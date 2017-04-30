@@ -4,7 +4,7 @@
 
 [Trello link][trello]
 
-[heroku]: http://airnbn.herokuapp.com/
+[heroku]: http://airbnfarm.herokuapp.com/
 [trello]: https://trello.com/b/zbOIba2f/airnbn
 
 ## Minimum Viable Product
