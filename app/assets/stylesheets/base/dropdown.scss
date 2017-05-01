@@ -22,3 +22,12 @@
 .dropdown-div a:hover {
   border-bottom: 1px solid black;
 }
+
+.dropdown-div a.inactive {
+  cursor: default;
+  color: #a6abb2;
+}
+
+.dropdown-div a.inactive:hover {
+  border-bottom: 1px solid #F2F2F2;
+}

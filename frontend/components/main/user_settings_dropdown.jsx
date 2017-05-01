@@ -27,12 +27,12 @@ class UserSettingsDropdown extends React.Component {
       <div className='user-settings-dropdown-div dropdown-div'>
         <ul>
 
-          <Link>Edit Profile</Link>
-          <Link>Travel Credit</Link>
-          <Link>Account Settings</Link>
-          <Link>My Guidebook</Link>
-          <Link>Gift Cards</Link>
-          <Link>Business Travel</Link>
+          <Link className='inactive'>Edit Profile</Link>
+          <Link className='inactive'>Travel Credit</Link>
+          <Link className='inactive'>Account Settings</Link>
+          <Link className='inactive'>My Guidebook</Link>
+          <Link className='inactive'>Gift Cards</Link>
+          <Link className='inactive'>Business Travel</Link>
           <Link onClick={this.handleLogoutClick}>Log Out</Link>
 
         </ul>
