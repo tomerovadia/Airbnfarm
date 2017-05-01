@@ -33,7 +33,6 @@ class SpotProfileSidebar extends React.Component {
   }
 
   isDayBlocked(day){
-
     return !this.state.availabilities.some((availableDate) => {
       return availableDate.startOf('day').isSame(day.startOf('day'));
     });
@@ -49,14 +48,20 @@ class SpotProfileSidebar extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    this.props.createBooking({
-      num_guests: this.state.numGuests,
-      start_date: this.deMomentDate(this.state.startDate),
-      end_date: this.deMomentDate(this.state.endDate),
-      spot_id: this.props.currentSpot.id,
-    });
 
-    this.props.router.push('/bookings/trips');
+    if(this.props.loggedIn){
+      this.props.createBooking({
+        num_guests: this.state.numGuests,
+        start_date: this.deMomentDate(this.state.startDate),
+        end_date: this.deMomentDate(this.state.endDate),
+        spot_id: this.props.currentSpot.id,
+      });
+
+      this.props.router.push('/bookings/trips');
+    } else {
+      debugger
+      this.props.receiveModal('login');
+    }
   }
 
   render(){

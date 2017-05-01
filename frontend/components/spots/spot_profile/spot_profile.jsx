@@ -34,7 +34,7 @@ class SpotProfile extends React.Component {
 
           <SpotProfileOverview currentSpot={this.props.currentSpot}/>
 
-          <SpotProfileSidebarContainer currentSpot={this.props.currentSpot}/>
+          <SpotProfileSidebarContainer receiveModal={this.props.receiveModal} loggedIn={this.props.loggedIn} currentSpot={this.props.currentSpot}/>
 
         </div>
 
