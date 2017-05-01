@@ -77,7 +77,7 @@ ActiveRecord::Base.transaction do
     ],
     ["Rivers Edge Ranch",
       "Luxury home on the Little Red River with dock. 10 Minutes from Greers Ferry Lake.",
-      "Melanie’s home is located in Heber Springs, Arkansas, United States"
+      "This ranch has been in my family for 150 years! I would love to share it with respectful guests who need a place to stay in this lovely part of the state."
     ],
     ["Magic Mist / Steampunk Cabin",
       "The Magic Mist cabin is decorated in Steampunk/ Industrial style. It is not the typical river cabin decor, yet it is attention to detail that makes this such a charming and unique place to stay. Perfect for relaxing and reconnecting with nature, and each other.",
