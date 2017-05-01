@@ -11,10 +11,7 @@ import TripsPage from './bookings/trips_page';
 import ReservationsPage from './bookings/reservations_page';
 import HostPage from './bookings/host_page';
 
-
-import Carousel from './main/carousel';
-
-
+// import Carousel from './main/carousel';
 
 export default (props) => {
 
@@ -39,7 +36,6 @@ export default (props) => {
 
 
 
-          <Route path='/test' component={Carousel}></Route>
 
         </Route>
       </Router>
@@ -47,5 +43,6 @@ export default (props) => {
   );
 };
 
+// <Route path='/test' component={Carousel}></Route>
 
 // <Route path='r' component={ListingsPage}></Route>

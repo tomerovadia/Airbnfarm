@@ -3,7 +3,17 @@ import {Link, hashHistory} from 'react-router';
 import UserSettingsDropdown from './user_settings_dropdown';
 import HostDropdown from './host_dropdown';
 
+
+
 export default (props) => {
+
+  const redirectIfLoggedOut = () => {
+    if (props.loggedIn){
+      hashHistory.push('/become-a-host');
+    } else {
+      props.activateModal('login')();
+    }
+  }
 
   let userSettingsDropdown = props.activeDropdown === 'userSettings' ? <UserSettingsDropdown handleLogout={props.handleLogout} hideDropdown={props.hideDropdown}/> : null;
   let hostDropdown = props.activeDropdown === 'host' ? <HostDropdown hideDropdown={props.hideDropdown}/> : null;
@@ -29,7 +39,7 @@ export default (props) => {
     links =
     <ul className='main-nav-links'>
       <Link className='inactive'>No time to host?</Link>
-      <Link to='/become-a-host'>Become a Host</Link>
+      <Link onClick={redirectIfLoggedOut}>Become a Host</Link>
       <Link className='inactive'>Help</Link>
       <Link onClick={props.activateModal('signup')}>Sign Up</Link>
       <Link onClick={props.activateModal('login')}>Log In</Link>
