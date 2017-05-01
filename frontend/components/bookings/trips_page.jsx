@@ -27,17 +27,21 @@ class TripsPage extends React.Component {
 
     return(
 
-      <div className='trips-page-main-container'>
+      <div className='trips-page-with-nav'>
 
         <NavContainer searchBarVisible={false} />
 
-        <h1 className='trips-page-h1'>Your Trips</h1>
+        <div className='trips-page-main-container'>
 
-        <section className='trips-section'>
+          <h1 className='trips-page-h1'>Your Trips</h1>
 
-          {trips}
+          <section className='trips-section'>
 
-        </section>
+            {trips}
+
+          </section>
+
+        </div>
 
       </div>
 
