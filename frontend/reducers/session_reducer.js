@@ -1,4 +1,4 @@
-import {RECEIVE_CURRENT_USER, RECEIVE_ERRORS} from '../actions/session_actions';
+import {RECEIVE_CURRENT_USER, RECEIVE_ERRORS, CLEAR_ERRORS} from '../actions/session_actions';
 import merge from 'lodash/merge';
 
 const _initialState = {
@@ -14,11 +14,17 @@ export default (oldState = _initialState, action) => {
       return {currentUser: action.user, errors: {}};
 
     case RECEIVE_ERRORS:
-      const currentUser = oldState.currentUser
 
       return {
-        currentUser,
+        currentUser: oldState.currentUser,
         errors: action.errors
+      };
+
+    case CLEAR_ERRORS:
+
+      return {
+        currentUser: oldState.currentUser,
+        errors: {},
       };
 
     default:

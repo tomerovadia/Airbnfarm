@@ -28,9 +28,7 @@ export default (props) => {
   } else {
     links =
     <ul className='main-nav-links'>
-      <Link>No time to host?</Link>
       <Link to='/become-a-host'>Become a Host</Link>
-      <Link>Help</Link>
       <Link onClick={props.activateModal('signup')}>Sign Up</Link>
       <Link onClick={props.activateModal('login')}>Log In</Link>
     </ul>

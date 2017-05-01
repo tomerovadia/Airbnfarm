@@ -9,6 +9,7 @@ class SessionForm extends React.Component {
     this.state = {email: '', password: ''};
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleGuestLogin = this.handleGuestLogin.bind(this);
   }
 
   componentWillReceiveProps(newProps){
@@ -24,6 +25,11 @@ class SessionForm extends React.Component {
   handleSubmit(e){
     e.preventDefault();
     this.props.processForm(this.state).then(this.props.clearModal);
+  }
+
+  handleGuestLogin(e){
+    e.preventDefault();
+    this.props.login({email: 'old.macdonald@gmail.com', password: 'password'}).then(this.props.clearModal);
   }
 
   switchModal(modalName){
@@ -134,6 +140,14 @@ class SessionForm extends React.Component {
                 type='submit'>
                 <span>{formTypeFormatted}</span>
               </button>
+
+              <button
+                type='submit'
+                onClick={this.handleGuestLogin}>
+                <span>Guest Login</span>
+              </button>
+
+
 
             </form>
 
