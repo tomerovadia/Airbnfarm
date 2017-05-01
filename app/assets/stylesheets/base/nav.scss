@@ -54,10 +54,13 @@
   display: flex;
   justify-content: space-between;
   width: 450px;
+  position: relative;
   z-index: 2;
 }
 
-.main-nav-links a, #main-nav-avatar {
+.main-nav-links a,
+.main-nav-links .link-with-dropdown,
+#main-nav-avatar {
   font-weight: 400;
   font-family: "Helvetica Neue";
   text-align: center;
@@ -69,6 +72,11 @@
   text-decoration: none;
   position: relative;
   color: #575757;
+}
+
+.main-nav-links a.inactive {
+  color: #a6abb2;
+  cursor: default;
 }
 
 .main-nav-links a:hover {
