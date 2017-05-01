@@ -1,7 +1,7 @@
 var path = require('path');
 
 module.exports = {
-  entry: './frontend/airnbn.jsx',
+  entry: './frontend/airbnfarm.jsx',
   output: {
     filename: './app/assets/javascripts/bundle.js',
   },

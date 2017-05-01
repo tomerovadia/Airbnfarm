@@ -1,7 +1,7 @@
 # README
 
 ## Overview
-Airbnfarm is an app built for anyone who has ever wished Airbnb only had farms.
+Airbnfarm is an app for anyone who has ever wished Airbnb only had farms.
 
 The app connects farm owners who have available lodging to adventurers who appreciate rural life. All app users have "guest" and "host" functionality in the same account.
 
@@ -9,7 +9,7 @@ Hosts can create `spots`, which are then available for viewing by guests, who ca
 
 ## Data Structure
 
-The primary tables are `users` and `spots`.
+The app's primary tables are the `users` and `spots` tables.
 
 The `availabilities` table stores data on the availability of spots. When a host creates a spot, they specify its availability, which is stored in the `availabilities` table with an initial `is_available` value of `true`.
 
