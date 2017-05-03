@@ -10,7 +10,6 @@ class Trip extends React.Component {
   }
 
   handleCancelButtonClick(){
-    debugger
     this.props.cancelBooking(this.props.trip.id);
   }
 

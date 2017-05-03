@@ -19,6 +19,8 @@ export default (props) => {
   );
 
 
+  // FOR FUTURE DEVELOPMENT OF ADDRESS DROPDOWN
+
   // const getAddressPredictions = () => {
   //   const displayPredictions = (predictions, status) => {
   //     console.log(predictions.map((prediction) => prediction.description));

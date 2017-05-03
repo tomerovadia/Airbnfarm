@@ -42,10 +42,7 @@ export const createSpot = (spot) => dispatch => {
   return SessionAPIUtil.createSpot(spot)
     .then(
       (resp) => dispatch(receiveCurrentSpot(resp)),
-      (errors) => {
-        debugger
-        dispatch(receiveErrors(errors.responseJSON))
-      }
+      (errors) => dispatch(receiveErrors(errors.responseJSON))
     );
 };
 

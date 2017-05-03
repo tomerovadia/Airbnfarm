@@ -59,7 +59,6 @@ class SpotProfileSidebar extends React.Component {
 
       this.props.router.push('/bookings/trips');
     } else {
-      debugger
       this.props.receiveModal('login');
     }
   }

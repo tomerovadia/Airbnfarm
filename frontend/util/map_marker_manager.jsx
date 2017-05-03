@@ -64,7 +64,7 @@ export default class MarkerManager {
       },
     }).then(
       (resp) => this.addMarker(resp.results[0].geometry.location),
-      (errors) => console.log('there were errors:', errors)
+      (errors) => console.log('Errors:', errors)
     )
   }
 

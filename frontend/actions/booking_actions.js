@@ -51,9 +51,9 @@ export const createBooking = (booking) => dispatch => {
     .then(
       (booking) => BookingAPIUtil.fetchBookings(booking.guest_id)
         .then((bookings) => dispatch(receiveBookings(bookings)),
-              (errors) => console.log('there were errors')
+              (errors) => console.log('Errors:', errors)
         ),
-      (errors) => console.log('there were errors')
+      (errors) => console.log('Errors:', errors)
     )
 };
 
