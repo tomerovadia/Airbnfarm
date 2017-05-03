@@ -31,7 +31,7 @@ The `Spots` pages allow users to explore spots. The two pages under this route a
 
 The `search` page renders "mini-spots" (snapshots of spot info) in two ways: a list on the left and a map on the right.
 
-![wireframe](docs/wireframes/HomesSpotsSearch.png)
+![wireframe](docs/wireframes/HomeSpotProfile.png)
 
 ### Become A Host
 
