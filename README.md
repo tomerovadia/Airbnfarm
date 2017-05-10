@@ -1,6 +1,6 @@
 # Airbnfarm
 
-[Live Link](http://airbnfarm.herokuapp.com/)
+[Live Link](http://airbn.farm/)
 
 ## Overview
 Airbnfarm is an app for anyone who has ever wished Airbnb only had farms. The app seeks to precisely clone the design of Airbnb's website. Its frontend is powered by React and its backend is powered by Ruby on Rails.
