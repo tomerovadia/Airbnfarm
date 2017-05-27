@@ -105,30 +105,6 @@ ActiveRecord::Base.transaction do
     ]
   ]
 
-  #   titles = [
-  #   '1000 Acre Farm with 2,000 miserable cows',
-  #   'Organic, Gluten-Free, Free-Range Farm',
-  #   'Fish Farm alongside Aquarium',
-  #   'Retired Race Horse Ranch',
-  #   'Tractor Factory',
-  #   'The Light Center Barn',
-  #   'The Perfect Yurt with Chickens in the Back',
-  #   'The Perfect Yurt with Cows in the Back',
-  #   'River-side Escape',
-  #   'Cabin in the woods',
-  #   'Cozy Ozark Cabin near Fayetteville-views',
-  #   'Amazing year-round lakeview farm retreat',
-  #   'Ranch with private riverfront access',
-  #   'Canoe floating down a river',
-  #   'Beaver Lake Bed & Breakfast (& Farm)',
-  #   'Bamboo Farm',
-  #   'Bell Tent Glamping on Navajoland Farm',
-  #   'Awesome Yurt Retreat in Southeast Utah',
-  #   'Country privacy, Oasis in the desert, with chickens',
-  #   'Secluded mini-horse ranch island'
-  # ]
-
-
   addresses = [
     ['121 Main St.', '745 Railroad Avenue', '450 Southern Avenue', '120 Kansas Avenue', '1152 E Quail Rd.'],
     ['19 Rose Ln', '95 Shelly Street', '552 4th St', '450 Moore St', '59 W Main St'],
@@ -140,9 +116,6 @@ ActiveRecord::Base.transaction do
     ['Oil Trough', 72564, State.find_by(state_name: 'AR').id],
     ['Tripp', 57376, State.find_by(state_name: 'SD').id]
   ]
-
-  # summary = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-  # description = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
 
   15.times do |idx|
 
@@ -167,9 +140,9 @@ ActiveRecord::Base.transaction do
   end
 
   date_ranges = [
-    ['Mon, 01 May 2017', 'Wed, 10 May 2017'],
-    ['Fri, 05 May 2017', 'Mon, 15 May 2017'],
-    ['Wed, 10 May 2017', 'Sat, 20 May 2017']
+    ['Thu, 01 Jun 2017', 'Sat, 10 Jun 2017'],
+    ['Mon, 05 Jun 2017', 'Thu, 15 Jun 2017'],
+    ['Sat, 10 Jun 2017', 'Tue, 20 Jun 2017']
   ]
 
   Spot.all.each do |spot|
@@ -183,9 +156,6 @@ ActiveRecord::Base.transaction do
     end
 
   end
-
-
-
 
 
 

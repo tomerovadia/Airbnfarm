@@ -34,9 +34,17 @@ class Booking < ApplicationRecord
   belongs_to :status,
     class_name: 'BookingStatus'
 
+  # enum :status, [:pending, :gone, :whatever, :asdfsdaf]
 
-  
+  # bitmask
 
+  # enum channel: [:phone, :email, :chat]
 
 
 end
+
+# class Employee
+#
+#   enum status: [:pending, :fired, :waiting]
+#
+# end
