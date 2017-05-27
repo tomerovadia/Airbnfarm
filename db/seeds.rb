@@ -140,9 +140,9 @@ ActiveRecord::Base.transaction do
   end
 
   date_ranges = [
-    ['Thu, 01 Jun 2017', 'Sat, 10 Jun 2017'],
-    ['Mon, 05 Jun 2017', 'Thu, 15 Jun 2017'],
-    ['Sat, 10 Jun 2017', 'Tue, 20 Jun 2017']
+    ['Thu, 15 Jun 2017', 'Sun, 25 Jun 2017'],
+    ['Tue, 20 Jun 2017', 'Fri, 30 Jun 2017'],
+    ['Sun, 25 Jun 2017', 'Wed, 05 Jul 2017']
   ]
 
   Spot.all.each do |spot|
