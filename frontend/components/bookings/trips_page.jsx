@@ -4,7 +4,7 @@ import NavContainer from '../main/nav_container';
 import { connect } from 'react-redux';
 import { fetchBookings, cancelBooking } from '../../actions/booking_actions';
 import { getFormatedBookings } from '../../reducers/selectors';
-import { withRouter } from 'react-router';
+import { withRouter, Link } from 'react-router';
 
 class TripsPage extends React.Component {
 
@@ -15,13 +15,18 @@ class TripsPage extends React.Component {
 
   }
 
-
-
   render(){
 
     let trips = this.props.currentBookings.trips.map((trip) => {
       return <Trip key={trip.id} trip={trip} cancelBooking={this.props.cancelBooking} />
     });
+
+    if(trips.length === 0){
+      trips =
+      <h3>
+        You have no trips! <Link to={`/spots/search`}>Find one</Link>.
+      </h3>
+    }
 
 
 
@@ -58,12 +63,15 @@ const mapStateToProps = (state) => {
   };
 };
 
+
+
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchBookings: (userId) => dispatch(fetchBookings(userId)),
     cancelBooking: (bookingId) => dispatch(cancelBooking(bookingId)),
   };
-}
+};
+
 
 export default withRouter(connect(
   mapStateToProps,
