@@ -28,6 +28,10 @@ class ReservationsPage extends React.Component {
       )
     });
 
+    if(reservations.length === 0){
+      reservations = <h3> You have no reservations yet!</h3>
+    }
+
 
     return(
 

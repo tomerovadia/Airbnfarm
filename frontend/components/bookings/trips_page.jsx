@@ -22,13 +22,8 @@ class TripsPage extends React.Component {
     });
 
     if(trips.length === 0){
-      trips =
-      <h3>
-        You have no trips! <Link to={`/spots/search`}>Find one</Link>.
-      </h3>
+      trips = <h3> You have no trips! <Link to={`/spots/search`}>Find one</Link>.</h3>
     }
-
-
 
     return(
 
