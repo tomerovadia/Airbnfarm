@@ -38,12 +38,11 @@ class SpotSearchBar extends React.Component {
     return moment._d.toString();
   }
 
-  removeNullCriteria(){
-  }
-
   handleSubmit(e){
-    e.preventDefault();
+    if(e) e.preventDefault();
     const criteria = Object.assign({}, this.state.searchCriteria);
+
+    debugger
 
     if(criteria.startDate && criteria.endDate){
       criteria.startDate = this.deMomentDate(criteria.startDate);
@@ -57,10 +56,12 @@ class SpotSearchBar extends React.Component {
   }
 
   handleNewDates({ startDate, endDate }){
+    const endDateChanged = endDate !== this.state.searchCriteria.endDate;
     const newSearchCriteria = Object.assign({}, this.state.searchCriteria);
     newSearchCriteria.startDate = startDate;
     newSearchCriteria.endDate = endDate;
     this.setState({ searchCriteria: newSearchCriteria });
+    // if(endDateChanged){ this.handleSubmit()};
   }
 
   handleNewFocusedInput(newFocusedInput){

@@ -34,9 +34,6 @@ export default (props) => {
             <Route path='/bookings/host/reservations' component={ReservationsPage}></Route>
           </Route>
 
-
-
-
         </Route>
       </Router>
     </Provider>
