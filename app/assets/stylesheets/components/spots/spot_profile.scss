@@ -323,14 +323,13 @@ span.spot-profile-price {
   width: 100%;
 }
 
+.spot-profile-booking-calendar {
+  border: 1px solid #dbdbdb;
+  border-radius: 2px;
+}
 
 .spot-profile-guests-select-div {
   width: 100%;
-}
-
-.spot-profile-guests-select {
-  width: 100%;
-  margin: 5px 0;
 }
 
 .spot-profile-request-to-book-button-div {
@@ -358,10 +357,12 @@ span.spot-profile-price {
 
 .spot-profile-guests-select {
   border-radius: 3px;
-  border: 1px solid #aaaaaa;
+  border: 1px solid #dbdbdb;
   font-size: 14px;
   letter-spacing: 1.2px;
   color: #797979;
   height: 45px;
   cursor: pointer;
+  width: 100%;
+  margin: 5px 0;
 }
