@@ -16,8 +16,8 @@ export default (props) => {
       <div className='homepage-main-section'>
 
         <div className='welcome-splash'>
-          <span className='welcome-where-to'>Where to? </span>
-          <span className='welcome-start-adventure'> Start your next adventure on Airbnfarm.</span>
+          <span className='welcome-where-to'>Airbnfarm </span>
+          <span className='welcome-start-adventure'> Book unique farms and experience rural life like a local.</span>
         </div>
 
         <SpotSearchBar />
