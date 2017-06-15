@@ -44,14 +44,18 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: 35%;
+  width: 42.25%;
 }
 
 .spot-search-bar-middle {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: 50%;
+  width: 42.25%;
+}
+
+.spot-search-bar-anywhere-input {
+  cursor: pointer;
 }
 
 .spot-search-bar-right {
@@ -61,8 +65,8 @@
   align-items: center;
 }
 
-.DateInput {
-  width: 44%;
+.spot-search-bar-calendar .DateInput {
+  width: 30%;
   line-height: 11px;
 }
 
@@ -72,6 +76,7 @@
 
 .DateRangePickerInput {
   display: block;
+  border: none;
 }
 
 .spot-search-bar-search-button {
@@ -114,58 +119,14 @@
 }
 
 .main-nav-center .spot-search-bar-left {
-  width: 25%
+  width: 50%;
 }
 
 .main-nav-center .spot-search-bar-middle {
-  width: 50%
-
+  width: 50%;
+  height: 43px;
 }
 
 .main-nav-center .spot-search-bar-right {
-  width: 25%
-
+  display: none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // NAV SEARCH BAR
-//
-// .nav-search-bar-main-container {
-//   border: 3px solid orange;
-//   width: 80%;
-//   margin: 0 auto;
-// }
-//
-// #nav-search-bar-form {
-//   display: flex;
-//   border: 2px solid purple;
-// }
-//
-// #nav-search-bar-form > div {
-//   border: 1px solid blue;
-//   width: 33.3333%;
-//   padding: 3px 7px;
-// }
-//
-// .nav-search-bar-main-container input {
-//   height: 30px;
-//   width: 100%;
-// }
-//
-// .nav-search-bar-right {
-// }
-//
-// .nav-search-bar-submit-button {
-//   display: none;
-// }

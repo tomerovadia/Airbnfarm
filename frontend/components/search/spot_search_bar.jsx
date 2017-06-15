@@ -20,12 +20,16 @@ class SpotSearchBar extends React.Component {
         startDate: null,
         endDate: null,
       },
+      calendarVisible: false,
     };
 
     this.handleCityChange = this.handleCityChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleNewDates = this.handleNewDates.bind(this);
     this.handleNewFocusedInput = this.handleNewFocusedInput.bind(this);
+    this.showCalendar = this.showCalendar.bind(this);
+
+
   }
 
   handleCityChange(e){
@@ -41,8 +45,6 @@ class SpotSearchBar extends React.Component {
   handleSubmit(e){
     if(e) e.preventDefault();
     const criteria = Object.assign({}, this.state.searchCriteria);
-
-    debugger
 
     if(criteria.startDate && criteria.endDate){
       criteria.startDate = this.deMomentDate(criteria.startDate);
@@ -61,7 +63,6 @@ class SpotSearchBar extends React.Component {
     newSearchCriteria.startDate = startDate;
     newSearchCriteria.endDate = endDate;
     this.setState({ searchCriteria: newSearchCriteria });
-    // if(endDateChanged){ this.handleSubmit()};
   }
 
   handleNewFocusedInput(newFocusedInput){
@@ -70,14 +71,19 @@ class SpotSearchBar extends React.Component {
     this.setState({ calendarProps: newCalendarProps });
   }
 
+  showCalendar() {
+    this.setState({ calendarVisible: true })
+    this.handleNewFocusedInput('startDate')
+  }
+
   render() {
+
+    const calendarDisplay = this.state.calendarVisible ? 'block' : 'none';
+    const anytimeLabelDisplay = this.state.calendarVisible ? 'none' : 'block';
 
     return(
       <div className='spot-search-bar-main-container'>
         <form onSubmit={this.handleSubmit} className='spot-search-bar-form'>
-
-
-
 
           <div className='spot-search-bar-left'>
             <label>Where</label>
@@ -90,19 +96,27 @@ class SpotSearchBar extends React.Component {
           </div>
 
 
-
-
           <div className='spot-search-bar-middle'>
             <label>When</label>
-            <div className='spot-search-bar-calendar'>
-              <DateRangePicker
-                startDate={this.state.searchCriteria.startDate}
-                endDate={this.state.searchCriteria.endDate}
-                onDatesChange={this.handleNewDates}
-                focusedInput={this.state.calendarProps.focusedInput}
-                onFocusChange={this.handleNewFocusedInput}
-              />
 
+            <div className='spot-search-bar-when-contents'>
+                <input
+                  className='spot-search-bar-anywhere-input'
+                  type='text'
+                  placeholder='Anytime'
+                  style={{display: anytimeLabelDisplay}}
+                  onClick={this.showCalendar}
+                 />
+
+               <div className='spot-search-bar-calendar' style={{display: calendarDisplay}}>
+                <DateRangePicker
+                  startDate={this.state.searchCriteria.startDate}
+                  endDate={this.state.searchCriteria.endDate}
+                  onDatesChange={this.handleNewDates}
+                  focusedInput={this.state.calendarProps.focusedInput}
+                  onFocusChange={this.handleNewFocusedInput}
+                />
+              </div>
             </div>
           </div>
 
