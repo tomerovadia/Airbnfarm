@@ -21,12 +21,6 @@ class Nav extends React.Component {
     return () => this.props.receiveModal(modalName);
   }
 
-  // showUserSettings(e){
-  //   e.stopPropagation();
-  //   this.props.showUserSettings();
-  // }
-
-
 
   render(){
 

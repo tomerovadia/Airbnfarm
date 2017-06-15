@@ -115,6 +115,7 @@ class SpotSearchBar extends React.Component {
                   onDatesChange={this.handleNewDates}
                   focusedInput={this.state.calendarProps.focusedInput}
                   onFocusChange={this.handleNewFocusedInput}
+                  displayFormat='MMM D'
                 />
               </div>
             </div>
