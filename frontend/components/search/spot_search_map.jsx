@@ -17,7 +17,7 @@ class SpotSearchMap extends React.Component {
         },
     };
 
-    this.initiateMap();
+    this.buildMap();
   }
 
   componentDidMount() {
@@ -32,29 +32,43 @@ class SpotSearchMap extends React.Component {
     // this.MarkerManager.updateMarkers(this.props.searchResults);
   }
 
-  initiateMap(){
+  buildMap(){
     const locationQuery = this.props.location.query.city;
 
-    $.ajax({
+    this.getLatLng(locationQuery)
+      .then(function(resp){
+          this.updateMapCenter(resp.results[0].geometry.location)
+        }.bind(this),
+        (errors) => console.log('Errors:', errors)
+      ).then(function(){
+          this.createMap();
+          this.MarkerManager = new MarkerManager(this.map);
+          this.updateSearchResults(this.map.getBounds());
+        }.bind(this))
+  }
+
+  getLatLng(locationQuery){
+    return $.ajax({
       method: 'get',
       url: 'https://maps.googleapis.com/maps/api/geocode/json',
       dataType: 'json',
       data: {address: locationQuery},
-    }).then(function(resp){
-        this.updateMapCenter(resp.results[0].geometry.location)
-      }.bind(this),
-      (errors) => console.log('Errors:', errors)
-    ).then(function(){
-        this.map = new google.maps.Map(document.getElementById('spot-search-map'), this.state.mapOptions);
-        this.MarkerManager = new MarkerManager(this.map);
-        this.updateSearchResults(this.map.getBounds());
-      }.bind(this))
+    })
   }
+
 
   updateMapCenter(center){
     const newMapOptions = Object.assign({}, this.state.mapOptions);
     newMapOptions.center = center;
     this.setState({ mapOptions: newMapOptions});
+  }
+
+
+  createMap(){
+    this.map = new google.maps.Map(
+      document.getElementById('spot-search-map'),
+      this.state.mapOptions
+    );
   }
 
 
