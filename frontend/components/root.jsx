@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import App from './app';
 import BecomeAHostContainer from './spots/spot_form/become_a_host_container';
 import SpotProfileContainer from './spots/spot_profile/spot_profile_container';
-import SpotSearchContainer from './search/spot_search_container';
+import SpotSearch from './search/spot_search';
 import Welcome from './main/welcome';
 import NavContainer from './main/nav_container';
 import TripsPage from './bookings/trips_page';
@@ -21,7 +21,7 @@ export default (props) => {
 
           <Route path='/spots' component={NavContainer} searchBarVisible={true}>
             <Route path='/spots/profile/:spotId' component={SpotProfileContainer}></Route>
-            <Route path='/spots/search' component={SpotSearchContainer}></Route>
+            <Route path='/spots/search' component={SpotSearch}></Route>
           </Route>
 
           <Route path='/become-a-host' component={BecomeAHostContainer}></Route>

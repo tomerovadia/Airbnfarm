@@ -1,6 +1,9 @@
 import React from 'react';
 import MarkerManager from '../../util/map_marker_manager';
 import { withRouter } from 'react-router';
+import { getSearchResults } from '../../reducers/selectors';
+import { connect } from 'react-redux';
+import { fetchSearchResults } from '../../actions/spot_actions';
 
 class SpotSearchMap extends React.Component {
 
@@ -49,12 +52,35 @@ class SpotSearchMap extends React.Component {
     // this.map = new google.maps.Map(this.mapNode, this.state.mapOptions);
   }
 
-  componentDidUpdate(){
+  componentDidMount(){
     this.map = new google.maps.Map(document.getElementById('spot-search-map'), this.state.mapOptions);
     this.MarkerManager = new MarkerManager(this.map);
-    this.props.updateCriteria(this.map.getBounds());
-    this.MarkerManager.updateMarkers(this.props.searchResults);
+    this.updateSearchResults(this.map.getBounds());
+  }
+
+  componentDidUpdate(){
     // map.getBounds().getNorthEast().lng()
+  }
+
+  updateSearchResults(bounds){
+    this.criteria = this.getCriteriaFromQueryString();
+    this.criteria.bounds = bounds;
+    this.props.fetchSearchResults(this.criteria)
+      .then(function(){
+        this.MarkerManager.updateMarkers(this.props.searchResults)
+      }.bind(this));
+  }
+
+  getCriteriaFromQueryString(){
+    const city = this.props.location.query.city || '';
+
+    const criteria = {
+      city,
+      startDate: this.props.location.query.startDate,
+      endDate: this.props.location.query.endDate,
+    }
+
+    return criteria;
   }
 
   render() {
@@ -71,4 +97,15 @@ class SpotSearchMap extends React.Component {
 
 }
 
-export default withRouter(SpotSearchMap);
+export default connect(
+  (state) => {
+    return {
+      searchResults: getSearchResults(state),
+    }
+  },
+  (dispatch) => {
+    return {
+      fetchSearchResults: (criteria) => dispatch(fetchSearchResults(criteria)),
+    }
+  }
+)(withRouter(SpotSearchMap));

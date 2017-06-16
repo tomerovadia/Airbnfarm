@@ -24,7 +24,6 @@ const _initialState = {
 };
 
 export default (oldState = _initialState, action) => {
-
   let newState = merge({}, oldState);
   switch(action.type){
 

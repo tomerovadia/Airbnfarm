@@ -40,5 +40,5 @@ export default connect(
       spotErrors: state.spots.errors,
     }
   },
-    (dispatch) => {}
+  (dispatch) => {return {}}
 )(SpotSearchResultsList);
