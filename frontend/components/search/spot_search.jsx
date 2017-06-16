@@ -52,7 +52,7 @@ class SpotSearch extends React.Component {
           </div>
 
           <div>
-            <SpotSearchResultsList spotErrors={this.props.spotErrors} searchResults={this.props.searchResults} />
+            <SpotSearchResultsList />
           </div>
 
         </div>
@@ -66,5 +66,6 @@ class SpotSearch extends React.Component {
     );
   }
 }
+// <SpotSearchResultsList spotErrors={this.props.spotErrors} searchResults={this.props.searchResults} />
 
 export default SpotSearch;

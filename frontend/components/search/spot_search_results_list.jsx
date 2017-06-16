@@ -1,5 +1,9 @@
 import React from 'react';
 import SpotMini from '../spots/spot_mini';
+import { connect } from 'react-redux';
+import { getSearchResults } from '../../reducers/selectors';
+import noSearchResultsHTML from './no_search_results';
+
 
 class SpotSearchResultsList extends React.Component {
 
@@ -15,16 +19,7 @@ class SpotSearchResultsList extends React.Component {
         return <SpotMini key={spot.id} spot={spot} />
       });
     } else if(newProps.spotErrors === 404){
-      this.content = <div className='spot-search-no-results-container'>
-          <h1>No results</h1>
-          <span>Try adjusting your search. Here are some ideas:</span>
-          <ul>
-            <li>Change your dates</li>
-            <li>Search for a specific city (e.g. 'Agra', 'Tripp' or 'Oil Trough')</li>
-          </ul>
-
-          <div className='spot-search-no-results-fine-text'><span>Enter dates to see full pricing. Additional fees apply. Taxes may be added.</span></div>
-        </div>
+      this.content = noSearchResultsHTML;
     }
   }
 
@@ -38,4 +33,12 @@ class SpotSearchResultsList extends React.Component {
   }
 }
 
-export default SpotSearchResultsList;
+export default connect(
+  (state) => {
+    return {
+      searchResults: getSearchResults(state),
+      spotErrors: state.spots.errors,
+    }
+  },
+    (dispatch) => {}
+)(SpotSearchResultsList);
