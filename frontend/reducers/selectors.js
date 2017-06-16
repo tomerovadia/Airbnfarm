@@ -25,7 +25,6 @@ export const getFormatedBookings = ({bookings}) => {
       return 0
     })
 
-
     return {
       trips,
       reservations,

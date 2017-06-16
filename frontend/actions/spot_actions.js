@@ -14,8 +14,6 @@ export const receiveCurrentSpot = (spot) => {
   };
 };
 
-
-
 export const receiveSearchResults = (searchResults) => {
   return {
     type: RECEIVE_SEARCH_RESULTS,
@@ -24,15 +22,12 @@ export const receiveSearchResults = (searchResults) => {
 
 };
 
-
 export const receiveErrors = (errors) => {
   return {
     type: RECEIVE_ERRORS,
     errors,
   };
 };
-
-
 
 
 
