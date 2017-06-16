@@ -41,16 +41,20 @@ class SpotSearchMap extends React.Component {
       dataType: 'json',
       data: {address: locationQuery},
     }).then(function(resp){
-      const newMapOptions = Object.assign({}, this.state.mapOptions);
-      newMapOptions.center = resp.results[0].geometry.location;
-      this.setState({ mapOptions: newMapOptions});
-    }.bind(this),
+        this.updateMapCenter(resp.results[0].geometry.location)
+      }.bind(this),
       (errors) => console.log('Errors:', errors)
     ).then(function(){
-      this.map = new google.maps.Map(document.getElementById('spot-search-map'), this.state.mapOptions);
-      this.MarkerManager = new MarkerManager(this.map);
-      this.updateSearchResults(this.map.getBounds());
-    }.bind(this))
+        this.map = new google.maps.Map(document.getElementById('spot-search-map'), this.state.mapOptions);
+        this.MarkerManager = new MarkerManager(this.map);
+        this.updateSearchResults(this.map.getBounds());
+      }.bind(this))
+  }
+
+  updateMapCenter(center){
+    const newMapOptions = Object.assign({}, this.state.mapOptions);
+    newMapOptions.center = center;
+    this.setState({ mapOptions: newMapOptions});
   }
 
 
