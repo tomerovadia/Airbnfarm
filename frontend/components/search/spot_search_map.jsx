@@ -17,22 +17,7 @@ class SpotSearchMap extends React.Component {
         },
     };
 
-    const locationQuery = this.props.location.query.city;
-
-    $.ajax({
-      method: 'get',
-      url: 'https://maps.googleapis.com/maps/api/geocode/json',
-      dataType: 'json',
-      data: {address: locationQuery},
-    }).then(function(resp){
-      const newMapOptions = Object.assign({}, this.state.mapOptions);
-      newMapOptions.center = resp.results[0].geometry.location;
-      this.setState({ mapOptions: newMapOptions});
-    }.bind(this),
-      // (resp) => console.log(resp.results[0].geometry.location),
-      // (resp) => this.addMarker(resp.results[0].geometry.location),
-      (errors) => console.log('Errors:', errors)
-    )
+    this.initiateMap();
   }
 
   componentDidMount() {
@@ -47,15 +32,35 @@ class SpotSearchMap extends React.Component {
     // this.MarkerManager.updateMarkers(this.props.searchResults);
   }
 
+  initiateMap(){
+    const locationQuery = this.props.location.query.city;
+
+    $.ajax({
+      method: 'get',
+      url: 'https://maps.googleapis.com/maps/api/geocode/json',
+      dataType: 'json',
+      data: {address: locationQuery},
+    }).then(function(resp){
+      const newMapOptions = Object.assign({}, this.state.mapOptions);
+      newMapOptions.center = resp.results[0].geometry.location;
+      this.setState({ mapOptions: newMapOptions});
+    }.bind(this),
+      (errors) => console.log('Errors:', errors)
+    ).then(function(){
+      this.map = new google.maps.Map(document.getElementById('spot-search-map'), this.state.mapOptions);
+      this.MarkerManager = new MarkerManager(this.map);
+      this.updateSearchResults(this.map.getBounds());
+    }.bind(this))
+  }
+
+
   componentWillUpdate(newProps){
     // this.MarkerManager.updateMarkers(newProps.searchResults);
     // this.map = new google.maps.Map(this.mapNode, this.state.mapOptions);
   }
 
   componentDidMount(){
-    this.map = new google.maps.Map(document.getElementById('spot-search-map'), this.state.mapOptions);
-    this.MarkerManager = new MarkerManager(this.map);
-    this.updateSearchResults(this.map.getBounds());
+
   }
 
   componentDidUpdate(){
