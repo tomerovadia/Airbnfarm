@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170427162359) do
+ActiveRecord::Schema.define(version: 20170616225754) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +77,8 @@ ActiveRecord::Schema.define(version: 20170427162359) do
     t.string   "main_photo_content_type"
     t.integer  "main_photo_file_size"
     t.datetime "main_photo_updated_at"
+    t.float    "latitude"
+    t.float    "longitude"
     t.index ["host_id"], name: "index_spots_on_host_id", using: :btree
     t.index ["privacy_level_id"], name: "index_spots_on_privacy_level_id", using: :btree
     t.index ["state_id"], name: "index_spots_on_state_id", using: :btree

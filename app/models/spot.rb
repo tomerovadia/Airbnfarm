@@ -37,6 +37,8 @@ class Spot < ApplicationRecord
   validates :num_bedrooms, :num_bathrooms, numericality: { greater_than_or_equal_to: 0 }
   validates :num_guests, :num_beds, :base_price, numericality: { greater_than: 0 }
 
+  geocoded_by :full_address
+  after_validation :geocode
 
   belongs_to :host,
     class_name: User,
@@ -48,6 +50,11 @@ class Spot < ApplicationRecord
   has_many :bookings
 
   has_many :availabilities
+
+
+  def full_address
+    "#{street_address} #{city}, #{state.state_name} #{zipcode}"
+  end
 
 
   def self.filter_by_availability(spots, startRequestedDate, endRequestedDate)
@@ -73,9 +80,12 @@ class Spot < ApplicationRecord
 
 
   def self.all_spots_within(bounds)
+    return Spot.all if bounds == ""
+    lats = [bounds[:NELat].to_f, bounds[:SWLat].to_f]
+    lngs = [bounds[:NELng].to_f, bounds[:SWLng].to_f]
     
+    Spot.where('latitude BETWEEN ? AND ?', lats.min, lats.max).where('longitude BETWEEN ? AND ?', lngs.min, lngs.max)
   end
-
 
   def self.all_spots_in(city)
     return Spot.all if city == ""
