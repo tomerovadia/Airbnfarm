@@ -51,9 +51,7 @@ class SpotSearch extends React.Component {
 
 
         <div className='spot-search-right'>
-
           <SpotSearchMap searchResults={this.props.searchResults}/>
-
         </div>
 
       </div>

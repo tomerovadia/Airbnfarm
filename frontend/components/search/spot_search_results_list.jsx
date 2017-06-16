@@ -7,7 +7,6 @@ class SpotSearchResultsList extends React.Component {
     super(props);
 
     this.contents = null;
-
   }
 
   componentWillReceiveProps(newProps){

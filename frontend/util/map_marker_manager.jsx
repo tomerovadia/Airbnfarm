@@ -30,7 +30,7 @@ export default class MarkerManager {
             marker.setLabel(`$${spot.base_price}`);
 
             marker.setIcon({
-              url: 'https://img.clipartfest.com/c27ce627c345eead6877a1e58d1cebbd_-of-a-cartoon-speech-bubble-thought-clipart-transparent-background_958-958.png',
+              url: './images/map_pin.png',
               scaledSize: new google.maps.Size(40, 30),
             });
 

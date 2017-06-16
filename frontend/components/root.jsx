@@ -19,7 +19,7 @@ export default (props) => {
         <Route path='/' component={App}>
           <IndexRoute component={Welcome} />
 
-          <Route path='/spots' component={NavContainer} searchBarVisible={true} >
+          <Route path='/spots' component={NavContainer} searchBarVisible={true}>
             <Route path='/spots/profile/:spotId' component={SpotProfileContainer}></Route>
             <Route path='/spots/search' component={SpotSearchContainer}></Route>
           </Route>

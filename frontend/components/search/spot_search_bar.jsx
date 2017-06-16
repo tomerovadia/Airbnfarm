@@ -122,7 +122,6 @@ class SpotSearchBar extends React.Component {
           </div>
 
 
-
           <div className='spot-search-bar-right'>
             <div>
               <label></label>
