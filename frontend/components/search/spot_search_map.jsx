@@ -41,10 +41,17 @@ class SpotSearchMap extends React.Component {
         }.bind(this),
         (errors) => console.log('Errors:', errors)
       ).then(function(){
-          this.createMap();
+          this.placeMap();
           this.MarkerManager = new MarkerManager(this.map);
-          this.updateSearchResults(this.map.getBounds());
-        }.bind(this))
+
+          google.maps.event.addListener(this.map, 'tilesloaded', function(e){
+            this.updateSearchResults();
+          }.bind(this));
+
+        }.bind(this)
+      );
+
+
   }
 
   getLatLng(locationQuery){
@@ -64,7 +71,7 @@ class SpotSearchMap extends React.Component {
   }
 
 
-  createMap(){
+  placeMap(){
     this.map = new google.maps.Map(
       document.getElementById('spot-search-map'),
       this.state.mapOptions
@@ -85,9 +92,20 @@ class SpotSearchMap extends React.Component {
     // map.getBounds().getNorthEast().lng()
   }
 
-  updateSearchResults(bounds){
+  getMapBounds(){
+    const mapsBoundsObject = this.map.getBounds();
+    return {
+      SWLat: mapsBoundsObject.getSouthWest().lat(),
+      SWLng: mapsBoundsObject.getSouthWest().lng(),
+      NELat: mapsBoundsObject.getNorthEast().lat(),
+      NELng: mapsBoundsObject.getNorthEast().lng(),
+    };
+  }
+
+  updateSearchResults(){
     this.criteria = this.getCriteriaFromQueryString();
-    this.criteria.bounds = bounds;
+    this.criteria.bounds = this.getMapBounds();
+
     this.props.fetchSearchResults(this.criteria)
       .then(function(){
         this.MarkerManager.updateMarkers(this.props.searchResults)

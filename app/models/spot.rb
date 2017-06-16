@@ -72,6 +72,11 @@ class Spot < ApplicationRecord
   end
 
 
+  def self.all_spots_within(bounds)
+    
+  end
+
+
   def self.all_spots_in(city)
     return Spot.all if city == ""
 
