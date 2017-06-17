@@ -16,7 +16,7 @@ class SpotSearchBar extends React.Component {
         focusedInput: null,
       },
       searchCriteria: {
-        city: '',
+        city: this.props.location.query.city,
         startDate: null,
         endDate: null,
       },
@@ -28,8 +28,6 @@ class SpotSearchBar extends React.Component {
     this.handleNewDates = this.handleNewDates.bind(this);
     this.handleNewFocusedInput = this.handleNewFocusedInput.bind(this);
     this.showCalendar = this.showCalendar.bind(this);
-
-
   }
 
   handleCityChange(e){
@@ -122,7 +120,9 @@ class SpotSearchBar extends React.Component {
           </div>
 
 
+
           <div className='spot-search-bar-right'>
+            // Empty for future # of guests search
             <div>
               <label></label>
               <div></div>
@@ -146,7 +146,7 @@ class SpotSearchBar extends React.Component {
   }
 }
 
-export default withRouter(connect(
+export default connect(
   (state) => {return {};},
 
   (dispatch) => {
@@ -154,4 +154,4 @@ export default withRouter(connect(
       fetchSearchResults: (criteria) => dispatch(fetchSearchResults(criteria)),
     };
   }
-)(SpotSearchBar));
+)(withRouter(SpotSearchBar));
