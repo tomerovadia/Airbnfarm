@@ -11,7 +11,21 @@ class SpotSearchBar extends React.Component {
   constructor(props){
     super(props);
 
-    const city = this.props.location.query.city || ''
+    const city = this.props.location.query.city || '';
+
+    let startDate = this.props.location.query.startDate;
+    let endDate = this.props.location.query.endDate;
+
+    let calendarVisible;
+    if(startDate && endDate){
+      startDate = moment(startDate);
+      endDate = moment(endDate);
+      calendarVisible = true;
+    } else {
+      startDate = null;
+      endDate = null;
+      calendarVisible = false;
+    }
 
     this.state = {
       calendarProps: {
@@ -19,10 +33,10 @@ class SpotSearchBar extends React.Component {
       },
       searchCriteria: {
         city,
-        startDate: null,
-        endDate: null,
+        startDate,
+        endDate,
       },
-      calendarVisible: false,
+      calendarVisible,
     };
 
     this.handleCityChange = this.handleCityChange.bind(this);
@@ -58,7 +72,7 @@ class SpotSearchBar extends React.Component {
   }
 
   handleNewDates({ startDate, endDate }){
-    const endDateChanged = endDate !== this.state.searchCriteria.endDate;
+    const endDateChanged = endDate && (endDate !== this.state.searchCriteria.endDate);
     const newSearchCriteria = Object.assign({}, this.state.searchCriteria);
     newSearchCriteria.startDate = startDate;
     newSearchCriteria.endDate = endDate;

@@ -16,7 +16,7 @@ class SpotSearchMap extends React.Component {
           zoomControl: true,
         },
       locationQuery: '',
-      searchCriteria: null,
+      searchCriteria: this.getCriteriaFromQueryString(),
     };
 
     console.log('constructing')
@@ -67,16 +67,12 @@ class SpotSearchMap extends React.Component {
     console.log('componentWillReceiveProps()');
 
     let locationQuery = newProps.router.location.query.city;
-    !locationQuery || locationQuery === '' ? locationQuery = '' : null;
+    if(!locationQuery) locationQuery = '';
     const locationQueryChanged = locationQuery !== this.state.locationQuery;
 
-    const criteria = this.getCriteriaFromQueryString();
-    const startDateChanged = criteria.startDate !== this.state.searchCriteria.startDate;
-    const endDateChanged = criteria.endDate !== this.state.searchCriteria.endDate;
-
-    console.log('locationQueryChanged', locationQueryChanged);
-    console.log('startDateChanged', startDateChanged);
-    console.log('endDateChanged', endDateChanged);
+    const criteriaFromQueryString = this.getCriteriaFromQueryString();
+    const startDateChanged = criteriaFromQueryString.startDate !== this.state.searchCriteria.startDate;
+    const endDateChanged = criteriaFromQueryString.endDate !== this.state.searchCriteria.endDate;
 
     if(locationQueryChanged || startDateChanged || endDateChanged){
       this.buildMapAndCreateListeners();
@@ -181,7 +177,6 @@ class SpotSearchMap extends React.Component {
 
   render() {
     console.log('render()')
-    console.log(this.state.mapOptions.center);
 
     return(
       <div className='spot-search-map-main-container'>
