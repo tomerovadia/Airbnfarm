@@ -17,44 +17,54 @@ class SpotSearchMap extends React.Component {
         },
     };
 
-    this.buildMap();
+    console.log('constructing')
   }
 
-  componentDidMount() {
-    // const mapOptions = {
-    //   center: {lat: 43.226451, lng: -97.965929},
-    //   zoom: 13,
-    //   zoomControl: true,
-    // };
-
-    // this.map = new google.maps.Map(this.mapNode, this.state.mapOptions);
-    // this.MarkerManager = new MarkerManager(this.map);
-    // this.MarkerManager.updateMarkers(this.props.searchResults);
-  }
+  // componentDidMount() {
+  //   // const mapOptions = {
+  //   //   center: {lat: 43.226451, lng: -97.965929},
+  //   //   zoom: 13,
+  //   //   zoomControl: true,
+  //   // };
+  //
+  //   // this.map = new google.maps.Map(this.mapNode, this.state.mapOptions);
+  //   // this.MarkerManager = new MarkerManager(this.map);
+  //   // this.MarkerManager.updateMarkers(this.props.searchResults);
+  // }
 
   buildMap(){
+    console.log('buildMap()')
     const locationQuery = this.props.location.query.city;
 
-    this.getLatLng(locationQuery)
-      .then(function(resp){
-          this.updateMapCenter(resp.results[0].geometry.location)
-        }.bind(this),
+    return this.getLatLng(locationQuery)
+      .then((resp) => this.updateMapCenter(resp.results[0].geometry.location),
         (errors) => console.log('Errors:', errors)
-      ).then(function(){
-          this.placeMap();
-          this.MarkerManager = new MarkerManager(this.map);
+      ).then(() => this.placeMap());
+  }
 
-          google.maps.event.addListener(this.map, 'tilesloaded', function(e){
-            this.updateSearchResults();
-          }.bind(this));
+  componentDidMount(){
+    console.log('componentDidMount()')
+    this.buildMap()
+      .then(function(){
+        this.MarkerManager = new MarkerManager(this.map);
+        this.createMapEventListeners();
+      }.bind(this))
+  }
 
-        }.bind(this)
-      );
+  createMapEventListeners(){
+    google.maps.event.addListenerOnce(this.map, 'tilesloaded', () => {
+      this.updateSearchResults()
+        .then(() => this.MarkerManager.updateMarkers(this.props.searchResults, true));
+    });
 
-
+    google.maps.event.addListener(this.map, 'idle', () => {
+      this.updateSearchResults()
+        .then(() => this.MarkerManager.updateMarkers(this.props.searchResults));
+    });
   }
 
   getLatLng(locationQuery){
+    console.log('getLatLng()')
     return $.ajax({
       method: 'get',
       url: 'https://maps.googleapis.com/maps/api/geocode/json',
@@ -65,6 +75,7 @@ class SpotSearchMap extends React.Component {
 
 
   updateMapCenter(center){
+    console.log('updateMapCenter()')
     const newMapOptions = Object.assign({}, this.state.mapOptions);
     newMapOptions.center = center;
     this.setState({ mapOptions: newMapOptions});
@@ -72,6 +83,7 @@ class SpotSearchMap extends React.Component {
 
 
   placeMap(){
+    console.log('placeMap()')
     this.map = new google.maps.Map(
       document.getElementById('spot-search-map'),
       this.state.mapOptions
@@ -84,15 +96,16 @@ class SpotSearchMap extends React.Component {
     // this.map = new google.maps.Map(this.mapNode, this.state.mapOptions);
   }
 
-  componentDidMount(){
-
-  }
+  // componentDidMount(){
+  //
+  // }
 
   componentDidUpdate(){
     // map.getBounds().getNorthEast().lng()
   }
 
   getMapBounds(){
+    console.log('getMapBounds()')
     const mapsBoundsObject = this.map.getBounds();
     return {
       SWLat: mapsBoundsObject.getSouthWest().lat(),
@@ -103,16 +116,15 @@ class SpotSearchMap extends React.Component {
   }
 
   updateSearchResults(){
+    console.log('updateSearchResults()')
     this.criteria = this.getCriteriaFromQueryString();
     this.criteria.bounds = this.getMapBounds();
 
-    this.props.fetchSearchResults(this.criteria)
-      .then(function(){
-        this.MarkerManager.updateMarkers(this.props.searchResults)
-      }.bind(this));
+    return this.props.fetchSearchResults(this.criteria);
   }
 
   getCriteriaFromQueryString(){
+    console.log('getCriteriaFromQueryString()')
     const city = this.props.location.query.city || '';
 
     const criteria = {
@@ -125,6 +137,7 @@ class SpotSearchMap extends React.Component {
   }
 
   render() {
+    console.log('render()')
     console.log(this.state.mapOptions.center);
 
     return(

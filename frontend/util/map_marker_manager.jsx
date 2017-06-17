@@ -13,7 +13,7 @@ export default class MarkerManager {
     this.openedMapSpotMini = null;
   }
 
-  updateMarkers(searchResults){
+  updateMarkers(searchResults, fitZoom){
     this.markers = {};
     let bounds = new google.maps.LatLngBounds();
 
@@ -50,7 +50,9 @@ export default class MarkerManager {
               ReactDOM.render(<SpotMini spot={spot}/>, document.getElementById('map-spot-mini-div'))
             }.bind(this));
           }.bind(this))
-          .then(() => this.map.fitBounds(bounds));
+          .then(() => {
+            if(fitZoom) this.map.fitBounds(bounds)
+          });
       }
     }
   }
