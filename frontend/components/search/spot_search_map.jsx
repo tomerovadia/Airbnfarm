@@ -35,29 +35,49 @@ class SpotSearchMap extends React.Component {
 
   buildMap(){
     console.log('buildMap()')
-    let mapOptions = { zoom: 13 };
+    // let mapOptions = { zoom: 13 };
+    // let locationQuery = this.props.location.query.city;
+    //
+    // if(!locationQuery || locationQuery === ''){
+    //   locationQuery = 'united states'
+    //   mapOptions.zoom = 5
+    // }
+
+    // this.setState({ locationQuery });
+
+    return this.updateMapOptions().then(() => this.placeMap());
+  }
+
+  updateMapOptions(){
+    console.log('updateMapCenter()')
+
+    let newMapOptions = { zoom: 13 };
     let locationQuery = this.props.location.query.city;
 
     if(!locationQuery || locationQuery === ''){
       locationQuery = 'united states'
-      mapOptions.zoom = 5
+      newMapOptions.zoom = 5
+      this.setState({ locationQuery: '' });
+    } else {
+      this.setState({ locationQuery });
     }
-
-    this.setState({ locationQuery });
 
     return this.getLatLng(locationQuery)
       .then((resp) => {
-        mapOptions.center = resp.results[0].geometry.location;
-        this.updateMapOptions(mapOptions);
+        newMapOptions.center = resp.results[0].geometry.location;
+        this.setState({ mapOptions: newMapOptions});
       },
         (errors) => console.log('Errors:', errors)
-      ).then(() => this.placeMap());
+      )
   }
 
   componentWillReceiveProps(newProps){
     console.log('componentWillReceiveProps()');
 
-    if(newProps.router.location.query.city !== this.state.locationQuery){
+    let locationQuery = newProps.router.location.query.city;
+    !locationQuery || locationQuery === '' ? locationQuery = '' : null;
+
+    if(locationQuery !== this.state.locationQuery){
       this.buildMap()
         .then(function(){
           this.MarkerManager = new MarkerManager(this.map);
@@ -97,15 +117,6 @@ class SpotSearchMap extends React.Component {
       dataType: 'json',
       data: {address: locationQuery},
     })
-  }
-
-
-  updateMapOptions({center, zoom}){
-    console.log('updateMapCenter()')
-    const newMapOptions = Object.assign({}, this.state.mapOptions);
-    newMapOptions.center = center;
-    if(zoom) newMapOptions.zoom = zoom;
-    this.setState({ mapOptions: newMapOptions});
   }
 
 

@@ -122,7 +122,6 @@ class SpotSearchBar extends React.Component {
 
 
           <div className='spot-search-bar-right'>
-            // Empty for future # of guests search
             <div>
               <label></label>
               <div></div>
