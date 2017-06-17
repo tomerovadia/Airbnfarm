@@ -62,7 +62,9 @@ class SpotSearchBar extends React.Component {
     const newSearchCriteria = Object.assign({}, this.state.searchCriteria);
     newSearchCriteria.startDate = startDate;
     newSearchCriteria.endDate = endDate;
-    this.setState({ searchCriteria: newSearchCriteria });
+    this.setState({ searchCriteria: newSearchCriteria }, () => {
+      if(endDateChanged) this.handleSubmit();
+    });
   }
 
   handleNewFocusedInput(newFocusedInput){
