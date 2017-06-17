@@ -35,15 +35,6 @@ class SpotSearchMap extends React.Component {
 
   buildMap(){
     console.log('buildMap()')
-    // let mapOptions = { zoom: 13 };
-    // let locationQuery = this.props.location.query.city;
-    //
-    // if(!locationQuery || locationQuery === ''){
-    //   locationQuery = 'united states'
-    //   mapOptions.zoom = 5
-    // }
-
-    // this.setState({ locationQuery });
 
     return this.updateMapOptions().then(() => this.placeMap());
   }
@@ -78,30 +69,33 @@ class SpotSearchMap extends React.Component {
     !locationQuery || locationQuery === '' ? locationQuery = '' : null;
 
     if(locationQuery !== this.state.locationQuery){
-      this.buildMap()
-        .then(function(){
-          this.MarkerManager = new MarkerManager(this.map);
-          this.createMapEventListeners();
-        }.bind(this))
+      this.buildMapAndCreateListeners();
     }
+  }
+
+  buildMapAndCreateListeners(){
+    this.buildMap()
+      .then(() => {
+        this.MarkerManager = new MarkerManager(this.map);
+        this.createInitialMapMarkers();
+        this.createMapEventListener();
+      })
   }
 
   componentDidMount(){
     console.log('componentDidMount()')
-    this.buildMap()
-      .then(function(){
-        this.MarkerManager = new MarkerManager(this.map);
-        this.createMapEventListeners();
-      }.bind(this))
+    this.buildMapAndCreateListeners();
   }
 
-  createMapEventListeners(){
+  createInitialMapMarkers(){
     // First time, zoom the map to focus on the pins
     google.maps.event.addListenerOnce(this.map, 'tilesloaded', () => {
       this.updateSearchResults()
         .then(() => this.MarkerManager.updateMarkers(this.props.searchResults, true));
     });
+  }
 
+  createMapEventListener(){
     // Subsequent times, no auto zoom, to allow user to control zoom
     google.maps.event.addListener(this.map, 'idle', () => {
       this.updateSearchResults()

@@ -11,12 +11,14 @@ class SpotSearchBar extends React.Component {
   constructor(props){
     super(props);
 
+    const city = this.props.location.query.city || ''
+
     this.state = {
       calendarProps: {
         focusedInput: null,
       },
       searchCriteria: {
-        city: this.props.location.query.city,
+        city,
         startDate: null,
         endDate: null,
       },
