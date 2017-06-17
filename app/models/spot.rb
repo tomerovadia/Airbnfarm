@@ -80,10 +80,10 @@ class Spot < ApplicationRecord
 
 
   def self.all_spots_within(bounds)
-    return Spot.all if bounds == ""
+    return Spot.all if !bounds
     lats = [bounds[:NELat].to_f, bounds[:SWLat].to_f]
     lngs = [bounds[:NELng].to_f, bounds[:SWLng].to_f]
-    
+
     Spot.where('latitude BETWEEN ? AND ?', lats.min, lats.max).where('longitude BETWEEN ? AND ?', lngs.min, lngs.max)
   end
 

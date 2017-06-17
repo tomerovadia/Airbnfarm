@@ -29,7 +29,6 @@ class App extends React.Component {
 
         {sessionForm}
 
-
         {this.props.children}
 
       </div>
@@ -55,7 +54,6 @@ export default connect(
   (dispatch) => {
     return {
       clearModal: () => dispatch(clearModal()),
-      // hideUserSettings: () => dispatch(hideUserSettings()),
     };
   }
 )(App);

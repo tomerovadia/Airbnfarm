@@ -2,8 +2,6 @@ class Api::SpotsController < ApplicationController
 
   def index
 
-    # @spots = Spot.all_spots_in(params[:city]).includes(:state, :privacy_level)
-
     @spots = Spot.all_spots_within(params[:bounds]).includes(:state, :privacy_level, :availabilities)
 
     if (params[:startDate] && params[:endDate]) && (!(params[:startDate].empty? && params[:endDate].empty?))

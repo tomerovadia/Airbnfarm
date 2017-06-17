@@ -11,7 +11,7 @@ class SpotSearchMap extends React.Component {
     super(props);
     this.state = {
       mapOptions: {
-          center: {lat: 43.226451, lng: -97.965929},
+          center: {lat: 37.0902, lng: -95.7129},
           zoom: 13,
           zoomControl: true,
         },
@@ -34,10 +34,19 @@ class SpotSearchMap extends React.Component {
 
   buildMap(){
     console.log('buildMap()')
-    const locationQuery = this.props.location.query.city;
+    let mapOptions = { zoom: 13 };
+    let locationQuery = this.props.location.query.city;
+
+    if(locationQuery === ''){
+      locationQuery = 'united states'
+      mapOptions.zoom = 5
+    }
 
     return this.getLatLng(locationQuery)
-      .then((resp) => this.updateMapCenter(resp.results[0].geometry.location),
+      .then((resp) => {
+        mapOptions.center = resp.results[0].geometry.location;
+        this.updateMapOptions(mapOptions);
+      },
         (errors) => console.log('Errors:', errors)
       ).then(() => this.placeMap());
   }
@@ -52,11 +61,13 @@ class SpotSearchMap extends React.Component {
   }
 
   createMapEventListeners(){
+    // First time, zoom the map to focus on the pins
     google.maps.event.addListenerOnce(this.map, 'tilesloaded', () => {
       this.updateSearchResults()
         .then(() => this.MarkerManager.updateMarkers(this.props.searchResults, true));
     });
 
+    // Subsequent times, no auto zoom, to allow user to control zoom
     google.maps.event.addListener(this.map, 'idle', () => {
       this.updateSearchResults()
         .then(() => this.MarkerManager.updateMarkers(this.props.searchResults));
@@ -74,10 +85,11 @@ class SpotSearchMap extends React.Component {
   }
 
 
-  updateMapCenter(center){
+  updateMapOptions({center, zoom}){
     console.log('updateMapCenter()')
     const newMapOptions = Object.assign({}, this.state.mapOptions);
     newMapOptions.center = center;
+    if(zoom) newMapOptions.zoom = zoom;
     this.setState({ mapOptions: newMapOptions});
   }
 
