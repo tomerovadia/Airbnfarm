@@ -15,6 +15,7 @@ class SpotSearchMap extends React.Component {
           zoom: 13,
           zoomControl: true,
         },
+      locationQuery: ''
     };
 
     console.log('constructing')
@@ -42,6 +43,8 @@ class SpotSearchMap extends React.Component {
       mapOptions.zoom = 5
     }
 
+    this.setState({ locationQuery });
+
     return this.getLatLng(locationQuery)
       .then((resp) => {
         mapOptions.center = resp.results[0].geometry.location;
@@ -49,6 +52,18 @@ class SpotSearchMap extends React.Component {
       },
         (errors) => console.log('Errors:', errors)
       ).then(() => this.placeMap());
+  }
+
+  componentWillReceiveProps(newProps){
+    console.log('componentWillReceiveProps()');
+
+    if(newProps.router.location.query.city !== this.state.locationQuery){
+      this.buildMap()
+        .then(function(){
+          this.MarkerManager = new MarkerManager(this.map);
+          this.createMapEventListeners();
+        }.bind(this))
+    }
   }
 
   componentDidMount(){
