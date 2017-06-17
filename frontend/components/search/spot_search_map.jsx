@@ -37,7 +37,7 @@ class SpotSearchMap extends React.Component {
     let mapOptions = { zoom: 13 };
     let locationQuery = this.props.location.query.city;
 
-    if(locationQuery === ''){
+    if(!locationQuery || locationQuery === ''){
       locationQuery = 'united states'
       mapOptions.zoom = 5
     }
