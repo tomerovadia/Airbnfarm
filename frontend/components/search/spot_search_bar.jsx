@@ -47,10 +47,12 @@ class SpotSearchBar extends React.Component {
     this.showCalendar = this.showCalendar.bind(this);
   }
 
-  handleCityChange(value){
+  handleCityChange(value, submit){
     const newSearchCriteria = Object.assign({}, this.state.searchCriteria);
     newSearchCriteria.city = value;
-    this.setState({searchCriteria: newSearchCriteria}, () => console.log(this.state.searchCriteria.city));
+    this.setState({searchCriteria: newSearchCriteria}, () => {
+      if(submit) this.handleSubmit();
+    });
   }
 
   deMomentDate(moment){
@@ -112,7 +114,9 @@ class SpotSearchBar extends React.Component {
             <label>Where</label>
             <SpotSearchLocationInput
               handleCityChange={this.handleCityChange}
-              initialValue={this.state.searchCriteria.city} />
+              initialValue={this.state.searchCriteria.city}
+              handleSubmit={this.handleSubmit}
+            />
           </div>
 
 

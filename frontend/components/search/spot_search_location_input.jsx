@@ -65,13 +65,13 @@ class SpotSearchLocationInput extends React.Component {
         onSelect={(value, item) => {
           // set the menu to only the selected item
           this.setState({ value, unitedStates: [ item ] })
-          this.props.handleCityChange(value);
+          this.props.handleCityChange(value, true);
           // or you could reset it to a default list again
           // this.setState({ unitedStates: getStates() })
         }}
         onChange={(event, value) => {
           this.setState({ value, loading: true })
-          this.props.handleCityChange(value);
+          this.props.handleCityChange(value, false);
           fakeRequest(value, (items) => {
             this.setState({ unitedStates: items, loading: false })
           })
