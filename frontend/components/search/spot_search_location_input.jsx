@@ -61,7 +61,17 @@ class SpotSearchLocationInput extends React.Component {
         value={this.state.value}
         items={this.state.unitedStates}
         getItemValue={(item) => item.name}
-        inputProps={{ placeholder: 'Anywhere' }}
+        inputProps={{placeholder: 'Anywhere'}}
+        inputStyle={{
+          'font-weight': 400,
+          'font-family': "Helvetica Neue",
+          'font-size': '14px',
+          'color': '#575757',
+          'letter-spacing': '1px',
+        }}
+        wrapperStyle={{
+          display: 'block',
+        }}
         onSelect={(value, item) => {
           // set the menu to only the selected item
           this.setState({ value, unitedStates: [ item ] })
