@@ -99,12 +99,6 @@ class SpotSearchBar extends React.Component {
 
     const calendarDisplay = this.state.calendarVisible ? 'block' : 'none';
     const anytimeLabelDisplay = this.state.calendarVisible ? 'none' : 'block';
-    // <input
-    //   type='text'
-    //   placeholder='Anywhere'
-    //   onChange={this.handleCityChange}
-    //   value={this.state.searchCriteria.city}
-    //  />
 
     return(
       <div className='spot-search-bar-main-container'>
