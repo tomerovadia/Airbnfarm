@@ -30,6 +30,7 @@
     "moment-timezone": "^0.5.13",
     "react": "^15.5.4",
     "react-addons-shallow-compare": "^15.5.2",
+    "react-autocomplete": "^1.5.9",
     "react-dates": "^10.1.1",
     "react-dom": "^15.5.4",
     "react-moment": "^0.2.2",

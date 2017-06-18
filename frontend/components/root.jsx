@@ -10,6 +10,7 @@ import NavContainer from './main/nav_container';
 import TripsPage from './bookings/trips_page';
 import ReservationsPage from './bookings/reservations_page';
 import HostPage from './bookings/host_page';
+import SpotSearchLocationInput from './search/spot_search_location_input';
 
 export default (props) => {
 
@@ -18,6 +19,9 @@ export default (props) => {
       <Router history={ hashHistory }>
         <Route path='/' component={App}>
           <IndexRoute component={Welcome} />
+
+          <Route path='/test' component={SpotSearchLocationInput} />
+
 
           <Route path='/spots' component={NavContainer} searchBarVisible={true}>
             <Route path='/spots/profile/:spotId' component={SpotProfileContainer}></Route>

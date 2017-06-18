@@ -5,6 +5,7 @@ import moment from 'moment';
 import {connect} from 'react-redux';
 import { fetchSearchResults } from '../../actions/spot_actions';
 import {hashHistory, router, withRouter} from 'react-router';
+import SpotSearchLocationInput from './spot_search_location_input';
 
 class SpotSearchBar extends React.Component {
 
@@ -46,10 +47,10 @@ class SpotSearchBar extends React.Component {
     this.showCalendar = this.showCalendar.bind(this);
   }
 
-  handleCityChange(e){
+  handleCityChange(value){
     const newSearchCriteria = Object.assign({}, this.state.searchCriteria);
-    newSearchCriteria.city = e.target.value;
-    this.setState({searchCriteria: newSearchCriteria});
+    newSearchCriteria.city = value;
+    this.setState({searchCriteria: newSearchCriteria}, () => console.log(this.state.searchCriteria.city));
   }
 
   deMomentDate(moment){
@@ -96,6 +97,12 @@ class SpotSearchBar extends React.Component {
 
     const calendarDisplay = this.state.calendarVisible ? 'block' : 'none';
     const anytimeLabelDisplay = this.state.calendarVisible ? 'none' : 'block';
+    // <input
+    //   type='text'
+    //   placeholder='Anywhere'
+    //   onChange={this.handleCityChange}
+    //   value={this.state.searchCriteria.city}
+    //  />
 
     return(
       <div className='spot-search-bar-main-container'>
@@ -103,12 +110,9 @@ class SpotSearchBar extends React.Component {
 
           <div className='spot-search-bar-left'>
             <label>Where</label>
-            <input
-              type='text'
-              placeholder='Anywhere'
-              onChange={this.handleCityChange}
-              value={this.state.searchCriteria.city}
-             />
+            <SpotSearchLocationInput
+              handleCityChange={this.handleCityChange}
+              initialValue={this.state.searchCriteria.city} />
           </div>
 
 
