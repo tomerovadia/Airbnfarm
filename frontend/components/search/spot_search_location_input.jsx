@@ -3,7 +3,7 @@ import Autocomplete from 'react-autocomplete';
 
 function processRequest(value, cb) {
   setTimeout(cb, 500, value ?
-    getOptions().filter(state => matchStateToTerm(state, value)) :
+    getOptions().filter(state => matchOptionToTerm(state, value)) :
     getOptions()
   )
 }
@@ -49,7 +49,7 @@ let styles = {
 
 }
 
-function matchStateToTerm(state, value) {
+function matchOptionToTerm(state, value) {
   return (
     state.name.toLowerCase().indexOf(value.toLowerCase()) !== -1
   )
@@ -70,7 +70,7 @@ class SpotSearchLocationInput extends React.Component {
 
     this.state = {
       value: this.props.initialValue,
-      unitedStates: getOptions(),
+      options: getOptions(),
       loading: false
     }
   }
@@ -82,7 +82,7 @@ class SpotSearchLocationInput extends React.Component {
         inputProps={{ id: 'states-autocomplete' }}
         ref="autocomplete"
         value={this.state.value}
-        items={this.state.unitedStates}
+        items={this.state.options}
         getItemValue={(item) => item.name}
         inputProps={{placeholder: 'Anywhere'}}
         inputStyle={styles.input}
@@ -90,16 +90,16 @@ class SpotSearchLocationInput extends React.Component {
         wrapperStyle={styles.wrapper}
         onSelect={(value, item) => {
           // set the menu to only the selected item
-          // this.setState({ value, unitedStates: [ item ] })
+          // this.setState({ value, options: [ item ] })
           this.props.handleCityChange(value, true);
           // or you could reset it to a default list again
-          this.setState({value, unitedStates: getOptions() })
+          this.setState({value, options: getOptions() })
         }}
         onChange={(event, value) => {
           this.setState({ value, loading: true })
           this.props.handleCityChange(value, false);
           processRequest(value, (items) => {
-            this.setState({ unitedStates: items, loading: false })
+            this.setState({ options: items, loading: false })
           })
         }}
         renderItem={(item, isHighlighted) => (
