@@ -10,19 +10,23 @@ function fakeRequest(value, cb) {
 
 let styles = {
   item: {
-    padding: '2px 6px',
-    cursor: 'default'
+    padding: '10px 6px',
+    cursor: 'default',
+    'font-size': '19px',
   },
 
   highlightedItem: {
     color: 'white',
-    background: 'hsl(200, 50%, 50%)',
-    padding: '2px 6px',
-    cursor: 'default'
+    background: '#FF5A5F',
+    padding: '10px 6px',
+    cursor: 'default',
+    'font-size': '19px',
   },
 
   menu: {
-    border: 'solid 1px #ccc'
+    'border': 'solid 1px #ccc',
+    'border-radius': '3px',
+    'box-shadow': '1px 1px #ccc',
   }
 }
 
@@ -74,10 +78,10 @@ class SpotSearchLocationInput extends React.Component {
         }}
         onSelect={(value, item) => {
           // set the menu to only the selected item
-          this.setState({ value, unitedStates: [ item ] })
+          // this.setState({ value, unitedStates: [ item ] })
           this.props.handleCityChange(value, true);
           // or you could reset it to a default list again
-          // this.setState({ unitedStates: getStates() })
+          this.setState({unitedStates: getStates() })
         }}
         onChange={(event, value) => {
           this.setState({ value, loading: true })
