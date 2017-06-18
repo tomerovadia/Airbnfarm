@@ -1,10 +1,10 @@
 import React from 'react';
 import Autocomplete from 'react-autocomplete';
 
-function fakeRequest(value, cb) {
+function processRequest(value, cb) {
   setTimeout(cb, 500, value ?
-    getStates().filter(state => matchStateToTerm(state, value)) :
-    getStates()
+    getOptions().filter(state => matchStateToTerm(state, value)) :
+    getOptions()
   )
 }
 
@@ -24,10 +24,29 @@ let styles = {
   },
 
   menu: {
-    'border': 'solid 1px #ccc',
-    'border-radius': '3px',
-    'box-shadow': '1px 1px #ccc',
-  }
+    borderRadius: '3px',
+    border: 'solid 1px #ccc',
+    boxShadow: '0 2px 12px rgba(0, 0, 0, 0.1)',
+    background: 'rgba(255, 255, 255, 0.9)',
+    padding: '2px 0',
+    fontSize: '90%',
+    position: 'fixed',
+    overflow: 'auto',
+    maxHeight: '50%',
+  },
+
+  input: {
+    'font-weight': 400,
+    'font-family': "Helvetica Neue",
+    'font-size': '14px',
+    'color': '#575757',
+    'letter-spacing': '1px',
+  },
+
+  wrapper: {
+    display: 'block',
+  },
+
 }
 
 function matchStateToTerm(state, value) {
@@ -36,7 +55,7 @@ function matchStateToTerm(state, value) {
   )
 }
 
-function getStates() {
+function getOptions() {
   return [
     {id: 1, name: 'Tripp, SD'},
     {id: 2, name: 'Agra, KS'},
@@ -51,7 +70,7 @@ class SpotSearchLocationInput extends React.Component {
 
     this.state = {
       value: this.props.initialValue,
-      unitedStates: getStates(),
+      unitedStates: getOptions(),
       loading: false
     }
   }
@@ -66,27 +85,20 @@ class SpotSearchLocationInput extends React.Component {
         items={this.state.unitedStates}
         getItemValue={(item) => item.name}
         inputProps={{placeholder: 'Anywhere'}}
-        inputStyle={{
-          'font-weight': 400,
-          'font-family': "Helvetica Neue",
-          'font-size': '14px',
-          'color': '#575757',
-          'letter-spacing': '1px',
-        }}
-        wrapperStyle={{
-          display: 'block',
-        }}
+        inputStyle={styles.input}
+        menuStyle={styles.menu}
+        wrapperStyle={styles.wrapper}
         onSelect={(value, item) => {
           // set the menu to only the selected item
           // this.setState({ value, unitedStates: [ item ] })
           this.props.handleCityChange(value, true);
           // or you could reset it to a default list again
-          this.setState({unitedStates: getStates() })
+          this.setState({value, unitedStates: getOptions() })
         }}
         onChange={(event, value) => {
           this.setState({ value, loading: true })
           this.props.handleCityChange(value, false);
-          fakeRequest(value, (items) => {
+          processRequest(value, (items) => {
             this.setState({ unitedStates: items, loading: false })
           })
         }}
