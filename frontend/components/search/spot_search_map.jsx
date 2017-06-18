@@ -22,18 +22,6 @@ class SpotSearchMap extends React.Component {
     console.log('constructing')
   }
 
-  // componentDidMount() {
-  //   // const mapOptions = {
-  //   //   center: {lat: 43.226451, lng: -97.965929},
-  //   //   zoom: 13,
-  //   //   zoomControl: true,
-  //   // };
-  //
-  //   // this.map = new google.maps.Map(this.mapNode, this.state.mapOptions);
-  //   // this.MarkerManager = new MarkerManager(this.map);
-  //   // this.MarkerManager.updateMarkers(this.props.searchResults);
-  // }
-
   buildMap(){
     console.log('buildMap()')
 
@@ -132,20 +120,6 @@ class SpotSearchMap extends React.Component {
     );
   }
 
-
-  componentWillUpdate(newProps){
-    // this.MarkerManager.updateMarkers(newProps.searchResults);
-    // this.map = new google.maps.Map(this.mapNode, this.state.mapOptions);
-  }
-
-  // componentDidMount(){
-  //
-  // }
-
-  componentDidUpdate(){
-    // map.getBounds().getNorthEast().lng()
-  }
-
   getMapBounds(){
     console.log('getMapBounds()')
     const mapsBoundsObject = this.map.getBounds();
@@ -189,7 +163,6 @@ class SpotSearchMap extends React.Component {
     );
 
   }
-  // <div ref={thisdiv => this.mapNode = thisdiv} className='spot-search-map'></div>
 
 }
 

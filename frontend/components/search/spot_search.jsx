@@ -8,37 +8,7 @@ class SpotSearch extends React.Component {
 
   constructor(props){
     super(props);
-    // this.criteria = {};
-
-    // this.updateCriteria = this.updateCriteria.bind(this);
   }
-
-  componentWillUpdate() {
-    // if(JSON.stringify(this.criteria) !== JSON.stringify(this.getCriteriaFromQueryString())){
-    //   this.criteria = this.getCriteriaFromQueryString();
-    //   this.props.fetchSearchResults(this.criteria);
-    // }
-  }
-
-  updateCriteria(bounds){
-    // this.criteria = this.getCriteriaFromQueryString();
-    // this.criteria.bounds = bounds;
-    // this.props.fetchSearchResults(this.criteria);
-  }
-
-
-  // getCriteriaFromQueryString(){
-  //   const city = this.props.location.query.city || '';
-  //
-  //   const criteria = {
-  //     city,
-  //     startDate: this.props.location.query.startDate,
-  //     endDate: this.props.location.query.endDate,
-  //   }
-  //
-  //   return criteria;
-  // }
-
 
   render() {
 
@@ -66,7 +36,5 @@ class SpotSearch extends React.Component {
     );
   }
 }
-// <SpotSearchResultsList spotErrors={this.props.spotErrors} searchResults={this.props.searchResults} />
-// <SpotSearchMap updateCriteria={this.updateCriteria} searchResults={this.props.searchResults}/>
 
 export default SpotSearch;
