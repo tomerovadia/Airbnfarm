@@ -41,17 +41,21 @@ class SpotSearchMap extends React.Component {
   }
 
   updateMapOptions(){
-    console.log('updateMapCenter()')
+    console.log('updateMapOptions()')
 
-    let newMapOptions = { zoom: 13 };
+    let newMapOptions = {};
     let locationQuery = this.props.location.query.city;
 
-    if(!locationQuery || locationQuery === ''){
-      locationQuery = 'united states'
-      newMapOptions.zoom = 5
-      this.setState({ locationQuery: '' });
-    } else {
-      this.setState({ locationQuery });
+    switch(locationQuery){
+      case undefined:
+      case '':
+        locationQuery = 'united states'
+        newMapOptions.zoom = 5;
+        this.setState({ locationQuery: '' });
+        break;
+      default:
+        newMapOptions.zoom = 13;
+        this.setState({ locationQuery });
     }
 
     return this.getLatLng(locationQuery)
