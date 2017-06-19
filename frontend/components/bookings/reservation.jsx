@@ -32,6 +32,9 @@ export default (props) => {
     approveButton = null;
     declineButton = null;
     statusColor = 'red';
+  } else if (bookingStatus === 'cancelled'){
+    approveButton = null;
+    declineButton = null;
   }
 
   return (
