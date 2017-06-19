@@ -2,13 +2,18 @@ class Api::SpotsController < ApplicationController
 
   def index
 
-    @spots = Spot.all_spots_within(params[:bounds]).includes(:state, :privacy_level, :availabilities)
+    if params[:user_id] # /api/users/:id/spots
+      @spots = User.find(params[:user_id]).listings
+    else # /api/spots
+      @spots = Spot.all_spots_within(params[:bounds]).includes(:state, :privacy_level, :availabilities)
 
-    if (params[:startDate] && params[:endDate]) && (!(params[:startDate].empty? && params[:endDate].empty?))
-      startRequestedDate = Date.parse(params[:startDate])
-      endRequestedDate = Date.parse(params[:endDate])
+      if (params[:startDate] && params[:endDate]) && (!(params[:startDate].empty? && params[:endDate].empty?))
+        startRequestedDate = Date.parse(params[:startDate])
+        endRequestedDate = Date.parse(params[:endDate])
 
-      @spots = Spot.filter_by_availability(@spots, startRequestedDate, endRequestedDate)
+        @spots = Spot.filter_by_availability(@spots, startRequestedDate, endRequestedDate)
+      end
+
     end
 
     if @spots.empty?

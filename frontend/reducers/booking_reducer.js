@@ -13,9 +13,6 @@ export default (oldState = _initialState, action) => {
   switch(action.type){
 
     case RECEIVE_BOOKINGS:
-      // newState.reservations = action.reservations;
-      // newState.trips = action.trips;
-      // return newState;
       return merge(newState, action.bookings);
 
     case RECEIVE_ERRORS:

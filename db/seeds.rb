@@ -331,8 +331,14 @@ ActiveRecord::Base.transaction do
 
     file_name = File.exist?("app/assets/images/farm#{idx}.jpeg") ? "farm#{idx}.jpeg" : "farm#{idx}.jpg"
 
+    if idx === 25 || idx === 35 || idx === 48
+      host_id = User.find_by_email('old.macdonald@gmail.com').id
+    else
+      host_id = all_users.sample.id
+    end
+
     Spot.create!(
-            host_id: all_users.sample.id,
+            host_id: host_id,
             title: farms[idx][0],
             base_price: rand(150..500),
             summary: farms[idx][1],
@@ -371,7 +377,7 @@ ActiveRecord::Base.transaction do
 
 
 
-  def createSpots(date_ranges)
+  def createAvailabilities(date_ranges)
     Spot.all.each do |spot|
       date_range = date_ranges[(0..2).to_a.sample]
 
@@ -386,8 +392,35 @@ ActiveRecord::Base.transaction do
 
   end
 
-  createSpots(date_ranges1)
-  createSpots(date_ranges2)
-  createSpots(date_ranges3)
+  createAvailabilities(date_ranges1)
+  createAvailabilities(date_ranges2)
+  createAvailabilities(date_ranges3)
+
+  # Old MacDonald's Trips
+  10.times do
+    spot = Spot.all[(0...Spot.all.length).to_a.sample]
+
+    availabilities = spot.availabilities.order(:available_date).limit(3)
+    start_date = availabilities.first.available_date
+    end_date = availabilities.last.available_date
+
+    status = BookingStatus.all[(0...BookingStatus.all.length).to_a.sample]
+
+    booking = Booking.create!(
+        guest: User.find_by_email('old.macdonald@gmail.com'),
+        spot: spot,
+        status: status,
+        start_date: start_date,
+        end_date: end_date,
+        title: spot.title,
+        city: spot.city,
+        base_price: spot.base_price.to_i
+      )
+
+    if status.status == 'approved'
+      Availability.book_availabilities(booking.start_date, booking.end_date, booking.spot)
+    end
+
+  end
 
 end

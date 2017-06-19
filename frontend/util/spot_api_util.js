@@ -21,12 +21,22 @@ export const fetchSpot = (id) => {
 };
 
 export const fetchSearchResults = (criteria) => {
-  
+
   return $.ajax({
     method: 'get',
     url: 'api/spots',
     responseText: 'json',
     data: criteria,
+  });
+
+};
+
+export const fetchUserListings = (userId) => {
+
+  return $.ajax({
+    method: 'get',
+    url: `api/users/${userId}/spots`,
+    responseText: 'json',
   });
 
 };

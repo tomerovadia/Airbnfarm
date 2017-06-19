@@ -9,6 +9,7 @@ import Welcome from './main/welcome';
 import NavContainer from './main/nav_container';
 import TripsPage from './bookings/trips_page';
 import ReservationsPage from './bookings/reservations_page';
+import ListingsPage from './bookings/listings_page';
 import HostPage from './bookings/host_page';
 import SpotSearchLocationInput from './search/spot_search_location_input';
 
@@ -33,6 +34,7 @@ export default (props) => {
           <Route path='/bookings/trips' component={TripsPage}></Route>
 
           <Route path='/bookings/host' component={HostPage}>
+            <Route path='/bookings/host/listings' component={ListingsPage}></Route>
             <Route path='/bookings/host/reservations' component={ReservationsPage}></Route>
           </Route>
 

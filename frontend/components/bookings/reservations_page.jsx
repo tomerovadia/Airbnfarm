@@ -13,7 +13,6 @@ class ReservationsPage extends React.Component {
     super(props)
 
     this.props.fetchBookings(this.props.currentUser.id);
-
   }
 
   render(){

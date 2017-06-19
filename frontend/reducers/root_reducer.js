@@ -5,6 +5,7 @@ import modalReducer from './modal_reducer';
 import availabilityReducer from './availability_reducer';
 import searchCriteriaReducer from './search_criteria_reducer';
 import bookingReducer from './booking_reducer';
+import listingsReducer from './listing_reducer';
 
 export default combineReducers(
   {
@@ -14,5 +15,6 @@ export default combineReducers(
     availabilities: availabilityReducer,
     searchCriteria: searchCriteriaReducer,
     bookings: bookingReducer,
+    listings: listingsReducer,
   }
 );
