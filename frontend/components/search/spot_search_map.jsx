@@ -12,7 +12,7 @@ class SpotSearchMap extends React.Component {
     this.state = {
       mapOptions: {
           center: {lat: 37.0902, lng: -95.7129},
-          zoom: 13,
+          zoom: 10,
           zoomControl: true,
         },
       locationQuery: '',
@@ -38,11 +38,11 @@ class SpotSearchMap extends React.Component {
       case undefined:
       case '':
         locationQuery = 'united states'
-        newMapOptions.zoom = 5;
+        newMapOptions.zoom = 3;
         this.setState({ locationQuery: '' });
         break;
       default:
-        newMapOptions.zoom = 13;
+        newMapOptions.zoom = 10;
         this.setState({ locationQuery });
     }
 

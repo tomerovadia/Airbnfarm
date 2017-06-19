@@ -12,7 +12,7 @@ let styles = {
   item: {
     padding: '10px 6px',
     cursor: 'default',
-    'font-size': '19px',
+    fontSize: '19px',
   },
 
   highlightedItem: {
@@ -20,7 +20,7 @@ let styles = {
     background: '#FF5A5F',
     padding: '10px 6px',
     cursor: 'default',
-    'font-size': '19px',
+    fontSize: '19px',
   },
 
   menu: {
@@ -38,7 +38,7 @@ let styles = {
   input: {
     'font-weight': 400,
     'font-family': "Helvetica Neue",
-    'font-size': '14px',
+    fontSize: '14px',
     'color': '#575757',
     'letter-spacing': '1px',
   },
@@ -57,9 +57,12 @@ function matchOptionToTerm(state, value) {
 
 function getOptions() {
   return [
-    {id: 1, name: 'Tripp, SD'},
-    {id: 2, name: 'Agra, KS'},
-    {id: 3, name: 'Oil Trough, AR'}
+    {id: 0, name: 'Agra, KS'},
+    {id: 1, name: 'Bruneau, ID'},
+    {id: 2, name: 'Karnack, TX'},
+    {id: 3, name: 'Oil Trough, AR'},
+    {id: 4, name: 'Tripp, SD'},
+    {id: 5, name: 'Yolo, CA'}
   ]
 }
 

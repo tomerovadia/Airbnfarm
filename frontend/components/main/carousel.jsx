@@ -10,21 +10,29 @@ class Carousel extends React.Component {
     super(props);
 
     this.spots = null;
-    const today = new Date();
-    const nextMonth = new Date(today.setMonth(today.getMonth() + 1));
+    // const today = new Date();
+    // const nextMonth = new Date(today.setMonth(today.getMonth() + 1));
 
-    this.props.fetchSearchResults({city: '', startDate: today, nextMonth: nextMonth});
+    this.props.fetchSearchResults({});
   }
 
   render() {
 
-    if(Object.keys(this.props.searchResults).length >= 3) {
+    if(this.props.searchResults[48]){
       this.spots = [
-        <SpotMini key={this.props.searchResults[0].id} spot={this.props.searchResults[0]} />,
-        <SpotMini key={this.props.searchResults[1].id} spot={this.props.searchResults[1]} />,
-        <SpotMini key={this.props.searchResults[2].id} spot={this.props.searchResults[2]} />
+        <SpotMini key={this.props.searchResults[25].id} spot={this.props.searchResults[25]} />,
+        <SpotMini key={this.props.searchResults[35].id} spot={this.props.searchResults[35]} />,
+        <SpotMini key={this.props.searchResults[48].id} spot={this.props.searchResults[48]} />
       ]
+    } else {
+      this.spots = null;
     }
+
+    // const image_indices =  ? [23, 35, 48] : [0,1,2];
+    //
+    // if(Object.keys(this.props.searchResults).length >= 3) {
+    //
+    // }
 
 
     return(

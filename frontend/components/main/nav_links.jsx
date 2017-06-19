@@ -30,7 +30,7 @@ export default (props) => {
       <Link className='inactive'>Messages</Link>
       <Link className='inactive'>Help</Link>
       <div className='link-with-dropdown' id='main-nav-avatar' onClick={() => props.showDropdown('userSettings')}>
-        <img src='https://a0.muscache.com/defaults/user_pic-50x50.png?v=2' />
+        <img src='http://www.clker.com/cliparts/8/l/O/9/b/2/farmer-smiley-md.png' />
         {userSettingsDropdown}
       </div>
     </ul>
