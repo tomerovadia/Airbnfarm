@@ -338,7 +338,7 @@ ActiveRecord::Base.transaction do
     ['200 S Hassett St.', '150 E Dakota St.', '114 N Wilder St.', '245 N Carpenter St.', '475 Main St.', '28953 407th Ave', '40778 292nd St', '29248 410th Ave', '29338 412th Ave', '29070 415th Ave', '28514 417th Ave'],
     ['37677 Washington St', '37652 Sacramento St', '14220 1st St', '37690 Clay St', '14148 2nd St', '14415 2nd St', '14201 3rd St', '37526 5th St', '37765 Washington St', '14244 1st St', '37660 Washington St'],
     ['561 Cypress Dr', '131 Bois D Arc', '1409 Cypress Dr', '109 Mossy Brake Dr', '176 Cypress Dr', '231 Mound Pond Rd', '3300 Broadway', '5283 Cypress Dr E', '169 Mossy Brake Dr', '4986 Broadway St', '2101 Broadway St'],
-    ['29393 Davis Rd', '28358 Mormon Blvd', '29396 ID-51', '29102 Davis Rd', '29811 Mormon Blvd', '28283 Shoofly Cutoff Rd', '31541 ID-51', '30709 ID-51', '29393 Davis Rd', '42069 ID-78', '27251 Anderson Loop']
+    ['28924 Davis Rd', '28358 Mormon Blvd', '29396 ID-51', '29102 Davis Rd', '29811 Mormon Blvd', '28283 Shoofly Cutoff Rd', '31541 ID-51', '30709 ID-51', '29393 Davis Rd', '42069 ID-78', '27251 Anderson Loop']
   ]
 
   locations = [
