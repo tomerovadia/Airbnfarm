@@ -19,18 +19,13 @@ class SpotSearchMap extends React.Component {
       searchCriteria: this.getCriteriaFromQueryString(),
     };
 
-    console.log('constructing')
   }
 
   buildMap(){
-    console.log('buildMap()')
-
     return this.updateMapOptions().then(() => this.placeMap());
   }
 
   updateMapOptions(){
-    console.log('updateMapOptions()')
-
     let newMapOptions = {};
     let locationQuery = this.props.location.query.city;
 
@@ -56,8 +51,6 @@ class SpotSearchMap extends React.Component {
   }
 
   componentWillReceiveProps(newProps){
-    console.log('componentWillReceiveProps()');
-
     let locationQuery = newProps.router.location.query.city;
     if(!locationQuery) locationQuery = '';
     const locationQueryChanged = locationQuery !== this.state.locationQuery;
@@ -81,7 +74,6 @@ class SpotSearchMap extends React.Component {
   }
 
   componentDidMount(){
-    console.log('componentDidMount()')
     this.buildMapAndCreateListeners();
   }
 
@@ -102,7 +94,6 @@ class SpotSearchMap extends React.Component {
   }
 
   getLatLng(locationQuery){
-    console.log('getLatLng()')
     return $.ajax({
       method: 'get',
       url: 'https://maps.googleapis.com/maps/api/geocode/json',
@@ -113,7 +104,6 @@ class SpotSearchMap extends React.Component {
 
 
   placeMap(){
-    console.log('placeMap()')
     this.map = new google.maps.Map(
       document.getElementById('spot-search-map'),
       this.state.mapOptions
@@ -121,7 +111,6 @@ class SpotSearchMap extends React.Component {
   }
 
   getMapBounds(){
-    console.log('getMapBounds()')
     const mapsBoundsObject = this.map.getBounds();
     return {
       SWLat: mapsBoundsObject.getSouthWest().lat(),
@@ -132,7 +121,6 @@ class SpotSearchMap extends React.Component {
   }
 
   updateSearchResults(){
-    console.log('updateSearchResults()')
     this.criteria = this.getCriteriaFromQueryString();
     this.setState({ searchCriteria: this.criteria });
     this.criteria.bounds = this.getMapBounds();
@@ -141,7 +129,6 @@ class SpotSearchMap extends React.Component {
   }
 
   getCriteriaFromQueryString(){
-    console.log('getCriteriaFromQueryString()')
     const city = this.props.location.query.city || '';
 
     const criteria = {
@@ -154,8 +141,6 @@ class SpotSearchMap extends React.Component {
   }
 
   render() {
-    console.log('render()')
-
     return(
       <div className='spot-search-map-main-container'>
         <div id='spot-search-map'></div>

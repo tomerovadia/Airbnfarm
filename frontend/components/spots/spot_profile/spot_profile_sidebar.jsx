@@ -65,8 +65,6 @@ class SpotProfileSidebar extends React.Component {
 
   render(){
 
-    console.log('rendering')
-
     let numGuestOptions = [];
     for(let i=1; i <= this.props.currentSpot.num_guests; i++){
       numGuestOptions.push(<option key={i} value={i}>{i} guests</option>);
