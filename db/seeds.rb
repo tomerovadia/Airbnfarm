@@ -28,6 +28,25 @@ ActiveRecord::Base.transaction do
   tomer = User.create!(email: 'tomer@gmail.com', password: 'password')
   old_macdonald = User.create!(email: 'old.macdonald@gmail.com', password: 'password')
 
+  guestsInfo = [
+    ['barack.obama@gmail.com', 'https://media.newsela.com/article_media/2016/02/prezbios-obama-4ecbc34f.jpg.400x400_q90_box-578%2C0%2C2052%2C1473_crop_detail.jpg'],
+    ['walter.white@gmail.com', 'https://s-media-cache-ak0.pinimg.com/originals/57/46/e9/5746e9611d16aacfa1eb9dc66fe298f8.jpg'],
+    ['oprah.winfrey@gmail.com', 'http://sweetphenomena.com/wp-content/uploads/2014/10/Oprah-headshot.jpg'],
+    ['jeff.bezos@gmail.com', 'http://a3.res.cloudinary.com/allamerican/image/fetch/t_face_s270/https://speakerdata2.s3.amazonaws.com/photo/image/856887/large_Bezos_Jeff_3.jpg'],
+    ['donald.trump@gmail.com', 'http://www.guymondailyherald.com/sites/default/files/field/image/DONALD-TRUMP.jpg'],
+    ['vladimir.putin@gmail.com', 'http://newslines.org/wp-content/uploads/2015/09/Vladimir-Putin-headshot-150x150.jpg'],
+    ['kobe.bryant@gmail.com', 'https://www.famousbirthdays.com/headshots/kobe-bryant-4.jpg'],
+    ['will.smith@gmail.com', 'https://www.wibwnewsnow.com/wp-content/uploads/2015/03/will-smith-headshot-300x225.jpg'],
+    ['jeff.zuckerberg@gmail.com', 'https://s-media-cache-ak0.pinimg.com/originals/14/ed/da/14eddac8cbed3b6cfee947a3d9262f5b.jpg'],
+    ['joe.biden@gmail.com', 'https://obamawhitehouse.archives.gov/sites/obamawhitehouse.archives.gov/files/styles/person_large_photo/public/person-photo/vice-president-biden.jpg']
+  ]
+
+  guests = []
+
+  guestsInfo.each do |guestInfo|
+    guests << User.create!(email: guestInfo.first, password: 'password', avatar_url: guestInfo.second)
+  end
+
   state_abbreviations = %w(AK AL AR AZ CA CO CT DC DE FL GA HI IA ID IL IN KS KY LA MA MD ME MI MN MO MS MT NC ND NE NH NJ NM NV NY OH OK OR PA RI SC SD TN TX UT VA VT WA WI WV WY)
   state_abbreviations.each do |state_abbreviation|
     State.create!(state_name: state_abbreviation)
@@ -401,14 +420,18 @@ ActiveRecord::Base.transaction do
   createAvailabilities(date_ranges3)
 
   # Old MacDonald's Trips
-  10.times do
+  10.times do |idx|
+    
     spot = Spot.all[(0...Spot.all.length).to_a.sample]
+    until spot.host.email != 'old.macdonald@gmail.com'
+      spot = Spot.all[(0...Spot.all.length).to_a.sample]
+    end
 
     availabilities = spot.availabilities.order(:available_date).limit(3)
     start_date = availabilities.first.available_date
     end_date = availabilities.last.available_date
 
-    status = BookingStatus.all[(0...BookingStatus.all.length).to_a.sample]
+    status = BookingStatus.all[idx % BookingStatus.all.length]
 
     booking = Booking.create!(
         guest: User.find_by_email('old.macdonald@gmail.com'),
@@ -428,15 +451,15 @@ ActiveRecord::Base.transaction do
   end
 
   # Old MacDonald's Reservations
-  10.times do
+  10.times do |idx|
     host = User.find_by_email('old.macdonald@gmail.com')
-    guest = User.all[(0...User.all.length).to_a.sample]
+    guest = guests[idx % 10]
     spot = host.listings.sample
-    availabilities = spot.availabilities.order(:available_date).limit(3)
+    availabilities = spot.availabilities.where(is_available: true).order(:available_date).limit(3)
     start_date = availabilities.first.available_date
     end_date = availabilities.last.available_date
 
-    status = BookingStatus.all[(0...BookingStatus.all.length).to_a.sample]
+    status = BookingStatus.all[idx % BookingStatus.all.length]
 
     booking = Booking.create!(
         guest: guest,
@@ -447,7 +470,7 @@ ActiveRecord::Base.transaction do
         title: spot.title,
         city: spot.city,
         base_price: spot.base_price.to_i,
-        guests: (1..spot.num_guests).to_a.sample
+        num_guests: (1..spot.num_guests).to_a.sample
       )
 
       if status.status == 'approved'

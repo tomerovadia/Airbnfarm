@@ -41,7 +41,7 @@ export default (props) => {
     <div className='reservation-main-container'>
 
       <div className='reservation-left'>
-        <img className='reservation-guest-img' src='https://a0.muscache.com/defaults/user_pic-50x50.png?v=2'/>
+        <img className='reservation-guest-img' src={props.reservation.guest_avatar_url}/>
       </div>
 
       <div className='reservation-middle'>

@@ -43,11 +43,11 @@
 }
 
 .reservation-guest-img {
-  width: 100%;
-  margin: 5px;
   border: 2px solid white;
   border-radius: 50%;
-  margin: 20px;
+  padding: 10px;
+  height: 100%;
+  overflow: hidden;
 }
 
 .reservation-middle {
