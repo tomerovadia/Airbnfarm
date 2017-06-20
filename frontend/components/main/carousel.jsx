@@ -10,8 +10,6 @@ class Carousel extends React.Component {
     super(props);
 
     this.spots = null;
-    // const today = new Date();
-    // const nextMonth = new Date(today.setMonth(today.getMonth() + 1));
 
     this.props.fetchSearchResults({});
   }
@@ -27,13 +25,6 @@ class Carousel extends React.Component {
     } else {
       this.spots = null;
     }
-
-    // const image_indices =  ? [23, 35, 48] : [0,1,2];
-    //
-    // if(Object.keys(this.props.searchResults).length >= 3) {
-    //
-    // }
-
 
     return(
       <div className='carousel-main-container'>

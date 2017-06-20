@@ -4,6 +4,7 @@ import SpotSearchBar from '../search/spot_search_bar';
 import NavContainer from './nav_container';
 import HomepageSectionNav from './homepage_section_nav';
 import Carousel from './carousel';
+import Footer from './footer';
 
 export default (props) => {
 
@@ -30,6 +31,8 @@ export default (props) => {
         </div>
 
         <Carousel />
+
+        <Footer />
 
       </div>
 

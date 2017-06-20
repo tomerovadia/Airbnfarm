@@ -15,7 +15,7 @@ class HostDropdown extends React.Component {
     return (
       <div className='host-dropdown-div dropdown-div'>
         <ul>
-          <Link className='inactive'>Dashboard</Link>
+          <Link to='/bookings/host/listings' onClick={this.props.hideDropdown}>Dashboard</Link>
           <Link className='inactive'>Calendar</Link>
           <Link to='/bookings/host/listings' onClick={this.props.hideDropdown}>Manage Listings</Link>
           <Link to='/become-a-host' onClick={this.props.hideDropdown}>List Your Space</Link>

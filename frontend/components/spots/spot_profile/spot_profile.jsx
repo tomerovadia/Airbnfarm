@@ -1,7 +1,7 @@
 import React from 'react';
 import SpotProfileOverview from './spot_profile_overview';
 import SpotProfileSidebarContainer from './spot_profile_sidebar_container';
-
+import Footer from '../../main/footer'
 
 class SpotProfile extends React.Component {
 
@@ -36,7 +36,11 @@ class SpotProfile extends React.Component {
 
           <SpotProfileSidebarContainer receiveModal={this.props.receiveModal} loggedIn={this.props.loggedIn} currentSpot={this.props.currentSpot}/>
 
+
         </div>
+
+        <Footer />
+
 
       </div>
 

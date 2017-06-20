@@ -1,0 +1,36 @@
+.footer-main-container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 25px;
+  border-top: 1px solid #dbdbdb;
+  align-items: center;
+  margin: 50px auto;
+}
+
+.main-homepage-container .footer-main-container {
+}
+
+.spot-profile-main-container .footer-main-container {
+  width: 1048px;
+}
+
+.footer-ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-ul li {
+  padding: 2px 22px;
+}
+
+.footer-ul a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #767676;
+}
+
+.footer-main-container .airbnb-logo {
+  color: #767676;
+  font-size: 30px;
+}
