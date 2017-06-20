@@ -101,8 +101,6 @@ class SpotProfileSidebar extends React.Component {
 
           </div>
 
-
-
           <div className='spot-profile-guests-select-div'>
             <label>Guests</label>
             <select className='spot-profile-guests-select' onChange={this.handleNumGuestsChange}>

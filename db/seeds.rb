@@ -130,18 +130,18 @@ ActiveRecord::Base.transaction do
       "Come on a vacation getaway in this rustic modern cabin nestled in the woods! Cedar Ridge Hideaway cabin has it all!!! This is a BRAND NEW LISTING! After years of it being our personal cabin, we have decided to start renting it out to others. This cabin is so private! Feel as if you're the only people around as you get cozy in all of the natural sunlight the cabin provides. This cabin has all the amenities you need for your family with three separate living rooms!!",
       "We are close to many attractions in the vicinity of Rural Hall (including: Winston-Salem, Old Salem, Mt. Airy, Pilot Mountain, Hanging Rock, Seagrove, Greensboro, Bethabara). This room can accommodate 2 guests but we have a 2nd room that could accommodate another 2 guests if needed (see Collier's Rustic Log Home - Room 2 listing)."
     ],
-    ["Ranch home with many cows",
-      "Private room with a love seat and walk-in closet. Bathroom a couple feet from bedroom. Come enjoy relaxing atmosphere of our home in the country!",
-      "Beautiful waterfront log home retreat. This home is perfect in every way; you will be delighted with the memories you will make during your stay. A romantic hideaway for a weekend getaway, a family vacation with the kids, or with a group of friends. A cozy, warm and down to earth place with the extras that make your getaway complete."
-    ],
     ["Uncle Jack's tomato farm",
       "Large home to rent/with bunk house full kitchen, outdoor grill, and fryer. Perfect for fishing on Missouri, indoor boat parking, electrical for charging, fridge and freezers for catch, 10 miles to Pease creek dock, 15 miles to Platte Creek.",
       "Ample parking with drive through access, outside electrical outlets for boat or trailer, barbecue grill (charcoal, lighter fluid provided), drip type coffee maker, coffee and condiments."
     ],
-    ["Giant solar farm -- wonderful weather!",
-      "My sons and I started a solar farm after moving from New York and seeking a new life. It's such a wonderful place, we'd love for you to join us!",
-      "The solar farm has one large house that we live in, and you would be staying in a room with your own bathroom. We have solar panels EVERYWHERE, so you'll have to be okay with that. Everything is powered by solar. We're huge fans of the environment, so expect a lot of recycling!"
+    ["Ranch home with many cows",
+      "Private room with a love seat and walk-in closet. Bathroom a couple feet from bedroom. Come enjoy relaxing atmosphere of our home in the country!",
+      "Beautiful waterfront log home retreat. This home is perfect in every way; you will be delighted with the memories you will make during your stay. A romantic hideaway for a weekend getaway, a family vacation with the kids, or with a group of friends. A cozy, warm and down to earth place with the extras that make your getaway complete."
     ],
+    # ["Giant solar farm -- wonderful weather!",
+    #   "My sons and I started a solar farm after moving from New York and seeking a new life. It's such a wonderful place, we'd love for you to join us!",
+    #   "The solar farm has one large house that we live in, and you would be staying in a room with your own bathroom. We have solar panels EVERYWHERE, so you'll have to be okay with that. Everything is powered by solar. We're huge fans of the environment, so expect a lot of recycling!"
+    # ],
     ["GORGEOUS flower farm!",
       "My wife and I are retired and now manage this wonderful 100-acre farm of flowers!",
       "We're the biggest supplier of flowers in the state, so we hope you will join us and learn about this wonderful craft!"

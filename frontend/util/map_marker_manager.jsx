@@ -7,7 +7,6 @@ export default class MarkerManager {
     this.map = map;
     this.markers = {};
 
-
     this.mapSpotMiniDiv = '<div id="map-spot-mini-div" style="width:280px"></div>';
 
     this.openedMapSpotMini = null;
