@@ -91,7 +91,10 @@ class SpotProfileSidebar extends React.Component {
             <DateRangePicker
               startDate={this.state.startDate}
               endDate={this.state.endDate}
-              onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })}
+              onDatesChange={({ startDate, endDate }) => {
+                debugger
+                this.setState({ startDate, endDate })
+              }}
               focusedInput={this.state.focusedInput}
               onFocusChange={focusedInput => this.setState({ focusedInput })}
               startDatePlaceholderText='mm/dd/yyyy'

@@ -63,6 +63,7 @@ $caret-top: $react-dates-spacing-vertical-picker - $react-dates-width-tooltip-ar
   padding: 4px 8px;
   white-space: nowrap;
   overflow: hidden;
+  text-align: center;
 }
 
 .DateInput__display-text--has-input {
@@ -74,6 +75,7 @@ $caret-top: $react-dates-spacing-vertical-picker - $react-dates-width-tooltip-ar
   border-color: $react-dates-color-focus;
   border-radius: 3px;
   color: $react-dates-color-text-focus;
+  text-align: center;
 }
 
 .DateInput__display-text--disabled {
