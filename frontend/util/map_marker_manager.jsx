@@ -11,6 +11,10 @@ export default class MarkerManager {
     this.mapSpotMiniDiv = '<div id="map-spot-mini-div" style="width:280px"></div>';
 
     this.openedMapSpotMini = null;
+
+    google.maps.event.addListener(map, 'click', () => {
+      if(this.openedMapSpotMini) this.openedMapSpotMini.close();
+    })
   }
 
   updateMarkers(searchResults, fitZoom){
