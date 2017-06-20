@@ -57,6 +57,7 @@ export default class MarkerManager {
     }
   }
 
+
   addSpot(spot){
     return $.ajax({
       method: 'get',

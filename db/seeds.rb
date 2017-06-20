@@ -421,7 +421,7 @@ ActiveRecord::Base.transaction do
 
   # Old MacDonald's Trips
   10.times do |idx|
-    
+
     spot = Spot.all[(0...Spot.all.length).to_a.sample]
     until spot.host.email != 'old.macdonald@gmail.com'
       spot = Spot.all[(0...Spot.all.length).to_a.sample]
