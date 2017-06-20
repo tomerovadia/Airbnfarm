@@ -26,7 +26,7 @@ ActiveRecord::Base.transaction do
 
   bob = User.create!(email: 'bob@gmail.com', password: 'password')
   tomer = User.create!(email: 'tomer@gmail.com', password: 'password')
-  old_macdonald = User.create!(email: 'old.macdonald@gmail.com', password: 'password')
+  old_macdonald = User.create!(email: 'old.macdonald@gmail.com', password: 'password', avatar_url: 'https://s-media-cache-ak0.pinimg.com/236x/c8/0d/c9/c80dc9953dc3752bb7c3e4462652d504.jpg')
 
   guestsInfo = [
     ['barack.obama@gmail.com', 'https://media.newsela.com/article_media/2016/02/prezbios-obama-4ecbc34f.jpg.400x400_q90_box-578%2C0%2C2052%2C1473_crop_detail.jpg'],
