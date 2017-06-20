@@ -3,7 +3,9 @@
 [Live Link](http://airbn.farm/)
 
 ## Overview
-Airbnfarm is an app for anyone who has ever wished Airbnb only had farms. The app seeks to precisely clone the design of Airbnb's website. Its frontend is powered by React and its backend is powered by Ruby on Rails.
+Airbnfarm is an app for anyone who has ever wished Airbnb only had farms. The app seeks to precisely clone the design and functionality of Airbnb's website.
+
+This app's frontend is powered by React and its backend is powered by Ruby on Rails. It uses many additional languages, frameworks, technologies and libraries, including but not limited to: Ajax, PostgreSQL, Jbuilder, AWS S3, HTML5/CSS3, Figaro, BCrypt, React Dates, React Autocomplete and React Geocoder.
 
 The app connects farm owners who have available lodging to adventurers who appreciate rural life. All app users have "guest" and "host" functionality in the same account.
 
