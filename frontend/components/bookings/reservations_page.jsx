@@ -4,7 +4,7 @@ import NavContainer from '../main/nav_container';
 import { connect } from 'react-redux';
 import { fetchBookings, approveBooking, declineBooking } from '../../actions/booking_actions';
 import { getFormatedBookings } from '../../reducers/selectors';
-import { withRouter } from 'react-router';
+import { withRouter, Link } from 'react-router';
 
 
 class ReservationsPage extends React.Component {
@@ -28,7 +28,7 @@ class ReservationsPage extends React.Component {
     });
 
     if(reservations.length === 0){
-      reservations = <h3> You have no reservations yet!</h3>
+      reservations = <div><h3> You have no reservations yet!</h3></div>
     }
 
 

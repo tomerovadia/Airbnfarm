@@ -59,6 +59,10 @@ ActiveRecord::Base.transaction do
       "We have a beautiful 2000 square foot facility with amazing scenery. This is one of farmland's best kept secrets for you and your friends and family to enjoy in privacy.",
       "We have a beautiful 2000 square foot facility with amazing scenery. This is one of farmland's best kept secrets for you and your friends and family to enjoy in privacy."
     ],
+    ["Fantasyland with gorgeous backyard",
+      "My husband is an artist and I'm a carpenter, so we've made this place the perfect storybook escape.",
+      "Complete with horse-drawn carriages and art in every nook and corner of this beautiful house."
+    ],
     ["Picturesque pasture with farm animals",
       "Spacious lake view loft that provides a private wooded retreat. All the amenities of home including satellite TV. Wildlife is abundant grazing in the yard. Spectacular sunsets while relaxing on a beautiful patio with built in fire pit.",
       "Spacious lake view loft that provides a private wooded retreat. All the amenities of home including satellite TV. Wildlife is abundant grazing in the yard. Spectacular sunsets while relaxing on a beautiful patio with built in fire pit."
@@ -424,6 +428,31 @@ ActiveRecord::Base.transaction do
   end
 
   # Old MacDonald's Reservations
+  10.times do
+    host = User.find_by_email('old.macdonald@gmail.com')
+    guest = User.all[(0...User.all.length).to_a.sample]
+    spot = host.listings.sample
+    availabilities = spot.availabilities.order(:available_date).limit(3)
+    start_date = availabilities.first.available_date
+    end_date = availabilities.last.available_date
 
+    status = BookingStatus.all[(0...BookingStatus.all.length).to_a.sample]
+
+    booking = Booking.create!(
+        guest: guest,
+        spot: spot,
+        status: status,
+        start_date: start_date,
+        end_date: end_date,
+        title: spot.title,
+        city: spot.city,
+        base_price: spot.base_price.to_i,
+        guests: (1..spot.num_guests).to_a.sample
+      )
+
+      if status.status == 'approved'
+        Availability.book_availabilities(booking.start_date, booking.end_date, booking.spot)
+      end
+  end
 
 end

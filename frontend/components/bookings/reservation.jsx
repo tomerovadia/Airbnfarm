@@ -49,7 +49,6 @@ export default (props) => {
         <div className='reservation-guest-title'><span>{props.reservation.title}</span></div>
         <div className='reservation-date-range'><span>{dateRange}</span></div>
         <div className='reservation-num-guests'><span>{props.reservation.num_guests} guests</span></div>
-
       </div>
 
       <div className='reservation-right'>
