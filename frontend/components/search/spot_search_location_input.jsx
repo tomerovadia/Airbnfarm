@@ -33,6 +33,7 @@ let styles = {
     position: 'fixed',
     overflow: 'auto',
     maxHeight: '50%',
+    zIndex: 5,
   },
 
   input: {

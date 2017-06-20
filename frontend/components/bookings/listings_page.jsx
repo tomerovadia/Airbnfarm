@@ -15,8 +15,6 @@ class ListingsPage extends React.Component {
 
   render(){
 
-    debugger
-
     let listings = this.props.listings.map((listing) => {
       return (<SpotMini
         key={listing.id}

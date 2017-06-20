@@ -25,16 +25,16 @@ class SpotProfileSidebar extends React.Component {
   componentWillReceiveProps(newProps){
     if(newProps.currentSpot.availabilities){
       this.setState({availabilities: newProps.currentSpot.availabilities.map((date) => {
-        let dateObj = new Date(date);
-        dateObj.setTime(dateObj.getTime() + (4*60*60*1000));
-        return moment(dateObj);
+        return moment(moment.utc(date).startOf('day').format('LL')).startOf('day');
       })})
     }
   }
 
   isDayBlocked(day){
+    const formattedDay = moment(moment.utc(day).startOf('day').format('LL')).startOf('day');
+
     return !this.state.availabilities.some((availableDate) => {
-      return availableDate.startOf('day').isSame(day.startOf('day'));
+      return availableDate.isSame(formattedDay);
     });
   }
 
@@ -65,6 +65,8 @@ class SpotProfileSidebar extends React.Component {
 
   render(){
 
+    console.log('rendering')
+
     let numGuestOptions = [];
     for(let i=1; i <= this.props.currentSpot.num_guests; i++){
       numGuestOptions.push(<option key={i} value={i}>{i} guests</option>);
@@ -92,7 +94,6 @@ class SpotProfileSidebar extends React.Component {
               startDate={this.state.startDate}
               endDate={this.state.endDate}
               onDatesChange={({ startDate, endDate }) => {
-                debugger
                 this.setState({ startDate, endDate })
               }}
               focusedInput={this.state.focusedInput}
