@@ -143,7 +143,7 @@ The `Spots` pages allow users to explore spots. The two pages under this route a
 The `profile` page, depicted below, is the most deeply nested of all React components in the app, avoiding overly complex components and allowing components to be reused.
 
 <img src="docs/wireframes/HomeSpotProfile.png" width="700"><br>
-Wireframe for **SpotProfile** component
+Wireframe for **SpotProfile** component (created using [Balsamiq](https://balsamiq.com/))
 
 The `search` page renders "mini-spots" (snapshots of spot info) in two ways: a list on the left and a map on the right.
 
@@ -231,7 +231,7 @@ end
 
 ### Jbuilder
 
-[This app uses [Jbuilder](https://github.com/rails/jbuilder)] templates and partials to format data before it is sent via an HTTP response.
+[This app uses Jbuilder](https://github.com/rails/jbuilder)] templates and partials to format data before it is sent via an HTTP response.
 
 For example, a Jbuilder template prepares data on multiple bookings, which can be requested by a user (as a guest) or requested *of* a user (as a host).
 
