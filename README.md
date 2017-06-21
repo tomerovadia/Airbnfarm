@@ -25,10 +25,11 @@ All components are optimally structured to maintain DRY code. For example:
 
 <img src="spotminiexample.png" width="250"><br>
 **SpotMini** component example
-<br><br>
+<br><br><br>
 
 <img src="tripexample.png" width="250"><br>
 **Trip** component example
+<br><br><br>
 
 <img src="reservationexample.png" width="500"><br>
 **Reservation** component example
