@@ -23,14 +23,14 @@ All components are optimally structured to maintain DRY code. For example:
 
 **Reservation** and **Trip** are components that appear multiple times on the Reservations and Trips page, once for every reservation and trip.
 
-<img src="spotminiexample.png" width="250">&nbsp;&nbsp;
+<img src="spotminiexample.png" width="250"><br>
 **SpotMini** component example
 <br><br>
 
-<img src="tripexample.png" width="250">&nbsp;&nbsp;
+<img src="tripexample.png" width="250"><br>
 **Trip** component example
 
-<img src="reservationexample.png" width="500">&nbsp;&nbsp;
+<img src="reservationexample.png" width="500"><br>
 **Reservation** component example
 
 ## Front End React Routes
