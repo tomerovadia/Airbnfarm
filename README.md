@@ -149,6 +149,13 @@ The `search` page renders "mini-spots" (snapshots of spot info) in two ways: a l
 
 ### Become A Host
 
+``` javascript
+// root.jsx
+...
+<Route path='/become-a-host' component={BecomeAHostContainer}></Route>
+...
+```
+
 The app has a single `/become-a-host` route, which renders the `BecomeAHost` component. This page is paginated, just like this feature on Airbnb's website, allowing hosts to create a spot step-by-step.
 
 The `BecomeAHost` component renders one of three components -- `SpotFormBasics`, `spotFormDetails`, and `SpotFormAvailability` as hosts navigate between the pages. User input is persisted by being stored in the `BecomeAHost` component's state. These three components modify `BecomeAHost`'s component state through a function it provides to them via props.
@@ -161,6 +168,18 @@ The Become A Host page also replicates Airbnb's feature for rendering tips as th
 Become A Host Page
 
 ### Bookings
+
+``` javascript
+// root.jsx
+...
+<Route path='/bookings/trips' component={TripsPage}></Route>
+
+<Route path='/bookings/host' component={HostPage}>
+  <Route path='/bookings/host/listings' component={ListingsPage}></Route>
+  <Route path='/bookings/host/reservations' component={ReservationsPage}></Route>
+</Route>
+...
+```
 
 The app's `/bookings` route has three sub-routes: one for guests (`trips`, which shows their requests) and two for hosts (`listings`, which shows their spots, and `reservations`, which shows requests to their listings).
 
