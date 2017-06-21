@@ -22,13 +22,6 @@ export default (oldState = _initialState, action) => {
     case HIDE_DROPDOWN:
       return merge(newState, {activeDropdown: ''});
 
-
-    // case HIDE_USER_SETTINGS:
-    //   return merge(newState, {userSettingsVisible: false});
-    //
-    // case SHOW_USER_SETTINGS:
-    //   return merge(newState, {userSettingsVisible: true});
-
     default:
       return oldState;
   }
