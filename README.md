@@ -156,7 +156,7 @@ Users are required to include a photo when creating a spot. They are prompted to
 
 The Become A Host page also replicates Airbnb's feature for rendering tips as the user completes the form. When a user begins specifying the number of bedrooms, for example, a tipbox appears with information on what is considered a bedroom. This is accomplished using a `tips` slice of the BecomeAHost component's state.
 
-<img src="becomeahostexample.png" width="700"><br>
+<img src="becomeahostexample.png" width="900"><br>
 Become A Host Page
 
 ### Bookings
@@ -167,7 +167,7 @@ The app's `/bookings` route has three sub-routes: one for guests (`trips`, which
 
 A key feature of Airbnfarm (and Airbnb) is the ability to explore spot. Airbnfarm allows exploration by location and availability. The interface provides users a **List** and a **Map**.
 
-<img src="searchexample.png" width="500"><br>
+<img src="searchexample.png" width="800"><br>
 Search **List (left)** and **Map (right)**
 
 A new search can be executed and the results stored in the Redux store via the following means:
@@ -294,7 +294,7 @@ The modal is rendered on every single of page (via the `App` component rendered 
 
 The log-in and sign-up modal contains design user interaction flow that almost precisely matches that of Airbnb's website (as of March 2017). This includes hard errors when a user fails to authenticate and soft errors when a user provided incomplete information.
 
-<img src="signupharderrorexample.png" width="300">
+<img src="signupsofterrorexample.png" width="300">
 User authentication soft error example
 
 <img src="loginharderrorexample.png" width="300">
@@ -304,7 +304,6 @@ User authentication hard error example
 
 Future developments to Airbnfarm include:
 
-* improving error handling
 * creating profile pages for hosts and guests
 * allowing guests to review spots/hosts and hosts to review guests
 * allowing hosts to post additional details about spots, including more than one photo
