@@ -142,9 +142,10 @@ The `Spots` pages allow users to explore spots. The two pages under this route a
 
 The `profile` page, depicted below, is the most deeply nested of all React components in the app, avoiding overly complex components and allowing components to be reused.
 
-The `search` page renders "mini-spots" (snapshots of spot info) in two ways: a list on the left and a map on the right.
+<img src="docs/wireframes/HomeSpotProfile.png" width="700"><br>
+Wireframe for **SpotProfile** component
 
-<img src="docs/wireframes/HomeSpotProfile.png" width="700">
+The `search` page renders "mini-spots" (snapshots of spot info) in two ways: a list on the left and a map on the right.
 
 ### Become A Host
 
@@ -191,7 +192,7 @@ This app uses the [**React Dates** library](https://github.com/airbnb/react-date
 
 Because this app has a unique feature for preventing double booking, dates that have been reserved or that weren't made available by the host are blocked in the calendar. This is accomplished using the `isBlocked` prop of React Dates, which is passed a function that compares every date displayed in the calendar with the availabilities of the spot.
 
-<img src="calendarexample.png" width="300"><br>
+<img src="calendarexample.png" width="550"><br>
 Calendar
 
 ## Controllers and Models
