@@ -21,7 +21,7 @@ All components are optimally structured to maintain DRY code. For example:
 
 **SpotMini** is a single component that shows basic information about a spot. This component is reused on the search map, the search list, the homepage and the listings page.
 
-**Reservation** and **Trip** are components that appear multiple times on the Reservations and Trips page, once for every reservation and trip.
+**Reservation** and **Trip** are components that appear multiple times on the Reservations and Trips pages, once for every reservation and trip.
 
 <img src="spotminiexample.png" width="250"><br>
 **SpotMini** component example
@@ -314,10 +314,10 @@ The modal is rendered on every single of page (via the `App` component rendered 
 
 The log-in and sign-up modal contains design user interaction flow that almost precisely matches that of Airbnb's website (as of March 2017). This includes hard errors when a user fails to authenticate and soft errors when a user provided incomplete information.
 
-<img src="signupsofterrorexample.png" width="300">
+<img src="signupsofterrorexample.png" width="300"><br>
 User authentication soft error example
 
-<img src="loginharderrorexample.png" width="300">
+<img src="loginharderrorexample.png" width="300"><br>
 User authentication hard error example
 
 ## Future Development
