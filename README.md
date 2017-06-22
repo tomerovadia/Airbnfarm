@@ -2,6 +2,8 @@
 
 [Live Link](http://airbn.farm/)
 
+<img src="airbnfarm_gif_lowres.gif" width="900"><br>
+
 ## Overview
 [Airbnfarm](http://airbn.farm/) is an app for anyone who has ever wished Airbnb only had farms. The app seeks to precisely clone the design and functionality of Airbnb's website.
 
