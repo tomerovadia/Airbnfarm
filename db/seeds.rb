@@ -31,7 +31,7 @@ ActiveRecord::Base.transaction do
   guestsInfo = [
     ['barack.obama@gmail.com', 'https://media.newsela.com/article_media/2016/02/prezbios-obama-4ecbc34f.jpg.400x400_q90_box-578%2C0%2C2052%2C1473_crop_detail.jpg'],
     ['walter.white@gmail.com', 'https://s-media-cache-ak0.pinimg.com/originals/57/46/e9/5746e9611d16aacfa1eb9dc66fe298f8.jpg'],
-    ['oprah.winfrey@gmail.com', 'http://sweetphenomena.com/wp-content/uploads/2014/10/Oprah-headshot.jpg'],
+    ['oprah.winfrey@gmail.com', 'https://speakerdata2.s3.amazonaws.com/photo/image/798060/Headshot-of-Oprah-Winfrey.Courtesy-of-Harpo-Inc.jpg'],
     ['jeff.bezos@gmail.com', 'http://a3.res.cloudinary.com/allamerican/image/fetch/t_face_s270/https://speakerdata2.s3.amazonaws.com/photo/image/856887/large_Bezos_Jeff_3.jpg'],
     ['donald.trump@gmail.com', 'http://www.guymondailyherald.com/sites/default/files/field/image/DONALD-TRUMP.jpg'],
     ['vladimir.putin@gmail.com', 'http://newslines.org/wp-content/uploads/2015/09/Vladimir-Putin-headshot-150x150.jpg'],
@@ -381,21 +381,21 @@ ActiveRecord::Base.transaction do
   end
 
   date_ranges1 = [
-    ['Sat, 01 Jul 2017', 'Sat, 15 Jul 2017'],
-    ['Mon, 10 Jul 2017', 'Tue, 25 Jul 2017'],
-    ['Thu, 20 Jul 2017', 'Sun, 30 Jul 2017']
+    ['Sat, 30 Sep 2017', 'Sun, 15 Oct 2017'],
+    ['Tue, 10 Oct 2017', 'Wed, 25 Oct 2017'],
+    ['Fri, 20 Oct 2017', 'Mon, 30 Oct 2017']
   ]
 
   date_ranges2 = [
-    ['Tue, 01 Aug 2017', 'Tue, 15 Aug 2017'],
-    ['Thu, 10 Aug 2017', 'Fri, 25 Aug 2017'],
-    ['Sun, 20 Aug 2017', 'Wed, 30 Aug 2017']
+    ['Wed, 01 Nov 2017', 'Wed, 15 Nov 2017'],
+    ['Fri, 10 Nov 2017', 'Sat, 25 Nov 2017'],
+    ['Mon, 20 Nov 2017', 'Thu, 30 Nov 2017']
   ]
 
   date_ranges3 = [
-    ['Fri, 01 Sep 2017', 'Fri, 15 Sep 2017'],
-    ['Sun, 10 Sep 2017', 'Mon, 25 Sep 2017'],
-    ['Wed, 20 Sep 2017', 'Sat, 30 Sep 2017']
+    ['Fri, 01 Dec 2017', 'Fri, 15 Dec 2017'],
+    ['Sun, 10 Dec 2017', 'Mon, 25 Dec 2017'],
+    ['Wed, 20 Dec 2017', 'Sat, 30 Dec 2017']
   ]
 
 
