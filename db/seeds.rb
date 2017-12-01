@@ -380,44 +380,154 @@ ActiveRecord::Base.transaction do
           )
   end
 
-  date_ranges1 = [
-    ['Sat, 30 Sep 2017', 'Sun, 15 Oct 2017'],
-    ['Tue, 10 Oct 2017', 'Wed, 25 Oct 2017'],
-    ['Fri, 20 Oct 2017', 'Mon, 30 Oct 2017']
+  date_ranges = [
+    [
+      ['1 Dec 2017', '12 Dec 2017'],
+      ['13 Dec 2017', '20 Dec 2017'],
+      ['21 Dec 2017', '27 Dec 2017']
+    ],
+    [
+      ['1 Jan 2018', '12 Jan 2018'],
+      ['13 Jan 2018', '20 Jan 2018'],
+      ['21 Jan 2018', '27 Jan 2018']
+    ],
+    [
+      ['1 Feb 2018', '12 Feb 2018'],
+      ['13 Feb 2018', '20 Feb 2018'],
+      ['21 Feb 2018', '27 Feb 2018']
+    ],
+    [
+      ['1 Mar 2018', '12 Mar 2018'],
+      ['13 Mar 2018', '20 Mar 2018'],
+      ['21 Mar 2018', '27 Mar 2018']
+    ],
+    [
+      ['1 Apr 2018', '12 Apr 2018'],
+      ['13 Apr 2018', '20 Apr 2018'],
+      ['21 Apr 2018', '27 Apr 2018']
+    ],
+    [
+      ['1 May 2018', '12 May 2018'],
+      ['13 May 2018', '20 May 2018'],
+      ['21 May 2018', '27 May 2018']
+    ],
+    [
+      ['1 Jun 2018', '12 Jun 2018'],
+      ['13 Jun 2018', '20 Jun 2018'],
+      ['21 Jun 2018', '27 Jun 2018']
+    ],
+    [
+      ['1 Jul 2018', '12 Jul 2018'],
+      ['13 Jul 2018', '20 Jul 2018'],
+      ['21 Jul 2018', '27 Jul 2018']
+    ],
+    [
+      ['1 Aug 2018', '12 Aug 2018'],
+      ['13 Aug 2018', '20 Aug 2018'],
+      ['21 Aug 2018', '27 Aug 2018']
+    ],
+    [
+      ['1 Sep 2018', '12 Sep 2018'],
+      ['13 Sep 2018', '20 Sep 2018'],
+      ['21 Sep 2018', '27 Sep 2018']
+    ],
+    [
+      ['1 Oct 2018', '12 Oct 2018'],
+      ['13 Oct 2018', '20 Oct 2018'],
+      ['21 Oct 2018', '27 Oct 2018']
+    ],
+    [
+      ['1 Nov 2018', '12 Nov 2018'],
+      ['13 Nov 2018', '20 Nov 2018'],
+      ['21 Nov 2018', '27 Nov 2018']
+    ],
+    [
+      ['1 Dec 2018', '12 Dec 2018'],
+      ['13 Dec 2018', '20 Dec 2018'],
+      ['21 Dec 2018', '27 Dec 2018']
+    ],
+    [
+      ['1 Jan 2019', '12 Jan 2019'],
+      ['13 Jan 2019', '20 Jan 2019'],
+      ['21 Jan 2019', '27 Jan 2019']
+    ],
+    [
+      ['1 Feb 2019', '12 Feb 2019'],
+      ['13 Feb 2019', '20 Feb 2019'],
+      ['21 Feb 2019', '27 Feb 2019']
+    ],
+    [
+      ['1 Mar 2019', '12 Mar 2019'],
+      ['13 Mar 2019', '20 Mar 2019'],
+      ['21 Mar 2019', '27 Mar 2019']
+    ],
+    [
+      ['1 Apr 2019', '12 Apr 2019'],
+      ['13 Apr 2019', '20 Apr 2019'],
+      ['21 Apr 2019', '27 Apr 2019']
+    ],
+    [
+      ['1 May 2019', '12 May 2019'],
+      ['13 May 2019', '20 May 2019'],
+      ['21 May 2019', '27 May 2019']
+    ],
+    [
+      ['1 Jun 2019', '12 Jun 2019'],
+      ['13 Jun 2019', '20 Jun 2019'],
+      ['21 Jun 2019', '27 Jun 2019']
+    ],
+    [
+      ['1 Jul 2019', '12 Jul 2019'],
+      ['13 Jul 2019', '20 Jul 2019'],
+      ['21 Jul 2019', '27 Jul 2019']
+    ],
+    [
+      ['1 Aug 2019', '12 Aug 2019'],
+      ['13 Aug 2019', '20 Aug 2019'],
+      ['21 Aug 2019', '27 Aug 2019']
+    ],
+    [
+      ['1 Sep 2019', '12 Sep 2019'],
+      ['13 Sep 2019', '20 Sep 2019'],
+      ['21 Sep 2019', '27 Sep 2019']
+    ],
+    [
+      ['1 Oct 2019', '12 Oct 2019'],
+      ['13 Oct 2019', '20 Oct 2019'],
+      ['21 Oct 2019', '27 Oct 2019']
+    ],
+    [
+      ['1 Nov 2019', '12 Nov 2019'],
+      ['13 Nov 2019', '20 Nov 2019'],
+      ['21 Nov 2019', '27 Nov 2019']
+    ],
+    [
+      ['1 Dec 2019', '12 Dec 2019'],
+      ['13 Dec 2019', '20 Dec 2019'],
+      ['21 Dec 2019', '27 Dec 2019']
+    ]
   ]
-
-  date_ranges2 = [
-    ['Wed, 01 Nov 2017', 'Wed, 15 Nov 2017'],
-    ['Fri, 10 Nov 2017', 'Sat, 25 Nov 2017'],
-    ['Mon, 20 Nov 2017', 'Thu, 30 Nov 2017']
-  ]
-
-  date_ranges3 = [
-    ['Fri, 01 Dec 2017', 'Fri, 15 Dec 2017'],
-    ['Sun, 10 Dec 2017', 'Mon, 25 Dec 2017'],
-    ['Wed, 20 Dec 2017', 'Sat, 30 Dec 2017']
-  ]
-
 
 
   def createAvailabilities(date_ranges)
     Spot.all.each do |spot|
-      date_range = date_ranges[(0..2).to_a.sample]
+      date_ranges.each do |month_ranges|
+        date_range = month_ranges[(0..2).to_a.sample]
 
-      start_date = Date.parse(date_range.first)
-      end_date = Date.parse(date_range.last)
+        start_date = Date.parse(date_range.first)
+        end_date = Date.parse(date_range.last)
 
-      (start_date..end_date).each do |date|
-        Availability.create!(available_date: date, spot_id: spot.id)
+        (start_date..end_date).each do |date|
+          Availability.create!(available_date: date, spot_id: spot.id)
+        end
+
       end
 
     end
 
   end
 
-  createAvailabilities(date_ranges1)
-  createAvailabilities(date_ranges2)
-  createAvailabilities(date_ranges3)
+  createAvailabilities(date_ranges)
 
   # Old MacDonald's Trips
   10.times do |idx|

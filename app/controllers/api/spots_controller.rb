@@ -3,7 +3,7 @@ class Api::SpotsController < ApplicationController
   def index
 
     if params[:user_id] # /api/users/:id/spots
-      @spots = User.find(params[:user_id]).listings
+      @spots = User.find(params[:user_id]).listings.includes(:state, :privacy_level)
     else # /api/spots
       @spots = Spot.all_spots_within(params[:bounds]).includes(:state, :privacy_level, :availabilities)
 
